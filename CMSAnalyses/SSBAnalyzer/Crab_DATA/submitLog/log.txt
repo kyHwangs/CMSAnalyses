@@ -1,0 +1,10 @@
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+The server answered with an error.
+Log file is /d3/scratch/sha/Analyses/Develop/MiniAOD/TestNewJetRes/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA/MuonEG_Run2016B/crab_20171118_104739/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
