@@ -1,0 +1,17 @@
+<use name="FWCore/Framework"/>
+<use name="FWCore/PluginManager"/>
+<use name="FWCore/ParameterSet"/>
+<use name="CommonTools/UtilAlgos"/> 
+<use name="PhysicsTools/Utilities"/> 
+<use name="DataFormats/PatCandidates"/>
+<use name="DataFormats/TrackReco"/>
+<use name="CondFormats/JetMETObjects"/>
+<use name="JetMETCorrections/Modules"/>
+<use name="JetMETCorrections/Objects"/>
+<use name="SimDataFormats/PileupSummaryInfo"/>
+<use name="DataFormats/Math"/> 
+<use name="RecoEgamma/EgammaTools"/>
+<use name="EgammaAnalysis/ElectronTools"/>
+<use name="CLHEP/Random"/>
+<use name="lhapdf" />
+<flags EDM_PLUGIN="1"/>

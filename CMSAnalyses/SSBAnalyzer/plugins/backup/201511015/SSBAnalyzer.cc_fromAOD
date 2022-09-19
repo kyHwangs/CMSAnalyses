@@ -1,0 +1,996 @@
+// -*- C++ -*-
+//
+// Package:    SSBAnalyzer
+// Class:      SSBAnalyzer
+// 
+/**\class SSBAnalyzer SSBAnalyzer.cc CMSAnalyses/SSBAnalyzer/plugins/SSBAnalyzer.cc
+
+ Description: [one line class summary]
+
+ Implementation:
+     [Notes on implementation]
+*/
+//
+// Original Author:  Sungwoong Cho, Seungkyu Ha, Sehwook Lee, Suyoung Choi, Jaehoon Lim, Dooyeon Gyun, 588 R-004, +41227678602
+//         Created:  Mon Jun  2 11:21:34 CEST 2014
+// $Id$
+//
+//
+
+
+// system include files
+#include <memory>
+#include "CMSAnalyses/SSBAnalyzer/plugins/SSBAnalyzer.h"
+
+using namespace std;
+using namespace reco;
+using namespace isodeposit;
+using namespace pat;
+//
+// constants, enums and typedefs
+//
+
+//
+// static data member definitions
+//
+//
+// constructors and destructor
+//
+SSBAnalyzer::SSBAnalyzer(const edm::ParameterSet& iConfig)
+:
+// needed for PDF 
+pdfTag( iConfig.getParameter<edm::InputTag>("PDFInfoTag") ),
+pdfSets( iConfig.getParameter<std::vector<std::string>>("PDFSetNames") ),
+pdfCent( iConfig.getParameter<bool>("PDFCent") ),
+pdfSys( iConfig.getParameter<bool>("PDFSys") ),
+
+/* WARNNING : You must use same variable name with GenInfor - genParInfoTag, genJetInfoTag, genMETInfoTag, isSignal*/
+//genParInfoTag( iConfig.getParameter<edm::InputTag>("genParTag") ),
+//genJetInfoTag( iConfig.getParameter<edm::InputTag>("genJetTag") ),
+//genMETInfoTag( iConfig.getParameter<edm::InputTag>("genMETTag") ),
+//isSignal( iConfig.getParameter<bool>("isSignal") ),
+
+// for EventFilter 
+PFCandidatesTag( iConfig.getParameter<edm::InputTag>("PFCandidates") ), 
+ptMinTag( iConfig.getParameter<double>("ptMin") ),
+maxPTDiffTag(iConfig.getParameter<double>("maxPTDiff") ),
+eOverPMaxTag(iConfig.getParameter<double>("eOverPMax") ),
+
+// needed for Vertex
+vertexTag( iConfig.getParameter<edm::InputTag>("pvTag") ),
+rhoTag( iConfig.getParameter<edm::InputTag>("RhoTag") ),
+pileupTag( iConfig.getParameter<edm::InputTag>("puTag") ),
+
+// needed for Trigger 
+triggerList( iConfig.getParameter<std::vector<std::string>>("trigList") ),
+
+// needed for Muon
+muonTag( iConfig.getParameter<edm::InputTag>("muTag") ),
+
+// needed for Photon
+photonTag( iConfig.getParameter<edm::InputTag>("phoTag") ),
+
+// needed for Electron
+electronTag( iConfig.getParameter<edm::InputTag>("eleTag") ),
+elecIDCheck( iConfig.getParameter<std::string>("eleID") ),
+elecmvaIdNoTrTag( iConfig.getParameter<edm::InputTag>("emvaIdNoTrTag") ),
+elecmvaIdTrNoIPTag( iConfig.getParameter<edm::InputTag>("emvaIdTrNoIPTag") ),
+elecmvaIdTrTag( iConfig.getParameter<edm::InputTag>("emvaIdTrTag") ),
+beamSpotInputTag( iConfig.getParameter<edm::InputTag>("bstag") ),
+conversionsInputTag( iConfig.getParameter<edm::InputTag>("convertag") ),
+
+// needed for Jet
+jetTag( iConfig.getParameter<edm::InputTag>("jtTag") ),
+pfLooseJetIDparam( iConfig.getParameter<edm::ParameterSet> ("PFLooseJetID") ),
+pfTightJetIDparam( iConfig.getParameter<edm::ParameterSet> ("PFTightJetID") ),
+csvBJetTag( iConfig.getParameter<std::string>("csvbjetTag") ),
+
+// needed for MET
+MetTag( iConfig.getParameter<edm::InputTag>("metTag") )
+
+{
+   //now do what ever initialization is needed
+     ssbgeninfor = new SSBGenInfor(iConfig);
+}
+
+
+SSBAnalyzer::~SSBAnalyzer()
+{
+ 
+   // do anything here that needs to be done at desctruction time
+   // (e.g. close files, deallocate resources etc.)
+
+}
+
+
+//
+// member functions
+//
+
+// ------------ method called for each event  ------------
+void
+SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
+{
+   using namespace edm;
+
+   Event = -999;
+   Run = -999;
+   Lumi = -999;
+   isData = false;
+
+   /// Initailizing variable 
+   ssbtreeManager->InitializeVariables(); 
+
+
+   Event = iEvent.id().event();
+   Run = iEvent.id().run();
+   Lumi = iEvent.id().luminosityBlock();
+   isData = iEvent.isRealData();
+
+   ssbtreeManager->Fill( "Info_EventNumber", Event  );
+   ssbtreeManager->Fill( "Info_RunNumber"  , Run    ); 
+   ssbtreeManager->Fill( "Info_Luminosity" , Lumi   ); 
+   ssbtreeManager->Fill( "Info_isData"     , isData ); 
+
+   /////////////////////////////////
+   /// Only For MC Samples!!!!!! ///
+   /////////////////////////////////
+
+   if (!isData)
+   {
+
+       ///////////////////////
+       /// PDF Information ///
+       ///////////////////////
+
+      Handle<GenEventInfoProduct> pdfstuff;
+      iEvent.getByLabel(pdfTag, pdfstuff);
+
+      if (pdfCent)
+      {
+         pdfWeight->SetScalePDF(pdfstuff->pdf()->scalePDF);
+         pdfWeight->SetIncomingPartion1(pdfstuff->pdf()->id.first, pdfstuff->pdf()->x.first, pdfstuff->pdf()->xPDF.first);
+         pdfWeight->SetIncomingPartion2(pdfstuff->pdf()->id.second, pdfstuff->pdf()->x.second, pdfstuff->pdf()->xPDF.second);
+         pdfWeight->SetPDFSet(1);
+         double _pdf1 = pdfWeight->getCentralPDFWeight(1);
+         double _pdf2 = pdfWeight->getCentralPDFWeight(2);
+         double _nominal = _pdf1*_pdf2;
+         pdfWeight->SetNominalWeight(_nominal);
+
+         ssbtreeManager->Fill( "PDFWeight_Id1"       , pdfstuff->pdf()->id.first  );
+         ssbtreeManager->Fill( "PDFWeight_Id2"       , pdfstuff->pdf()->id.second );
+         ssbtreeManager->Fill( "PDFWeight_BjorkenX1" , pdfstuff->pdf()->x.first   );
+         ssbtreeManager->Fill( "PDFWeight_BjorkenX2" , pdfstuff->pdf()->x.second  );
+         ssbtreeManager->Fill( "PDFWeight_Q"         , pdfstuff->pdf()->scalePDF  );
+         ssbtreeManager->Fill( "PDFWeight_PDF1"      , _pdf1                      );
+         ssbtreeManager->Fill( "PDFWeight_PDF2"      , _pdf2                      );
+      }
+      if (pdfSys)
+      {
+         pdfWeight->getSys("Up");
+         pdfWeight->getSys("Down");
+
+         ssbtreeManager->Fill( "PDFWeight_Up"   , pdfWeight->getSys("Up")   );
+         ssbtreeManager->Fill( "PDFWeight_Down" , pdfWeight->getSys("Down") );
+      }
+
+      ///////////////////////////////////////////
+      /// Generator Level Particle Informaton ///
+      ///////////////////////////////////////////
+      
+      ssbgeninfor->GenPar(iEvent, ssbtreeManager);
+      ssbgeninfor->GenJet(iEvent, ssbtreeManager);
+      ssbgeninfor->GenMET(iEvent, ssbtreeManager);
+
+   }/// isDATA ///
+
+
+
+   /////////////////////////////////////////
+   /// inconsistentMuonPFCandidateFilter ///
+   /////////////////////////////////////////
+
+   incons_mu_pt_flt_ = false;
+   pfreco_mu_flt_ = false;
+   int foMu = 0;
+   int pfremu =0;
+  
+   Handle<PFCandColl> pfCandidates;
+   iEvent.getByLabel(PFCandidatesTag,pfCandidates);
+   for ( unsigned i=0; i<pfCandidates->size(); i++ )
+   {
+      const reco::PFCandidate & cand = (*pfCandidates)[i];
+      if ( cand.particleId() != reco::PFCandidate::mu ){continue;}
+
+      const reco::MuonRef muon = cand.muonRef();
+      if ( fabs( muon->pt() - cand.pt() ) > 100 ) {pfremu++;}
+
+      if ( cand.pt() < ptMinTag ){continue;}
+
+      if (  muon->isTrackerMuon()
+         && muon->isGlobalMuon()
+         && fabs(muon->innerTrack()->pt()/muon->globalTrack()->pt() - 1) > maxPTDiffTag){ foMu++; }
+   }
+   if (foMu == 0){
+      incons_mu_pt_flt_ = true;
+   }
+   if (pfremu == 0 ){ 
+      pfreco_mu_flt_ = true; 
+   }
+
+   ssbtreeManager->Fill( "Filter_Inconsistent_MuonPt", incons_mu_pt_flt_ ); 
+   ssbtreeManager->Fill( "Filter_PFReco_Muon", pfreco_mu_flt_);  
+
+   //////////////////////////
+   /// Greedy Muon Filter ///
+   //////////////////////////
+         
+   greedy_mu_flt_ = false;
+   int grMu = 0;
+   for( unsigned i=0; i<pfCandidates->size(); i++ )
+   {
+
+      const reco::PFCandidate & cand = (*pfCandidates)[i];
+
+//    if( cand.particleId() != 3 ) // not a muon
+      if( cand.particleId() != reco::PFCandidate::mu ) {continue;}// not a muon
+      if(!PFMuonAlgo::isIsolatedMuon( cand.muonRef() ) ) {continue;} // muon is not isolated
+
+       double totalCaloEnergy = cand.rawEcalEnergy() +  cand.rawHcalEnergy();
+       double eOverP = totalCaloEnergy/cand.p();
+
+       if( eOverP >= eOverPMaxTag ) { grMu++; }
+
+    }
+
+    if (grMu == 0) 
+    {  
+       greedy_mu_flt_ = true;
+    }
+    ssbtreeManager->Fill( "Filter_Greedy_Muon" ,greedy_mu_flt_);
+
+                                            
+   ///////////////////////////////////
+   // Primary Vertices Information ///
+   ///////////////////////////////////
+
+/*   map_vtx_sumptsquare.clear();
+   map_vtx_x.clear();
+   map_vtx_y.clear();
+   map_vtx_z.clear();
+   map_vtx_x_e.clear();
+   map_vtx_y_e.clear();
+   map_vtx_z_e.clear();
+*/
+   int numpvidx =0;
+   //std::vector<double> v_sumPtSquare;
+   //v_sumPtSquare.clear();
+
+   Handle<VertexCollection> vertices;
+   iEvent.getByLabel(vertexTag, vertices);
+   for (VertexCollection::const_iterator itPV = vertices->begin(); itPV != vertices->end(); itPV++)
+   {
+      PV_Filter_ = false;
+
+      if ( !itPV->isFake() && itPV->ndof() > 4.0 && itPV->position().Rho() < 2. && abs(itPV->z()) < 24. )
+      {
+         PV_Filter_ = true;
+      }
+      ssbtreeManager->Fill( "Filter_PV" , PV_Filter_ );
+
+      sumtrackptsquare = -9999.0;
+      for(reco::Vertex::trackRef_iterator trkItr = itPV->tracks_begin(); trkItr != itPV->tracks_end(); ++trkItr)
+      {
+         sumtrackptsquare += (*trkItr)->pt()*(*trkItr)->pt();
+      }
+ 
+      ssbtreeManager->Fill( "Vertex_SumPtSquare", sumtrackptsquare );
+
+      vtx_x_ = -9999.0;
+      vtx_y_ = -9999.0;
+      vtx_z_ = -9999.0;
+      vtx_x_e = -9999.0;
+      vtx_y_e = -9999.0;
+      vtx_z_e = -9999.0;
+
+      vtx_x_ = (*itPV).x();
+      vtx_y_ = (*itPV).y();
+      vtx_z_ = (*itPV).z();
+      vtx_x_e = (*itPV).xError();
+      vtx_y_e = (*itPV).yError();
+      vtx_z_e = (*itPV).zError();
+
+      ssbtreeManager->Fill( "Vertex_X", vtx_x_ );
+      ssbtreeManager->Fill( "Vertex_Y", vtx_y_ );
+      ssbtreeManager->Fill( "Vertex_Z", vtx_z_ );
+      ssbtreeManager->Fill( "Vertex_X_Error", vtx_x_e );
+      ssbtreeManager->Fill( "Vertex_Y_Error", vtx_y_e );
+      ssbtreeManager->Fill( "Vertex_Z_Error", vtx_z_e );
+
+/*      v_sumPtSquare.push_back( sumtrackptsquare );
+      map_vtx_sumptsquare[sumtrackptsquare] = *itPV;
+      map_vtx_x[sumtrackptsquare] = (*itPV).x();
+      map_vtx_y[sumtrackptsquare] = (*itPV).y();
+      map_vtx_z[sumtrackptsquare] = (*itPV).z();
+      map_vtx_x_e[sumtrackptsquare] = (*itPV).xError();
+      map_vtx_y_e[sumtrackptsquare] = (*itPV).yError();
+      map_vtx_z_e[sumtrackptsquare] = (*itPV).zError();
+*/
+ 
+      numpvidx++;
+   }
+   ssbtreeManager->Fill( "PV_Count", numpvidx );
+
+   // for replace vertex map
+   VertexCollection::const_iterator itPV_begin = vertices->begin();
+
+/*
+   for (unsigned int i=0; i < v_sumPtSquare.size(); i++)
+   {
+
+
+   }
+*/
+
+   /////////////////////////
+   ///  Rho Information  ///
+   /////////////////////////
+
+   Handle<double> rhoHandle;
+   iEvent.getByLabel(rhoTag, rhoHandle);
+   
+   if(rhoHandle.isValid()) 
+   {
+      rho = *(rhoHandle.product());
+   } else {
+      cout << "Rho is invalid!!!" << endl;
+
+   }
+
+   //////////////////////////
+   /// Pileup Information ///
+   //////////////////////////
+
+   NPU = -1;
+   NPUin = 0;
+   BX = -999;
+   if (!isData)
+   { 
+
+       Handle<PileUpCollection> pileup;
+       iEvent.getByLabel( pileupTag, pileup ); 
+       for (PileUpCollection::const_iterator itpu = pileup->begin() ; itpu != pileup->end(); itpu++)
+       {
+           BX = (*itpu).getBunchCrossing();
+           if (BX == 0){
+           NPU = (*itpu).getTrueNumInteractions();
+           NPUin += (*itpu).getPU_NumInteractions();
+           ssbtreeManager->Fill( "PileUp_Count_Intime"     , NPU  ); 
+           ssbtreeManager->Fill( "PileUp_Count_Interaction", NPUin); 
+           }
+       }
+
+   }
+
+   ////////////////////////////
+   /// Pileup configuration ///
+   ////////////////////////////
+
+   string genfile  = "./Pileup/MC_Common_Pileup.root";
+   string datafile = "./Pileup/Data_2012_Reco_Pileup.root";
+
+   if (FILE *file = fopen(genfile.c_str(), "r")) {
+      fclose(file);
+   }
+   else {
+      genfile = "./MC_Common_Pileup.root";
+   }
+   if (FILE *file = fopen(datafile.c_str(), "r")) {
+      fclose(file);
+   }
+   else {
+      datafile = "./Data_2012_Reco_Pileup.root";
+   }
+
+   LumiWeights_ = edm::LumiReWeighting(genfile,
+                                      datafile,
+                                      "pileup",
+                                      "pileup");
+   double MyWeight = LumiWeights_.weight( NPU );
+   ssbtreeManager->Fill( "Weight_PileUp",MyWeight); 
+
+
+
+   /////////////////////////
+   ///Trigger Information///
+   /////////////////////////
+
+   Handle<TriggerFilterCollection> TriggerFilters;
+   iEvent.getByLabel("patTrigger",TriggerFilters );
+   for (TriggerFilterCollection::const_iterator itTrigF = TriggerFilters->begin() ; itTrigF != TriggerFilters->end(); itTrigF++)
+   {
+   }
+
+   Handle<TriggerObjectCollection> TriggerObjects;
+   iEvent.getByLabel("patTrigger",TriggerObjects );
+   for (TriggerObjectCollection::const_iterator itTrigO = TriggerObjects->begin() ; itTrigO != TriggerObjects->end(); itTrigO++)
+   {
+   }
+
+   Handle<TriggerPathCollection> TriggerPaths;
+   iEvent.getByLabel("patTrigger",TriggerPaths );
+   for (TriggerPathCollection::const_iterator itTrigP = TriggerPaths->begin() ; itTrigP != TriggerPaths->end(); itTrigP++)
+   {
+      string trigpath = (*itTrigP).name();
+
+      for (unsigned int i =0; i<triggerList.size() ;i++)
+      {
+          trigPass_  = false;
+          trigError_ = false;
+          trigRun_   = false;
+          unsigned int trigPreScale_ = 0;
+
+          if (TString(trigpath).Contains(triggerList.at(i)) )
+          {
+
+             if( (*itTrigP).wasAccept() == 1 ){trigPass_ = true; }
+             if( (*itTrigP).wasError() == 1 ) {trigError_ = true;}
+             if( (*itTrigP).wasRun() == 1 )   {trigRun_ = true;  }
+             trigPreScale_ = (*itTrigP).prescale();
+
+             ssbtreeManager->Fill( "Trigger_Name"    , trigpath       );
+             ssbtreeManager->Fill( "Trigger_isPass"  , trigPass_      );
+             ssbtreeManager->Fill( "Trigger_PreScale", trigPreScale_  );
+             ssbtreeManager->Fill( "Trigger_isError" , trigError_     );
+             ssbtreeManager->Fill( "Trigger_isRun"   , trigRun_       );
+          }
+      }       
+   }
+
+
+   /////////////////////////
+   /// Muon Information ////
+   /////////////////////////
+
+   Handle<MuonCollection> muons;
+   iEvent.getByLabel(muonTag, muons);
+   muon_index=0; 
+
+   for (MuonCollection::const_iterator itMu = muons->begin() ; itMu != muons->end(); itMu++)
+   {
+
+      isLoose = false;
+      isSoft = false;
+      isTight = false;
+      isHighPt = false;
+
+      isLoose = (*itMu).isLooseMuon() ;
+      isSoft =  (*itMu).isSoftMuon( *itPV_begin );
+      isTight = (*itMu).isTightMuon( *itPV_begin );
+      isHighPt = (*itMu).isHighPtMuon( *itPV_begin );
+
+      relIso03 = isolation->MuonRelTrkIso( (*itMu).isolationR03().sumPt, (*itMu).pt() );
+
+      PFIsodbeta03 = isolation->PFIsodBeta( (*itMu).pfIsolationR03().sumChargedHadronPt, (*itMu).pfIsolationR03().sumNeutralHadronEt, 
+                                                (*itMu).pfIsolationR03().sumPhotonEt, (*itMu).pfIsolationR03().sumPUPt, (*itMu).pt() ,0.5);
+
+      PFIsodbeta04 = isolation->PFIsodBeta( (*itMu).pfIsolationR04().sumChargedHadronPt, (*itMu).pfIsolationR04().sumNeutralHadronEt, 
+                                                (*itMu).pfIsolationR04().sumPhotonEt, (*itMu).pfIsolationR04().sumPUPt, (*itMu).pt() ,0.5);
+
+      ssbtreeManager->Fill( "Muon", (*itMu).pt(), (*itMu).eta(), (*itMu).phi(), (*itMu).energy(), muon_index);
+
+      ssbtreeManager->Fill( "Muon_isLoose"     , isLoose          );
+      ssbtreeManager->Fill( "Muon_isSoft"      , isSoft           );
+      ssbtreeManager->Fill( "Muon_isTight"     , isTight          );
+      ssbtreeManager->Fill( "Muon_isHighPt"    , isHighPt         );
+      ssbtreeManager->Fill( "Muon_relIso03"    , relIso03         );
+      ssbtreeManager->Fill( "Muon_PFIsodBeta03", PFIsodbeta03     );
+      ssbtreeManager->Fill( "Muon_PFIsodBeta04", PFIsodbeta04     );
+      ssbtreeManager->Fill( "Muon_pdgId"       , (*itMu).pdgId()  );
+      ssbtreeManager->Fill( "Muon_Charge"      , (*itMu).charge() );
+
+      muon_index++;
+
+   }
+   ssbtreeManager->Fill( "Muon_Count", muon_index );
+    
+
+   ////////////////////////////////////
+   //////// Photon Information/////////
+   ///////////////////////////////////
+
+   Handle<PhotonCollection> photons;
+   iEvent.getByLabel(photonTag, photons);
+   photon_index=0;
+
+
+   /// Photon pf iso
+   PFIsolationEstimator isolator;
+   isolator.initializePhotonIsolation(kTRUE);
+   isolator. setConeSize(0.3);
+
+   for (PhotonCollection::const_iterator itPho = photons->begin() ; itPho != photons->end(); itPho++)
+   {
+
+      phos_pidLoose_ = false;
+      phos_pidTight_ = false;
+      pat::IsolationKeys isokeyPfChargedHadronIso = pat::IsolationKeys(4);
+      const reco::IsoDeposit * PfChargedHadronIsolation = (*itPho).isoDeposit(isokeyPfChargedHadronIso);
+      if (PfChargedHadronIsolation !=0 )
+      {
+      }
+      else {}//cout << "11" <<endl; }
+      phos_pidLoose_ = (*itPho).photonIDs().at(0).second;
+      phos_pidTight_ = (*itPho).photonIDs().at(1).second;
+      photon_index++;
+
+   }
+
+
+
+    
+   ////////////////////////////
+   /////// Electron infor//////
+   ////////////////////////////
+   ele_index=0;
+
+   Handle<ElectronCollection> ele;
+   iEvent.getByLabel( electronTag, ele );
+
+   edm::Handle < reco::BeamSpot > bsHandle;
+   iEvent.getByLabel(beamSpotInputTag, bsHandle);
+
+   Handle<ConversionCollection> hConversions;
+   iEvent.getByLabel(conversionsInputTag, hConversions);
+
+   for ( unsigned int i=0; i<ele->size(); i++)
+   {
+
+      const pat::Electron & itEle = ele->at(i);
+      const auto el = ele->ptrAt(i);
+
+      isTightele = -999;
+      eles_pt_ = -9999.0;
+      eles_eta_ = -9999.0;
+      eles_phi_ = -9999.0;
+      eles_energy_ = -9999.0;
+      superclustereta_ = -999.0;
+
+      elecs_relIso03_ = -999.0;
+      elecs_relIso04_ = -999.0;
+      elecs_PFIsodbeta03_ = -999.0;
+      elecs_PFIsodbeta04_ = -999.0;
+      elecs_PFIsoRho03_ = -999.0;
+      elecs_PFIsoRho04_ = -999.0;
+
+      PfCharHadIso03_   = -999.0;
+      PfPUCharHadIso03_ = -999.0;
+      PfNeuHadIso03_    = -999.0;
+      PfGamIso03_       = -999.0;
+      PfCharHadIso04_   = -999.0;
+      PfPUCharHadIso04_ = -999.0;
+      PfNeuHadIso04_    = -999.0;
+      PfGamIso04_       = -999.0;
+
+      elecs_IsoWrong_ = false;
+
+      eles_eidLoose_ = -999;
+      eles_eidRobustHighEnergy_ = -999;
+      eles_eidRobustLoose_ = -999;
+      eles_eidRobustTight_ = -999;
+      eles_eidTight_ = -999;
+
+      eles_SCB_Loose = false;
+      eles_SCB_Medium = false;
+      eles_SCB_Tight = false;
+      eles_SCB_Veto = false;
+
+      eles_pdgid_ = 0;
+      eles_charge_ = -999;
+      eles_chargeid_gsfctfpx_ = false;
+      eles_chargeid_gsfpx_ = false;
+      eles_chargeid_gsfctf_ = false;
+      eles_gsfchar_ = -999;
+      eles_ctfchar_ = -999;
+      eles_spchar_ = -999;
+
+      gsftrack_dxy_ = -999.0;
+      gsftrack_dz_ = -999.0;
+      ctftrack_dxy_ = -999.0;
+      ctftrack_dz_ = -999.0; 
+
+      mva1_ = -999.0;
+      mva2_ = -999.0;
+      mva3_ = -999.0;
+
+      nmhit_ = 999;
+      matchesConv = false;
+      passconversionveto = false;
+      passconversionveto1 = false;
+      ooEmooP_ = -999.0;
+
+      pat::IsolationKeys isokeyPfChargedHadronIso = pat::IsolationKeys(4);
+      pat::IsolationKeys isokeyPfNeutralHadronIso = pat::IsolationKeys(5);
+      pat::IsolationKeys isokeyPFGammaIso = pat::IsolationKeys(6);
+      pat::IsolationKeys isokeyPfPUChargedHadronIso = pat::IsolationKeys(12);
+
+      const reco::IsoDeposit * PfChargedHadronIsolation = itEle.isoDeposit(isokeyPfChargedHadronIso);
+      const reco::IsoDeposit * PfNeutralHadronIsolation = itEle.isoDeposit(isokeyPfNeutralHadronIso);
+      const reco::IsoDeposit * PFGammaIsolation = itEle.isoDeposit(isokeyPFGammaIso);
+      const reco::IsoDeposit * PfPUChargedHadronIso = itEle.isoDeposit(isokeyPfPUChargedHadronIso);
+
+      elecs_relIso03_ = isolation->ElecRelIso( itEle.dr03HcalTowerSumEt(), itEle.dr03EcalRecHitSumEt(), itEle.dr03TkSumPt(), itEle.et() );
+      elecs_relIso04_ = isolation->ElecRelIso( itEle.dr04HcalTowerSumEt(), itEle.dr04EcalRecHitSumEt(), itEle.dr04TkSumPt(), itEle.et() );
+
+      /// Effective Area Information
+      effA03_ = ElectronEffectiveArea::GetElectronEffectiveArea(ElectronEffectiveArea::kEleGammaAndNeutralHadronIso03, 
+                                                                itEle.superCluster()->eta(), ElectronEffectiveArea::kEleEAData2012);
+      effA04_ = ElectronEffectiveArea::GetElectronEffectiveArea(ElectronEffectiveArea::kEleGammaAndNeutralHadronIso04, 
+                                                                itEle.superCluster()->eta(), ElectronEffectiveArea::kEleEAData2012);
+
+      if ( (PfPUChargedHadronIso !=0) && (PFGammaIsolation !=0) && (PfNeutralHadronIsolation !=0) && ( PfChargedHadronIsolation !=0) )
+      {
+         elecs_IsoWrong_ = true;
+         
+         PfCharHadIso03_   = PfChargedHadronIsolation->depositWithin(0.3);
+         PfPUCharHadIso03_ = PfPUChargedHadronIso->depositWithin(0.3);
+         PfNeuHadIso03_    = PfNeutralHadronIsolation->depositWithin(0.3);
+         PfGamIso03_       = PFGammaIsolation->depositWithin(0.3);
+         PfCharHadIso04_   = PfChargedHadronIsolation->depositWithin(0.4);
+         PfPUCharHadIso04_ = PfPUChargedHadronIso->depositWithin(0.4);
+         PfNeuHadIso04_    = PfNeutralHadronIsolation->depositWithin(0.4);
+         PfGamIso04_       = PFGammaIsolation->depositWithin(0.4);
+      }
+      else 
+      {
+         if ( PfChargedHadronIsolation == 0 )  { PfCharHadIso03_   = 0; PfCharHadIso04_   = 0; }
+         if ( PfPUChargedHadronIso == 0 )      { PfPUCharHadIso03_ = 0; PfPUCharHadIso04_ = 0; }
+         if ( PfNeutralHadronIsolation == 0 )  { PfNeuHadIso03_    = 0; PfNeuHadIso04_    = 0; }
+         if ( PFGammaIsolation == 0 )          { PfGamIso03_       = 0; PfGamIso04_       = 0; }
+      }
+     
+      /// Rho correction
+      elecs_PFIsoRho03_ = isolation->PFIsoRho( PfCharHadIso03_, PfNeuHadIso03_, PfGamIso03_, rho, effA03_, itEle.pt() );
+      elecs_PFIsoRho04_ = isolation->PFIsoRho( PfCharHadIso04_, PfNeuHadIso04_, PfGamIso04_, rho, effA04_, itEle.pt() );
+
+
+      /// Recalculate for delta Beta correction (RunII)
+      reco::GsfElectron::PflowIsolationVariables ele_pfIso = itEle.pfIsolationVariables();
+      elecs_PFIsodbeta03_ = isolation->PFIsodBeta(ele_pfIso.sumChargedHadronPt, ele_pfIso.sumNeutralHadronEt, ele_pfIso.sumPhotonEt, ele_pfIso.sumPUPt, itEle.pt(), 0.5);
+      //elecs_PFIsodbeta04_ = 0;
+
+      /// delta Beta correction
+      //elecs_PFIsodbeta03_ = isolation->PFIsodBeta( PfCharHadIso03_, PfNeuHadIso03_, PfGamIso03_, PfPUCharHadIso03_, itEle.pt(), 1.0 );
+      elecs_PFIsodbeta04_ = isolation->PFIsodBeta( PfCharHadIso04_, PfNeuHadIso04_, PfGamIso04_, PfPUCharHadIso04_, itEle.pt(), 1.0 );
+				
+      ssbtreeManager->Fill( "Elec_relIso03"    , elecs_relIso03_     );	
+      ssbtreeManager->Fill( "Elec_relIso04"    , elecs_relIso04_     );	
+      ssbtreeManager->Fill( "Elec_PFIsodBeta03", elecs_PFIsodbeta03_ );	
+      ssbtreeManager->Fill( "Elec_PFIsodBeta04", elecs_PFIsodbeta04_ );	
+      ssbtreeManager->Fill( "Elec_PFIsoRho03"  , elecs_PFIsoRho03_   );	
+      ssbtreeManager->Fill( "Elec_PFIsoRho04"  , elecs_PFIsoRho04_   );	
+      ssbtreeManager->Fill( "Elec_PFIsoValid"   , elecs_IsoWrong_     );	
+
+      if (!(itEle.gsfTrack().isNull())) 
+      {
+
+          //nmhit_ = itEle.gsfTrack()->trackerExpectedHitsInner().numberOfHits(); 
+          nmhit_ = itEle.gsfTrack()->hitPattern().numberOfHits(reco::HitPattern::MISSING_INNER_HITS); 
+          gsftrack_dxy_ =itEle.gsfTrack()->dxy( itPV_begin->position() );
+          gsftrack_dz_ = itEle.gsfTrack()->dz( itPV_begin->position());
+          eles_gsfchar_ = itEle.gsfTrack()->charge();
+
+      }
+
+      ssbtreeManager->Fill( "Elec_Charge_GsfTr" , eles_gsfchar_ );
+      ssbtreeManager->Fill( "Elec_Track_GsfdXY" , gsftrack_dxy_ ); 
+      ssbtreeManager->Fill( "Elec_Track_GsfdZ"  , gsftrack_dz_  ); 
+      ssbtreeManager->Fill( "Elec_Inner_Hit"    , nmhit_        ); 
+
+      if (!(itEle.closestCtfTrackRef().isNull()))
+      {
+
+          ctftrack_dxy_ = itEle.closestCtfTrackRef()->dxy( itPV_begin->position());
+          ctftrack_dz_ = itEle.closestCtfTrackRef()->dz( itPV_begin->position());
+          eles_ctfchar_ = itEle.closestCtfTrackRef()->charge();
+
+      }
+
+      ssbtreeManager->Fill( "Elec_Charge_CtfTr", eles_ctfchar_ );
+      ssbtreeManager->Fill( "Elec_Track_CtfdXY", ctftrack_dxy_ ); 
+      ssbtreeManager->Fill( "Elec_Track_CtfdZ" , ctftrack_dz_  ); 
+
+      eles_spchar_ = itEle.scPixCharge();
+      ssbtreeManager->Fill( "Elec_Charge_Px", eles_spchar_);
+    
+      eles_pt_ = itEle.pt();
+      eles_eta_ = itEle.eta();
+      eles_phi_ = itEle.phi();
+      eles_energy_ = itEle.energy();
+      eles_pdgid_ = itEle.pdgId();
+      eles_charge_ = itEle.charge();
+
+      superclustereta_ =  itEle.superCluster()->eta(); 
+
+      if (itEle.isGsfCtfScPixChargeConsistent())
+      {
+         eles_chargeid_gsfctfpx_ = true;
+      }
+
+      if (itEle.isGsfCtfChargeConsistent())
+      {
+         eles_chargeid_gsfctf_ = true;
+      }
+
+      if (itEle.isGsfScPixChargeConsistent())
+      {
+         eles_chargeid_gsfpx_ = true;
+      }
+
+      if (elecIDCheck == "MVA") {
+
+         if (itEle.electronIDs().size()==3)
+         {
+	    //if (ele_index==0) cout << itEle.electronIDs().at(0).first << " / "  << itEle.electronIDs().at(1).first << " / "  << itEle.electronIDs().at(2).first << endl;
+            mva1_ = itEle.electronIDs().at(0).second;
+            mva2_ = itEle.electronIDs().at(1).second;
+            mva3_ = itEle.electronIDs().at(2).second;
+         }
+         else
+         {
+	    //if (ele_index==0) cout << itEle.electronIDs().at(0).first << " / "  << itEle.electronIDs().at(1).first << " / "  << itEle.electronIDs().at(2).first << itEle.electronIDs().at(3).first << " / " << itEle.electronIDs().at(4).first << " / " << endl;
+            eles_eidLoose_ = itEle.electronIDs().at(0).second;
+            eles_eidRobustHighEnergy_ = itEle.electronIDs().at(1).second;
+            eles_eidRobustLoose_ = itEle.electronIDs().at(2).second;
+            eles_eidRobustTight_ = itEle.electronIDs().at(3).second;
+            eles_eidTight_ = itEle.electronIDs().at(4).second;
+         }
+      } else if (elecIDCheck == "CUT") {
+
+	 //if (ele_index==0) cout << itEle.electronIDs().at(0).first << " / "  << itEle.electronIDs().at(1).first << " / "  << itEle.electronIDs().at(2).first << itEle.electronIDs().at(3).first << " / " << endl;
+         eles_SCB_Loose = itEle.electronIDs().at(0).second;
+         eles_SCB_Medium = itEle.electronIDs().at(1).second;
+         eles_SCB_Tight = itEle.electronIDs().at(2).second;
+         eles_SCB_Veto = itEle.electronIDs().at(3).second;
+
+      } else { cout << "Electron ID Error" << endl; }
+
+      if (hConversions.isValid() && bsHandle.isValid()) 
+      {
+         matchesConv = ConversionTools::hasMatchedConversion(itEle, hConversions, bsHandle->position());
+      } 
+      else {
+         if (!bsHandle.isValid())
+	 cout << "Error! Can't get the product " <<endl;
+	 if (!hConversions.isValid())
+	 cout << "Error! Can't get the product "<< endl;
+      }
+      passconversionveto = !ConversionTools::hasMatchedConversion(itEle, hConversions, bsHandle->position());
+      passconversionveto1 = itEle.passConversionVeto();// pat conversion veto
+      ooEmooP_ = (1.0/itEle.superCluster()->energy())*(1.0-itEle.eSuperClusterOverP()); 
+
+      ssbtreeManager->Fill("Elec", eles_pt_,eles_eta_,eles_phi_,eles_energy_,ele_index );
+
+      ssbtreeManager->Fill( "Elec_Conversion"         , passconversionveto1       );
+      ssbtreeManager->Fill( "Elec_Id_Loose"           , eles_eidLoose_            );
+      ssbtreeManager->Fill( "Elec_Id_RobustHighEnergy", eles_eidRobustHighEnergy_ );
+      ssbtreeManager->Fill( "Elec_Id_RobustLoose"     , eles_eidRobustLoose_      );
+      ssbtreeManager->Fill( "Elec_Id_RobustTight"     , eles_eidRobustTight_      );
+      ssbtreeManager->Fill( "Elec_Id_Tight"           , eles_eidTight_            );
+      ssbtreeManager->Fill( "Elec_MVA_NonTrigV0"      , mva1_                     );
+      ssbtreeManager->Fill( "Elec_MVA_TrigNoIPV0"     , mva2_                     );
+      ssbtreeManager->Fill( "Elec_MVA_TrigV0"         , mva3_                     );
+      ssbtreeManager->Fill( "Elec_SCB_Veto"           , eles_SCB_Veto             );
+      ssbtreeManager->Fill( "Elec_SCB_Loose"          , eles_SCB_Loose            );
+      ssbtreeManager->Fill( "Elec_SCB_Medium"         , eles_SCB_Medium           );
+      ssbtreeManager->Fill( "Elec_SCB_Tight"          , eles_SCB_Tight            );
+      ssbtreeManager->Fill( "Elec_pdgId"              , eles_pdgid_               );
+      ssbtreeManager->Fill( "Elec_Charge"             , eles_charge_              );
+      ssbtreeManager->Fill( "Elec_ChargeId_GsfCtfPx"  , eles_chargeid_gsfctfpx_   );
+      ssbtreeManager->Fill( "Elec_ChargeId_GsfCtf"    , eles_chargeid_gsfctf_     );
+      ssbtreeManager->Fill( "Elec_ChargeId_GsfPx"     , eles_chargeid_gsfpx_      );
+      ssbtreeManager->Fill( "Elec_Supercluster_Eta"   , superclustereta_          );
+      ssbtreeManager->Fill( "Elec_SCB_dEtaIn"         , itEle.deltaEtaSuperClusterTrackAtVtx() );
+      ssbtreeManager->Fill( "Elec_SCB_dPhiIn"         , itEle.deltaPhiSuperClusterTrackAtVtx() );
+      ssbtreeManager->Fill( "Elec_SCB_sigmaIetaIeta"  , itEle.full5x5_sigmaIetaIeta() );
+      ssbtreeManager->Fill( "Elec_SCB_hOverE"         , itEle.hadronicOverEm() );
+      ssbtreeManager->Fill( "Elec_SCB_ooEmooP"        , itEle.hadronicOverEm() );
+      
+      ele_index++;
+
+   }
+   ssbtreeManager->Fill( "Elec_Count" , ele_index );
+
+   /////////////////////////
+   /// Jets Information  ///
+   /////////////////////////
+
+
+   // Utility for Jet ID
+   PFJetIDSelectionFunctor LooseJetID(pfLooseJetIDparam);
+   pat::strbitset looseJetIdSel = LooseJetID.getBitTemplate();
+
+   PFJetIDSelectionFunctor TightJetID(pfTightJetIDparam);
+   pat::strbitset tightJetIdSel = TightJetID.getBitTemplate();
+
+   jet_index = 0;
+
+   Handle<JetCollection> jets;
+   iEvent.getByLabel(jetTag, jets);
+
+   for ( unsigned int i=0; i<jets->size(); ++i ) 
+   {
+      const pat::Jet & itJet = jets->at(i);
+
+      ////////////////////////////////////
+      /// selection of resaonable jets ///
+      ////////////////////////////////////
+      
+      if ( itJet.pt() < 20.0 || abs( itJet.eta() ) > 2.5 ) {continue;} // import at python config
+
+      jets_pt_ = -9999;
+      jets_eta_ = -9999;
+      jets_phi_ = -9999;
+      jets_energy_ = -9999;
+      jets_pdgid_ = 0;
+      jets_isJet_ = false;
+      jets_bDisc_ = -9999;
+      jets_charge_ = -9999;
+      jets_pfjetid_ = -999;
+      jets_mvapujetid_ = -999;
+      jets_mvapujet_ = -999;
+      isLoosejetid_pass = false;
+      isTightjetid_pass = false;
+
+
+      ///For PFJetIDSelectionFunctor
+      looseJetIdSel.set(false);
+      isLoosejetid_pass = LooseJetID(itJet, looseJetIdSel);
+
+      tightJetIdSel.set(false);
+      isTightjetid_pass = TightJetID(itJet, tightJetIdSel);
+
+      if (isTightjetid_pass)
+      {
+         jets_pfjetid_ = 2;
+      }
+      else if (isLoosejetid_pass)
+      {
+         jets_pfjetid_ = 1;
+      }
+      else 
+      {
+         jets_pfjetid_ = 0;
+      }
+
+
+      ////////////////////////////
+      /// End of jet selection ///
+      ////////////////////////////
+
+      float mva   = -999;
+          
+      jets_pt_ = itJet.pt();
+      jets_eta_ = itJet.eta();
+      jets_phi_ = itJet.phi();
+      jets_energy_ = itJet.energy();
+      jets_charge_ = itJet.charge();
+
+      /// works only for JPT or PF jet
+      jets_mvapujet_ = mva;
+      jets_pdgid_ = itJet.pdgId();
+      jets_isJet_ = itJet.isJet();
+      jets_bDisc_ = itJet.bDiscriminator(csvBJetTag);
+
+      ssbtreeManager->Fill( "Jet", jets_pt_, jets_eta_, jets_phi_, jets_energy_, jet_index);
+      ssbtreeManager->Fill( "Jet_Charge"   , jets_charge_     );
+      ssbtreeManager->Fill( "Jet_isJet"    , jets_isJet_      );
+      ssbtreeManager->Fill( "Jet_bDisc"    , jets_bDisc_      );
+      ssbtreeManager->Fill( "Jet_PFId"     , jets_pfjetid_    );
+      ssbtreeManager->Fill( "Jet_PileUpId" , jets_mvapujetid_ );
+      ssbtreeManager->Fill( "Jet_PileUpMVA", jets_mvapujet_   );
+      
+      jet_index++;
+
+   }
+   ssbtreeManager->Fill( "Jet_Count", jet_index );
+
+
+
+   ///////////////////////
+   /// MET infromation ///
+   ///////////////////////
+
+   MET_index=0;
+   Handle<METCollection> met;
+   iEvent.getByLabel( MetTag, met );
+   for (METCollection::const_iterator itMet = met->begin() ; itMet != met->end(); itMet++)
+   {
+       ssbtreeManager->Fill( "MET" ,(*itMet).pt(), 0, (*itMet).phi(), 0, MET_index);      
+       MET_index++;
+   }
+
+
+   /// Fill Ntuples at each event
+   ssbtreeManager->FillNtuple();
+
+#ifdef THIS_IS_AN_EVENT_EXAMPLE
+   Handle<ExampleData> pIn;
+   iEvent.getByLabel("example",pIn);
+#endif
+   
+#ifdef THIS_IS_AN_EVENTSETUP_EXAMPLE
+   ESHandle<SetupData> pSetup;
+   iSetup.get<SetupRecord>().get(pSetup);
+#endif
+}
+
+
+// ------------ method called once each job just before starting event loop  ------------
+void 
+SSBAnalyzer::beginJob()
+{
+   ssbtree = ssbfs->make<TTree>("SSBTree", "Tree for Physics Analyses at CMS");
+   ssbtreeManager = new SSBTreeManager();
+//   ssbtreeManager->book(ssbtree);
+   ssbtreeManager->Book(ssbtree);
+
+   if (pdfCent)
+   {
+      /// PDFWeight
+      pdfWeight = new SSBPDFWeight(pdfSets.size(), pdfSets.at(0));
+   }
+
+   /// Isolation calculation
+   isolation = new SSBIsoCal(); 
+/*
+   /// PDF
+   for (unsigned int k=1; k<=pdfSets.size(); k++) 
+   {
+      LHAPDF::initPDFSet(k, pdfSets[k-1]);
+   }
+*/
+}
+
+// ------------ method called once each job just after ending the event loop  ------------
+void 
+SSBAnalyzer::endJob() 
+{
+}
+
+// ------------ method called when starting to processes a run  ------------
+void 
+SSBAnalyzer::beginRun(edm::Run const&, edm::EventSetup const&)
+{
+}
+
+// ------------ method called when ending the processing of a run  ------------
+void 
+SSBAnalyzer::endRun(edm::Run const&, edm::EventSetup const&)
+{
+}
+
+// ------------ method called when starting to processes a luminosity block  ------------
+void 
+SSBAnalyzer::beginLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&)
+{
+}
+
+// ------------ method called when ending the processing of a luminosity block  ------------
+void 
+SSBAnalyzer::endLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&)
+{
+}
+
+// ------------ method fills 'descriptions' with the allowed parameters for the module  ------------
+void
+SSBAnalyzer::fillDescriptions(edm::ConfigurationDescriptions& descriptions) {
+  //The following says we do not know what parameters are allowed so do no validation
+  // Please change this to state exactly what you do use, even if it is no parameters
+  edm::ParameterSetDescription desc;
+  desc.setUnknown();
+  descriptions.addDefault(desc);
+}
+
+//define this as a plug-in
+DEFINE_FWK_MODULE(SSBAnalyzer);

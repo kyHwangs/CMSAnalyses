@@ -1,0 +1,1246 @@
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+# Conditions read from  CMS_CONDITIONS  via FrontierProd 
+ ################################################################### 
+ # WARNING: this module is deprecated.                             # 
+ # Please use CondCore.CondDB.CondDB_cfi.py                        # 
+ ################################################################### 
+03-Feb-2017 23:50:26 KST  Initiating request to open file file:/pnfs/knu.ac.kr/data/cms/store/user/sha/MiniAODSample/MC/80X_v2/ForMoriond/TTbar/0693E0E7-97BE-E611-B32F-0CC47A78A3D8.root
+03-Feb-2017 23:50:30 KST  Successfully opened file file:/pnfs/knu.ac.kr/data/cms/store/user/sha/MiniAODSample/MC/80X_v2/ForMoriond/TTbar/0693E0E7-97BE-E611-B32F-0CC47A78A3D8.root
+[STATUS] Reading energy scale correction  values from file: EgammaAnalysis/ElectronTools/data/ScalesSmearings/Winter_2016_reReco_v1_ele_scales.dat
+[STATUS] Reading energy scale correction  values from file: EgammaAnalysis/ElectronTools/data/ScalesSmearings/Winter_2016_reReco_v1_ele_scales.dat
+[STATUS] Reading energy scale correction  values from file: EgammaAnalysis/ElectronTools/data/ScalesSmearings/Winter_2016_reReco_v1_ele_scales.dat
+[STATUS] Reading energy scale correction  values from file: EgammaAnalysis/ElectronTools/data/ScalesSmearings/Winter_2016_reReco_v1_ele_scales.dat
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0000.dat
+NNPDF30_nlo_as_0118 PDF set, member #0, version 2; LHAPDF ID = 260000
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0000.dat
+NNPDF30_nlo_as_0118 PDF set, member #0, version 2; LHAPDF ID = 260000
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0000.dat
+NNPDF30_nlo_as_0118 PDF set, member #0, version 2; LHAPDF ID = 260000
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0000.dat
+CT10nnlo PDF set, member #0, version 1; LHAPDF ID = 11200
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0000.dat
+CT10nnlo PDF set, member #0, version 1; LHAPDF ID = 11200
+Begin processing the 1st record. Run 1, Event 315595, LumiSection 1971 at 03-Feb-2017 23:50:55.360 KST
+Begin processing the 101st record. Run 1, Event 315689, LumiSection 1971 at 03-Feb-2017 23:51:05.635 KST
+Begin processing the 201st record. Run 1, Event 315802, LumiSection 1972 at 03-Feb-2017 23:51:11.383 KST
+Begin processing the 301st record. Run 1, Event 315884, LumiSection 1972 at 03-Feb-2017 23:51:16.762 KST
+Begin processing the 401st record. Run 1, Event 315995, LumiSection 1973 at 03-Feb-2017 23:51:23.364 KST
+Begin processing the 501st record. Run 1, Event 316099, LumiSection 1973 at 03-Feb-2017 23:51:27.818 KST
+Begin processing the 601st record. Run 1, Event 316196, LumiSection 1974 at 03-Feb-2017 23:51:32.452 KST
+Begin processing the 701st record. Run 1, Event 316299, LumiSection 1974 at 03-Feb-2017 23:51:36.804 KST
+Begin processing the 801st record. Run 1, Event 316395, LumiSection 1975 at 03-Feb-2017 23:51:42.552 KST
+Begin processing the 901st record. Run 1, Event 3113581, LumiSection 19436 at 03-Feb-2017 23:51:47.009 KST
+Begin processing the 1001st record. Run 1, Event 3113686, LumiSection 19436 at 03-Feb-2017 23:51:51.637 KST
+Begin processing the 1101st record. Run 1, Event 3113790, LumiSection 19437 at 03-Feb-2017 23:51:57.369 KST
+Begin processing the 1201st record. Run 1, Event 3113886, LumiSection 19437 at 03-Feb-2017 23:52:02.101 KST
+Begin processing the 1301st record. Run 1, Event 3113973, LumiSection 19438 at 03-Feb-2017 23:52:06.751 KST
+Begin processing the 1401st record. Run 1, Event 3114081, LumiSection 19438 at 03-Feb-2017 23:52:11.311 KST
+Begin processing the 1501st record. Run 1, Event 3114190, LumiSection 19439 at 03-Feb-2017 23:52:17.112 KST
+Begin processing the 1601st record. Run 1, Event 3114285, LumiSection 19439 at 03-Feb-2017 23:52:21.509 KST
+Begin processing the 1701st record. Run 1, Event 24691722, LumiSection 154131 at 03-Feb-2017 23:52:25.970 KST
+Begin processing the 1801st record. Run 1, Event 24691825, LumiSection 154131 at 03-Feb-2017 23:52:31.909 KST
+Begin processing the 1901st record. Run 1, Event 24691926, LumiSection 154132 at 03-Feb-2017 23:52:36.154 KST
+Begin processing the 2001st record. Run 1, Event 24692023, LumiSection 154132 at 03-Feb-2017 23:52:40.577 KST
+Begin processing the 2101st record. Run 1, Event 24692125, LumiSection 154133 at 03-Feb-2017 23:52:45.007 KST
+Begin processing the 2201st record. Run 1, Event 24692226, LumiSection 154133 at 03-Feb-2017 23:52:51.046 KST
+Begin processing the 2301st record. Run 1, Event 24692316, LumiSection 154134 at 03-Feb-2017 23:52:55.324 KST
+Begin processing the 2401st record. Run 1, Event 24692415, LumiSection 154134 at 03-Feb-2017 23:52:59.564 KST
+Begin processing the 2501st record. Run 1, Event 36804439, LumiSection 229741 at 03-Feb-2017 23:53:05.424 KST
+Begin processing the 2601st record. Run 1, Event 36804544, LumiSection 229741 at 03-Feb-2017 23:53:09.968 KST
+Begin processing the 2701st record. Run 1, Event 36804647, LumiSection 229742 at 03-Feb-2017 23:53:14.169 KST
+Begin processing the 2801st record. Run 1, Event 36804746, LumiSection 229742 at 03-Feb-2017 23:53:18.777 KST
+Begin processing the 2901st record. Run 1, Event 36804850, LumiSection 229743 at 03-Feb-2017 23:53:24.537 KST
+Begin processing the 3001st record. Run 1, Event 36804947, LumiSection 229743 at 03-Feb-2017 23:53:29.063 KST
+Begin processing the 3101st record. Run 1, Event 36805049, LumiSection 229744 at 03-Feb-2017 23:53:33.371 KST
+Begin processing the 3201st record. Run 1, Event 36805142, LumiSection 229744 at 03-Feb-2017 23:53:39.078 KST
+Begin processing the 3301st record. Run 1, Event 47247080, LumiSection 294926 at 03-Feb-2017 23:53:43.587 KST
+Begin processing the 3401st record. Run 1, Event 47247183, LumiSection 294926 at 03-Feb-2017 23:53:48.020 KST
+Begin processing the 3501st record. Run 1, Event 47247283, LumiSection 294927 at 03-Feb-2017 23:53:52.714 KST
+Begin processing the 3601st record. Run 1, Event 47247384, LumiSection 294927 at 03-Feb-2017 23:53:58.663 KST
+Begin processing the 3701st record. Run 1, Event 47247482, LumiSection 294928 at 03-Feb-2017 23:54:03.121 KST
+Begin processing the 3801st record. Run 1, Event 47247584, LumiSection 294928 at 03-Feb-2017 23:54:07.612 KST
+Begin processing the 3901st record. Run 1, Event 47247688, LumiSection 294929 at 03-Feb-2017 23:54:12.288 KST
+Begin processing the 4001st record. Run 1, Event 47247769, LumiSection 294929 at 03-Feb-2017 23:54:17.987 KST
+Begin processing the 4101st record. Run 1, Event 53462041, LumiSection 333721 at 03-Feb-2017 23:54:22.440 KST
+Begin processing the 4201st record. Run 1, Event 53462142, LumiSection 333721 at 03-Feb-2017 23:54:26.888 KST
+Begin processing the 4301st record. Run 1, Event 53462240, LumiSection 333722 at 03-Feb-2017 23:54:32.674 KST
+Begin processing the 4401st record. Run 1, Event 53462337, LumiSection 333722 at 03-Feb-2017 23:54:37.150 KST
+Begin processing the 4501st record. Run 1, Event 53462441, LumiSection 333723 at 03-Feb-2017 23:54:41.901 KST
+Begin processing the 4601st record. Run 1, Event 53462537, LumiSection 333723 at 03-Feb-2017 23:54:46.550 KST
+Begin processing the 4701st record. Run 1, Event 53462636, LumiSection 333724 at 03-Feb-2017 23:54:52.285 KST
+Begin processing the 4801st record. Run 1, Event 53462733, LumiSection 333724 at 03-Feb-2017 23:54:56.853 KST
+Begin processing the 4901st record. Run 1, Event 72365640, LumiSection 451721 at 03-Feb-2017 23:55:01.411 KST
+Begin processing the 5001st record. Run 1, Event 72365743, LumiSection 451721 at 03-Feb-2017 23:55:07.384 KST
+Begin processing the 5101st record. Run 1, Event 72365831, LumiSection 451722 at 03-Feb-2017 23:55:11.877 KST
+Begin processing the 5201st record. Run 1, Event 72365940, LumiSection 451722 at 03-Feb-2017 23:55:16.232 KST
+Begin processing the 5301st record. Run 1, Event 72366041, LumiSection 451723 at 03-Feb-2017 23:55:20.711 KST
+Begin processing the 5401st record. Run 1, Event 72366140, LumiSection 451723 at 03-Feb-2017 23:55:26.684 KST
+Begin processing the 5501st record. Run 1, Event 72366241, LumiSection 451724 at 03-Feb-2017 23:55:31.342 KST
+Begin processing the 5601st record. Run 1, Event 72366337, LumiSection 451724 at 03-Feb-2017 23:55:35.689 KST
+Begin processing the 5701st record. Run 1, Event 73586361, LumiSection 459341 at 03-Feb-2017 23:55:41.483 KST
+Begin processing the 5801st record. Run 1, Event 73586462, LumiSection 459341 at 03-Feb-2017 23:55:46.063 KST
+Begin processing the 5901st record. Run 1, Event 73586564, LumiSection 459342 at 03-Feb-2017 23:55:50.495 KST
+Begin processing the 6001st record. Run 1, Event 73586665, LumiSection 459342 at 03-Feb-2017 23:55:54.917 KST
+Begin processing the 6101st record. Run 1, Event 73586763, LumiSection 459343 at 03-Feb-2017 23:56:00.677 KST
+Begin processing the 6201st record. Run 1, Event 73586862, LumiSection 459343 at 03-Feb-2017 23:56:05.161 KST
+Begin processing the 6301st record. Run 1, Event 73586959, LumiSection 459344 at 03-Feb-2017 23:56:09.539 KST
+Begin processing the 6401st record. Run 1, Event 73587061, LumiSection 459344 at 03-Feb-2017 23:56:14.478 KST
+Begin processing the 6501st record. Run 1, Event 597641, LumiSection 3731 at 03-Feb-2017 23:56:19.812 KST
+Begin processing the 6601st record. Run 1, Event 597740, LumiSection 3731 at 03-Feb-2017 23:56:25.497 KST
+Begin processing the 6701st record. Run 1, Event 597840, LumiSection 3732 at 03-Feb-2017 23:56:30.589 KST
+Begin processing the 6801st record. Run 1, Event 597944, LumiSection 3732 at 03-Feb-2017 23:56:37.045 KST
+Begin processing the 6901st record. Run 1, Event 598041, LumiSection 3733 at 03-Feb-2017 23:56:41.835 KST
+Begin processing the 7001st record. Run 1, Event 598142, LumiSection 3733 at 03-Feb-2017 23:56:46.109 KST
+Begin processing the 7101st record. Run 1, Event 598246, LumiSection 3734 at 03-Feb-2017 23:56:50.727 KST
+Begin processing the 7201st record. Run 1, Event 598343, LumiSection 3734 at 03-Feb-2017 23:56:56.823 KST
+Begin processing the 7301st record. Run 1, Event 2675437, LumiSection 16701 at 03-Feb-2017 23:57:01.204 KST
+Begin processing the 7401st record. Run 1, Event 2675535, LumiSection 16701 at 03-Feb-2017 23:57:05.527 KST
+Begin processing the 7501st record. Run 1, Event 2675633, LumiSection 16702 at 03-Feb-2017 23:57:11.568 KST
+Begin processing the 7601st record. Run 1, Event 2675734, LumiSection 16702 at 03-Feb-2017 23:57:16.202 KST
+Begin processing the 7701st record. Run 1, Event 2675824, LumiSection 16703 at 03-Feb-2017 23:57:20.431 KST
+Begin processing the 7801st record. Run 1, Event 2675933, LumiSection 16703 at 03-Feb-2017 23:57:26.147 KST
+Begin processing the 7901st record. Run 1, Event 2676031, LumiSection 16704 at 03-Feb-2017 23:57:32.152 KST
+Begin processing the 8001st record. Run 1, Event 2676137, LumiSection 16704 at 03-Feb-2017 23:57:36.895 KST
+Begin processing the 8101st record. Run 1, Event 8525127, LumiSection 53216 at 03-Feb-2017 23:57:41.511 KST
+Begin processing the 8201st record. Run 1, Event 8525238, LumiSection 53216 at 03-Feb-2017 23:57:47.429 KST
+Begin processing the 8301st record. Run 1, Event 8525336, LumiSection 53217 at 03-Feb-2017 23:57:51.710 KST
+Begin processing the 8401st record. Run 1, Event 8525438, LumiSection 53217 at 03-Feb-2017 23:57:56.502 KST
+Begin processing the 8501st record. Run 1, Event 8525533, LumiSection 53218 at 03-Feb-2017 23:58:00.721 KST
+Begin processing the 8601st record. Run 1, Event 8525636, LumiSection 53218 at 03-Feb-2017 23:58:06.541 KST
+Begin processing the 8701st record. Run 1, Event 8525730, LumiSection 53219 at 03-Feb-2017 23:58:11.392 KST
+Begin processing the 8801st record. Run 1, Event 8525834, LumiSection 53219 at 03-Feb-2017 23:58:15.682 KST
+Begin processing the 8901st record. Run 1, Event 14249883, LumiSection 88951 at 03-Feb-2017 23:58:21.569 KST
+Begin processing the 9001st record. Run 1, Event 14249971, LumiSection 88951 at 03-Feb-2017 23:58:25.941 KST
+Begin processing the 9101st record. Run 1, Event 14250081, LumiSection 88952 at 03-Feb-2017 23:58:30.221 KST
+Begin processing the 9201st record. Run 1, Event 14250184, LumiSection 88952 at 03-Feb-2017 23:58:35.218 KST
+Begin processing the 9301st record. Run 1, Event 14250281, LumiSection 88953 at 03-Feb-2017 23:58:41.164 KST
+Begin processing the 9401st record. Run 1, Event 14250372, LumiSection 88953 at 03-Feb-2017 23:58:45.731 KST
+Begin processing the 9501st record. Run 1, Event 14250484, LumiSection 88954 at 03-Feb-2017 23:58:50.168 KST
+Begin processing the 9601st record. Run 1, Event 14250575, LumiSection 88954 at 03-Feb-2017 23:58:55.939 KST
+Begin processing the 9701st record. Run 1, Event 22935926, LumiSection 143171 at 03-Feb-2017 23:59:00.531 KST
+Begin processing the 9801st record. Run 1, Event 22936025, LumiSection 143171 at 03-Feb-2017 23:59:04.843 KST
+Begin processing the 9901st record. Run 1, Event 22936125, LumiSection 143172 at 03-Feb-2017 23:59:09.491 KST
+Begin processing the 10001st record. Run 1, Event 22936221, LumiSection 143172 at 03-Feb-2017 23:59:15.261 KST
+Begin processing the 10101st record. Run 1, Event 22936327, LumiSection 143173 at 03-Feb-2017 23:59:19.954 KST
+Begin processing the 10201st record. Run 1, Event 22936426, LumiSection 143173 at 03-Feb-2017 23:59:24.417 KST
+Begin processing the 10301st record. Run 1, Event 22936524, LumiSection 143174 at 03-Feb-2017 23:59:29.099 KST
+Begin processing the 10401st record. Run 1, Event 22936623, LumiSection 143174 at 03-Feb-2017 23:59:34.756 KST
+Begin processing the 10501st record. Run 1, Event 23826636, LumiSection 148731 at 03-Feb-2017 23:59:39.270 KST
+Begin processing the 10601st record. Run 1, Event 23826730, LumiSection 148731 at 03-Feb-2017 23:59:44.224 KST
+Begin processing the 10701st record. Run 1, Event 23826827, LumiSection 148732 at 03-Feb-2017 23:59:50.000 KST
+Begin processing the 10801st record. Run 1, Event 23826936, LumiSection 148732 at 03-Feb-2017 23:59:54.704 KST
+Begin processing the 10901st record. Run 1, Event 23827039, LumiSection 148733 at 03-Feb-2017 23:59:59.075 KST
+Begin processing the 11001st record. Run 1, Event 23827135, LumiSection 148733 at 04-Feb-2017 00:00:03.828 KST
+Begin processing the 11101st record. Run 1, Event 23827231, LumiSection 148734 at 04-Feb-2017 00:00:09.388 KST
+Begin processing the 11201st record. Run 1, Event 23827338, LumiSection 148734 at 04-Feb-2017 00:00:13.947 KST
+Begin processing the 11301st record. Run 1, Event 45170878, LumiSection 281966 at 04-Feb-2017 00:00:18.305 KST
+Begin processing the 11401st record. Run 1, Event 45170982, LumiSection 281966 at 04-Feb-2017 00:00:24.467 KST
+Begin processing the 11501st record. Run 1, Event 45171073, LumiSection 281967 at 04-Feb-2017 00:00:28.887 KST
+Begin processing the 11601st record. Run 1, Event 45171187, LumiSection 281967 at 04-Feb-2017 00:00:33.516 KST
+Begin processing the 11701st record. Run 1, Event 45171287, LumiSection 281968 at 04-Feb-2017 00:00:39.542 KST
+Begin processing the 11801st record. Run 1, Event 45171384, LumiSection 281968 at 04-Feb-2017 00:00:45.427 KST
+Begin processing the 11901st record. Run 1, Event 45171485, LumiSection 281969 at 04-Feb-2017 00:00:50.054 KST
+Begin processing the 12001st record. Run 1, Event 45171582, LumiSection 281969 at 04-Feb-2017 00:00:54.423 KST
+Begin processing the 12101st record. Run 1, Event 68273325, LumiSection 426176 at 04-Feb-2017 00:01:00.437 KST
+Begin processing the 12201st record. Run 1, Event 68273421, LumiSection 426176 at 04-Feb-2017 00:01:04.856 KST
+Begin processing the 12301st record. Run 1, Event 68273526, LumiSection 426177 at 04-Feb-2017 00:01:10.110 KST
+Begin processing the 12401st record. Run 1, Event 68273620, LumiSection 426177 at 04-Feb-2017 00:01:14.807 KST
+Begin processing the 12501st record. Run 1, Event 68273726, LumiSection 426178 at 04-Feb-2017 00:01:21.106 KST
+Begin processing the 12601st record. Run 1, Event 68273822, LumiSection 426178 at 04-Feb-2017 00:01:26.243 KST
+Begin processing the 12701st record. Run 1, Event 68273895, LumiSection 426179 at 04-Feb-2017 00:01:30.610 KST
+Begin processing the 12801st record. Run 1, Event 68274024, LumiSection 426179 at 04-Feb-2017 00:01:35.954 KST
+Begin processing the 12901st record. Run 1, Event 1551625, LumiSection 9686 at 04-Feb-2017 00:01:41.594 KST
+Begin processing the 13001st record. Run 1, Event 1551727, LumiSection 9686 at 04-Feb-2017 00:01:47.314 KST
+Begin processing the 13101st record. Run 1, Event 1551824, LumiSection 9687 at 04-Feb-2017 00:01:52.697 KST
+Begin processing the 13201st record. Run 1, Event 1551920, LumiSection 9687 at 04-Feb-2017 00:01:59.161 KST
+Begin processing the 13301st record. Run 1, Event 1552024, LumiSection 9688 at 04-Feb-2017 00:02:04.215 KST
+Begin processing the 13401st record. Run 1, Event 1552127, LumiSection 9688 at 04-Feb-2017 00:02:08.937 KST
+Begin processing the 13501st record. Run 1, Event 1552215, LumiSection 9689 at 04-Feb-2017 00:02:13.496 KST
+Begin processing the 13601st record. Run 1, Event 1552327, LumiSection 9689 at 04-Feb-2017 00:02:19.246 KST
+Begin processing the 13701st record. Run 1, Event 10652583, LumiSection 66496 at 04-Feb-2017 00:02:23.832 KST
+Begin processing the 13801st record. Run 1, Event 10652681, LumiSection 66496 at 04-Feb-2017 00:02:28.559 KST
+Begin processing the 13901st record. Run 1, Event 10652783, LumiSection 66497 at 04-Feb-2017 00:02:35.373 KST
+Begin processing the 14001st record. Run 1, Event 10652888, LumiSection 66497 at 04-Feb-2017 00:02:40.237 KST
+Begin processing the 14101st record. Run 1, Event 10652978, LumiSection 66498 at 04-Feb-2017 00:02:44.640 KST
+Begin processing the 14201st record. Run 1, Event 10653081, LumiSection 66498 at 04-Feb-2017 00:02:49.555 KST
+Begin processing the 14301st record. Run 1, Event 10653171, LumiSection 66499 at 04-Feb-2017 00:02:55.578 KST
+Begin processing the 14401st record. Run 1, Event 10653280, LumiSection 66499 at 04-Feb-2017 00:02:59.981 KST
+Begin processing the 14501st record. Run 1, Event 10717469, LumiSection 66901 at 04-Feb-2017 00:03:04.913 KST
+Begin processing the 14601st record. Run 1, Event 10717568, LumiSection 66901 at 04-Feb-2017 00:03:10.463 KST
+Begin processing the 14701st record. Run 1, Event 10717668, LumiSection 66902 at 04-Feb-2017 00:03:15.280 KST
+Begin processing the 14801st record. Run 1, Event 10717758, LumiSection 66902 at 04-Feb-2017 00:03:19.925 KST
+Begin processing the 14901st record. Run 1, Event 10717852, LumiSection 66903 at 04-Feb-2017 00:03:25.682 KST
+Begin processing the 15001st record. Run 1, Event 10717968, LumiSection 66903 at 04-Feb-2017 00:03:30.221 KST
+Begin processing the 15101st record. Run 1, Event 10718068, LumiSection 66904 at 04-Feb-2017 00:03:34.855 KST
+Begin processing the 15201st record. Run 1, Event 10718160, LumiSection 66904 at 04-Feb-2017 00:03:38.971 KST
+Begin processing the 15301st record. Run 1, Event 24713336, LumiSection 154266 at 04-Feb-2017 00:03:45.892 KST
+Begin processing the 15401st record. Run 1, Event 24713435, LumiSection 154266 at 04-Feb-2017 00:03:50.828 KST
+Begin processing the 15501st record. Run 1, Event 24713538, LumiSection 154267 at 04-Feb-2017 00:03:55.404 KST
+Begin processing the 15601st record. Run 1, Event 24713639, LumiSection 154267 at 04-Feb-2017 00:04:02.803 KST
+Begin processing the 15701st record. Run 1, Event 24713729, LumiSection 154268 at 04-Feb-2017 00:04:07.522 KST
+Begin processing the 15801st record. Run 1, Event 24713838, LumiSection 154268 at 04-Feb-2017 00:04:12.175 KST
+Begin processing the 15901st record. Run 1, Event 24713935, LumiSection 154269 at 04-Feb-2017 00:04:17.041 KST
+Begin processing the 16001st record. Run 1, Event 24714036, LumiSection 154269 at 04-Feb-2017 00:04:23.307 KST
+Begin processing the 16101st record. Run 1, Event 30877834, LumiSection 192746 at 04-Feb-2017 00:04:28.038 KST
+Begin processing the 16201st record. Run 1, Event 30877918, LumiSection 192746 at 04-Feb-2017 00:04:32.774 KST
+Begin processing the 16301st record. Run 1, Event 30878027, LumiSection 192747 at 04-Feb-2017 00:04:38.954 KST
+Begin processing the 16401st record. Run 1, Event 30878135, LumiSection 192747 at 04-Feb-2017 00:04:43.606 KST
+Begin processing the 16501st record. Run 1, Event 30878225, LumiSection 192748 at 04-Feb-2017 00:04:48.266 KST
+Begin processing the 16601st record. Run 1, Event 30878333, LumiSection 192748 at 04-Feb-2017 00:04:53.297 KST
+Begin processing the 16701st record. Run 1, Event 30878433, LumiSection 192749 at 04-Feb-2017 00:04:59.507 KST
+Begin processing the 16801st record. Run 1, Event 30878527, LumiSection 192749 at 04-Feb-2017 00:05:04.399 KST
+Begin processing the 16901st record. Run 1, Event 34506364, LumiSection 215396 at 04-Feb-2017 00:05:09.418 KST
+Begin processing the 17001st record. Run 1, Event 34506458, LumiSection 215396 at 04-Feb-2017 00:05:15.691 KST
+Begin processing the 17101st record. Run 1, Event 34506557, LumiSection 215397 at 04-Feb-2017 00:05:20.187 KST
+Begin processing the 17201st record. Run 1, Event 34506642, LumiSection 215397 at 04-Feb-2017 00:05:25.130 KST
+Begin processing the 17301st record. Run 1, Event 34506760, LumiSection 215398 at 04-Feb-2017 00:05:30.082 KST
+Begin processing the 17401st record. Run 1, Event 34506856, LumiSection 215398 at 04-Feb-2017 00:05:36.523 KST
+Begin processing the 17501st record. Run 1, Event 34506946, LumiSection 215399 at 04-Feb-2017 00:05:41.408 KST
+Begin processing the 17601st record. Run 1, Event 34507061, LumiSection 215399 at 04-Feb-2017 00:05:46.182 KST
+Begin processing the 17701st record. Run 1, Event 50097028, LumiSection 312716 at 04-Feb-2017 00:05:52.575 KST
+Begin processing the 17801st record. Run 1, Event 50097122, LumiSection 312716 at 04-Feb-2017 00:05:57.369 KST
+Begin processing the 17901st record. Run 1, Event 50097217, LumiSection 312717 at 04-Feb-2017 00:06:02.239 KST
+Begin processing the 18001st record. Run 1, Event 50097324, LumiSection 312717 at 04-Feb-2017 00:06:07.255 KST
+Begin processing the 18101st record. Run 1, Event 50097426, LumiSection 312718 at 04-Feb-2017 00:06:13.255 KST
+Begin processing the 18201st record. Run 1, Event 50097522, LumiSection 312718 at 04-Feb-2017 00:06:18.080 KST
+Begin processing the 18301st record. Run 1, Event 50097623, LumiSection 312719 at 04-Feb-2017 00:06:23.182 KST
+Begin processing the 18401st record. Run 1, Event 50097725, LumiSection 312719 at 04-Feb-2017 00:06:29.755 KST
+Begin processing the 18501st record. Run 1, Event 69152815, LumiSection 431666 at 04-Feb-2017 00:06:35.036 KST
+Begin processing the 18601st record. Run 1, Event 69152906, LumiSection 431666 at 04-Feb-2017 00:06:39.676 KST
+Begin processing the 18701st record. Run 1, Event 69153010, LumiSection 431667 at 04-Feb-2017 00:06:45.880 KST
+Begin processing the 18801st record. Run 1, Event 69153107, LumiSection 431667 at 04-Feb-2017 00:06:50.701 KST
+Begin processing the 18901st record. Run 1, Event 69153205, LumiSection 431668 at 04-Feb-2017 00:06:55.801 KST
+Begin processing the 19001st record. Run 1, Event 69153317, LumiSection 431668 at 04-Feb-2017 00:07:00.694 KST
+Begin processing the 19101st record. Run 1, Event 69153414, LumiSection 431669 at 04-Feb-2017 00:07:06.384 KST
+Begin processing the 19201st record. Run 1, Event 69153512, LumiSection 431669 at 04-Feb-2017 00:07:10.911 KST
+Begin processing the 19301st record. Run 1, Event 1892039, LumiSection 11811 at 04-Feb-2017 00:07:16.804 KST
+Begin processing the 19401st record. Run 1, Event 1892141, LumiSection 11811 at 04-Feb-2017 00:07:22.599 KST
+Begin processing the 19501st record. Run 1, Event 1892243, LumiSection 11812 at 04-Feb-2017 00:07:29.774 KST
+Begin processing the 19601st record. Run 1, Event 1892339, LumiSection 11812 at 04-Feb-2017 00:07:36.684 KST
+Begin processing the 19701st record. Run 1, Event 1892438, LumiSection 11813 at 04-Feb-2017 00:07:41.658 KST
+Begin processing the 19801st record. Run 1, Event 1892539, LumiSection 11813 at 04-Feb-2017 00:07:46.554 KST
+Begin processing the 19901st record. Run 1, Event 1892639, LumiSection 11814 at 04-Feb-2017 00:07:51.528 KST
+04-Feb-2017 00:07:57 KST  Closed file file:/pnfs/knu.ac.kr/data/cms/store/user/sha/MiniAODSample/MC/80X_v2/ForMoriond/TTbar/0693E0E7-97BE-E611-B32F-0CC47A78A3D8.root
+
+TrigReport ---------- Event  Summary ------------
+TrigReport Events total = 20000 passed = 20000 failed = 0
+
+TrigReport ---------- Path   Summary ------------
+TrigReport  Trig Bit#   Executed     Passed     Failed      Error Name
+TrigReport     1    0      20000      20000          0          0 p
+
+TrigReport -------End-Path   Summary ------------
+TrigReport  Trig Bit#   Executed     Passed     Failed      Error Name
+
+TrigReport ---------- Modules in Path: p ------------
+TrigReport  Trig Bit#    Visited     Passed     Failed      Error Name
+TrigReport     1    0      20000      20000          0          0 pfMet
+TrigReport     1    1      20000      20000          0          0 genMetExtractor
+TrigReport     1    2      20000      20000          0          0 patJetCorrFactorsReapplyJEC
+TrigReport     1    3      20000      20000          0          0 patJetsReapplyJEC
+TrigReport     1    4      20000      20000          0          0 basicJetsForMet
+TrigReport     1    5      20000      20000          0          0 jetSelectorForMet
+TrigReport     1    6      20000      20000          0          0 cleanedPatJets
+TrigReport     1    7      20000      20000          0          0 metrawCalo
+TrigReport     1    8      20000      20000          0          0 patPFMet
+TrigReport     1    9      20000      20000          0          0 patPFMetT1T2Corr
+TrigReport     1   10      20000      20000          0          0 patPFMetT1
+TrigReport     1   11      20000      20000          0          0 patPFMetTxyCorr
+TrigReport     1   12      20000      20000          0          0 patPFMetT1Txy
+TrigReport     1   13      20000      20000          0          0 patPFMetTxy
+TrigReport     1   14      20000      20000          0          0 patSmearedJets
+TrigReport     1   15      20000      20000          0          0 selectedPatJetsForMetT1T2SmearCorr
+TrigReport     1   16      20000      20000          0          0 patPFMetT1T2SmearCorr
+TrigReport     1   17      20000      20000          0          0 patPFMetT1Smear
+TrigReport     1   18      20000      20000          0          0 ak4PFCHSL1FastjetCorrector
+TrigReport     1   19      20000      20000          0          0 ak4PFCHSL2RelativeCorrector
+TrigReport     1   20      20000      20000          0          0 ak4PFCHSL3AbsoluteCorrector
+TrigReport     1   21      20000      20000          0          0 ak4PFCHSL1FastL2L3Corrector
+TrigReport     1   22      20000      20000          0          0 ak4PFCHSL1FastjetCorrector
+TrigReport     1   23      20000      20000          0          0 ak4PFCHSL2RelativeCorrector
+TrigReport     1   24      20000      20000          0          0 ak4PFCHSL3AbsoluteCorrector
+TrigReport     1   25      20000      20000          0          0 ak4PFCHSResidualCorrector
+TrigReport     1   26      20000      20000          0          0 ak4PFCHSL1FastL2L3ResidualCorrector
+TrigReport     1   27      20000      20000          0          0 shiftedPatJetResDown
+TrigReport     1   28      20000      20000          0          0 shiftedPatMETCorrJetResDown
+TrigReport     1   29      20000      20000          0          0 shiftedPatJetResUp
+TrigReport     1   30      20000      20000          0          0 shiftedPatMETCorrJetResUp
+TrigReport     1   31      20000      20000          0          0 pfCandsNoJets
+TrigReport     1   32      20000      20000          0          0 pfCandsNoJetsNoEle
+TrigReport     1   33      20000      20000          0          0 pfCandsNoJetsNoEleNoMu
+TrigReport     1   34      20000      20000          0          0 pfCandsNoJetsNoEleNoMuNoTau
+TrigReport     1   35      20000      20000          0          0 pfCandsForUnclusteredUnc
+TrigReport     1   36      20000      20000          0          0 shiftedPatMuonEnDown
+TrigReport     1   37      20000      20000          0          0 shiftedPatMETCorrMuonEnDown
+TrigReport     1   38      20000      20000          0          0 shiftedPatMuonEnUp
+TrigReport     1   39      20000      20000          0          0 shiftedPatMETCorrMuonEnUp
+TrigReport     1   40      20000      20000          0          0 shiftedPatJetEnDown
+TrigReport     1   41      20000      20000          0          0 shiftedPatMETCorrJetEnDown
+TrigReport     1   42      20000      20000          0          0 shiftedPatJetEnUp
+TrigReport     1   43      20000      20000          0          0 shiftedPatMETCorrJetEnUp
+TrigReport     1   44      20000      20000          0          0 shiftedPatTauEnDown
+TrigReport     1   45      20000      20000          0          0 shiftedPatMETCorrTauEnDown
+TrigReport     1   46      20000      20000          0          0 shiftedPatTauEnUp
+TrigReport     1   47      20000      20000          0          0 shiftedPatMETCorrTauEnUp
+TrigReport     1   48      20000      20000          0          0 shiftedPatPhotonEnDown
+TrigReport     1   49      20000      20000          0          0 shiftedPatMETCorrPhotonEnDown
+TrigReport     1   50      20000      20000          0          0 shiftedPatPhotonEnUp
+TrigReport     1   51      20000      20000          0          0 shiftedPatMETCorrPhotonEnUp
+TrigReport     1   52      20000      20000          0          0 shiftedPatElectronEnDown
+TrigReport     1   53      20000      20000          0          0 shiftedPatMETCorrElectronEnDown
+TrigReport     1   54      20000      20000          0          0 shiftedPatElectronEnUp
+TrigReport     1   55      20000      20000          0          0 shiftedPatMETCorrElectronEnUp
+TrigReport     1   56      20000      20000          0          0 shiftedPatUnclusteredEnDown
+TrigReport     1   57      20000      20000          0          0 shiftedPatMETCorrUnclusteredEnDown
+TrigReport     1   58      20000      20000          0          0 shiftedPatUnclusteredEnUp
+TrigReport     1   59      20000      20000          0          0 shiftedPatMETCorrUnclusteredEnUp
+TrigReport     1   60      20000      20000          0          0 shiftedPatSmearedJetResDown
+TrigReport     1   61      20000      20000          0          0 shiftedPatMETCorrSmearedJetResDown
+TrigReport     1   62      20000      20000          0          0 shiftedPatSmearedJetResUp
+TrigReport     1   63      20000      20000          0          0 shiftedPatMETCorrSmearedJetResUp
+TrigReport     1   64      20000      20000          0          0 patPFMetT1JetResUp
+TrigReport     1   65      20000      20000          0          0 patPFMetT1JetResDown
+TrigReport     1   66      20000      20000          0          0 patPFMetT1MuonEnUp
+TrigReport     1   67      20000      20000          0          0 patPFMetT1MuonEnDown
+TrigReport     1   68      20000      20000          0          0 patPFMetT1JetEnUp
+TrigReport     1   69      20000      20000          0          0 patPFMetT1JetEnDown
+TrigReport     1   70      20000      20000          0          0 patPFMetT1TauEnDown
+TrigReport     1   71      20000      20000          0          0 patPFMetT1TauEnUp
+TrigReport     1   72      20000      20000          0          0 patPFMetT1PhotonEnUp
+TrigReport     1   73      20000      20000          0          0 patPFMetT1PhotonEnDown
+TrigReport     1   74      20000      20000          0          0 patPFMetT1ElectronEnUp
+TrigReport     1   75      20000      20000          0          0 patPFMetT1ElectronEnDown
+TrigReport     1   76      20000      20000          0          0 patPFMetT1UnclusteredEnUp
+TrigReport     1   77      20000      20000          0          0 patPFMetT1UnclusteredEnDown
+TrigReport     1   78      20000      20000          0          0 patPFMetT1SmearJetResDown
+TrigReport     1   79      20000      20000          0          0 patPFMetT1SmearJetResUp
+TrigReport     1   80      20000      20000          0          0 patPFMetT1SmearMuonEnUp
+TrigReport     1   81      20000      20000          0          0 patPFMetT1SmearMuonEnDown
+TrigReport     1   82      20000      20000          0          0 patPFMetT1SmearJetEnUp
+TrigReport     1   83      20000      20000          0          0 patPFMetT1SmearJetEnDown
+TrigReport     1   84      20000      20000          0          0 patPFMetT1SmearTauEnUp
+TrigReport     1   85      20000      20000          0          0 patPFMetT1SmearTauEnDown
+TrigReport     1   86      20000      20000          0          0 patPFMetT1SmearPhotonEnUp
+TrigReport     1   87      20000      20000          0          0 patPFMetT1SmearPhotonEnDown
+TrigReport     1   88      20000      20000          0          0 patPFMetT1SmearElectronEnDown
+TrigReport     1   89      20000      20000          0          0 patPFMetT1SmearElectronEnUp
+TrigReport     1   90      20000      20000          0          0 patPFMetT1SmearUnclusteredEnUp
+TrigReport     1   91      20000      20000          0          0 patPFMetT1SmearUnclusteredEnDown
+TrigReport     1   92      20000      20000          0          0 patCaloMet
+TrigReport     1   93      20000      20000          0          0 slimmedMETs
+TrigReport     1   94      20000      20000          0          0 patJetCorrFactorsUpdatedJEC
+TrigReport     1   95      20000      20000          0          0 updatedPatJetsUpdatedJEC
+TrigReport     1   96      20000      20000          0          0 calibratedPatElectrons
+TrigReport     1   97      20000      20000          0          0 calibratedPatPhotons
+TrigReport     1   98      20000      20000          0          0 egmPhotonIsolation
+TrigReport     1   99      20000      20000          0          0 photonIDValueMapProducer
+TrigReport     1  100      20000      20000          0          0 photonMVAValueMapProducer
+TrigReport     1  101      20000      20000          0          0 egmPhotonIDs
+TrigReport     1  102      20000      20000          0          0 photonRegressionValueMapProducer
+TrigReport     1  103      20000      20000          0          0 electronMVAValueMapProducer
+TrigReport     1  104      20000      20000          0          0 egmGsfElectronIDs
+TrigReport     1  105      20000      20000          0          0 electronRegressionValueMapProducer
+TrigReport     1  106      20000      20000          0          0 cloneGlobalMuonTagger
+TrigReport     1  107      20000      20000          0          0 badGlobalMuonTagger
+TrigReport     1  108      20000      20000          0          0 ssbanalyzer
+
+TrigReport ---------- Module Summary ------------
+TrigReport    Visited   Executed     Passed     Failed      Error Name
+TrigReport      20000      20000      20000          0          0 BadChargedCandidateFilter
+TrigReport      20000      20000      20000          0          0 BadPFMuonFilter
+TrigReport          0          0          0          0          0 PFCandAssoMap
+TrigReport      20000      20000      20000          0          0 TriggerResults
+TrigReport          0          0          0          0          0 ak4CaloL1FastL2L3Corrector
+TrigReport          0          0          0          0          0 ak4CaloL1FastL2L3L6Corrector
+TrigReport          0          0          0          0          0 ak4CaloL1FastL2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4CaloL1FastjetCorrector
+TrigReport          0          0          0          0          0 ak4CaloL1L2L3Corrector
+TrigReport          0          0          0          0          0 ak4CaloL1L2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4CaloL1OffsetCorrector
+TrigReport          0          0          0          0          0 ak4CaloL2L3Corrector
+TrigReport          0          0          0          0          0 ak4CaloL2L3CorrectorPuppi
+TrigReport          0          0          0          0          0 ak4CaloL2L3L6Corrector
+TrigReport          0          0          0          0          0 ak4CaloL2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4CaloL2RelativeCorrector
+TrigReport          0          0          0          0          0 ak4CaloL2RelativeCorrectorPuppi
+TrigReport          0          0          0          0          0 ak4CaloL3AbsoluteCorrector
+TrigReport          0          0          0          0          0 ak4CaloL3AbsoluteCorrectorPuppi
+TrigReport          0          0          0          0          0 ak4CaloL6SLBCorrector
+TrigReport          0          0          0          0          0 ak4CaloResidualCorrector
+TrigReport      20000      20000      20000          0          0 ak4GenJetsCustom
+TrigReport          0          0          0          0          0 ak4JPTL1FastL2L3Corrector
+TrigReport          0          0          0          0          0 ak4JPTL1FastL2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4JPTL1FastjetCorrector
+TrigReport          0          0          0          0          0 ak4JPTL1L2L3Corrector
+TrigReport          0          0          0          0          0 ak4JPTL1L2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4JPTL1OffsetCorrector
+TrigReport          0          0          0          0          0 ak4JPTL2L3Corrector
+TrigReport          0          0          0          0          0 ak4JPTL2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4JPTL2RelativeCorrector
+TrigReport          0          0          0          0          0 ak4JPTL3AbsoluteCorrector
+TrigReport          0          0          0          0          0 ak4JPTResidualCorrector
+TrigReport          0          0          0          0          0 ak4L1JPTOffsetCorrector
+TrigReport      20000      20000      20000          0          0 ak4PFCHSL1FastL2L3Corrector
+TrigReport          0          0          0          0          0 ak4PFCHSL1FastL2L3CorrectorPuppi
+TrigReport      20000      20000      20000          0          0 ak4PFCHSL1FastL2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4PFCHSL1FastL2L3ResidualCorrectorPuppi
+TrigReport      40000      20000      20000          0          0 ak4PFCHSL1FastjetCorrector
+TrigReport          0          0          0          0          0 ak4PFCHSL1FastjetCorrectorPuppi
+TrigReport          0          0          0          0          0 ak4PFCHSL1L2L3Corrector
+TrigReport          0          0          0          0          0 ak4PFCHSL1L2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4PFCHSL1OffsetCorrector
+TrigReport          0          0          0          0          0 ak4PFCHSL2L3Corrector
+TrigReport          0          0          0          0          0 ak4PFCHSL2L3ResidualCorrector
+TrigReport      40000      20000      20000          0          0 ak4PFCHSL2RelativeCorrector
+TrigReport          0          0          0          0          0 ak4PFCHSL2RelativeCorrectorPuppi
+TrigReport      40000      20000      20000          0          0 ak4PFCHSL3AbsoluteCorrector
+TrigReport          0          0          0          0          0 ak4PFCHSL3AbsoluteCorrectorPuppi
+TrigReport      20000      20000      20000          0          0 ak4PFCHSResidualCorrector
+TrigReport          0          0          0          0          0 ak4PFCHSResidualCorrectorPuppi
+TrigReport          0          0          0          0          0 ak4PFJets
+TrigReport          0          0          0          0          0 ak4PFJetsPuppi
+TrigReport          0          0          0          0          0 ak4PFL1FastL2L3Corrector
+TrigReport          0          0          0          0          0 ak4PFL1FastL2L3L6Corrector
+TrigReport          0          0          0          0          0 ak4PFL1FastL2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4PFL1FastjetCorrector
+TrigReport          0          0          0          0          0 ak4PFL1L2L3Corrector
+TrigReport          0          0          0          0          0 ak4PFL1L2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4PFL1OffsetCorrector
+TrigReport          0          0          0          0          0 ak4PFL2L3Corrector
+TrigReport          0          0          0          0          0 ak4PFL2L3L6Corrector
+TrigReport          0          0          0          0          0 ak4PFL2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4PFL2RelativeCorrector
+TrigReport          0          0          0          0          0 ak4PFL3AbsoluteCorrector
+TrigReport          0          0          0          0          0 ak4PFL6SLBCorrector
+TrigReport          0          0          0          0          0 ak4PFPuppiL1FastL2L3Corrector
+TrigReport          0          0          0          0          0 ak4PFPuppiL1FastL2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4PFPuppiL1FastjetCorrector
+TrigReport          0          0          0          0          0 ak4PFPuppiL1L2L3Corrector
+TrigReport          0          0          0          0          0 ak4PFPuppiL1L2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4PFPuppiL1OffsetCorrector
+TrigReport          0          0          0          0          0 ak4PFPuppiL2L3Corrector
+TrigReport          0          0          0          0          0 ak4PFPuppiL2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4PFPuppiL2RelativeCorrector
+TrigReport          0          0          0          0          0 ak4PFPuppiL3AbsoluteCorrector
+TrigReport          0          0          0          0          0 ak4PFPuppiResidualCorrector
+TrigReport          0          0          0          0          0 ak4PFResidualCorrector
+TrigReport          0          0          0          0          0 ak4TrackL2L3Corrector
+TrigReport          0          0          0          0          0 ak4TrackL2RelativeCorrector
+TrigReport          0          0          0          0          0 ak4TrackL3AbsoluteCorrector
+TrigReport      20000      20000      20000          0          0 badGlobalMuonTagger
+TrigReport      20000      20000      20000          0          0 basicJetsForMet
+TrigReport          0          0          0          0          0 basicJetsForMetPuppi
+TrigReport          0          0          0          0          0 calibratedElectrons
+TrigReport      20000      20000      20000          0          0 calibratedPatElectrons
+TrigReport      20000      20000      20000          0          0 calibratedPatPhotons
+TrigReport          0          0          0          0          0 calibratedPhotons
+TrigReport          0          0          0          0          0 caloMetT1
+TrigReport          0          0          0          0          0 caloMetT1Puppi
+TrigReport          0          0          0          0          0 caloMetT1T2
+TrigReport          0          0          0          0          0 caloMetT1T2Puppi
+TrigReport      20000      20000      20000          0          0 cleanedPatJets
+TrigReport          0          0          0          0          0 cleanedPatJetsPuppi
+TrigReport      20000      20000      20000          0          0 cloneGlobalMuonTagger
+TrigReport          0          0          0          0          0 corrCaloMetType1
+TrigReport          0          0          0          0          0 corrCaloMetType1Puppi
+TrigReport          0          0          0          0          0 corrCaloMetType2
+TrigReport          0          0          0          0          0 corrCaloMetType2Puppi
+TrigReport          0          0          0          0          0 corrPfMetType0PfCand
+TrigReport          0          0          0          0          0 corrPfMetType1
+TrigReport          0          0          0          0          0 corrPfMetType1Puppi
+TrigReport          0          0          0          0          0 corrPfMetType2
+TrigReport          0          0          0          0          0 corrPfMetType2Puppi
+TrigReport      20000      20000      20000          0          0 egmGsfElectronIDs
+TrigReport      20000      20000      20000          0          0 egmPhotonIDs
+TrigReport      20000      20000      20000          0          0 egmPhotonIsolation
+TrigReport      20000      20000      20000          0          0 electronMVAValueMapProducer
+TrigReport      20000      20000      20000          0          0 electronRegressionValueMapProducer
+TrigReport      20000      20000      20000          0          0 genJetFlavourInfos
+TrigReport      20000      20000      20000          0          0 genMetExtractor
+TrigReport          0          0          0          0          0 genMetExtractorPuppi
+TrigReport      20000      20000      20000          0          0 genParticlesForJetsCustom
+TrigReport      20000      20000      20000          0          0 jetSelectorForMet
+TrigReport          0          0          0          0          0 jetSelectorForMetPuppi
+TrigReport      20000      20000      20000          0          0 matchGenBHadron
+TrigReport          0          0          0          0          0 matchGenCHadron
+TrigReport      20000      20000      20000          0          0 metrawCalo
+TrigReport      20000      20000      20000          0          0 metrawCaloPuppi
+TrigReport          0          0          0          0          0 muCaloMetCorr
+TrigReport          0          0          0          0          0 muCaloMetCorrPuppi
+TrigReport          0          0          0          0          0 particleFlowDisplacedVertex
+TrigReport          0          0          0          0          0 particleFlowPtrs
+TrigReport          0          0          0          0          0 particleFlowPtrsPuppi
+TrigReport      20000      20000      20000          0          0 patCaloMet
+TrigReport          0          0          0          0          0 patJetCorrFactorsPuppi
+TrigReport      20000      20000      20000          0          0 patJetCorrFactorsReapplyJEC
+TrigReport      20000      20000      20000          0          0 patJetCorrFactorsUpdatedJEC
+TrigReport          0          0          0          0          0 patJetFlavourAssociationLegacyPuppi
+TrigReport          0          0          0          0          0 patJetFlavourAssociationPuppi
+TrigReport          0          0          0          0          0 patJetGenJetMatchPuppi
+TrigReport          0          0          0          0          0 patJetPartonAssociationLegacyPuppi
+TrigReport          0          0          0          0          0 patJetPartonMatchPuppi
+TrigReport          0          0          0          0          0 patJetPartonsLegacyPuppi
+TrigReport          0          0          0          0          0 patJetPartonsPuppi
+TrigReport          0          0          0          0          0 patJetsPuppi
+TrigReport      20000      20000      20000          0          0 patJetsReapplyJEC
+TrigReport          0          0          0          0          0 patMETs
+TrigReport      20000      20000      20000          0          0 patPFMet
+TrigReport          0          0          0          0          0 patPFMetPuppi
+TrigReport          0          0          0          0          0 patPFMetT0Corr
+TrigReport          0          0          0          0          0 patPFMetT0CorrPuppi
+TrigReport          0          0          0          0          0 patPFMetT0pcT1
+TrigReport          0          0          0          0          0 patPFMetT0pcT1Puppi
+TrigReport          0          0          0          0          0 patPFMetT0pcT1Smear
+TrigReport          0          0          0          0          0 patPFMetT0pcT1T2
+TrigReport          0          0          0          0          0 patPFMetT0pcT1T2Puppi
+TrigReport          0          0          0          0          0 patPFMetT0pcT1T2Smear
+TrigReport          0          0          0          0          0 patPFMetT0pcT1T2Txy
+TrigReport          0          0          0          0          0 patPFMetT0pcT1T2TxySmear
+TrigReport          0          0          0          0          0 patPFMetT0pcT1Txy
+TrigReport          0          0          0          0          0 patPFMetT0pcT1TxySmear
+TrigReport      20000      20000      20000          0          0 patPFMetT1
+TrigReport      20000      20000      20000          0          0 patPFMetT1ElectronEnDown
+TrigReport          0          0          0          0          0 patPFMetT1ElectronEnDownPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1ElectronEnUp
+TrigReport          0          0          0          0          0 patPFMetT1ElectronEnUpPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1JetEnDown
+TrigReport          0          0          0          0          0 patPFMetT1JetEnDownPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1JetEnUp
+TrigReport          0          0          0          0          0 patPFMetT1JetEnUpPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1JetResDown
+TrigReport          0          0          0          0          0 patPFMetT1JetResDownPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1JetResUp
+TrigReport          0          0          0          0          0 patPFMetT1JetResUpPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1MuonEnDown
+TrigReport          0          0          0          0          0 patPFMetT1MuonEnDownPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1MuonEnUp
+TrigReport          0          0          0          0          0 patPFMetT1MuonEnUpPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1PhotonEnDown
+TrigReport          0          0          0          0          0 patPFMetT1PhotonEnDownPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1PhotonEnUp
+TrigReport          0          0          0          0          0 patPFMetT1PhotonEnUpPuppi
+TrigReport          0          0          0          0          0 patPFMetT1Puppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1Smear
+TrigReport      20000      20000      20000          0          0 patPFMetT1SmearElectronEnDown
+TrigReport          0          0          0          0          0 patPFMetT1SmearElectronEnDownPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1SmearElectronEnUp
+TrigReport          0          0          0          0          0 patPFMetT1SmearElectronEnUpPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1SmearJetEnDown
+TrigReport          0          0          0          0          0 patPFMetT1SmearJetEnDownPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1SmearJetEnUp
+TrigReport          0          0          0          0          0 patPFMetT1SmearJetEnUpPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1SmearJetResDown
+TrigReport          0          0          0          0          0 patPFMetT1SmearJetResDownPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1SmearJetResUp
+TrigReport          0          0          0          0          0 patPFMetT1SmearJetResUpPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1SmearMuonEnDown
+TrigReport          0          0          0          0          0 patPFMetT1SmearMuonEnDownPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1SmearMuonEnUp
+TrigReport          0          0          0          0          0 patPFMetT1SmearMuonEnUpPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1SmearPhotonEnDown
+TrigReport          0          0          0          0          0 patPFMetT1SmearPhotonEnDownPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1SmearPhotonEnUp
+TrigReport          0          0          0          0          0 patPFMetT1SmearPhotonEnUpPuppi
+TrigReport          0          0          0          0          0 patPFMetT1SmearPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1SmearTauEnDown
+TrigReport          0          0          0          0          0 patPFMetT1SmearTauEnDownPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1SmearTauEnUp
+TrigReport          0          0          0          0          0 patPFMetT1SmearTauEnUpPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1SmearUnclusteredEnDown
+TrigReport          0          0          0          0          0 patPFMetT1SmearUnclusteredEnDownPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1SmearUnclusteredEnUp
+TrigReport          0          0          0          0          0 patPFMetT1SmearUnclusteredEnUpPuppi
+TrigReport          0          0          0          0          0 patPFMetT1T2
+TrigReport      20000      20000      20000          0          0 patPFMetT1T2Corr
+TrigReport          0          0          0          0          0 patPFMetT1T2CorrPuppi
+TrigReport          0          0          0          0          0 patPFMetT1T2Puppi
+TrigReport          0          0          0          0          0 patPFMetT1T2Smear
+TrigReport      20000      20000      20000          0          0 patPFMetT1T2SmearCorr
+TrigReport          0          0          0          0          0 patPFMetT1T2SmearCorrPuppi
+TrigReport          0          0          0          0          0 patPFMetT1T2Txy
+TrigReport          0          0          0          0          0 patPFMetT1T2TxySmear
+TrigReport      20000      20000      20000          0          0 patPFMetT1TauEnDown
+TrigReport          0          0          0          0          0 patPFMetT1TauEnDownPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1TauEnUp
+TrigReport          0          0          0          0          0 patPFMetT1TauEnUpPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1Txy
+TrigReport          0          0          0          0          0 patPFMetT1TxyPuppi
+TrigReport          0          0          0          0          0 patPFMetT1TxySmear
+TrigReport      20000      20000      20000          0          0 patPFMetT1UnclusteredEnDown
+TrigReport          0          0          0          0          0 patPFMetT1UnclusteredEnDownPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetT1UnclusteredEnUp
+TrigReport          0          0          0          0          0 patPFMetT1UnclusteredEnUpPuppi
+TrigReport          0          0          0          0          0 patPFMetT2Corr
+TrigReport          0          0          0          0          0 patPFMetT2CorrPuppi
+TrigReport          0          0          0          0          0 patPFMetT2SmearCorr
+TrigReport          0          0          0          0          0 patPFMetT2SmearCorrPuppi
+TrigReport      20000      20000      20000          0          0 patPFMetTxy
+TrigReport      20000      20000      20000          0          0 patPFMetTxyCorr
+TrigReport          0          0          0          0          0 patPFMetTxyCorrPuppi
+TrigReport          0          0          0          0          0 patPFMetTxyPuppi
+TrigReport      20000      20000      20000          0          0 patSmearedJets
+TrigReport          0          0          0          0          0 patSmearedJetsPuppi
+TrigReport          0          0          0          0          0 pfCandMETcorr
+TrigReport          0          0          0          0          0 pfCandMETcorrPuppi
+TrigReport          0          0          0          0          0 pfCandidateToVertexAssociation
+TrigReport      20000      20000      20000          0          0 pfCandsForUnclusteredUnc
+TrigReport          0          0          0          0          0 pfCandsForUnclusteredUncPuppi
+TrigReport      20000      20000      20000          0          0 pfCandsNoJets
+TrigReport      20000      20000      20000          0          0 pfCandsNoJetsNoEle
+TrigReport      20000      20000      20000          0          0 pfCandsNoJetsNoEleNoMu
+TrigReport      20000      20000      20000          0          0 pfCandsNoJetsNoEleNoMuNoTau
+TrigReport          0          0          0          0          0 pfCandsNoJetsNoEleNoMuNoTauPuppi
+TrigReport          0          0          0          0          0 pfCandsNoJetsNoEleNoMuPuppi
+TrigReport          0          0          0          0          0 pfCandsNoJetsNoElePuppi
+TrigReport          0          0          0          0          0 pfCandsNoJetsPuppi
+TrigReport          0          0          0          0          0 pfCandsNotInJetsForMetCorr
+TrigReport          0          0          0          0          0 pfCandsNotInJetsForMetCorrPuppi
+TrigReport          0          0          0          0          0 pfCandsNotInJetsPtrForMetCorr
+TrigReport          0          0          0          0          0 pfCandsNotInJetsPtrForMetCorrPuppi
+TrigReport          0          0          0          0          0 pfJetsPtrForMetCorr
+TrigReport          0          0          0          0          0 pfJetsPtrForMetCorrPuppi
+TrigReport          0          0          0          0          0 pfLeptonsPUPPET
+TrigReport          0          0          0          0          0 pfMETcorrType0
+TrigReport          0          0          0          0          0 pfMEtMultShiftCorr
+TrigReport      20000      20000      20000          0          0 pfMet
+TrigReport          0          0          0          0          0 pfMetPuppi
+TrigReport          0          0          0          0          0 pfMetT0pc
+TrigReport          0          0          0          0          0 pfMetT0pcT1
+TrigReport          0          0          0          0          0 pfMetT0pcT1T2Txy
+TrigReport          0          0          0          0          0 pfMetT0pcT1Txy
+TrigReport          0          0          0          0          0 pfMetT0pcTxy
+TrigReport          0          0          0          0          0 pfMetT0rt
+TrigReport          0          0          0          0          0 pfMetT0rtT1
+TrigReport          0          0          0          0          0 pfMetT0rtT1T2
+TrigReport          0          0          0          0          0 pfMetT0rtT1T2Txy
+TrigReport          0          0          0          0          0 pfMetT0rtT1Txy
+TrigReport          0          0          0          0          0 pfMetT0rtT2
+TrigReport          0          0          0          0          0 pfMetT0rtTxy
+TrigReport          0          0          0          0          0 pfMetT1
+TrigReport          0          0          0          0          0 pfMetT1Puppi
+TrigReport          0          0          0          0          0 pfMetT1T2
+TrigReport          0          0          0          0          0 pfMetT1T2Puppi
+TrigReport          0          0          0          0          0 pfMetT1T2Txy
+TrigReport          0          0          0          0          0 pfMetT1Txy
+TrigReport          0          0          0          0          0 pfMetTxy
+TrigReport          0          0          0          0          0 pfNoJet
+TrigReport          0          0          0          0          0 pfNoLepPUPPI
+TrigReport      20000      20000      20000          0          0 photonIDValueMapProducer
+TrigReport      20000      20000      20000          0          0 photonMVAValueMapProducer
+TrigReport      20000      20000      20000          0          0 photonRegressionValueMapProducer
+TrigReport          0          0          0          0          0 puppi
+TrigReport          0          0          0          0          0 puppiForMET
+TrigReport          0          0          0          0          0 puppiMerged
+TrigReport          0          0          0          0          0 puppiNoLep
+TrigReport          0          0          0          0          0 puppiPhoton
+TrigReport          0          0          0          0          0 randomEngineStateProducer
+TrigReport      20000      20000      20000          0          0 selectedHadronsAndPartons
+TrigReport          0          0          0          0          0 selectedPatJetsForMetT1T2Corr
+TrigReport          0          0          0          0          0 selectedPatJetsForMetT1T2CorrPuppi
+TrigReport      20000      20000      20000          0          0 selectedPatJetsForMetT1T2SmearCorr
+TrigReport          0          0          0          0          0 selectedPatJetsForMetT1T2SmearCorrPuppi
+TrigReport          0          0          0          0          0 selectedPatJetsForMetT2Corr
+TrigReport          0          0          0          0          0 selectedPatJetsForMetT2CorrPuppi
+TrigReport          0          0          0          0          0 selectedPatJetsForMetT2SmearCorr
+TrigReport          0          0          0          0          0 selectedPatJetsForMetT2SmearCorrPuppi
+TrigReport          0          0          0          0          0 selectedPatJetsPuppi
+TrigReport          0          0          0          0          0 selectedPrimaryVertexHighestPtTrackSumForPFMEtCorrType0
+TrigReport          0          0          0          0          0 selectedPrimaryVertexHighestPtTrackSumForPFMEtCorrType0Puppi
+TrigReport          0          0          0          0          0 selectedUpdatedPatJetsUpdatedJEC
+TrigReport          0          0          0          0          0 selectedVerticesForPFMEtCorrType0
+TrigReport          0          0          0          0          0 selectedVerticesForPFMEtCorrType0Puppi
+TrigReport      20000      20000      20000          0          0 shiftedPatElectronEnDown
+TrigReport          0          0          0          0          0 shiftedPatElectronEnDownPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatElectronEnUp
+TrigReport          0          0          0          0          0 shiftedPatElectronEnUpPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatJetEnDown
+TrigReport          0          0          0          0          0 shiftedPatJetEnDownPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatJetEnUp
+TrigReport          0          0          0          0          0 shiftedPatJetEnUpPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatJetResDown
+TrigReport          0          0          0          0          0 shiftedPatJetResDownPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatJetResUp
+TrigReport          0          0          0          0          0 shiftedPatJetResUpPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatMETCorrElectronEnDown
+TrigReport          0          0          0          0          0 shiftedPatMETCorrElectronEnDownPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatMETCorrElectronEnUp
+TrigReport          0          0          0          0          0 shiftedPatMETCorrElectronEnUpPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatMETCorrJetEnDown
+TrigReport          0          0          0          0          0 shiftedPatMETCorrJetEnDownPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatMETCorrJetEnUp
+TrigReport          0          0          0          0          0 shiftedPatMETCorrJetEnUpPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatMETCorrJetResDown
+TrigReport          0          0          0          0          0 shiftedPatMETCorrJetResDownPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatMETCorrJetResUp
+TrigReport          0          0          0          0          0 shiftedPatMETCorrJetResUpPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatMETCorrMuonEnDown
+TrigReport          0          0          0          0          0 shiftedPatMETCorrMuonEnDownPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatMETCorrMuonEnUp
+TrigReport          0          0          0          0          0 shiftedPatMETCorrMuonEnUpPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatMETCorrPhotonEnDown
+TrigReport          0          0          0          0          0 shiftedPatMETCorrPhotonEnDownPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatMETCorrPhotonEnUp
+TrigReport          0          0          0          0          0 shiftedPatMETCorrPhotonEnUpPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatMETCorrSmearedJetResDown
+TrigReport          0          0          0          0          0 shiftedPatMETCorrSmearedJetResDownPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatMETCorrSmearedJetResUp
+TrigReport          0          0          0          0          0 shiftedPatMETCorrSmearedJetResUpPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatMETCorrTauEnDown
+TrigReport          0          0          0          0          0 shiftedPatMETCorrTauEnDownPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatMETCorrTauEnUp
+TrigReport          0          0          0          0          0 shiftedPatMETCorrTauEnUpPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatMETCorrUnclusteredEnDown
+TrigReport          0          0          0          0          0 shiftedPatMETCorrUnclusteredEnDownPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatMETCorrUnclusteredEnUp
+TrigReport          0          0          0          0          0 shiftedPatMETCorrUnclusteredEnUpPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatMuonEnDown
+TrigReport          0          0          0          0          0 shiftedPatMuonEnDownPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatMuonEnUp
+TrigReport          0          0          0          0          0 shiftedPatMuonEnUpPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatPhotonEnDown
+TrigReport          0          0          0          0          0 shiftedPatPhotonEnDownPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatPhotonEnUp
+TrigReport          0          0          0          0          0 shiftedPatPhotonEnUpPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatSmearedJetResDown
+TrigReport          0          0          0          0          0 shiftedPatSmearedJetResDownPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatSmearedJetResUp
+TrigReport          0          0          0          0          0 shiftedPatSmearedJetResUpPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatTauEnDown
+TrigReport          0          0          0          0          0 shiftedPatTauEnDownPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatTauEnUp
+TrigReport          0          0          0          0          0 shiftedPatTauEnUpPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatUnclusteredEnDown
+TrigReport          0          0          0          0          0 shiftedPatUnclusteredEnDownPuppi
+TrigReport      20000      20000      20000          0          0 shiftedPatUnclusteredEnUp
+TrigReport          0          0          0          0          0 shiftedPatUnclusteredEnUpPuppi
+TrigReport      20000      20000      20000          0          0 slimmedMETs
+TrigReport          0          0          0          0          0 slimmedMETsPuppi
+TrigReport      20000      20000      20000          0          0 ssbanalyzer
+TrigReport      20000      20000      20000          0          0 updatedPatJetsUpdatedJEC
+
+TimeReport ---------- Event  Summary ---[sec]----
+TimeReport       event loop CPU/event = 0.050999
+TimeReport      event loop Real/event = 0.051264
+TimeReport     sum Streams Real/event = 0.049825
+TimeReport efficiency CPU/Real/thread = 0.994832
+
+TimeReport ---------- Path   Summary ---[Real sec]----
+TimeReport  per event     per exec  Name
+TimeReport   0.049276     0.049276  p
+TimeReport  per event     per exec  Name
+
+TimeReport -------End-Path   Summary ---[Real sec]----
+TimeReport  per event     per exec  Name
+TimeReport  per event     per exec  Name
+
+TimeReport ---------- Modules in Path: p ---[Real sec]----
+TimeReport  per event    per visit  Name
+TimeReport   0.000030     0.000030  pfMet
+TimeReport   0.000011     0.000011  genMetExtractor
+TimeReport   0.001032     0.001032  patJetCorrFactorsReapplyJEC
+TimeReport   0.000341     0.000341  patJetsReapplyJEC
+TimeReport   0.003467     0.003467  basicJetsForMet
+TimeReport   0.000306     0.000306  jetSelectorForMet
+TimeReport   0.000124     0.000124  cleanedPatJets
+TimeReport   0.000014     0.000014  metrawCalo
+TimeReport   0.003178     0.003178  patPFMet
+TimeReport   0.000541     0.000541  patPFMetT1T2Corr
+TimeReport   0.000028     0.000028  patPFMetT1
+TimeReport   0.000232     0.000232  patPFMetTxyCorr
+TimeReport   0.000023     0.000023  patPFMetT1Txy
+TimeReport   0.000015     0.000015  patPFMetTxy
+TimeReport   0.000353     0.000353  patSmearedJets
+TimeReport   0.000117     0.000117  selectedPatJetsForMetT1T2SmearCorr
+TimeReport   0.000525     0.000525  patPFMetT1T2SmearCorr
+TimeReport   0.000024     0.000024  patPFMetT1Smear
+TimeReport   0.000015     0.000015  ak4PFCHSL1FastjetCorrector
+TimeReport   0.000006     0.000006  ak4PFCHSL2RelativeCorrector
+TimeReport   0.000004     0.000004  ak4PFCHSL3AbsoluteCorrector
+TimeReport   0.000008     0.000008  ak4PFCHSL1FastL2L3Corrector
+TimeReport   0.000000     0.000000  ak4PFCHSL1FastjetCorrector
+TimeReport   0.000000     0.000000  ak4PFCHSL2RelativeCorrector
+TimeReport   0.000000     0.000000  ak4PFCHSL3AbsoluteCorrector
+TimeReport   0.000004     0.000004  ak4PFCHSResidualCorrector
+TimeReport   0.000005     0.000005  ak4PFCHSL1FastL2L3ResidualCorrector
+TimeReport   0.000346     0.000346  shiftedPatJetResDown
+TimeReport   0.000013     0.000013  shiftedPatMETCorrJetResDown
+TimeReport   0.000330     0.000330  shiftedPatJetResUp
+TimeReport   0.000012     0.000012  shiftedPatMETCorrJetResUp
+TimeReport   0.000189     0.000189  pfCandsNoJets
+TimeReport   0.000154     0.000154  pfCandsNoJetsNoEle
+TimeReport   0.000140     0.000140  pfCandsNoJetsNoEleNoMu
+TimeReport   0.000210     0.000210  pfCandsNoJetsNoEleNoMuNoTau
+TimeReport   0.000142     0.000142  pfCandsForUnclusteredUnc
+TimeReport   0.000017     0.000017  shiftedPatMuonEnDown
+TimeReport   0.000010     0.000010  shiftedPatMETCorrMuonEnDown
+TimeReport   0.000008     0.000008  shiftedPatMuonEnUp
+TimeReport   0.000007     0.000007  shiftedPatMETCorrMuonEnUp
+TimeReport   0.000165     0.000165  shiftedPatJetEnDown
+TimeReport   0.000010     0.000010  shiftedPatMETCorrJetEnDown
+TimeReport   0.000146     0.000146  shiftedPatJetEnUp
+TimeReport   0.000011     0.000011  shiftedPatMETCorrJetEnUp
+TimeReport   0.000012     0.000012  shiftedPatTauEnDown
+TimeReport   0.000008     0.000008  shiftedPatMETCorrTauEnDown
+TimeReport   0.000008     0.000008  shiftedPatTauEnUp
+TimeReport   0.000006     0.000006  shiftedPatMETCorrTauEnUp
+TimeReport   0.000008     0.000008  shiftedPatPhotonEnDown
+TimeReport   0.000006     0.000006  shiftedPatMETCorrPhotonEnDown
+TimeReport   0.000006     0.000006  shiftedPatPhotonEnUp
+TimeReport   0.000006     0.000006  shiftedPatMETCorrPhotonEnUp
+TimeReport   0.000009     0.000009  shiftedPatElectronEnDown
+TimeReport   0.000006     0.000006  shiftedPatMETCorrElectronEnDown
+TimeReport   0.000007     0.000007  shiftedPatElectronEnUp
+TimeReport   0.000006     0.000006  shiftedPatMETCorrElectronEnUp
+TimeReport   0.002422     0.002422  shiftedPatUnclusteredEnDown
+TimeReport   0.000183     0.000183  shiftedPatMETCorrUnclusteredEnDown
+TimeReport   0.001412     0.001412  shiftedPatUnclusteredEnUp
+TimeReport   0.000175     0.000175  shiftedPatMETCorrUnclusteredEnUp
+TimeReport   0.000363     0.000363  shiftedPatSmearedJetResDown
+TimeReport   0.000013     0.000013  shiftedPatMETCorrSmearedJetResDown
+TimeReport   0.000338     0.000338  shiftedPatSmearedJetResUp
+TimeReport   0.000012     0.000012  shiftedPatMETCorrSmearedJetResUp
+TimeReport   0.000026     0.000026  patPFMetT1JetResUp
+TimeReport   0.000016     0.000016  patPFMetT1JetResDown
+TimeReport   0.000015     0.000015  patPFMetT1MuonEnUp
+TimeReport   0.000015     0.000015  patPFMetT1MuonEnDown
+TimeReport   0.000015     0.000015  patPFMetT1JetEnUp
+TimeReport   0.000015     0.000015  patPFMetT1JetEnDown
+TimeReport   0.000015     0.000015  patPFMetT1TauEnDown
+TimeReport   0.000015     0.000015  patPFMetT1TauEnUp
+TimeReport   0.000015     0.000015  patPFMetT1PhotonEnUp
+TimeReport   0.000015     0.000015  patPFMetT1PhotonEnDown
+TimeReport   0.000015     0.000015  patPFMetT1ElectronEnUp
+TimeReport   0.000015     0.000015  patPFMetT1ElectronEnDown
+TimeReport   0.000015     0.000015  patPFMetT1UnclusteredEnUp
+TimeReport   0.000015     0.000015  patPFMetT1UnclusteredEnDown
+TimeReport   0.000016     0.000016  patPFMetT1SmearJetResDown
+TimeReport   0.000015     0.000015  patPFMetT1SmearJetResUp
+TimeReport   0.000015     0.000015  patPFMetT1SmearMuonEnUp
+TimeReport   0.000015     0.000015  patPFMetT1SmearMuonEnDown
+TimeReport   0.000015     0.000015  patPFMetT1SmearJetEnUp
+TimeReport   0.000015     0.000015  patPFMetT1SmearJetEnDown
+TimeReport   0.000015     0.000015  patPFMetT1SmearTauEnUp
+TimeReport   0.000015     0.000015  patPFMetT1SmearTauEnDown
+TimeReport   0.000016     0.000016  patPFMetT1SmearPhotonEnUp
+TimeReport   0.000015     0.000015  patPFMetT1SmearPhotonEnDown
+TimeReport   0.000016     0.000016  patPFMetT1SmearElectronEnDown
+TimeReport   0.000015     0.000015  patPFMetT1SmearElectronEnUp
+TimeReport   0.000015     0.000015  patPFMetT1SmearUnclusteredEnUp
+TimeReport   0.000015     0.000015  patPFMetT1SmearUnclusteredEnDown
+TimeReport   0.000024     0.000024  patCaloMet
+TimeReport   0.000022     0.000022  slimmedMETs
+TimeReport   0.000986     0.000986  patJetCorrFactorsUpdatedJEC
+TimeReport   0.000327     0.000327  updatedPatJetsUpdatedJEC
+TimeReport   0.000259     0.000259  calibratedPatElectrons
+TimeReport   0.000105     0.000105  calibratedPatPhotons
+TimeReport   0.000879     0.000879  egmPhotonIsolation
+TimeReport   0.008862     0.008862  photonIDValueMapProducer
+TimeReport   0.000362     0.000362  photonMVAValueMapProducer
+TimeReport   0.000372     0.000372  egmPhotonIDs
+TimeReport   0.000027     0.000027  photonRegressionValueMapProducer
+TimeReport   0.000736     0.000736  electronMVAValueMapProducer
+TimeReport   0.000979     0.000979  egmGsfElectronIDs
+TimeReport   0.000026     0.000026  electronRegressionValueMapProducer
+TimeReport   0.000029     0.000029  cloneGlobalMuonTagger
+TimeReport   0.000034     0.000034  badGlobalMuonTagger
+TimeReport   0.008819     0.008819  ssbanalyzer
+TimeReport  per event    per visit  Name
+
+TimeReport ---------- Module Summary ---[Real sec]----
+TimeReport  per event     per exec    per visit  Name
+TimeReport   0.000061     0.000061     0.000061  BadChargedCandidateFilter
+TimeReport   0.000044     0.000044     0.000044  BadPFMuonFilter
+TimeReport   0.000000     0.000000     0.000000  PFCandAssoMap
+TimeReport   0.000030     0.000030     0.000030  TriggerResults
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL1FastL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL1FastL2L3L6Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL1FastL2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL1FastjetCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL1L2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL1L2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL1OffsetCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL2L3CorrectorPuppi
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL2L3L6Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL2RelativeCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL2RelativeCorrectorPuppi
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL3AbsoluteCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL3AbsoluteCorrectorPuppi
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL6SLBCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloResidualCorrector
+TimeReport   0.000830     0.000830     0.000830  ak4GenJetsCustom
+TimeReport   0.000000     0.000000     0.000000  ak4JPTL1FastL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4JPTL1FastL2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4JPTL1FastjetCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4JPTL1L2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4JPTL1L2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4JPTL1OffsetCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4JPTL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4JPTL2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4JPTL2RelativeCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4JPTL3AbsoluteCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4JPTResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4L1JPTOffsetCorrector
+TimeReport   0.000008     0.000008     0.000008  ak4PFCHSL1FastL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSL1FastL2L3CorrectorPuppi
+TimeReport   0.000005     0.000005     0.000005  ak4PFCHSL1FastL2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSL1FastL2L3ResidualCorrectorPuppi
+TimeReport   0.000015     0.000015     0.000007  ak4PFCHSL1FastjetCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSL1FastjetCorrectorPuppi
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSL1L2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSL1L2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSL1OffsetCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSL2L3ResidualCorrector
+TimeReport   0.000006     0.000006     0.000003  ak4PFCHSL2RelativeCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSL2RelativeCorrectorPuppi
+TimeReport   0.000004     0.000004     0.000002  ak4PFCHSL3AbsoluteCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSL3AbsoluteCorrectorPuppi
+TimeReport   0.000004     0.000004     0.000004  ak4PFCHSResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSResidualCorrectorPuppi
+TimeReport   0.000000     0.000000     0.000000  ak4PFJets
+TimeReport   0.000000     0.000000     0.000000  ak4PFJetsPuppi
+TimeReport   0.000000     0.000000     0.000000  ak4PFL1FastL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL1FastL2L3L6Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL1FastL2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL1FastjetCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL1L2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL1L2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL1OffsetCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL2L3L6Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL2RelativeCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL3AbsoluteCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL6SLBCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiL1FastL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiL1FastL2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiL1FastjetCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiL1L2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiL1L2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiL1OffsetCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiL2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiL2RelativeCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiL3AbsoluteCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4TrackL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4TrackL2RelativeCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4TrackL3AbsoluteCorrector
+TimeReport   0.000034     0.000034     0.000034  badGlobalMuonTagger
+TimeReport   0.003467     0.003467     0.003467  basicJetsForMet
+TimeReport   0.000000     0.000000     0.000000  basicJetsForMetPuppi
+TimeReport   0.000000     0.000000     0.000000  calibratedElectrons
+TimeReport   0.000259     0.000259     0.000259  calibratedPatElectrons
+TimeReport   0.000105     0.000105     0.000105  calibratedPatPhotons
+TimeReport   0.000000     0.000000     0.000000  calibratedPhotons
+TimeReport   0.000000     0.000000     0.000000  caloMetT1
+TimeReport   0.000000     0.000000     0.000000  caloMetT1Puppi
+TimeReport   0.000000     0.000000     0.000000  caloMetT1T2
+TimeReport   0.000000     0.000000     0.000000  caloMetT1T2Puppi
+TimeReport   0.000124     0.000124     0.000124  cleanedPatJets
+TimeReport   0.000000     0.000000     0.000000  cleanedPatJetsPuppi
+TimeReport   0.000029     0.000029     0.000029  cloneGlobalMuonTagger
+TimeReport   0.000000     0.000000     0.000000  corrCaloMetType1
+TimeReport   0.000000     0.000000     0.000000  corrCaloMetType1Puppi
+TimeReport   0.000000     0.000000     0.000000  corrCaloMetType2
+TimeReport   0.000000     0.000000     0.000000  corrCaloMetType2Puppi
+TimeReport   0.000000     0.000000     0.000000  corrPfMetType0PfCand
+TimeReport   0.000000     0.000000     0.000000  corrPfMetType1
+TimeReport   0.000000     0.000000     0.000000  corrPfMetType1Puppi
+TimeReport   0.000000     0.000000     0.000000  corrPfMetType2
+TimeReport   0.000000     0.000000     0.000000  corrPfMetType2Puppi
+TimeReport   0.000979     0.000979     0.000979  egmGsfElectronIDs
+TimeReport   0.000372     0.000372     0.000372  egmPhotonIDs
+TimeReport   0.000879     0.000879     0.000879  egmPhotonIsolation
+TimeReport   0.000736     0.000736     0.000736  electronMVAValueMapProducer
+TimeReport   0.000026     0.000026     0.000026  electronRegressionValueMapProducer
+TimeReport   0.000606     0.000606     0.000606  genJetFlavourInfos
+TimeReport   0.000011     0.000011     0.000011  genMetExtractor
+TimeReport   0.000000     0.000000     0.000000  genMetExtractorPuppi
+TimeReport   0.000496     0.000496     0.000496  genParticlesForJetsCustom
+TimeReport   0.000306     0.000306     0.000306  jetSelectorForMet
+TimeReport   0.000000     0.000000     0.000000  jetSelectorForMetPuppi
+TimeReport   0.000232     0.000232     0.000232  matchGenBHadron
+TimeReport   0.000000     0.000000     0.000000  matchGenCHadron
+TimeReport   0.000014     0.000014     0.000014  metrawCalo
+TimeReport   0.000012     0.000012     0.000012  metrawCaloPuppi
+TimeReport   0.000000     0.000000     0.000000  muCaloMetCorr
+TimeReport   0.000000     0.000000     0.000000  muCaloMetCorrPuppi
+TimeReport   0.000000     0.000000     0.000000  particleFlowDisplacedVertex
+TimeReport   0.000000     0.000000     0.000000  particleFlowPtrs
+TimeReport   0.000000     0.000000     0.000000  particleFlowPtrsPuppi
+TimeReport   0.000024     0.000024     0.000024  patCaloMet
+TimeReport   0.000000     0.000000     0.000000  patJetCorrFactorsPuppi
+TimeReport   0.001032     0.001032     0.001032  patJetCorrFactorsReapplyJEC
+TimeReport   0.000986     0.000986     0.000986  patJetCorrFactorsUpdatedJEC
+TimeReport   0.000000     0.000000     0.000000  patJetFlavourAssociationLegacyPuppi
+TimeReport   0.000000     0.000000     0.000000  patJetFlavourAssociationPuppi
+TimeReport   0.000000     0.000000     0.000000  patJetGenJetMatchPuppi
+TimeReport   0.000000     0.000000     0.000000  patJetPartonAssociationLegacyPuppi
+TimeReport   0.000000     0.000000     0.000000  patJetPartonMatchPuppi
+TimeReport   0.000000     0.000000     0.000000  patJetPartonsLegacyPuppi
+TimeReport   0.000000     0.000000     0.000000  patJetPartonsPuppi
+TimeReport   0.000000     0.000000     0.000000  patJetsPuppi
+TimeReport   0.000341     0.000341     0.000341  patJetsReapplyJEC
+TimeReport   0.000000     0.000000     0.000000  patMETs
+TimeReport   0.003178     0.003178     0.003178  patPFMet
+TimeReport   0.000000     0.000000     0.000000  patPFMetPuppi
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0Corr
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0CorrPuppi
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0pcT1
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0pcT1Puppi
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0pcT1Smear
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0pcT1T2
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0pcT1T2Puppi
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0pcT1T2Smear
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0pcT1T2Txy
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0pcT1T2TxySmear
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0pcT1Txy
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0pcT1TxySmear
+TimeReport   0.000028     0.000028     0.000028  patPFMetT1
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1ElectronEnDown
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1ElectronEnDownPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1ElectronEnUp
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1ElectronEnUpPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1JetEnDown
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1JetEnDownPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1JetEnUp
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1JetEnUpPuppi
+TimeReport   0.000016     0.000016     0.000016  patPFMetT1JetResDown
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1JetResDownPuppi
+TimeReport   0.000026     0.000026     0.000026  patPFMetT1JetResUp
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1JetResUpPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1MuonEnDown
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1MuonEnDownPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1MuonEnUp
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1MuonEnUpPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1PhotonEnDown
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1PhotonEnDownPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1PhotonEnUp
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1PhotonEnUpPuppi
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1Puppi
+TimeReport   0.000024     0.000024     0.000024  patPFMetT1Smear
+TimeReport   0.000016     0.000016     0.000016  patPFMetT1SmearElectronEnDown
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1SmearElectronEnDownPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1SmearElectronEnUp
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1SmearElectronEnUpPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1SmearJetEnDown
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1SmearJetEnDownPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1SmearJetEnUp
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1SmearJetEnUpPuppi
+TimeReport   0.000016     0.000016     0.000016  patPFMetT1SmearJetResDown
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1SmearJetResDownPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1SmearJetResUp
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1SmearJetResUpPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1SmearMuonEnDown
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1SmearMuonEnDownPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1SmearMuonEnUp
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1SmearMuonEnUpPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1SmearPhotonEnDown
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1SmearPhotonEnDownPuppi
+TimeReport   0.000016     0.000016     0.000016  patPFMetT1SmearPhotonEnUp
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1SmearPhotonEnUpPuppi
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1SmearPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1SmearTauEnDown
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1SmearTauEnDownPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1SmearTauEnUp
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1SmearTauEnUpPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1SmearUnclusteredEnDown
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1SmearUnclusteredEnDownPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1SmearUnclusteredEnUp
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1SmearUnclusteredEnUpPuppi
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1T2
+TimeReport   0.000541     0.000541     0.000541  patPFMetT1T2Corr
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1T2CorrPuppi
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1T2Puppi
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1T2Smear
+TimeReport   0.000525     0.000525     0.000525  patPFMetT1T2SmearCorr
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1T2SmearCorrPuppi
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1T2Txy
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1T2TxySmear
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1TauEnDown
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1TauEnDownPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1TauEnUp
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1TauEnUpPuppi
+TimeReport   0.000023     0.000023     0.000023  patPFMetT1Txy
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1TxyPuppi
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1TxySmear
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1UnclusteredEnDown
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1UnclusteredEnDownPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetT1UnclusteredEnUp
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1UnclusteredEnUpPuppi
+TimeReport   0.000000     0.000000     0.000000  patPFMetT2Corr
+TimeReport   0.000000     0.000000     0.000000  patPFMetT2CorrPuppi
+TimeReport   0.000000     0.000000     0.000000  patPFMetT2SmearCorr
+TimeReport   0.000000     0.000000     0.000000  patPFMetT2SmearCorrPuppi
+TimeReport   0.000015     0.000015     0.000015  patPFMetTxy
+TimeReport   0.000232     0.000232     0.000232  patPFMetTxyCorr
+TimeReport   0.000000     0.000000     0.000000  patPFMetTxyCorrPuppi
+TimeReport   0.000000     0.000000     0.000000  patPFMetTxyPuppi
+TimeReport   0.000353     0.000353     0.000353  patSmearedJets
+TimeReport   0.000000     0.000000     0.000000  patSmearedJetsPuppi
+TimeReport   0.000000     0.000000     0.000000  pfCandMETcorr
+TimeReport   0.000000     0.000000     0.000000  pfCandMETcorrPuppi
+TimeReport   0.000000     0.000000     0.000000  pfCandidateToVertexAssociation
+TimeReport   0.000142     0.000142     0.000142  pfCandsForUnclusteredUnc
+TimeReport   0.000000     0.000000     0.000000  pfCandsForUnclusteredUncPuppi
+TimeReport   0.000189     0.000189     0.000189  pfCandsNoJets
+TimeReport   0.000154     0.000154     0.000154  pfCandsNoJetsNoEle
+TimeReport   0.000140     0.000140     0.000140  pfCandsNoJetsNoEleNoMu
+TimeReport   0.000210     0.000210     0.000210  pfCandsNoJetsNoEleNoMuNoTau
+TimeReport   0.000000     0.000000     0.000000  pfCandsNoJetsNoEleNoMuNoTauPuppi
+TimeReport   0.000000     0.000000     0.000000  pfCandsNoJetsNoEleNoMuPuppi
+TimeReport   0.000000     0.000000     0.000000  pfCandsNoJetsNoElePuppi
+TimeReport   0.000000     0.000000     0.000000  pfCandsNoJetsPuppi
+TimeReport   0.000000     0.000000     0.000000  pfCandsNotInJetsForMetCorr
+TimeReport   0.000000     0.000000     0.000000  pfCandsNotInJetsForMetCorrPuppi
+TimeReport   0.000000     0.000000     0.000000  pfCandsNotInJetsPtrForMetCorr
+TimeReport   0.000000     0.000000     0.000000  pfCandsNotInJetsPtrForMetCorrPuppi
+TimeReport   0.000000     0.000000     0.000000  pfJetsPtrForMetCorr
+TimeReport   0.000000     0.000000     0.000000  pfJetsPtrForMetCorrPuppi
+TimeReport   0.000000     0.000000     0.000000  pfLeptonsPUPPET
+TimeReport   0.000000     0.000000     0.000000  pfMETcorrType0
+TimeReport   0.000000     0.000000     0.000000  pfMEtMultShiftCorr
+TimeReport   0.000030     0.000030     0.000030  pfMet
+TimeReport   0.000000     0.000000     0.000000  pfMetPuppi
+TimeReport   0.000000     0.000000     0.000000  pfMetT0pc
+TimeReport   0.000000     0.000000     0.000000  pfMetT0pcT1
+TimeReport   0.000000     0.000000     0.000000  pfMetT0pcT1T2Txy
+TimeReport   0.000000     0.000000     0.000000  pfMetT0pcT1Txy
+TimeReport   0.000000     0.000000     0.000000  pfMetT0pcTxy
+TimeReport   0.000000     0.000000     0.000000  pfMetT0rt
+TimeReport   0.000000     0.000000     0.000000  pfMetT0rtT1
+TimeReport   0.000000     0.000000     0.000000  pfMetT0rtT1T2
+TimeReport   0.000000     0.000000     0.000000  pfMetT0rtT1T2Txy
+TimeReport   0.000000     0.000000     0.000000  pfMetT0rtT1Txy
+TimeReport   0.000000     0.000000     0.000000  pfMetT0rtT2
+TimeReport   0.000000     0.000000     0.000000  pfMetT0rtTxy
+TimeReport   0.000000     0.000000     0.000000  pfMetT1
+TimeReport   0.000000     0.000000     0.000000  pfMetT1Puppi
+TimeReport   0.000000     0.000000     0.000000  pfMetT1T2
+TimeReport   0.000000     0.000000     0.000000  pfMetT1T2Puppi
+TimeReport   0.000000     0.000000     0.000000  pfMetT1T2Txy
+TimeReport   0.000000     0.000000     0.000000  pfMetT1Txy
+TimeReport   0.000000     0.000000     0.000000  pfMetTxy
+TimeReport   0.000000     0.000000     0.000000  pfNoJet
+TimeReport   0.000000     0.000000     0.000000  pfNoLepPUPPI
+TimeReport   0.008862     0.008862     0.008862  photonIDValueMapProducer
+TimeReport   0.000362     0.000362     0.000362  photonMVAValueMapProducer
+TimeReport   0.000027     0.000027     0.000027  photonRegressionValueMapProducer
+TimeReport   0.000000     0.000000     0.000000  puppi
+TimeReport   0.000000     0.000000     0.000000  puppiForMET
+TimeReport   0.000000     0.000000     0.000000  puppiMerged
+TimeReport   0.000000     0.000000     0.000000  puppiNoLep
+TimeReport   0.000000     0.000000     0.000000  puppiPhoton
+TimeReport   0.000000     0.000000     0.000000  randomEngineStateProducer
+TimeReport   0.000066     0.000066     0.000066  selectedHadronsAndPartons
+TimeReport   0.000000     0.000000     0.000000  selectedPatJetsForMetT1T2Corr
+TimeReport   0.000000     0.000000     0.000000  selectedPatJetsForMetT1T2CorrPuppi
+TimeReport   0.000117     0.000117     0.000117  selectedPatJetsForMetT1T2SmearCorr
+TimeReport   0.000000     0.000000     0.000000  selectedPatJetsForMetT1T2SmearCorrPuppi
+TimeReport   0.000000     0.000000     0.000000  selectedPatJetsForMetT2Corr
+TimeReport   0.000000     0.000000     0.000000  selectedPatJetsForMetT2CorrPuppi
+TimeReport   0.000000     0.000000     0.000000  selectedPatJetsForMetT2SmearCorr
+TimeReport   0.000000     0.000000     0.000000  selectedPatJetsForMetT2SmearCorrPuppi
+TimeReport   0.000000     0.000000     0.000000  selectedPatJetsPuppi
+TimeReport   0.000000     0.000000     0.000000  selectedPrimaryVertexHighestPtTrackSumForPFMEtCorrType0
+TimeReport   0.000000     0.000000     0.000000  selectedPrimaryVertexHighestPtTrackSumForPFMEtCorrType0Puppi
+TimeReport   0.000000     0.000000     0.000000  selectedUpdatedPatJetsUpdatedJEC
+TimeReport   0.000000     0.000000     0.000000  selectedVerticesForPFMEtCorrType0
+TimeReport   0.000000     0.000000     0.000000  selectedVerticesForPFMEtCorrType0Puppi
+TimeReport   0.000009     0.000009     0.000009  shiftedPatElectronEnDown
+TimeReport   0.000000     0.000000     0.000000  shiftedPatElectronEnDownPuppi
+TimeReport   0.000007     0.000007     0.000007  shiftedPatElectronEnUp
+TimeReport   0.000000     0.000000     0.000000  shiftedPatElectronEnUpPuppi
+TimeReport   0.000165     0.000165     0.000165  shiftedPatJetEnDown
+TimeReport   0.000000     0.000000     0.000000  shiftedPatJetEnDownPuppi
+TimeReport   0.000146     0.000146     0.000146  shiftedPatJetEnUp
+TimeReport   0.000000     0.000000     0.000000  shiftedPatJetEnUpPuppi
+TimeReport   0.000346     0.000346     0.000346  shiftedPatJetResDown
+TimeReport   0.000000     0.000000     0.000000  shiftedPatJetResDownPuppi
+TimeReport   0.000330     0.000330     0.000330  shiftedPatJetResUp
+TimeReport   0.000000     0.000000     0.000000  shiftedPatJetResUpPuppi
+TimeReport   0.000006     0.000006     0.000006  shiftedPatMETCorrElectronEnDown
+TimeReport   0.000000     0.000000     0.000000  shiftedPatMETCorrElectronEnDownPuppi
+TimeReport   0.000006     0.000006     0.000006  shiftedPatMETCorrElectronEnUp
+TimeReport   0.000000     0.000000     0.000000  shiftedPatMETCorrElectronEnUpPuppi
+TimeReport   0.000010     0.000010     0.000010  shiftedPatMETCorrJetEnDown
+TimeReport   0.000000     0.000000     0.000000  shiftedPatMETCorrJetEnDownPuppi
+TimeReport   0.000011     0.000011     0.000011  shiftedPatMETCorrJetEnUp
+TimeReport   0.000000     0.000000     0.000000  shiftedPatMETCorrJetEnUpPuppi
+TimeReport   0.000013     0.000013     0.000013  shiftedPatMETCorrJetResDown
+TimeReport   0.000000     0.000000     0.000000  shiftedPatMETCorrJetResDownPuppi
+TimeReport   0.000012     0.000012     0.000012  shiftedPatMETCorrJetResUp
+TimeReport   0.000000     0.000000     0.000000  shiftedPatMETCorrJetResUpPuppi
+TimeReport   0.000010     0.000010     0.000010  shiftedPatMETCorrMuonEnDown
+TimeReport   0.000000     0.000000     0.000000  shiftedPatMETCorrMuonEnDownPuppi
+TimeReport   0.000007     0.000007     0.000007  shiftedPatMETCorrMuonEnUp
+TimeReport   0.000000     0.000000     0.000000  shiftedPatMETCorrMuonEnUpPuppi
+TimeReport   0.000006     0.000006     0.000006  shiftedPatMETCorrPhotonEnDown
+TimeReport   0.000000     0.000000     0.000000  shiftedPatMETCorrPhotonEnDownPuppi
+TimeReport   0.000006     0.000006     0.000006  shiftedPatMETCorrPhotonEnUp
+TimeReport   0.000000     0.000000     0.000000  shiftedPatMETCorrPhotonEnUpPuppi
+TimeReport   0.000013     0.000013     0.000013  shiftedPatMETCorrSmearedJetResDown
+TimeReport   0.000000     0.000000     0.000000  shiftedPatMETCorrSmearedJetResDownPuppi
+TimeReport   0.000012     0.000012     0.000012  shiftedPatMETCorrSmearedJetResUp
+TimeReport   0.000000     0.000000     0.000000  shiftedPatMETCorrSmearedJetResUpPuppi
+TimeReport   0.000008     0.000008     0.000008  shiftedPatMETCorrTauEnDown
+TimeReport   0.000000     0.000000     0.000000  shiftedPatMETCorrTauEnDownPuppi
+TimeReport   0.000006     0.000006     0.000006  shiftedPatMETCorrTauEnUp
+TimeReport   0.000000     0.000000     0.000000  shiftedPatMETCorrTauEnUpPuppi
+TimeReport   0.000183     0.000183     0.000183  shiftedPatMETCorrUnclusteredEnDown
+TimeReport   0.000000     0.000000     0.000000  shiftedPatMETCorrUnclusteredEnDownPuppi
+TimeReport   0.000175     0.000175     0.000175  shiftedPatMETCorrUnclusteredEnUp
+TimeReport   0.000000     0.000000     0.000000  shiftedPatMETCorrUnclusteredEnUpPuppi
+TimeReport   0.000017     0.000017     0.000017  shiftedPatMuonEnDown
+TimeReport   0.000000     0.000000     0.000000  shiftedPatMuonEnDownPuppi
+TimeReport   0.000008     0.000008     0.000008  shiftedPatMuonEnUp
+TimeReport   0.000000     0.000000     0.000000  shiftedPatMuonEnUpPuppi
+TimeReport   0.000008     0.000008     0.000008  shiftedPatPhotonEnDown
+TimeReport   0.000000     0.000000     0.000000  shiftedPatPhotonEnDownPuppi
+TimeReport   0.000006     0.000006     0.000006  shiftedPatPhotonEnUp
+TimeReport   0.000000     0.000000     0.000000  shiftedPatPhotonEnUpPuppi
+TimeReport   0.000363     0.000363     0.000363  shiftedPatSmearedJetResDown
+TimeReport   0.000000     0.000000     0.000000  shiftedPatSmearedJetResDownPuppi
+TimeReport   0.000338     0.000338     0.000338  shiftedPatSmearedJetResUp
+TimeReport   0.000000     0.000000     0.000000  shiftedPatSmearedJetResUpPuppi
+TimeReport   0.000012     0.000012     0.000012  shiftedPatTauEnDown
+TimeReport   0.000000     0.000000     0.000000  shiftedPatTauEnDownPuppi
+TimeReport   0.000008     0.000008     0.000008  shiftedPatTauEnUp
+TimeReport   0.000000     0.000000     0.000000  shiftedPatTauEnUpPuppi
+TimeReport   0.002422     0.002422     0.002422  shiftedPatUnclusteredEnDown
+TimeReport   0.000000     0.000000     0.000000  shiftedPatUnclusteredEnDownPuppi
+TimeReport   0.001412     0.001412     0.001412  shiftedPatUnclusteredEnUp
+TimeReport   0.000000     0.000000     0.000000  shiftedPatUnclusteredEnUpPuppi
+TimeReport   0.000022     0.000022     0.000022  slimmedMETs
+TimeReport   0.000000     0.000000     0.000000  slimmedMETsPuppi
+TimeReport   0.008819     0.008819     0.008819  ssbanalyzer
+TimeReport   0.000327     0.000327     0.000327  updatedPatJetsUpdatedJEC
+TimeReport  per event     per exec    per visit  Name
+
+T---Report end!
+
+
+=============================================
+
+MessageLogger Summary
+
+ type     category        sev    module        subroutine        count    total
+ ---- -------------------- -- ---------------- ----------------  -----    -----
+    1 fileAction           -s file_close                             1        1
+    2 fileAction           -s file_open                              2        2
+
+ type    category    Examples: run/evt        run/evt          run/evt
+ ---- -------------------- ---------------- ---------------- ----------------
+    1 fileAction           PostEndRun                        
+    2 fileAction           pre-events       pre-events       
+
+Severity    # Occurrences   Total Occurrences
+--------    -------------   -----------------
+System                  3                   3
+Thanks for using LHAPDF 6.1.6. Please make sure to cite the paper:
+  Eur.Phys.J. C75 (2015) 3, 132  (http://arxiv.org/abs/1412.7420)
