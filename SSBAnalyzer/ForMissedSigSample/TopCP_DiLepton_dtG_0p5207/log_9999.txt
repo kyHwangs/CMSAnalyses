@@ -1,0 +1,1544 @@
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+# Conditions read from  CMS_CONDITIONS  via FrontierProd 
+ ################################################################### 
+ # WARNING: this module is deprecated.                             # 
+ # Please use CondCore.CondDB.CondDB_cfi.py                        # 
+ ################################################################### 
+Eras Summer16_23Sep2016V4_MC
+11-Jun-2018 15:12:54 KST  Initiating request to open file file:/pnfs/knu.ac.kr/data/cms/store/user/sha/PrivateMC/TT_CEDM_DiLepton_dtG_0p5207/TT_CEDM_DiLepton_dtG_0p5207_TuneCUETP8M2T4_13TeV_v3_2/MiniAODv2/180317_032009/0009/MiniAODv2_9999.root
+11-Jun-2018 15:13:13 KST  Successfully opened file file:/pnfs/knu.ac.kr/data/cms/store/user/sha/PrivateMC/TT_CEDM_DiLepton_dtG_0p5207/TT_CEDM_DiLepton_dtG_0p5207_TuneCUETP8M2T4_13TeV_v3_2/MiniAODv2/180317_032009/0009/MiniAODv2_9999.root
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0000.dat
+NNPDF30_nlo_as_0118 PDF set, member #0, version 2; LHAPDF ID = 260000
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0000.dat
+NNPDF30_nlo_as_0118 PDF set, member #0, version 2; LHAPDF ID = 260000
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0000.dat
+NNPDF30_nlo_as_0118 PDF set, member #0, version 2; LHAPDF ID = 260000
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0000.dat
+CT10nnlo PDF set, member #0, version 1; LHAPDF ID = 11200
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0000.dat
+CT10nnlo PDF set, member #0, version 1; LHAPDF ID = 11200
+Begin processing the 1st record. Run 1, Event 1, LumiSection 9009 at 11-Jun-2018 15:14:05.175 KST
+Rivet.Analysis.Handler: WARN  Analysis 'RivetAnalysis' is unvalidated: be careful, it may be broken!
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0001.dat
+NNPDF30_nlo_as_0118 PDF set, member #1, version 2; LHAPDF ID = 260001
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0003.dat
+NNPDF30_nlo_as_0118 PDF set, member #3, version 2; LHAPDF ID = 260003
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0005.dat
+NNPDF30_nlo_as_0118 PDF set, member #5, version 2; LHAPDF ID = 260005
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0007.dat
+NNPDF30_nlo_as_0118 PDF set, member #7, version 2; LHAPDF ID = 260007
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0009.dat
+NNPDF30_nlo_as_0118 PDF set, member #9, version 2; LHAPDF ID = 260009
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0011.dat
+NNPDF30_nlo_as_0118 PDF set, member #11, version 2; LHAPDF ID = 260011
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0013.dat
+NNPDF30_nlo_as_0118 PDF set, member #13, version 2; LHAPDF ID = 260013
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0015.dat
+NNPDF30_nlo_as_0118 PDF set, member #15, version 2; LHAPDF ID = 260015
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0017.dat
+NNPDF30_nlo_as_0118 PDF set, member #17, version 2; LHAPDF ID = 260017
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0019.dat
+NNPDF30_nlo_as_0118 PDF set, member #19, version 2; LHAPDF ID = 260019
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0021.dat
+NNPDF30_nlo_as_0118 PDF set, member #21, version 2; LHAPDF ID = 260021
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0023.dat
+NNPDF30_nlo_as_0118 PDF set, member #23, version 2; LHAPDF ID = 260023
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0025.dat
+NNPDF30_nlo_as_0118 PDF set, member #25, version 2; LHAPDF ID = 260025
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0027.dat
+NNPDF30_nlo_as_0118 PDF set, member #27, version 2; LHAPDF ID = 260027
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0029.dat
+NNPDF30_nlo_as_0118 PDF set, member #29, version 2; LHAPDF ID = 260029
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0031.dat
+NNPDF30_nlo_as_0118 PDF set, member #31, version 2; LHAPDF ID = 260031
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0033.dat
+NNPDF30_nlo_as_0118 PDF set, member #33, version 2; LHAPDF ID = 260033
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0035.dat
+NNPDF30_nlo_as_0118 PDF set, member #35, version 2; LHAPDF ID = 260035
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0037.dat
+NNPDF30_nlo_as_0118 PDF set, member #37, version 2; LHAPDF ID = 260037
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0039.dat
+NNPDF30_nlo_as_0118 PDF set, member #39, version 2; LHAPDF ID = 260039
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0041.dat
+NNPDF30_nlo_as_0118 PDF set, member #41, version 2; LHAPDF ID = 260041
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0043.dat
+NNPDF30_nlo_as_0118 PDF set, member #43, version 2; LHAPDF ID = 260043
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0045.dat
+NNPDF30_nlo_as_0118 PDF set, member #45, version 2; LHAPDF ID = 260045
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0047.dat
+NNPDF30_nlo_as_0118 PDF set, member #47, version 2; LHAPDF ID = 260047
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0049.dat
+NNPDF30_nlo_as_0118 PDF set, member #49, version 2; LHAPDF ID = 260049
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0051.dat
+NNPDF30_nlo_as_0118 PDF set, member #51, version 2; LHAPDF ID = 260051
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0053.dat
+NNPDF30_nlo_as_0118 PDF set, member #53, version 2; LHAPDF ID = 260053
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0055.dat
+NNPDF30_nlo_as_0118 PDF set, member #55, version 2; LHAPDF ID = 260055
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0057.dat
+NNPDF30_nlo_as_0118 PDF set, member #57, version 2; LHAPDF ID = 260057
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0059.dat
+NNPDF30_nlo_as_0118 PDF set, member #59, version 2; LHAPDF ID = 260059
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0061.dat
+NNPDF30_nlo_as_0118 PDF set, member #61, version 2; LHAPDF ID = 260061
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0063.dat
+NNPDF30_nlo_as_0118 PDF set, member #63, version 2; LHAPDF ID = 260063
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0065.dat
+NNPDF30_nlo_as_0118 PDF set, member #65, version 2; LHAPDF ID = 260065
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0067.dat
+NNPDF30_nlo_as_0118 PDF set, member #67, version 2; LHAPDF ID = 260067
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0069.dat
+NNPDF30_nlo_as_0118 PDF set, member #69, version 2; LHAPDF ID = 260069
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0071.dat
+NNPDF30_nlo_as_0118 PDF set, member #71, version 2; LHAPDF ID = 260071
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0073.dat
+NNPDF30_nlo_as_0118 PDF set, member #73, version 2; LHAPDF ID = 260073
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0075.dat
+NNPDF30_nlo_as_0118 PDF set, member #75, version 2; LHAPDF ID = 260075
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0077.dat
+NNPDF30_nlo_as_0118 PDF set, member #77, version 2; LHAPDF ID = 260077
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0079.dat
+NNPDF30_nlo_as_0118 PDF set, member #79, version 2; LHAPDF ID = 260079
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0081.dat
+NNPDF30_nlo_as_0118 PDF set, member #81, version 2; LHAPDF ID = 260081
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0083.dat
+NNPDF30_nlo_as_0118 PDF set, member #83, version 2; LHAPDF ID = 260083
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0085.dat
+NNPDF30_nlo_as_0118 PDF set, member #85, version 2; LHAPDF ID = 260085
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0087.dat
+NNPDF30_nlo_as_0118 PDF set, member #87, version 2; LHAPDF ID = 260087
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0089.dat
+NNPDF30_nlo_as_0118 PDF set, member #89, version 2; LHAPDF ID = 260089
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0091.dat
+NNPDF30_nlo_as_0118 PDF set, member #91, version 2; LHAPDF ID = 260091
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0093.dat
+NNPDF30_nlo_as_0118 PDF set, member #93, version 2; LHAPDF ID = 260093
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0095.dat
+NNPDF30_nlo_as_0118 PDF set, member #95, version 2; LHAPDF ID = 260095
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0097.dat
+NNPDF30_nlo_as_0118 PDF set, member #97, version 2; LHAPDF ID = 260097
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0099.dat
+NNPDF30_nlo_as_0118 PDF set, member #99, version 2; LHAPDF ID = 260099
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0002.dat
+NNPDF30_nlo_as_0118 PDF set, member #2, version 2; LHAPDF ID = 260002
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0004.dat
+NNPDF30_nlo_as_0118 PDF set, member #4, version 2; LHAPDF ID = 260004
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0006.dat
+NNPDF30_nlo_as_0118 PDF set, member #6, version 2; LHAPDF ID = 260006
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0008.dat
+NNPDF30_nlo_as_0118 PDF set, member #8, version 2; LHAPDF ID = 260008
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0010.dat
+NNPDF30_nlo_as_0118 PDF set, member #10, version 2; LHAPDF ID = 260010
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0012.dat
+NNPDF30_nlo_as_0118 PDF set, member #12, version 2; LHAPDF ID = 260012
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0014.dat
+NNPDF30_nlo_as_0118 PDF set, member #14, version 2; LHAPDF ID = 260014
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0016.dat
+NNPDF30_nlo_as_0118 PDF set, member #16, version 2; LHAPDF ID = 260016
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0018.dat
+NNPDF30_nlo_as_0118 PDF set, member #18, version 2; LHAPDF ID = 260018
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0020.dat
+NNPDF30_nlo_as_0118 PDF set, member #20, version 2; LHAPDF ID = 260020
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0022.dat
+NNPDF30_nlo_as_0118 PDF set, member #22, version 2; LHAPDF ID = 260022
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0024.dat
+NNPDF30_nlo_as_0118 PDF set, member #24, version 2; LHAPDF ID = 260024
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0026.dat
+NNPDF30_nlo_as_0118 PDF set, member #26, version 2; LHAPDF ID = 260026
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0028.dat
+NNPDF30_nlo_as_0118 PDF set, member #28, version 2; LHAPDF ID = 260028
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0030.dat
+NNPDF30_nlo_as_0118 PDF set, member #30, version 2; LHAPDF ID = 260030
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0032.dat
+NNPDF30_nlo_as_0118 PDF set, member #32, version 2; LHAPDF ID = 260032
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0034.dat
+NNPDF30_nlo_as_0118 PDF set, member #34, version 2; LHAPDF ID = 260034
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0036.dat
+NNPDF30_nlo_as_0118 PDF set, member #36, version 2; LHAPDF ID = 260036
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0038.dat
+NNPDF30_nlo_as_0118 PDF set, member #38, version 2; LHAPDF ID = 260038
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0040.dat
+NNPDF30_nlo_as_0118 PDF set, member #40, version 2; LHAPDF ID = 260040
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0042.dat
+NNPDF30_nlo_as_0118 PDF set, member #42, version 2; LHAPDF ID = 260042
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0044.dat
+NNPDF30_nlo_as_0118 PDF set, member #44, version 2; LHAPDF ID = 260044
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0046.dat
+NNPDF30_nlo_as_0118 PDF set, member #46, version 2; LHAPDF ID = 260046
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0048.dat
+NNPDF30_nlo_as_0118 PDF set, member #48, version 2; LHAPDF ID = 260048
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0050.dat
+NNPDF30_nlo_as_0118 PDF set, member #50, version 2; LHAPDF ID = 260050
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0052.dat
+NNPDF30_nlo_as_0118 PDF set, member #52, version 2; LHAPDF ID = 260052
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0054.dat
+NNPDF30_nlo_as_0118 PDF set, member #54, version 2; LHAPDF ID = 260054
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0056.dat
+NNPDF30_nlo_as_0118 PDF set, member #56, version 2; LHAPDF ID = 260056
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0058.dat
+NNPDF30_nlo_as_0118 PDF set, member #58, version 2; LHAPDF ID = 260058
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0060.dat
+NNPDF30_nlo_as_0118 PDF set, member #60, version 2; LHAPDF ID = 260060
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0062.dat
+NNPDF30_nlo_as_0118 PDF set, member #62, version 2; LHAPDF ID = 260062
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0064.dat
+NNPDF30_nlo_as_0118 PDF set, member #64, version 2; LHAPDF ID = 260064
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0066.dat
+NNPDF30_nlo_as_0118 PDF set, member #66, version 2; LHAPDF ID = 260066
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0068.dat
+NNPDF30_nlo_as_0118 PDF set, member #68, version 2; LHAPDF ID = 260068
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0070.dat
+NNPDF30_nlo_as_0118 PDF set, member #70, version 2; LHAPDF ID = 260070
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0072.dat
+NNPDF30_nlo_as_0118 PDF set, member #72, version 2; LHAPDF ID = 260072
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0074.dat
+NNPDF30_nlo_as_0118 PDF set, member #74, version 2; LHAPDF ID = 260074
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0076.dat
+NNPDF30_nlo_as_0118 PDF set, member #76, version 2; LHAPDF ID = 260076
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0078.dat
+NNPDF30_nlo_as_0118 PDF set, member #78, version 2; LHAPDF ID = 260078
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0080.dat
+NNPDF30_nlo_as_0118 PDF set, member #80, version 2; LHAPDF ID = 260080
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0082.dat
+NNPDF30_nlo_as_0118 PDF set, member #82, version 2; LHAPDF ID = 260082
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0084.dat
+NNPDF30_nlo_as_0118 PDF set, member #84, version 2; LHAPDF ID = 260084
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0086.dat
+NNPDF30_nlo_as_0118 PDF set, member #86, version 2; LHAPDF ID = 260086
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0088.dat
+NNPDF30_nlo_as_0118 PDF set, member #88, version 2; LHAPDF ID = 260088
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0090.dat
+NNPDF30_nlo_as_0118 PDF set, member #90, version 2; LHAPDF ID = 260090
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0092.dat
+NNPDF30_nlo_as_0118 PDF set, member #92, version 2; LHAPDF ID = 260092
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0094.dat
+NNPDF30_nlo_as_0118 PDF set, member #94, version 2; LHAPDF ID = 260094
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0096.dat
+NNPDF30_nlo_as_0118 PDF set, member #96, version 2; LHAPDF ID = 260096
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0098.dat
+NNPDF30_nlo_as_0118 PDF set, member #98, version 2; LHAPDF ID = 260098
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0100.dat
+NNPDF30_nlo_as_0118 PDF set, member #100, version 2; LHAPDF ID = 260100
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0001.dat
+CT10nnlo PDF set, member #1, version 1; LHAPDF ID = 11201
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0003.dat
+CT10nnlo PDF set, member #3, version 1; LHAPDF ID = 11203
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0005.dat
+CT10nnlo PDF set, member #5, version 1; LHAPDF ID = 11205
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0007.dat
+CT10nnlo PDF set, member #7, version 1; LHAPDF ID = 11207
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0009.dat
+CT10nnlo PDF set, member #9, version 1; LHAPDF ID = 11209
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0011.dat
+CT10nnlo PDF set, member #11, version 1; LHAPDF ID = 11211
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0013.dat
+CT10nnlo PDF set, member #13, version 1; LHAPDF ID = 11213
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0015.dat
+CT10nnlo PDF set, member #15, version 1; LHAPDF ID = 11215
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0017.dat
+CT10nnlo PDF set, member #17, version 1; LHAPDF ID = 11217
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0019.dat
+CT10nnlo PDF set, member #19, version 1; LHAPDF ID = 11219
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0021.dat
+CT10nnlo PDF set, member #21, version 1; LHAPDF ID = 11221
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0023.dat
+CT10nnlo PDF set, member #23, version 1; LHAPDF ID = 11223
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0025.dat
+CT10nnlo PDF set, member #25, version 1; LHAPDF ID = 11225
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0027.dat
+CT10nnlo PDF set, member #27, version 1; LHAPDF ID = 11227
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0029.dat
+CT10nnlo PDF set, member #29, version 1; LHAPDF ID = 11229
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0031.dat
+CT10nnlo PDF set, member #31, version 1; LHAPDF ID = 11231
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0033.dat
+CT10nnlo PDF set, member #33, version 1; LHAPDF ID = 11233
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0035.dat
+CT10nnlo PDF set, member #35, version 1; LHAPDF ID = 11235
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0037.dat
+CT10nnlo PDF set, member #37, version 1; LHAPDF ID = 11237
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0039.dat
+CT10nnlo PDF set, member #39, version 1; LHAPDF ID = 11239
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0041.dat
+CT10nnlo PDF set, member #41, version 1; LHAPDF ID = 11241
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0043.dat
+CT10nnlo PDF set, member #43, version 1; LHAPDF ID = 11243
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0045.dat
+CT10nnlo PDF set, member #45, version 1; LHAPDF ID = 11245
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0047.dat
+CT10nnlo PDF set, member #47, version 1; LHAPDF ID = 11247
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0049.dat
+CT10nnlo PDF set, member #49, version 1; LHAPDF ID = 11249
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0002.dat
+CT10nnlo PDF set, member #2, version 1; LHAPDF ID = 11202
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0004.dat
+CT10nnlo PDF set, member #4, version 1; LHAPDF ID = 11204
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0006.dat
+CT10nnlo PDF set, member #6, version 1; LHAPDF ID = 11206
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0008.dat
+CT10nnlo PDF set, member #8, version 1; LHAPDF ID = 11208
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0010.dat
+CT10nnlo PDF set, member #10, version 1; LHAPDF ID = 11210
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0012.dat
+CT10nnlo PDF set, member #12, version 1; LHAPDF ID = 11212
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0014.dat
+CT10nnlo PDF set, member #14, version 1; LHAPDF ID = 11214
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0016.dat
+CT10nnlo PDF set, member #16, version 1; LHAPDF ID = 11216
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0018.dat
+CT10nnlo PDF set, member #18, version 1; LHAPDF ID = 11218
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0020.dat
+CT10nnlo PDF set, member #20, version 1; LHAPDF ID = 11220
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0022.dat
+CT10nnlo PDF set, member #22, version 1; LHAPDF ID = 11222
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0024.dat
+CT10nnlo PDF set, member #24, version 1; LHAPDF ID = 11224
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0026.dat
+CT10nnlo PDF set, member #26, version 1; LHAPDF ID = 11226
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0028.dat
+CT10nnlo PDF set, member #28, version 1; LHAPDF ID = 11228
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0030.dat
+CT10nnlo PDF set, member #30, version 1; LHAPDF ID = 11230
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0032.dat
+CT10nnlo PDF set, member #32, version 1; LHAPDF ID = 11232
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0034.dat
+CT10nnlo PDF set, member #34, version 1; LHAPDF ID = 11234
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0036.dat
+CT10nnlo PDF set, member #36, version 1; LHAPDF ID = 11236
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0038.dat
+CT10nnlo PDF set, member #38, version 1; LHAPDF ID = 11238
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0040.dat
+CT10nnlo PDF set, member #40, version 1; LHAPDF ID = 11240
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0042.dat
+CT10nnlo PDF set, member #42, version 1; LHAPDF ID = 11242
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0044.dat
+CT10nnlo PDF set, member #44, version 1; LHAPDF ID = 11244
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0046.dat
+CT10nnlo PDF set, member #46, version 1; LHAPDF ID = 11246
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0048.dat
+CT10nnlo PDF set, member #48, version 1; LHAPDF ID = 11248
+LHAPDF 6.1.6 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc530/external/lhapdf/6.1.6-ikhhed2/share/LHAPDF/CT10nnlo/CT10nnlo_0050.dat
+CT10nnlo PDF set, member #50, version 1; LHAPDF ID = 11250
+11-Jun-2018 15:14:32 KST  Closed file file:/pnfs/knu.ac.kr/data/cms/store/user/sha/PrivateMC/TT_CEDM_DiLepton_dtG_0p5207/TT_CEDM_DiLepton_dtG_0p5207_TuneCUETP8M2T4_13TeV_v3_2/MiniAODv2/180317_032009/0009/MiniAODv2_9999.root
+
+TrigReport ---------- Event  Summary ------------
+TrigReport Events total = 100 passed = 100 failed = 0
+
+TrigReport ---------- Path   Summary ------------
+TrigReport  Trig Bit#   Executed     Passed     Failed      Error Name
+TrigReport     1    0        100        100          0          0 p
+
+TrigReport -------End-Path   Summary ------------
+TrigReport  Trig Bit#   Executed     Passed     Failed      Error Name
+
+TrigReport ---------- Modules in Path: p ------------
+TrigReport  Trig Bit#    Visited     Passed     Failed      Error Name
+TrigReport     1    0        100        100          0          0 slimmedElectrons
+TrigReport     1    1        100        100          0          0 slimmedPhotons
+TrigReport     1    2        100        100          0          0 calibratedPatElectrons
+TrigReport     1    3        100        100          0          0 calibratedPatPhotons
+TrigReport     1    4        100        100          0          0 selectedElectrons
+TrigReport     1    5        100        100          0          0 selectedPhotons
+TrigReport     1    6        100        100          0          0 electronMVAValueMapProducer
+TrigReport     1    7        100        100          0          0 egmGsfElectronIDs
+TrigReport     1    8        100        100          0          0 electronRegressionValueMapProducer
+TrigReport     1    9        100        100          0          0 egmPhotonIsolation
+TrigReport     1   10        100        100          0          0 photonIDValueMapProducer
+TrigReport     1   11        100        100          0          0 photonMVAValueMapProducer
+TrigReport     1   12        100        100          0          0 egmPhotonIDs
+TrigReport     1   13        100        100          0          0 photonRegressionValueMapProducer
+TrigReport     1   14        100        100          0          0 photonIDValueMapProducer
+TrigReport     1   15        100        100          0          0 electronIDValueMapProducer
+TrigReport     1   16        100        100          0          0 photonMVAValueMapProducer
+TrigReport     1   17        100        100          0          0 electronMVAValueMapProducer
+TrigReport     1   18        100        100          0          0 badGlobalMuonTaggerMAOD
+TrigReport     1   19        100        100          0          0 cloneGlobalMuonTaggerMAOD
+TrigReport     1   20        100        100          0          0 cleanMuonsPFCandidates
+TrigReport     1   21        100        100          0          0 pfMetMuClean
+TrigReport     1   22        100        100          0          0 patJetCorrFactorsReapplyJECMuClean
+TrigReport     1   23        100        100          0          0 patJetsReapplyJECMuClean
+TrigReport     1   24        100        100          0          0 basicJetsForMetMuClean
+TrigReport     1   25        100        100          0          0 jetSelectorForMetMuClean
+TrigReport     1   26        100        100          0          0 cleanedPatJetsMuClean
+TrigReport     1   27        100        100          0          0 metrawCaloMuClean
+TrigReport     1   28        100        100          0          0 genMetExtractorMuClean
+TrigReport     1   29        100        100          0          0 patPFMetMuClean
+TrigReport     1   30        100        100          0          0 patPFMetT1T2CorrMuClean
+TrigReport     1   31        100        100          0          0 patPFMetT1MuClean
+TrigReport     1   32        100        100          0          0 patPFMetTxyCorrMuClean
+TrigReport     1   33        100        100          0          0 patPFMetT1TxyMuClean
+TrigReport     1   34        100        100          0          0 patPFMetTxyMuClean
+TrigReport     1   35        100        100          0          0 patSmearedJetsMuClean
+TrigReport     1   36        100        100          0          0 selectedPatJetsForMetT1T2SmearCorrMuClean
+TrigReport     1   37        100        100          0          0 patPFMetT1T2SmearCorrMuClean
+TrigReport     1   38        100        100          0          0 patPFMetT1SmearMuClean
+TrigReport     1   39        100        100          0          0 ak4PFCHSL1FastjetCorrector
+TrigReport     1   40        100        100          0          0 ak4PFCHSL2RelativeCorrector
+TrigReport     1   41        100        100          0          0 ak4PFCHSL3AbsoluteCorrector
+TrigReport     1   42        100        100          0          0 ak4PFCHSL1FastL2L3Corrector
+TrigReport     1   43        100        100          0          0 ak4PFCHSL1FastjetCorrector
+TrigReport     1   44        100        100          0          0 ak4PFCHSL2RelativeCorrector
+TrigReport     1   45        100        100          0          0 ak4PFCHSL3AbsoluteCorrector
+TrigReport     1   46        100        100          0          0 ak4PFCHSResidualCorrector
+TrigReport     1   47        100        100          0          0 ak4PFCHSL1FastL2L3ResidualCorrector
+TrigReport     1   48        100        100          0          0 shiftedPatJetResDownMuClean
+TrigReport     1   49        100        100          0          0 shiftedPatMETCorrJetResDownMuClean
+TrigReport     1   50        100        100          0          0 shiftedPatJetResUpMuClean
+TrigReport     1   51        100        100          0          0 shiftedPatMETCorrJetResUpMuClean
+TrigReport     1   52        100        100          0          0 pfCandsNoJetsMuClean
+TrigReport     1   53        100        100          0          0 pfCandsNoJetsNoEleMuClean
+TrigReport     1   54        100        100          0          0 pfCandsNoJetsNoEleNoMuMuClean
+TrigReport     1   55        100        100          0          0 pfCandsNoJetsNoEleNoMuNoTauMuClean
+TrigReport     1   56        100        100          0          0 pfCandsForUnclusteredUncMuClean
+TrigReport     1   57        100        100          0          0 shiftedPatMuonEnDownMuClean
+TrigReport     1   58        100        100          0          0 shiftedPatMETCorrMuonEnDownMuClean
+TrigReport     1   59        100        100          0          0 shiftedPatMuonEnUpMuClean
+TrigReport     1   60        100        100          0          0 shiftedPatMETCorrMuonEnUpMuClean
+TrigReport     1   61        100        100          0          0 shiftedPatJetEnDownMuClean
+TrigReport     1   62        100        100          0          0 shiftedPatMETCorrJetEnDownMuClean
+TrigReport     1   63        100        100          0          0 shiftedPatJetEnUpMuClean
+TrigReport     1   64        100        100          0          0 shiftedPatMETCorrJetEnUpMuClean
+TrigReport     1   65        100        100          0          0 shiftedPatTauEnDownMuClean
+TrigReport     1   66        100        100          0          0 shiftedPatMETCorrTauEnDownMuClean
+TrigReport     1   67        100        100          0          0 shiftedPatTauEnUpMuClean
+TrigReport     1   68        100        100          0          0 shiftedPatMETCorrTauEnUpMuClean
+TrigReport     1   69        100        100          0          0 shiftedPatPhotonEnDownMuClean
+TrigReport     1   70        100        100          0          0 shiftedPatMETCorrPhotonEnDownMuClean
+TrigReport     1   71        100        100          0          0 shiftedPatPhotonEnUpMuClean
+TrigReport     1   72        100        100          0          0 shiftedPatMETCorrPhotonEnUpMuClean
+TrigReport     1   73        100        100          0          0 shiftedPatElectronEnDownMuClean
+TrigReport     1   74        100        100          0          0 shiftedPatMETCorrElectronEnDownMuClean
+TrigReport     1   75        100        100          0          0 shiftedPatElectronEnUpMuClean
+TrigReport     1   76        100        100          0          0 shiftedPatMETCorrElectronEnUpMuClean
+TrigReport     1   77        100        100          0          0 shiftedPatUnclusteredEnDownMuClean
+TrigReport     1   78        100        100          0          0 shiftedPatMETCorrUnclusteredEnDownMuClean
+TrigReport     1   79        100        100          0          0 shiftedPatUnclusteredEnUpMuClean
+TrigReport     1   80        100        100          0          0 shiftedPatMETCorrUnclusteredEnUpMuClean
+TrigReport     1   81        100        100          0          0 shiftedPatSmearedJetResDownMuClean
+TrigReport     1   82        100        100          0          0 shiftedPatMETCorrSmearedJetResDownMuClean
+TrigReport     1   83        100        100          0          0 shiftedPatSmearedJetResUpMuClean
+TrigReport     1   84        100        100          0          0 shiftedPatMETCorrSmearedJetResUpMuClean
+TrigReport     1   85        100        100          0          0 patPFMetT1JetResDownMuClean
+TrigReport     1   86        100        100          0          0 patPFMetT1JetResUpMuClean
+TrigReport     1   87        100        100          0          0 patPFMetT1MuonEnUpMuClean
+TrigReport     1   88        100        100          0          0 patPFMetT1MuonEnDownMuClean
+TrigReport     1   89        100        100          0          0 patPFMetT1JetEnUpMuClean
+TrigReport     1   90        100        100          0          0 patPFMetT1JetEnDownMuClean
+TrigReport     1   91        100        100          0          0 patPFMetT1TauEnDownMuClean
+TrigReport     1   92        100        100          0          0 patPFMetT1TauEnUpMuClean
+TrigReport     1   93        100        100          0          0 patPFMetT1PhotonEnDownMuClean
+TrigReport     1   94        100        100          0          0 patPFMetT1PhotonEnUpMuClean
+TrigReport     1   95        100        100          0          0 patPFMetT1ElectronEnUpMuClean
+TrigReport     1   96        100        100          0          0 patPFMetT1ElectronEnDownMuClean
+TrigReport     1   97        100        100          0          0 patPFMetT1UnclusteredEnUpMuClean
+TrigReport     1   98        100        100          0          0 patPFMetT1UnclusteredEnDownMuClean
+TrigReport     1   99        100        100          0          0 patPFMetT1SmearJetResDownMuClean
+TrigReport     1  100        100        100          0          0 patPFMetT1SmearJetResUpMuClean
+TrigReport     1  101        100        100          0          0 patPFMetT1SmearMuonEnUpMuClean
+TrigReport     1  102        100        100          0          0 patPFMetT1SmearMuonEnDownMuClean
+TrigReport     1  103        100        100          0          0 patPFMetT1SmearJetEnUpMuClean
+TrigReport     1  104        100        100          0          0 patPFMetT1SmearJetEnDownMuClean
+TrigReport     1  105        100        100          0          0 patPFMetT1SmearTauEnDownMuClean
+TrigReport     1  106        100        100          0          0 patPFMetT1SmearTauEnUpMuClean
+TrigReport     1  107        100        100          0          0 patPFMetT1SmearPhotonEnUpMuClean
+TrigReport     1  108        100        100          0          0 patPFMetT1SmearPhotonEnDownMuClean
+TrigReport     1  109        100        100          0          0 patPFMetT1SmearElectronEnDownMuClean
+TrigReport     1  110        100        100          0          0 patPFMetT1SmearElectronEnUpMuClean
+TrigReport     1  111        100        100          0          0 patPFMetT1SmearUnclusteredEnUpMuClean
+TrigReport     1  112        100        100          0          0 patPFMetT1SmearUnclusteredEnDownMuClean
+TrigReport     1  113        100        100          0          0 patCaloMet
+TrigReport     1  114        100        100          0          0 slimmedMETsMuClean
+TrigReport     1  115        100        100          0          0 pfMet
+TrigReport     1  116        100        100          0          0 genMetExtractor
+TrigReport     1  117        100        100          0          0 patJetCorrFactorsReapplyJEC
+TrigReport     1  118        100        100          0          0 patJetsReapplyJEC
+TrigReport     1  119        100        100          0          0 basicJetsForMet
+TrigReport     1  120        100        100          0          0 jetSelectorForMet
+TrigReport     1  121        100        100          0          0 cleanedPatJets
+TrigReport     1  122        100        100          0          0 metrawCalo
+TrigReport     1  123        100        100          0          0 patPFMet
+TrigReport     1  124        100        100          0          0 patPFMetT1T2Corr
+TrigReport     1  125        100        100          0          0 patPFMetT1
+TrigReport     1  126        100        100          0          0 patPFMetTxyCorr
+TrigReport     1  127        100        100          0          0 patPFMetT1Txy
+TrigReport     1  128        100        100          0          0 patPFMetTxy
+TrigReport     1  129        100        100          0          0 patSmearedJets
+TrigReport     1  130        100        100          0          0 selectedPatJetsForMetT1T2SmearCorr
+TrigReport     1  131        100        100          0          0 patPFMetT1T2SmearCorr
+TrigReport     1  132        100        100          0          0 patPFMetT1Smear
+TrigReport     1  133        100        100          0          0 ak4PFCHSL1FastjetCorrector
+TrigReport     1  134        100        100          0          0 ak4PFCHSL2RelativeCorrector
+TrigReport     1  135        100        100          0          0 ak4PFCHSL3AbsoluteCorrector
+TrigReport     1  136        100        100          0          0 ak4PFCHSL1FastL2L3Corrector
+TrigReport     1  137        100        100          0          0 ak4PFCHSL1FastjetCorrector
+TrigReport     1  138        100        100          0          0 ak4PFCHSL2RelativeCorrector
+TrigReport     1  139        100        100          0          0 ak4PFCHSL3AbsoluteCorrector
+TrigReport     1  140        100        100          0          0 ak4PFCHSResidualCorrector
+TrigReport     1  141        100        100          0          0 ak4PFCHSL1FastL2L3ResidualCorrector
+TrigReport     1  142        100        100          0          0 shiftedPatJetResDown
+TrigReport     1  143        100        100          0          0 shiftedPatMETCorrJetResDown
+TrigReport     1  144        100        100          0          0 shiftedPatJetResUp
+TrigReport     1  145        100        100          0          0 shiftedPatMETCorrJetResUp
+TrigReport     1  146        100        100          0          0 pfCandsNoJets
+TrigReport     1  147        100        100          0          0 pfCandsNoJetsNoEle
+TrigReport     1  148        100        100          0          0 pfCandsNoJetsNoEleNoMu
+TrigReport     1  149        100        100          0          0 pfCandsNoJetsNoEleNoMuNoTau
+TrigReport     1  150        100        100          0          0 pfCandsForUnclusteredUnc
+TrigReport     1  151        100        100          0          0 shiftedPatMuonEnDown
+TrigReport     1  152        100        100          0          0 shiftedPatMETCorrMuonEnDown
+TrigReport     1  153        100        100          0          0 shiftedPatMuonEnUp
+TrigReport     1  154        100        100          0          0 shiftedPatMETCorrMuonEnUp
+TrigReport     1  155        100        100          0          0 shiftedPatJetEnDown
+TrigReport     1  156        100        100          0          0 shiftedPatMETCorrJetEnDown
+TrigReport     1  157        100        100          0          0 shiftedPatJetEnUp
+TrigReport     1  158        100        100          0          0 shiftedPatMETCorrJetEnUp
+TrigReport     1  159        100        100          0          0 shiftedPatTauEnDown
+TrigReport     1  160        100        100          0          0 shiftedPatMETCorrTauEnDown
+TrigReport     1  161        100        100          0          0 shiftedPatTauEnUp
+TrigReport     1  162        100        100          0          0 shiftedPatMETCorrTauEnUp
+TrigReport     1  163        100        100          0          0 shiftedPatPhotonEnDown
+TrigReport     1  164        100        100          0          0 shiftedPatMETCorrPhotonEnDown
+TrigReport     1  165        100        100          0          0 shiftedPatPhotonEnUp
+TrigReport     1  166        100        100          0          0 shiftedPatMETCorrPhotonEnUp
+TrigReport     1  167        100        100          0          0 shiftedPatElectronEnDown
+TrigReport     1  168        100        100          0          0 shiftedPatMETCorrElectronEnDown
+TrigReport     1  169        100        100          0          0 shiftedPatElectronEnUp
+TrigReport     1  170        100        100          0          0 shiftedPatMETCorrElectronEnUp
+TrigReport     1  171        100        100          0          0 shiftedPatUnclusteredEnDown
+TrigReport     1  172        100        100          0          0 shiftedPatMETCorrUnclusteredEnDown
+TrigReport     1  173        100        100          0          0 shiftedPatUnclusteredEnUp
+TrigReport     1  174        100        100          0          0 shiftedPatMETCorrUnclusteredEnUp
+TrigReport     1  175        100        100          0          0 shiftedPatSmearedJetResDown
+TrigReport     1  176        100        100          0          0 shiftedPatMETCorrSmearedJetResDown
+TrigReport     1  177        100        100          0          0 shiftedPatSmearedJetResUp
+TrigReport     1  178        100        100          0          0 shiftedPatMETCorrSmearedJetResUp
+TrigReport     1  179        100        100          0          0 patPFMetT1JetResUp
+TrigReport     1  180        100        100          0          0 patPFMetT1JetResDown
+TrigReport     1  181        100        100          0          0 patPFMetT1MuonEnUp
+TrigReport     1  182        100        100          0          0 patPFMetT1MuonEnDown
+TrigReport     1  183        100        100          0          0 patPFMetT1JetEnUp
+TrigReport     1  184        100        100          0          0 patPFMetT1JetEnDown
+TrigReport     1  185        100        100          0          0 patPFMetT1TauEnDown
+TrigReport     1  186        100        100          0          0 patPFMetT1TauEnUp
+TrigReport     1  187        100        100          0          0 patPFMetT1PhotonEnUp
+TrigReport     1  188        100        100          0          0 patPFMetT1PhotonEnDown
+TrigReport     1  189        100        100          0          0 patPFMetT1ElectronEnUp
+TrigReport     1  190        100        100          0          0 patPFMetT1ElectronEnDown
+TrigReport     1  191        100        100          0          0 patPFMetT1UnclusteredEnUp
+TrigReport     1  192        100        100          0          0 patPFMetT1UnclusteredEnDown
+TrigReport     1  193        100        100          0          0 patPFMetT1SmearJetResDown
+TrigReport     1  194        100        100          0          0 patPFMetT1SmearJetResUp
+TrigReport     1  195        100        100          0          0 patPFMetT1SmearMuonEnUp
+TrigReport     1  196        100        100          0          0 patPFMetT1SmearMuonEnDown
+TrigReport     1  197        100        100          0          0 patPFMetT1SmearJetEnUp
+TrigReport     1  198        100        100          0          0 patPFMetT1SmearJetEnDown
+TrigReport     1  199        100        100          0          0 patPFMetT1SmearTauEnUp
+TrigReport     1  200        100        100          0          0 patPFMetT1SmearTauEnDown
+TrigReport     1  201        100        100          0          0 patPFMetT1SmearPhotonEnUp
+TrigReport     1  202        100        100          0          0 patPFMetT1SmearPhotonEnDown
+TrigReport     1  203        100        100          0          0 patPFMetT1SmearElectronEnDown
+TrigReport     1  204        100        100          0          0 patPFMetT1SmearElectronEnUp
+TrigReport     1  205        100        100          0          0 patPFMetT1SmearUnclusteredEnUp
+TrigReport     1  206        100        100          0          0 patPFMetT1SmearUnclusteredEnDown
+TrigReport     1  207        100        100          0          0 patCaloMet
+TrigReport     1  208        100        100          0          0 slimmedMETs
+TrigReport     1  209        100        100          0          0 patJetCorrFactorsUpdatedJEC
+TrigReport     1  210        100        100          0          0 updatedPatJetsUpdatedJEC
+TrigReport     1  211        100        100          0          0 mergedGenParticles
+TrigReport     1  212        100        100          0          0 genParticles2HepMC
+TrigReport     1  213        100        100          0          0 particleLevel
+TrigReport     1  214        100        100          0          0 bfragWgtProducer
+TrigReport     1  215        100        100          0          0 ssbanalyzer
+
+TrigReport ---------- Module Summary ------------
+TrigReport    Visited   Executed     Passed     Failed      Error Name
+TrigReport        100        100        100          0          0 BadChargedCandidateFilter
+TrigReport        100        100        100          0          0 BadPFMuonFilter
+TrigReport          0          0          0          0          0 PFCandAssoMap
+TrigReport        100        100        100          0          0 TriggerResults
+TrigReport          0          0          0          0          0 ak4CaloL1FastL2L3Corrector
+TrigReport          0          0          0          0          0 ak4CaloL1FastL2L3L6Corrector
+TrigReport          0          0          0          0          0 ak4CaloL1FastL2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4CaloL1FastjetCorrector
+TrigReport          0          0          0          0          0 ak4CaloL1L2L3Corrector
+TrigReport          0          0          0          0          0 ak4CaloL1L2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4CaloL1OffsetCorrector
+TrigReport          0          0          0          0          0 ak4CaloL2L3Corrector
+TrigReport          0          0          0          0          0 ak4CaloL2L3CorrectorMuClean
+TrigReport          0          0          0          0          0 ak4CaloL2L3L6Corrector
+TrigReport          0          0          0          0          0 ak4CaloL2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4CaloL2RelativeCorrector
+TrigReport          0          0          0          0          0 ak4CaloL2RelativeCorrectorMuClean
+TrigReport          0          0          0          0          0 ak4CaloL3AbsoluteCorrector
+TrigReport          0          0          0          0          0 ak4CaloL3AbsoluteCorrectorMuClean
+TrigReport          0          0          0          0          0 ak4CaloL6SLBCorrector
+TrigReport          0          0          0          0          0 ak4CaloResidualCorrector
+TrigReport        100        100        100          0          0 ak4GenJetsCustom
+TrigReport          0          0          0          0          0 ak4JPTL1FastL2L3Corrector
+TrigReport          0          0          0          0          0 ak4JPTL1FastL2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4JPTL1FastjetCorrector
+TrigReport          0          0          0          0          0 ak4JPTL1L2L3Corrector
+TrigReport          0          0          0          0          0 ak4JPTL1L2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4JPTL1OffsetCorrector
+TrigReport          0          0          0          0          0 ak4JPTL2L3Corrector
+TrigReport          0          0          0          0          0 ak4JPTL2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4JPTL2RelativeCorrector
+TrigReport          0          0          0          0          0 ak4JPTL3AbsoluteCorrector
+TrigReport          0          0          0          0          0 ak4JPTResidualCorrector
+TrigReport          0          0          0          0          0 ak4L1JPTOffsetCorrector
+TrigReport        200        100        100          0          0 ak4PFCHSL1FastL2L3Corrector
+TrigReport          0          0          0          0          0 ak4PFCHSL1FastL2L3CorrectorMuClean
+TrigReport        200        100        100          0          0 ak4PFCHSL1FastL2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4PFCHSL1FastL2L3ResidualCorrectorMuClean
+TrigReport        400        100        100          0          0 ak4PFCHSL1FastjetCorrector
+TrigReport          0          0          0          0          0 ak4PFCHSL1FastjetCorrectorMuClean
+TrigReport          0          0          0          0          0 ak4PFCHSL1L2L3Corrector
+TrigReport          0          0          0          0          0 ak4PFCHSL1L2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4PFCHSL1OffsetCorrector
+TrigReport          0          0          0          0          0 ak4PFCHSL2L3Corrector
+TrigReport          0          0          0          0          0 ak4PFCHSL2L3ResidualCorrector
+TrigReport        400        100        100          0          0 ak4PFCHSL2RelativeCorrector
+TrigReport          0          0          0          0          0 ak4PFCHSL2RelativeCorrectorMuClean
+TrigReport        400        100        100          0          0 ak4PFCHSL3AbsoluteCorrector
+TrigReport          0          0          0          0          0 ak4PFCHSL3AbsoluteCorrectorMuClean
+TrigReport        200        100        100          0          0 ak4PFCHSResidualCorrector
+TrigReport          0          0          0          0          0 ak4PFCHSResidualCorrectorMuClean
+TrigReport          0          0          0          0          0 ak4PFL1FastL2L3Corrector
+TrigReport          0          0          0          0          0 ak4PFL1FastL2L3L6Corrector
+TrigReport          0          0          0          0          0 ak4PFL1FastL2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4PFL1FastjetCorrector
+TrigReport          0          0          0          0          0 ak4PFL1L2L3Corrector
+TrigReport          0          0          0          0          0 ak4PFL1L2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4PFL1OffsetCorrector
+TrigReport          0          0          0          0          0 ak4PFL2L3Corrector
+TrigReport          0          0          0          0          0 ak4PFL2L3L6Corrector
+TrigReport          0          0          0          0          0 ak4PFL2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4PFL2RelativeCorrector
+TrigReport          0          0          0          0          0 ak4PFL3AbsoluteCorrector
+TrigReport          0          0          0          0          0 ak4PFL6SLBCorrector
+TrigReport          0          0          0          0          0 ak4PFPuppiL1FastL2L3Corrector
+TrigReport          0          0          0          0          0 ak4PFPuppiL1FastL2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4PFPuppiL1FastjetCorrector
+TrigReport          0          0          0          0          0 ak4PFPuppiL1L2L3Corrector
+TrigReport          0          0          0          0          0 ak4PFPuppiL1L2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4PFPuppiL1OffsetCorrector
+TrigReport          0          0          0          0          0 ak4PFPuppiL2L3Corrector
+TrigReport          0          0          0          0          0 ak4PFPuppiL2L3ResidualCorrector
+TrigReport          0          0          0          0          0 ak4PFPuppiL2RelativeCorrector
+TrigReport          0          0          0          0          0 ak4PFPuppiL3AbsoluteCorrector
+TrigReport          0          0          0          0          0 ak4PFPuppiResidualCorrector
+TrigReport          0          0          0          0          0 ak4PFResidualCorrector
+TrigReport          0          0          0          0          0 ak4TrackL2L3Corrector
+TrigReport          0          0          0          0          0 ak4TrackL2RelativeCorrector
+TrigReport          0          0          0          0          0 ak4TrackL3AbsoluteCorrector
+TrigReport        100        100        100          0          0 badGlobalMuonTaggerMAOD
+TrigReport        100        100        100          0          0 basicJetsForMet
+TrigReport        100        100        100          0          0 basicJetsForMetMuClean
+TrigReport        100        100        100          0          0 bfragWgtProducer
+TrigReport        100        100        100          0          0 calibratedPatElectrons
+TrigReport        100        100        100          0          0 calibratedPatPhotons
+TrigReport          0          0          0          0          0 caloMetT1
+TrigReport          0          0          0          0          0 caloMetT1MuClean
+TrigReport          0          0          0          0          0 caloMetT1T2
+TrigReport          0          0          0          0          0 caloMetT1T2MuClean
+TrigReport        100        100        100          0          0 cleanMuonsPFCandidates
+TrigReport        100        100        100          0          0 cleanedPatJets
+TrigReport        100        100        100          0          0 cleanedPatJetsMuClean
+TrigReport        100        100        100          0          0 cloneGlobalMuonTaggerMAOD
+TrigReport          0          0          0          0          0 corrCaloMetType1
+TrigReport          0          0          0          0          0 corrCaloMetType1MuClean
+TrigReport          0          0          0          0          0 corrCaloMetType2
+TrigReport          0          0          0          0          0 corrCaloMetType2MuClean
+TrigReport          0          0          0          0          0 corrPfMetType0PfCand
+TrigReport          0          0          0          0          0 corrPfMetType1
+TrigReport          0          0          0          0          0 corrPfMetType1MuClean
+TrigReport          0          0          0          0          0 corrPfMetType2
+TrigReport          0          0          0          0          0 corrPfMetType2MuClean
+TrigReport        100        100        100          0          0 egmGsfElectronIDs
+TrigReport        100        100        100          0          0 egmPhotonIDs
+TrigReport        100        100        100          0          0 egmPhotonIsolation
+TrigReport        100        100        100          0          0 electronIDValueMapProducer
+TrigReport        200        100        100          0          0 electronMVAValueMapProducer
+TrigReport        100        100        100          0          0 electronRegressionValueMapProducer
+TrigReport        100        100        100          0          0 genJetFlavourInfos
+TrigReport        100        100        100          0          0 genMetExtractor
+TrigReport        100        100        100          0          0 genMetExtractorMuClean
+TrigReport        100        100        100          0          0 genParticles2HepMC
+TrigReport        100        100        100          0          0 genParticlesForJetsCustom
+TrigReport        100        100        100          0          0 jetSelectorForMet
+TrigReport        100        100        100          0          0 jetSelectorForMetMuClean
+TrigReport        100        100        100          0          0 matchGenBHadron
+TrigReport          0          0          0          0          0 matchGenCHadron
+TrigReport        100        100        100          0          0 mergedGenParticles
+TrigReport        100        100        100          0          0 metrawCalo
+TrigReport        100        100        100          0          0 metrawCaloMuClean
+TrigReport          0          0          0          0          0 modifiedElectrons
+TrigReport          0          0          0          0          0 modifiedPhotons
+TrigReport          0          0          0          0          0 muCaloMetCorr
+TrigReport          0          0          0          0          0 muCaloMetCorrMuClean
+TrigReport          0          0          0          0          0 particleFlowDisplacedVertex
+TrigReport          0          0          0          0          0 particleFlowPtrs
+TrigReport          0          0          0          0          0 particleFlowPtrsMuClean
+TrigReport        100        100        100          0          0 particleLevel
+TrigReport        200        100        100          0          0 patCaloMet
+TrigReport        100        100        100          0          0 patJetCorrFactorsReapplyJEC
+TrigReport        100        100        100          0          0 patJetCorrFactorsReapplyJECMuClean
+TrigReport        100        100        100          0          0 patJetCorrFactorsUpdatedJEC
+TrigReport        100        100        100          0          0 patJetsReapplyJEC
+TrigReport        100        100        100          0          0 patJetsReapplyJECMuClean
+TrigReport          0          0          0          0          0 patMETs
+TrigReport        100        100        100          0          0 patPFMet
+TrigReport        100        100        100          0          0 patPFMetMuClean
+TrigReport          0          0          0          0          0 patPFMetT0Corr
+TrigReport          0          0          0          0          0 patPFMetT0CorrMuClean
+TrigReport          0          0          0          0          0 patPFMetT0pcT1
+TrigReport          0          0          0          0          0 patPFMetT0pcT1MuClean
+TrigReport          0          0          0          0          0 patPFMetT0pcT1Smear
+TrigReport          0          0          0          0          0 patPFMetT0pcT1T2
+TrigReport          0          0          0          0          0 patPFMetT0pcT1T2MuClean
+TrigReport          0          0          0          0          0 patPFMetT0pcT1T2Smear
+TrigReport          0          0          0          0          0 patPFMetT0pcT1T2Txy
+TrigReport          0          0          0          0          0 patPFMetT0pcT1T2TxySmear
+TrigReport          0          0          0          0          0 patPFMetT0pcT1Txy
+TrigReport          0          0          0          0          0 patPFMetT0pcT1TxySmear
+TrigReport        100        100        100          0          0 patPFMetT1
+TrigReport        100        100        100          0          0 patPFMetT1ElectronEnDown
+TrigReport        100        100        100          0          0 patPFMetT1ElectronEnDownMuClean
+TrigReport        100        100        100          0          0 patPFMetT1ElectronEnUp
+TrigReport        100        100        100          0          0 patPFMetT1ElectronEnUpMuClean
+TrigReport        100        100        100          0          0 patPFMetT1JetEnDown
+TrigReport        100        100        100          0          0 patPFMetT1JetEnDownMuClean
+TrigReport        100        100        100          0          0 patPFMetT1JetEnUp
+TrigReport        100        100        100          0          0 patPFMetT1JetEnUpMuClean
+TrigReport        100        100        100          0          0 patPFMetT1JetResDown
+TrigReport        100        100        100          0          0 patPFMetT1JetResDownMuClean
+TrigReport        100        100        100          0          0 patPFMetT1JetResUp
+TrigReport        100        100        100          0          0 patPFMetT1JetResUpMuClean
+TrigReport        100        100        100          0          0 patPFMetT1MuClean
+TrigReport        100        100        100          0          0 patPFMetT1MuonEnDown
+TrigReport        100        100        100          0          0 patPFMetT1MuonEnDownMuClean
+TrigReport        100        100        100          0          0 patPFMetT1MuonEnUp
+TrigReport        100        100        100          0          0 patPFMetT1MuonEnUpMuClean
+TrigReport        100        100        100          0          0 patPFMetT1PhotonEnDown
+TrigReport        100        100        100          0          0 patPFMetT1PhotonEnDownMuClean
+TrigReport        100        100        100          0          0 patPFMetT1PhotonEnUp
+TrigReport        100        100        100          0          0 patPFMetT1PhotonEnUpMuClean
+TrigReport        100        100        100          0          0 patPFMetT1Smear
+TrigReport        100        100        100          0          0 patPFMetT1SmearElectronEnDown
+TrigReport        100        100        100          0          0 patPFMetT1SmearElectronEnDownMuClean
+TrigReport        100        100        100          0          0 patPFMetT1SmearElectronEnUp
+TrigReport        100        100        100          0          0 patPFMetT1SmearElectronEnUpMuClean
+TrigReport        100        100        100          0          0 patPFMetT1SmearJetEnDown
+TrigReport        100        100        100          0          0 patPFMetT1SmearJetEnDownMuClean
+TrigReport        100        100        100          0          0 patPFMetT1SmearJetEnUp
+TrigReport        100        100        100          0          0 patPFMetT1SmearJetEnUpMuClean
+TrigReport        100        100        100          0          0 patPFMetT1SmearJetResDown
+TrigReport        100        100        100          0          0 patPFMetT1SmearJetResDownMuClean
+TrigReport        100        100        100          0          0 patPFMetT1SmearJetResUp
+TrigReport        100        100        100          0          0 patPFMetT1SmearJetResUpMuClean
+TrigReport        100        100        100          0          0 patPFMetT1SmearMuClean
+TrigReport        100        100        100          0          0 patPFMetT1SmearMuonEnDown
+TrigReport        100        100        100          0          0 patPFMetT1SmearMuonEnDownMuClean
+TrigReport        100        100        100          0          0 patPFMetT1SmearMuonEnUp
+TrigReport        100        100        100          0          0 patPFMetT1SmearMuonEnUpMuClean
+TrigReport        100        100        100          0          0 patPFMetT1SmearPhotonEnDown
+TrigReport        100        100        100          0          0 patPFMetT1SmearPhotonEnDownMuClean
+TrigReport        100        100        100          0          0 patPFMetT1SmearPhotonEnUp
+TrigReport        100        100        100          0          0 patPFMetT1SmearPhotonEnUpMuClean
+TrigReport        100        100        100          0          0 patPFMetT1SmearTauEnDown
+TrigReport        100        100        100          0          0 patPFMetT1SmearTauEnDownMuClean
+TrigReport        100        100        100          0          0 patPFMetT1SmearTauEnUp
+TrigReport        100        100        100          0          0 patPFMetT1SmearTauEnUpMuClean
+TrigReport        100        100        100          0          0 patPFMetT1SmearUnclusteredEnDown
+TrigReport        100        100        100          0          0 patPFMetT1SmearUnclusteredEnDownMuClean
+TrigReport        100        100        100          0          0 patPFMetT1SmearUnclusteredEnUp
+TrigReport        100        100        100          0          0 patPFMetT1SmearUnclusteredEnUpMuClean
+TrigReport          0          0          0          0          0 patPFMetT1T2
+TrigReport        100        100        100          0          0 patPFMetT1T2Corr
+TrigReport        100        100        100          0          0 patPFMetT1T2CorrMuClean
+TrigReport          0          0          0          0          0 patPFMetT1T2MuClean
+TrigReport          0          0          0          0          0 patPFMetT1T2Smear
+TrigReport        100        100        100          0          0 patPFMetT1T2SmearCorr
+TrigReport        100        100        100          0          0 patPFMetT1T2SmearCorrMuClean
+TrigReport          0          0          0          0          0 patPFMetT1T2Txy
+TrigReport          0          0          0          0          0 patPFMetT1T2TxySmear
+TrigReport        100        100        100          0          0 patPFMetT1TauEnDown
+TrigReport        100        100        100          0          0 patPFMetT1TauEnDownMuClean
+TrigReport        100        100        100          0          0 patPFMetT1TauEnUp
+TrigReport        100        100        100          0          0 patPFMetT1TauEnUpMuClean
+TrigReport        100        100        100          0          0 patPFMetT1Txy
+TrigReport        100        100        100          0          0 patPFMetT1TxyMuClean
+TrigReport          0          0          0          0          0 patPFMetT1TxySmear
+TrigReport        100        100        100          0          0 patPFMetT1UnclusteredEnDown
+TrigReport        100        100        100          0          0 patPFMetT1UnclusteredEnDownMuClean
+TrigReport        100        100        100          0          0 patPFMetT1UnclusteredEnUp
+TrigReport        100        100        100          0          0 patPFMetT1UnclusteredEnUpMuClean
+TrigReport          0          0          0          0          0 patPFMetT2Corr
+TrigReport          0          0          0          0          0 patPFMetT2CorrMuClean
+TrigReport          0          0          0          0          0 patPFMetT2SmearCorr
+TrigReport          0          0          0          0          0 patPFMetT2SmearCorrMuClean
+TrigReport        100        100        100          0          0 patPFMetTxy
+TrigReport        100        100        100          0          0 patPFMetTxyCorr
+TrigReport        100        100        100          0          0 patPFMetTxyCorrMuClean
+TrigReport        100        100        100          0          0 patPFMetTxyMuClean
+TrigReport        100        100        100          0          0 patSmearedJets
+TrigReport        100        100        100          0          0 patSmearedJetsMuClean
+TrigReport          0          0          0          0          0 pfCandMETcorr
+TrigReport          0          0          0          0          0 pfCandMETcorrMuClean
+TrigReport          0          0          0          0          0 pfCandidateToVertexAssociation
+TrigReport        100        100        100          0          0 pfCandsForUnclusteredUnc
+TrigReport        100        100        100          0          0 pfCandsForUnclusteredUncMuClean
+TrigReport        100        100        100          0          0 pfCandsNoJets
+TrigReport        100        100        100          0          0 pfCandsNoJetsMuClean
+TrigReport        100        100        100          0          0 pfCandsNoJetsNoEle
+TrigReport        100        100        100          0          0 pfCandsNoJetsNoEleMuClean
+TrigReport        100        100        100          0          0 pfCandsNoJetsNoEleNoMu
+TrigReport        100        100        100          0          0 pfCandsNoJetsNoEleNoMuMuClean
+TrigReport        100        100        100          0          0 pfCandsNoJetsNoEleNoMuNoTau
+TrigReport        100        100        100          0          0 pfCandsNoJetsNoEleNoMuNoTauMuClean
+TrigReport          0          0          0          0          0 pfCandsNotInJetsForMetCorr
+TrigReport          0          0          0          0          0 pfCandsNotInJetsForMetCorrMuClean
+TrigReport          0          0          0          0          0 pfCandsNotInJetsPtrForMetCorr
+TrigReport          0          0          0          0          0 pfCandsNotInJetsPtrForMetCorrMuClean
+TrigReport          0          0          0          0          0 pfJetsPtrForMetCorr
+TrigReport          0          0          0          0          0 pfJetsPtrForMetCorrMuClean
+TrigReport          0          0          0          0          0 pfMETcorrType0
+TrigReport          0          0          0          0          0 pfMEtMultShiftCorr
+TrigReport        100        100        100          0          0 pfMet
+TrigReport        100        100        100          0          0 pfMetMuClean
+TrigReport          0          0          0          0          0 pfMetT0pc
+TrigReport          0          0          0          0          0 pfMetT0pcT1
+TrigReport          0          0          0          0          0 pfMetT0pcT1T2Txy
+TrigReport          0          0          0          0          0 pfMetT0pcT1Txy
+TrigReport          0          0          0          0          0 pfMetT0pcTxy
+TrigReport          0          0          0          0          0 pfMetT0rt
+TrigReport          0          0          0          0          0 pfMetT0rtT1
+TrigReport          0          0          0          0          0 pfMetT0rtT1T2
+TrigReport          0          0          0          0          0 pfMetT0rtT1T2Txy
+TrigReport          0          0          0          0          0 pfMetT0rtT1Txy
+TrigReport          0          0          0          0          0 pfMetT0rtT2
+TrigReport          0          0          0          0          0 pfMetT0rtTxy
+TrigReport          0          0          0          0          0 pfMetT1
+TrigReport          0          0          0          0          0 pfMetT1MuClean
+TrigReport          0          0          0          0          0 pfMetT1T2
+TrigReport          0          0          0          0          0 pfMetT1T2MuClean
+TrigReport          0          0          0          0          0 pfMetT1T2Txy
+TrigReport          0          0          0          0          0 pfMetT1Txy
+TrigReport          0          0          0          0          0 pfMetTxy
+TrigReport          0          0          0          0          0 pfNoJet
+TrigReport        200        100        100          0          0 photonIDValueMapProducer
+TrigReport        200        100        100          0          0 photonMVAValueMapProducer
+TrigReport        100        100        100          0          0 photonRegressionValueMapProducer
+TrigReport          0          0          0          0          0 randomEngineStateProducer
+TrigReport        100        100        100          0          0 selectedElectrons
+TrigReport        100        100        100          0          0 selectedHadronsAndPartons
+TrigReport          0          0          0          0          0 selectedPatJetsForMetT1T2Corr
+TrigReport          0          0          0          0          0 selectedPatJetsForMetT1T2CorrMuClean
+TrigReport        100        100        100          0          0 selectedPatJetsForMetT1T2SmearCorr
+TrigReport        100        100        100          0          0 selectedPatJetsForMetT1T2SmearCorrMuClean
+TrigReport          0          0          0          0          0 selectedPatJetsForMetT2Corr
+TrigReport          0          0          0          0          0 selectedPatJetsForMetT2CorrMuClean
+TrigReport          0          0          0          0          0 selectedPatJetsForMetT2SmearCorr
+TrigReport          0          0          0          0          0 selectedPatJetsForMetT2SmearCorrMuClean
+TrigReport        100        100        100          0          0 selectedPhotons
+TrigReport          0          0          0          0          0 selectedPrimaryVertexHighestPtTrackSumForPFMEtCorrType0
+TrigReport          0          0          0          0          0 selectedPrimaryVertexHighestPtTrackSumForPFMEtCorrType0MuClean
+TrigReport          0          0          0          0          0 selectedUpdatedPatJetsUpdatedJEC
+TrigReport          0          0          0          0          0 selectedVerticesForPFMEtCorrType0
+TrigReport          0          0          0          0          0 selectedVerticesForPFMEtCorrType0MuClean
+TrigReport        100        100        100          0          0 shiftedPatElectronEnDown
+TrigReport        100        100        100          0          0 shiftedPatElectronEnDownMuClean
+TrigReport        100        100        100          0          0 shiftedPatElectronEnUp
+TrigReport        100        100        100          0          0 shiftedPatElectronEnUpMuClean
+TrigReport        100        100        100          0          0 shiftedPatJetEnDown
+TrigReport        100        100        100          0          0 shiftedPatJetEnDownMuClean
+TrigReport        100        100        100          0          0 shiftedPatJetEnUp
+TrigReport        100        100        100          0          0 shiftedPatJetEnUpMuClean
+TrigReport        100        100        100          0          0 shiftedPatJetResDown
+TrigReport        100        100        100          0          0 shiftedPatJetResDownMuClean
+TrigReport        100        100        100          0          0 shiftedPatJetResUp
+TrigReport        100        100        100          0          0 shiftedPatJetResUpMuClean
+TrigReport        100        100        100          0          0 shiftedPatMETCorrElectronEnDown
+TrigReport        100        100        100          0          0 shiftedPatMETCorrElectronEnDownMuClean
+TrigReport        100        100        100          0          0 shiftedPatMETCorrElectronEnUp
+TrigReport        100        100        100          0          0 shiftedPatMETCorrElectronEnUpMuClean
+TrigReport        100        100        100          0          0 shiftedPatMETCorrJetEnDown
+TrigReport        100        100        100          0          0 shiftedPatMETCorrJetEnDownMuClean
+TrigReport        100        100        100          0          0 shiftedPatMETCorrJetEnUp
+TrigReport        100        100        100          0          0 shiftedPatMETCorrJetEnUpMuClean
+TrigReport        100        100        100          0          0 shiftedPatMETCorrJetResDown
+TrigReport        100        100        100          0          0 shiftedPatMETCorrJetResDownMuClean
+TrigReport        100        100        100          0          0 shiftedPatMETCorrJetResUp
+TrigReport        100        100        100          0          0 shiftedPatMETCorrJetResUpMuClean
+TrigReport        100        100        100          0          0 shiftedPatMETCorrMuonEnDown
+TrigReport        100        100        100          0          0 shiftedPatMETCorrMuonEnDownMuClean
+TrigReport        100        100        100          0          0 shiftedPatMETCorrMuonEnUp
+TrigReport        100        100        100          0          0 shiftedPatMETCorrMuonEnUpMuClean
+TrigReport        100        100        100          0          0 shiftedPatMETCorrPhotonEnDown
+TrigReport        100        100        100          0          0 shiftedPatMETCorrPhotonEnDownMuClean
+TrigReport        100        100        100          0          0 shiftedPatMETCorrPhotonEnUp
+TrigReport        100        100        100          0          0 shiftedPatMETCorrPhotonEnUpMuClean
+TrigReport        100        100        100          0          0 shiftedPatMETCorrSmearedJetResDown
+TrigReport        100        100        100          0          0 shiftedPatMETCorrSmearedJetResDownMuClean
+TrigReport        100        100        100          0          0 shiftedPatMETCorrSmearedJetResUp
+TrigReport        100        100        100          0          0 shiftedPatMETCorrSmearedJetResUpMuClean
+TrigReport        100        100        100          0          0 shiftedPatMETCorrTauEnDown
+TrigReport        100        100        100          0          0 shiftedPatMETCorrTauEnDownMuClean
+TrigReport        100        100        100          0          0 shiftedPatMETCorrTauEnUp
+TrigReport        100        100        100          0          0 shiftedPatMETCorrTauEnUpMuClean
+TrigReport        100        100        100          0          0 shiftedPatMETCorrUnclusteredEnDown
+TrigReport        100        100        100          0          0 shiftedPatMETCorrUnclusteredEnDownMuClean
+TrigReport        100        100        100          0          0 shiftedPatMETCorrUnclusteredEnUp
+TrigReport        100        100        100          0          0 shiftedPatMETCorrUnclusteredEnUpMuClean
+TrigReport        100        100        100          0          0 shiftedPatMuonEnDown
+TrigReport        100        100        100          0          0 shiftedPatMuonEnDownMuClean
+TrigReport        100        100        100          0          0 shiftedPatMuonEnUp
+TrigReport        100        100        100          0          0 shiftedPatMuonEnUpMuClean
+TrigReport        100        100        100          0          0 shiftedPatPhotonEnDown
+TrigReport        100        100        100          0          0 shiftedPatPhotonEnDownMuClean
+TrigReport        100        100        100          0          0 shiftedPatPhotonEnUp
+TrigReport        100        100        100          0          0 shiftedPatPhotonEnUpMuClean
+TrigReport        100        100        100          0          0 shiftedPatSmearedJetResDown
+TrigReport        100        100        100          0          0 shiftedPatSmearedJetResDownMuClean
+TrigReport        100        100        100          0          0 shiftedPatSmearedJetResUp
+TrigReport        100        100        100          0          0 shiftedPatSmearedJetResUpMuClean
+TrigReport        100        100        100          0          0 shiftedPatTauEnDown
+TrigReport        100        100        100          0          0 shiftedPatTauEnDownMuClean
+TrigReport        100        100        100          0          0 shiftedPatTauEnUp
+TrigReport        100        100        100          0          0 shiftedPatTauEnUpMuClean
+TrigReport        100        100        100          0          0 shiftedPatUnclusteredEnDown
+TrigReport        100        100        100          0          0 shiftedPatUnclusteredEnDownMuClean
+TrigReport        100        100        100          0          0 shiftedPatUnclusteredEnUp
+TrigReport        100        100        100          0          0 shiftedPatUnclusteredEnUpMuClean
+TrigReport        100        100        100          0          0 slimmedElectrons
+TrigReport        100        100        100          0          0 slimmedMETs
+TrigReport        100        100        100          0          0 slimmedMETsMuClean
+TrigReport        100        100        100          0          0 slimmedPhotons
+TrigReport        100        100        100          0          0 ssbanalyzer
+TrigReport        100        100        100          0          0 updatedPatJetsUpdatedJEC
+
+TimeReport ---------- Event  Summary ---[sec]----
+TimeReport       event loop CPU/event = 0.218537
+TimeReport      event loop Real/event = 0.366272
+TimeReport     sum Streams Real/event = 0.272894
+TimeReport efficiency CPU/Real/thread = 0.596653
+
+TimeReport ---------- Path   Summary ---[Real sec]----
+TimeReport  per event     per exec  Name
+TimeReport   0.271938     0.271938  p
+TimeReport  per event     per exec  Name
+
+TimeReport -------End-Path   Summary ---[Real sec]----
+TimeReport  per event     per exec  Name
+TimeReport  per event     per exec  Name
+
+TimeReport ---------- Modules in Path: p ---[Real sec]----
+TimeReport  per event    per visit  Name
+TimeReport   0.001377     0.001377  slimmedElectrons
+TimeReport   0.000466     0.000466  slimmedPhotons
+TimeReport   0.000445     0.000445  calibratedPatElectrons
+TimeReport   0.000132     0.000132  calibratedPatPhotons
+TimeReport   0.000073     0.000073  selectedElectrons
+TimeReport   0.000034     0.000034  selectedPhotons
+TimeReport   0.001018     0.001018  electronMVAValueMapProducer
+TimeReport   0.001127     0.001127  egmGsfElectronIDs
+TimeReport   0.001423     0.001423  electronRegressionValueMapProducer
+TimeReport   0.001298     0.001298  egmPhotonIsolation
+TimeReport   0.012566     0.012566  photonIDValueMapProducer
+TimeReport   0.000614     0.000614  photonMVAValueMapProducer
+TimeReport   0.000549     0.000549  egmPhotonIDs
+TimeReport   0.000047     0.000047  photonRegressionValueMapProducer
+TimeReport   0.000000     0.000000  photonIDValueMapProducer
+TimeReport   0.000151     0.000151  electronIDValueMapProducer
+TimeReport   0.000000     0.000000  photonMVAValueMapProducer
+TimeReport   0.000000     0.000000  electronMVAValueMapProducer
+TimeReport   0.000092     0.000092  badGlobalMuonTaggerMAOD
+TimeReport   0.000013     0.000013  cloneGlobalMuonTaggerMAOD
+TimeReport   0.000158     0.000158  cleanMuonsPFCandidates
+TimeReport   0.000595     0.000595  pfMetMuClean
+TimeReport   0.001238     0.001238  patJetCorrFactorsReapplyJECMuClean
+TimeReport   0.000387     0.000387  patJetsReapplyJECMuClean
+TimeReport   0.001036     0.001036  basicJetsForMetMuClean
+TimeReport   0.000641     0.000641  jetSelectorForMetMuClean
+TimeReport   0.000104     0.000104  cleanedPatJetsMuClean
+TimeReport   0.000037     0.000037  metrawCaloMuClean
+TimeReport   0.000015     0.000015  genMetExtractorMuClean
+TimeReport   0.003746     0.003746  patPFMetMuClean
+TimeReport   0.000465     0.000465  patPFMetT1T2CorrMuClean
+TimeReport   0.000037     0.000037  patPFMetT1MuClean
+TimeReport   0.000362     0.000362  patPFMetTxyCorrMuClean
+TimeReport   0.000029     0.000029  patPFMetT1TxyMuClean
+TimeReport   0.000020     0.000020  patPFMetTxyMuClean
+TimeReport   0.000354     0.000354  patSmearedJetsMuClean
+TimeReport   0.000118     0.000118  selectedPatJetsForMetT1T2SmearCorrMuClean
+TimeReport   0.000417     0.000417  patPFMetT1T2SmearCorrMuClean
+TimeReport   0.000028     0.000028  patPFMetT1SmearMuClean
+TimeReport   0.000026     0.000026  ak4PFCHSL1FastjetCorrector
+TimeReport   0.000023     0.000023  ak4PFCHSL2RelativeCorrector
+TimeReport   0.000007     0.000007  ak4PFCHSL3AbsoluteCorrector
+TimeReport   0.000011     0.000011  ak4PFCHSL1FastL2L3Corrector
+TimeReport   0.000000     0.000000  ak4PFCHSL1FastjetCorrector
+TimeReport   0.000000     0.000000  ak4PFCHSL2RelativeCorrector
+TimeReport   0.000000     0.000000  ak4PFCHSL3AbsoluteCorrector
+TimeReport   0.000006     0.000006  ak4PFCHSResidualCorrector
+TimeReport   0.000008     0.000008  ak4PFCHSL1FastL2L3ResidualCorrector
+TimeReport   0.000322     0.000322  shiftedPatJetResDownMuClean
+TimeReport   0.000016     0.000016  shiftedPatMETCorrJetResDownMuClean
+TimeReport   0.000304     0.000304  shiftedPatJetResUpMuClean
+TimeReport   0.000013     0.000013  shiftedPatMETCorrJetResUpMuClean
+TimeReport   0.000294     0.000294  pfCandsNoJetsMuClean
+TimeReport   0.000201     0.000201  pfCandsNoJetsNoEleMuClean
+TimeReport   0.000184     0.000184  pfCandsNoJetsNoEleNoMuMuClean
+TimeReport   0.000258     0.000258  pfCandsNoJetsNoEleNoMuNoTauMuClean
+TimeReport   0.000184     0.000184  pfCandsForUnclusteredUncMuClean
+TimeReport   0.000027     0.000027  shiftedPatMuonEnDownMuClean
+TimeReport   0.000014     0.000014  shiftedPatMETCorrMuonEnDownMuClean
+TimeReport   0.000012     0.000012  shiftedPatMuonEnUpMuClean
+TimeReport   0.000010     0.000010  shiftedPatMETCorrMuonEnUpMuClean
+TimeReport   0.000176     0.000176  shiftedPatJetEnDownMuClean
+TimeReport   0.000013     0.000013  shiftedPatMETCorrJetEnDownMuClean
+TimeReport   0.000123     0.000123  shiftedPatJetEnUpMuClean
+TimeReport   0.000012     0.000012  shiftedPatMETCorrJetEnUpMuClean
+TimeReport   0.000016     0.000016  shiftedPatTauEnDownMuClean
+TimeReport   0.000010     0.000010  shiftedPatMETCorrTauEnDownMuClean
+TimeReport   0.000012     0.000012  shiftedPatTauEnUpMuClean
+TimeReport   0.000009     0.000009  shiftedPatMETCorrTauEnUpMuClean
+TimeReport   0.000011     0.000011  shiftedPatPhotonEnDownMuClean
+TimeReport   0.000009     0.000009  shiftedPatMETCorrPhotonEnDownMuClean
+TimeReport   0.000009     0.000009  shiftedPatPhotonEnUpMuClean
+TimeReport   0.000008     0.000008  shiftedPatMETCorrPhotonEnUpMuClean
+TimeReport   0.000012     0.000012  shiftedPatElectronEnDownMuClean
+TimeReport   0.000009     0.000009  shiftedPatMETCorrElectronEnDownMuClean
+TimeReport   0.000010     0.000010  shiftedPatElectronEnUpMuClean
+TimeReport   0.000009     0.000009  shiftedPatMETCorrElectronEnUpMuClean
+TimeReport   0.002789     0.002789  shiftedPatUnclusteredEnDownMuClean
+TimeReport   0.000246     0.000246  shiftedPatMETCorrUnclusteredEnDownMuClean
+TimeReport   0.001712     0.001712  shiftedPatUnclusteredEnUpMuClean
+TimeReport   0.000225     0.000225  shiftedPatMETCorrUnclusteredEnUpMuClean
+TimeReport   0.000444     0.000444  shiftedPatSmearedJetResDownMuClean
+TimeReport   0.000015     0.000015  shiftedPatMETCorrSmearedJetResDownMuClean
+TimeReport   0.000309     0.000309  shiftedPatSmearedJetResUpMuClean
+TimeReport   0.000014     0.000014  shiftedPatMETCorrSmearedJetResUpMuClean
+TimeReport   0.000043     0.000043  patPFMetT1JetResDownMuClean
+TimeReport   0.000021     0.000021  patPFMetT1JetResUpMuClean
+TimeReport   0.000021     0.000021  patPFMetT1MuonEnUpMuClean
+TimeReport   0.000021     0.000021  patPFMetT1MuonEnDownMuClean
+TimeReport   0.000020     0.000020  patPFMetT1JetEnUpMuClean
+TimeReport   0.000021     0.000021  patPFMetT1JetEnDownMuClean
+TimeReport   0.000021     0.000021  patPFMetT1TauEnDownMuClean
+TimeReport   0.000020     0.000020  patPFMetT1TauEnUpMuClean
+TimeReport   0.000020     0.000020  patPFMetT1PhotonEnDownMuClean
+TimeReport   0.000021     0.000021  patPFMetT1PhotonEnUpMuClean
+TimeReport   0.000021     0.000021  patPFMetT1ElectronEnUpMuClean
+TimeReport   0.000020     0.000020  patPFMetT1ElectronEnDownMuClean
+TimeReport   0.000021     0.000021  patPFMetT1UnclusteredEnUpMuClean
+TimeReport   0.000020     0.000020  patPFMetT1UnclusteredEnDownMuClean
+TimeReport   0.000021     0.000021  patPFMetT1SmearJetResDownMuClean
+TimeReport   0.000020     0.000020  patPFMetT1SmearJetResUpMuClean
+TimeReport   0.000020     0.000020  patPFMetT1SmearMuonEnUpMuClean
+TimeReport   0.000020     0.000020  patPFMetT1SmearMuonEnDownMuClean
+TimeReport   0.000020     0.000020  patPFMetT1SmearJetEnUpMuClean
+TimeReport   0.000020     0.000020  patPFMetT1SmearJetEnDownMuClean
+TimeReport   0.000021     0.000021  patPFMetT1SmearTauEnDownMuClean
+TimeReport   0.000020     0.000020  patPFMetT1SmearTauEnUpMuClean
+TimeReport   0.000020     0.000020  patPFMetT1SmearPhotonEnUpMuClean
+TimeReport   0.000020     0.000020  patPFMetT1SmearPhotonEnDownMuClean
+TimeReport   0.000021     0.000021  patPFMetT1SmearElectronEnDownMuClean
+TimeReport   0.000019     0.000019  patPFMetT1SmearElectronEnUpMuClean
+TimeReport   0.000021     0.000021  patPFMetT1SmearUnclusteredEnUpMuClean
+TimeReport   0.000021     0.000021  patPFMetT1SmearUnclusteredEnDownMuClean
+TimeReport   0.000038     0.000038  patCaloMet
+TimeReport   0.000034     0.000034  slimmedMETsMuClean
+TimeReport   0.000019     0.000019  pfMet
+TimeReport   0.000014     0.000014  genMetExtractor
+TimeReport   0.001050     0.001050  patJetCorrFactorsReapplyJEC
+TimeReport   0.000340     0.000340  patJetsReapplyJEC
+TimeReport   0.000745     0.000745  basicJetsForMet
+TimeReport   0.000137     0.000137  jetSelectorForMet
+TimeReport   0.000092     0.000092  cleanedPatJets
+TimeReport   0.000015     0.000015  metrawCalo
+TimeReport   0.002966     0.002966  patPFMet
+TimeReport   0.000446     0.000446  patPFMetT1T2Corr
+TimeReport   0.000029     0.000029  patPFMetT1
+TimeReport   0.000301     0.000301  patPFMetTxyCorr
+TimeReport   0.000027     0.000027  patPFMetT1Txy
+TimeReport   0.000018     0.000018  patPFMetTxy
+TimeReport   0.000340     0.000340  patSmearedJets
+TimeReport   0.000114     0.000114  selectedPatJetsForMetT1T2SmearCorr
+TimeReport   0.000419     0.000419  patPFMetT1T2SmearCorr
+TimeReport   0.000027     0.000027  patPFMetT1Smear
+TimeReport   0.000000     0.000000  ak4PFCHSL1FastjetCorrector
+TimeReport   0.000000     0.000000  ak4PFCHSL2RelativeCorrector
+TimeReport   0.000000     0.000000  ak4PFCHSL3AbsoluteCorrector
+TimeReport   0.000000     0.000000  ak4PFCHSL1FastL2L3Corrector
+TimeReport   0.000000     0.000000  ak4PFCHSL1FastjetCorrector
+TimeReport   0.000000     0.000000  ak4PFCHSL2RelativeCorrector
+TimeReport   0.000000     0.000000  ak4PFCHSL3AbsoluteCorrector
+TimeReport   0.000000     0.000000  ak4PFCHSResidualCorrector
+TimeReport   0.000000     0.000000  ak4PFCHSL1FastL2L3ResidualCorrector
+TimeReport   0.000316     0.000316  shiftedPatJetResDown
+TimeReport   0.000014     0.000014  shiftedPatMETCorrJetResDown
+TimeReport   0.000305     0.000305  shiftedPatJetResUp
+TimeReport   0.000013     0.000013  shiftedPatMETCorrJetResUp
+TimeReport   0.000243     0.000243  pfCandsNoJets
+TimeReport   0.000206     0.000206  pfCandsNoJetsNoEle
+TimeReport   0.000185     0.000185  pfCandsNoJetsNoEleNoMu
+TimeReport   0.000232     0.000232  pfCandsNoJetsNoEleNoMuNoTau
+TimeReport   0.000182     0.000182  pfCandsForUnclusteredUnc
+TimeReport   0.000024     0.000024  shiftedPatMuonEnDown
+TimeReport   0.000012     0.000012  shiftedPatMETCorrMuonEnDown
+TimeReport   0.000012     0.000012  shiftedPatMuonEnUp
+TimeReport   0.000010     0.000010  shiftedPatMETCorrMuonEnUp
+TimeReport   0.000161     0.000161  shiftedPatJetEnDown
+TimeReport   0.000012     0.000012  shiftedPatMETCorrJetEnDown
+TimeReport   0.000123     0.000123  shiftedPatJetEnUp
+TimeReport   0.000012     0.000012  shiftedPatMETCorrJetEnUp
+TimeReport   0.000015     0.000015  shiftedPatTauEnDown
+TimeReport   0.000010     0.000010  shiftedPatMETCorrTauEnDown
+TimeReport   0.000011     0.000011  shiftedPatTauEnUp
+TimeReport   0.000009     0.000009  shiftedPatMETCorrTauEnUp
+TimeReport   0.000011     0.000011  shiftedPatPhotonEnDown
+TimeReport   0.000008     0.000008  shiftedPatMETCorrPhotonEnDown
+TimeReport   0.000009     0.000009  shiftedPatPhotonEnUp
+TimeReport   0.000008     0.000008  shiftedPatMETCorrPhotonEnUp
+TimeReport   0.000011     0.000011  shiftedPatElectronEnDown
+TimeReport   0.000008     0.000008  shiftedPatMETCorrElectronEnDown
+TimeReport   0.000010     0.000010  shiftedPatElectronEnUp
+TimeReport   0.000009     0.000009  shiftedPatMETCorrElectronEnUp
+TimeReport   0.001764     0.001764  shiftedPatUnclusteredEnDown
+TimeReport   0.000236     0.000236  shiftedPatMETCorrUnclusteredEnDown
+TimeReport   0.001696     0.001696  shiftedPatUnclusteredEnUp
+TimeReport   0.000225     0.000225  shiftedPatMETCorrUnclusteredEnUp
+TimeReport   0.000411     0.000411  shiftedPatSmearedJetResDown
+TimeReport   0.000015     0.000015  shiftedPatMETCorrSmearedJetResDown
+TimeReport   0.000308     0.000308  shiftedPatSmearedJetResUp
+TimeReport   0.000013     0.000013  shiftedPatMETCorrSmearedJetResUp
+TimeReport   0.000039     0.000039  patPFMetT1JetResUp
+TimeReport   0.000020     0.000020  patPFMetT1JetResDown
+TimeReport   0.000020     0.000020  patPFMetT1MuonEnUp
+TimeReport   0.000019     0.000019  patPFMetT1MuonEnDown
+TimeReport   0.000019     0.000019  patPFMetT1JetEnUp
+TimeReport   0.000020     0.000020  patPFMetT1JetEnDown
+TimeReport   0.000020     0.000020  patPFMetT1TauEnDown
+TimeReport   0.000020     0.000020  patPFMetT1TauEnUp
+TimeReport   0.000020     0.000020  patPFMetT1PhotonEnUp
+TimeReport   0.000020     0.000020  patPFMetT1PhotonEnDown
+TimeReport   0.000020     0.000020  patPFMetT1ElectronEnUp
+TimeReport   0.000020     0.000020  patPFMetT1ElectronEnDown
+TimeReport   0.000020     0.000020  patPFMetT1UnclusteredEnUp
+TimeReport   0.000020     0.000020  patPFMetT1UnclusteredEnDown
+TimeReport   0.000022     0.000022  patPFMetT1SmearJetResDown
+TimeReport   0.000020     0.000020  patPFMetT1SmearJetResUp
+TimeReport   0.000020     0.000020  patPFMetT1SmearMuonEnUp
+TimeReport   0.000020     0.000020  patPFMetT1SmearMuonEnDown
+TimeReport   0.000020     0.000020  patPFMetT1SmearJetEnUp
+TimeReport   0.000020     0.000020  patPFMetT1SmearJetEnDown
+TimeReport   0.000020     0.000020  patPFMetT1SmearTauEnUp
+TimeReport   0.000019     0.000019  patPFMetT1SmearTauEnDown
+TimeReport   0.000020     0.000020  patPFMetT1SmearPhotonEnUp
+TimeReport   0.000020     0.000020  patPFMetT1SmearPhotonEnDown
+TimeReport   0.000020     0.000020  patPFMetT1SmearElectronEnDown
+TimeReport   0.000020     0.000020  patPFMetT1SmearElectronEnUp
+TimeReport   0.000021     0.000021  patPFMetT1SmearUnclusteredEnUp
+TimeReport   0.000020     0.000020  patPFMetT1SmearUnclusteredEnDown
+TimeReport   0.000000     0.000000  patCaloMet
+TimeReport   0.000033     0.000033  slimmedMETs
+TimeReport   0.001057     0.001057  patJetCorrFactorsUpdatedJEC
+TimeReport   0.000338     0.000338  updatedPatJetsUpdatedJEC
+TimeReport   0.001439     0.001439  mergedGenParticles
+TimeReport   0.001434     0.001434  genParticles2HepMC
+TimeReport   0.007225     0.007225  particleLevel
+TimeReport   0.000120     0.000120  bfragWgtProducer
+TimeReport   0.164012     0.164012  ssbanalyzer
+TimeReport  per event    per visit  Name
+
+TimeReport ---------- Module Summary ---[Real sec]----
+TimeReport  per event     per exec    per visit  Name
+TimeReport   0.000097     0.000097     0.000097  BadChargedCandidateFilter
+TimeReport   0.000050     0.000050     0.000050  BadPFMuonFilter
+TimeReport   0.000000     0.000000     0.000000  PFCandAssoMap
+TimeReport   0.000048     0.000048     0.000048  TriggerResults
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL1FastL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL1FastL2L3L6Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL1FastL2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL1FastjetCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL1L2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL1L2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL1OffsetCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL2L3CorrectorMuClean
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL2L3L6Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL2RelativeCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL2RelativeCorrectorMuClean
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL3AbsoluteCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL3AbsoluteCorrectorMuClean
+TimeReport   0.000000     0.000000     0.000000  ak4CaloL6SLBCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4CaloResidualCorrector
+TimeReport   0.000751     0.000751     0.000751  ak4GenJetsCustom
+TimeReport   0.000000     0.000000     0.000000  ak4JPTL1FastL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4JPTL1FastL2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4JPTL1FastjetCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4JPTL1L2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4JPTL1L2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4JPTL1OffsetCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4JPTL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4JPTL2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4JPTL2RelativeCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4JPTL3AbsoluteCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4JPTResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4L1JPTOffsetCorrector
+TimeReport   0.000011     0.000011     0.000006  ak4PFCHSL1FastL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSL1FastL2L3CorrectorMuClean
+TimeReport   0.000008     0.000008     0.000004  ak4PFCHSL1FastL2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSL1FastL2L3ResidualCorrectorMuClean
+TimeReport   0.000026     0.000026     0.000006  ak4PFCHSL1FastjetCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSL1FastjetCorrectorMuClean
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSL1L2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSL1L2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSL1OffsetCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSL2L3ResidualCorrector
+TimeReport   0.000023     0.000023     0.000006  ak4PFCHSL2RelativeCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSL2RelativeCorrectorMuClean
+TimeReport   0.000007     0.000007     0.000002  ak4PFCHSL3AbsoluteCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSL3AbsoluteCorrectorMuClean
+TimeReport   0.000006     0.000006     0.000003  ak4PFCHSResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFCHSResidualCorrectorMuClean
+TimeReport   0.000000     0.000000     0.000000  ak4PFL1FastL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL1FastL2L3L6Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL1FastL2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL1FastjetCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL1L2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL1L2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL1OffsetCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL2L3L6Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL2RelativeCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL3AbsoluteCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFL6SLBCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiL1FastL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiL1FastL2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiL1FastjetCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiL1L2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiL1L2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiL1OffsetCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiL2L3ResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiL2RelativeCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiL3AbsoluteCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFPuppiResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4PFResidualCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4TrackL2L3Corrector
+TimeReport   0.000000     0.000000     0.000000  ak4TrackL2RelativeCorrector
+TimeReport   0.000000     0.000000     0.000000  ak4TrackL3AbsoluteCorrector
+TimeReport   0.000092     0.000092     0.000092  badGlobalMuonTaggerMAOD
+TimeReport   0.000745     0.000745     0.000745  basicJetsForMet
+TimeReport   0.001036     0.001036     0.001036  basicJetsForMetMuClean
+TimeReport   0.000120     0.000120     0.000120  bfragWgtProducer
+TimeReport   0.000445     0.000445     0.000445  calibratedPatElectrons
+TimeReport   0.000132     0.000132     0.000132  calibratedPatPhotons
+TimeReport   0.000000     0.000000     0.000000  caloMetT1
+TimeReport   0.000000     0.000000     0.000000  caloMetT1MuClean
+TimeReport   0.000000     0.000000     0.000000  caloMetT1T2
+TimeReport   0.000000     0.000000     0.000000  caloMetT1T2MuClean
+TimeReport   0.000158     0.000158     0.000158  cleanMuonsPFCandidates
+TimeReport   0.000092     0.000092     0.000092  cleanedPatJets
+TimeReport   0.000104     0.000104     0.000104  cleanedPatJetsMuClean
+TimeReport   0.000013     0.000013     0.000013  cloneGlobalMuonTaggerMAOD
+TimeReport   0.000000     0.000000     0.000000  corrCaloMetType1
+TimeReport   0.000000     0.000000     0.000000  corrCaloMetType1MuClean
+TimeReport   0.000000     0.000000     0.000000  corrCaloMetType2
+TimeReport   0.000000     0.000000     0.000000  corrCaloMetType2MuClean
+TimeReport   0.000000     0.000000     0.000000  corrPfMetType0PfCand
+TimeReport   0.000000     0.000000     0.000000  corrPfMetType1
+TimeReport   0.000000     0.000000     0.000000  corrPfMetType1MuClean
+TimeReport   0.000000     0.000000     0.000000  corrPfMetType2
+TimeReport   0.000000     0.000000     0.000000  corrPfMetType2MuClean
+TimeReport   0.001127     0.001127     0.001127  egmGsfElectronIDs
+TimeReport   0.000549     0.000549     0.000549  egmPhotonIDs
+TimeReport   0.001298     0.001298     0.001298  egmPhotonIsolation
+TimeReport   0.000151     0.000151     0.000151  electronIDValueMapProducer
+TimeReport   0.001018     0.001018     0.000509  electronMVAValueMapProducer
+TimeReport   0.001423     0.001423     0.001423  electronRegressionValueMapProducer
+TimeReport   0.000546     0.000546     0.000546  genJetFlavourInfos
+TimeReport   0.000014     0.000014     0.000014  genMetExtractor
+TimeReport   0.000015     0.000015     0.000015  genMetExtractorMuClean
+TimeReport   0.001434     0.001434     0.001434  genParticles2HepMC
+TimeReport   0.000180     0.000180     0.000180  genParticlesForJetsCustom
+TimeReport   0.000137     0.000137     0.000137  jetSelectorForMet
+TimeReport   0.000641     0.000641     0.000641  jetSelectorForMetMuClean
+TimeReport   0.000264     0.000264     0.000264  matchGenBHadron
+TimeReport   0.000000     0.000000     0.000000  matchGenCHadron
+TimeReport   0.001439     0.001439     0.001439  mergedGenParticles
+TimeReport   0.000015     0.000015     0.000015  metrawCalo
+TimeReport   0.000037     0.000037     0.000037  metrawCaloMuClean
+TimeReport   0.000000     0.000000     0.000000  modifiedElectrons
+TimeReport   0.000000     0.000000     0.000000  modifiedPhotons
+TimeReport   0.000000     0.000000     0.000000  muCaloMetCorr
+TimeReport   0.000000     0.000000     0.000000  muCaloMetCorrMuClean
+TimeReport   0.000000     0.000000     0.000000  particleFlowDisplacedVertex
+TimeReport   0.000000     0.000000     0.000000  particleFlowPtrs
+TimeReport   0.000000     0.000000     0.000000  particleFlowPtrsMuClean
+TimeReport   0.007225     0.007225     0.007225  particleLevel
+TimeReport   0.000038     0.000038     0.000019  patCaloMet
+TimeReport   0.001050     0.001050     0.001050  patJetCorrFactorsReapplyJEC
+TimeReport   0.001238     0.001238     0.001238  patJetCorrFactorsReapplyJECMuClean
+TimeReport   0.001057     0.001057     0.001057  patJetCorrFactorsUpdatedJEC
+TimeReport   0.000340     0.000340     0.000340  patJetsReapplyJEC
+TimeReport   0.000387     0.000387     0.000387  patJetsReapplyJECMuClean
+TimeReport   0.000000     0.000000     0.000000  patMETs
+TimeReport   0.002966     0.002966     0.002966  patPFMet
+TimeReport   0.003746     0.003746     0.003746  patPFMetMuClean
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0Corr
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0CorrMuClean
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0pcT1
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0pcT1MuClean
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0pcT1Smear
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0pcT1T2
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0pcT1T2MuClean
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0pcT1T2Smear
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0pcT1T2Txy
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0pcT1T2TxySmear
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0pcT1Txy
+TimeReport   0.000000     0.000000     0.000000  patPFMetT0pcT1TxySmear
+TimeReport   0.000029     0.000029     0.000029  patPFMetT1
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1ElectronEnDown
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1ElectronEnDownMuClean
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1ElectronEnUp
+TimeReport   0.000021     0.000021     0.000021  patPFMetT1ElectronEnUpMuClean
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1JetEnDown
+TimeReport   0.000021     0.000021     0.000021  patPFMetT1JetEnDownMuClean
+TimeReport   0.000019     0.000019     0.000019  patPFMetT1JetEnUp
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1JetEnUpMuClean
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1JetResDown
+TimeReport   0.000043     0.000043     0.000043  patPFMetT1JetResDownMuClean
+TimeReport   0.000039     0.000039     0.000039  patPFMetT1JetResUp
+TimeReport   0.000021     0.000021     0.000021  patPFMetT1JetResUpMuClean
+TimeReport   0.000037     0.000037     0.000037  patPFMetT1MuClean
+TimeReport   0.000019     0.000019     0.000019  patPFMetT1MuonEnDown
+TimeReport   0.000021     0.000021     0.000021  patPFMetT1MuonEnDownMuClean
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1MuonEnUp
+TimeReport   0.000021     0.000021     0.000021  patPFMetT1MuonEnUpMuClean
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1PhotonEnDown
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1PhotonEnDownMuClean
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1PhotonEnUp
+TimeReport   0.000021     0.000021     0.000021  patPFMetT1PhotonEnUpMuClean
+TimeReport   0.000027     0.000027     0.000027  patPFMetT1Smear
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1SmearElectronEnDown
+TimeReport   0.000021     0.000021     0.000021  patPFMetT1SmearElectronEnDownMuClean
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1SmearElectronEnUp
+TimeReport   0.000019     0.000019     0.000019  patPFMetT1SmearElectronEnUpMuClean
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1SmearJetEnDown
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1SmearJetEnDownMuClean
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1SmearJetEnUp
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1SmearJetEnUpMuClean
+TimeReport   0.000022     0.000022     0.000022  patPFMetT1SmearJetResDown
+TimeReport   0.000021     0.000021     0.000021  patPFMetT1SmearJetResDownMuClean
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1SmearJetResUp
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1SmearJetResUpMuClean
+TimeReport   0.000028     0.000028     0.000028  patPFMetT1SmearMuClean
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1SmearMuonEnDown
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1SmearMuonEnDownMuClean
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1SmearMuonEnUp
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1SmearMuonEnUpMuClean
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1SmearPhotonEnDown
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1SmearPhotonEnDownMuClean
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1SmearPhotonEnUp
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1SmearPhotonEnUpMuClean
+TimeReport   0.000019     0.000019     0.000019  patPFMetT1SmearTauEnDown
+TimeReport   0.000021     0.000021     0.000021  patPFMetT1SmearTauEnDownMuClean
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1SmearTauEnUp
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1SmearTauEnUpMuClean
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1SmearUnclusteredEnDown
+TimeReport   0.000021     0.000021     0.000021  patPFMetT1SmearUnclusteredEnDownMuClean
+TimeReport   0.000021     0.000021     0.000021  patPFMetT1SmearUnclusteredEnUp
+TimeReport   0.000021     0.000021     0.000021  patPFMetT1SmearUnclusteredEnUpMuClean
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1T2
+TimeReport   0.000446     0.000446     0.000446  patPFMetT1T2Corr
+TimeReport   0.000465     0.000465     0.000465  patPFMetT1T2CorrMuClean
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1T2MuClean
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1T2Smear
+TimeReport   0.000419     0.000419     0.000419  patPFMetT1T2SmearCorr
+TimeReport   0.000417     0.000417     0.000417  patPFMetT1T2SmearCorrMuClean
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1T2Txy
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1T2TxySmear
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1TauEnDown
+TimeReport   0.000021     0.000021     0.000021  patPFMetT1TauEnDownMuClean
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1TauEnUp
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1TauEnUpMuClean
+TimeReport   0.000027     0.000027     0.000027  patPFMetT1Txy
+TimeReport   0.000029     0.000029     0.000029  patPFMetT1TxyMuClean
+TimeReport   0.000000     0.000000     0.000000  patPFMetT1TxySmear
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1UnclusteredEnDown
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1UnclusteredEnDownMuClean
+TimeReport   0.000020     0.000020     0.000020  patPFMetT1UnclusteredEnUp
+TimeReport   0.000021     0.000021     0.000021  patPFMetT1UnclusteredEnUpMuClean
+TimeReport   0.000000     0.000000     0.000000  patPFMetT2Corr
+TimeReport   0.000000     0.000000     0.000000  patPFMetT2CorrMuClean
+TimeReport   0.000000     0.000000     0.000000  patPFMetT2SmearCorr
+TimeReport   0.000000     0.000000     0.000000  patPFMetT2SmearCorrMuClean
+TimeReport   0.000018     0.000018     0.000018  patPFMetTxy
+TimeReport   0.000301     0.000301     0.000301  patPFMetTxyCorr
+TimeReport   0.000362     0.000362     0.000362  patPFMetTxyCorrMuClean
+TimeReport   0.000020     0.000020     0.000020  patPFMetTxyMuClean
+TimeReport   0.000340     0.000340     0.000340  patSmearedJets
+TimeReport   0.000354     0.000354     0.000354  patSmearedJetsMuClean
+TimeReport   0.000000     0.000000     0.000000  pfCandMETcorr
+TimeReport   0.000000     0.000000     0.000000  pfCandMETcorrMuClean
+TimeReport   0.000000     0.000000     0.000000  pfCandidateToVertexAssociation
+TimeReport   0.000182     0.000182     0.000182  pfCandsForUnclusteredUnc
+TimeReport   0.000184     0.000184     0.000184  pfCandsForUnclusteredUncMuClean
+TimeReport   0.000243     0.000243     0.000243  pfCandsNoJets
+TimeReport   0.000294     0.000294     0.000294  pfCandsNoJetsMuClean
+TimeReport   0.000206     0.000206     0.000206  pfCandsNoJetsNoEle
+TimeReport   0.000201     0.000201     0.000201  pfCandsNoJetsNoEleMuClean
+TimeReport   0.000185     0.000185     0.000185  pfCandsNoJetsNoEleNoMu
+TimeReport   0.000184     0.000184     0.000184  pfCandsNoJetsNoEleNoMuMuClean
+TimeReport   0.000232     0.000232     0.000232  pfCandsNoJetsNoEleNoMuNoTau
+TimeReport   0.000258     0.000258     0.000258  pfCandsNoJetsNoEleNoMuNoTauMuClean
+TimeReport   0.000000     0.000000     0.000000  pfCandsNotInJetsForMetCorr
+TimeReport   0.000000     0.000000     0.000000  pfCandsNotInJetsForMetCorrMuClean
+TimeReport   0.000000     0.000000     0.000000  pfCandsNotInJetsPtrForMetCorr
+TimeReport   0.000000     0.000000     0.000000  pfCandsNotInJetsPtrForMetCorrMuClean
+TimeReport   0.000000     0.000000     0.000000  pfJetsPtrForMetCorr
+TimeReport   0.000000     0.000000     0.000000  pfJetsPtrForMetCorrMuClean
+TimeReport   0.000000     0.000000     0.000000  pfMETcorrType0
+TimeReport   0.000000     0.000000     0.000000  pfMEtMultShiftCorr
+TimeReport   0.000019     0.000019     0.000019  pfMet
+TimeReport   0.000595     0.000595     0.000595  pfMetMuClean
+TimeReport   0.000000     0.000000     0.000000  pfMetT0pc
+TimeReport   0.000000     0.000000     0.000000  pfMetT0pcT1
+TimeReport   0.000000     0.000000     0.000000  pfMetT0pcT1T2Txy
+TimeReport   0.000000     0.000000     0.000000  pfMetT0pcT1Txy
+TimeReport   0.000000     0.000000     0.000000  pfMetT0pcTxy
+TimeReport   0.000000     0.000000     0.000000  pfMetT0rt
+TimeReport   0.000000     0.000000     0.000000  pfMetT0rtT1
+TimeReport   0.000000     0.000000     0.000000  pfMetT0rtT1T2
+TimeReport   0.000000     0.000000     0.000000  pfMetT0rtT1T2Txy
+TimeReport   0.000000     0.000000     0.000000  pfMetT0rtT1Txy
+TimeReport   0.000000     0.000000     0.000000  pfMetT0rtT2
+TimeReport   0.000000     0.000000     0.000000  pfMetT0rtTxy
+TimeReport   0.000000     0.000000     0.000000  pfMetT1
+TimeReport   0.000000     0.000000     0.000000  pfMetT1MuClean
+TimeReport   0.000000     0.000000     0.000000  pfMetT1T2
+TimeReport   0.000000     0.000000     0.000000  pfMetT1T2MuClean
+TimeReport   0.000000     0.000000     0.000000  pfMetT1T2Txy
+TimeReport   0.000000     0.000000     0.000000  pfMetT1Txy
+TimeReport   0.000000     0.000000     0.000000  pfMetTxy
+TimeReport   0.000000     0.000000     0.000000  pfNoJet
+TimeReport   0.012566     0.012566     0.006283  photonIDValueMapProducer
+TimeReport   0.000614     0.000614     0.000307  photonMVAValueMapProducer
+TimeReport   0.000047     0.000047     0.000047  photonRegressionValueMapProducer
+TimeReport   0.000000     0.000000     0.000000  randomEngineStateProducer
+TimeReport   0.000073     0.000073     0.000073  selectedElectrons
+TimeReport   0.000076     0.000076     0.000076  selectedHadronsAndPartons
+TimeReport   0.000000     0.000000     0.000000  selectedPatJetsForMetT1T2Corr
+TimeReport   0.000000     0.000000     0.000000  selectedPatJetsForMetT1T2CorrMuClean
+TimeReport   0.000114     0.000114     0.000114  selectedPatJetsForMetT1T2SmearCorr
+TimeReport   0.000118     0.000118     0.000118  selectedPatJetsForMetT1T2SmearCorrMuClean
+TimeReport   0.000000     0.000000     0.000000  selectedPatJetsForMetT2Corr
+TimeReport   0.000000     0.000000     0.000000  selectedPatJetsForMetT2CorrMuClean
+TimeReport   0.000000     0.000000     0.000000  selectedPatJetsForMetT2SmearCorr
+TimeReport   0.000000     0.000000     0.000000  selectedPatJetsForMetT2SmearCorrMuClean
+TimeReport   0.000034     0.000034     0.000034  selectedPhotons
+TimeReport   0.000000     0.000000     0.000000  selectedPrimaryVertexHighestPtTrackSumForPFMEtCorrType0
+TimeReport   0.000000     0.000000     0.000000  selectedPrimaryVertexHighestPtTrackSumForPFMEtCorrType0MuClean
+TimeReport   0.000000     0.000000     0.000000  selectedUpdatedPatJetsUpdatedJEC
+TimeReport   0.000000     0.000000     0.000000  selectedVerticesForPFMEtCorrType0
+TimeReport   0.000000     0.000000     0.000000  selectedVerticesForPFMEtCorrType0MuClean
+TimeReport   0.000011     0.000011     0.000011  shiftedPatElectronEnDown
+TimeReport   0.000012     0.000012     0.000012  shiftedPatElectronEnDownMuClean
+TimeReport   0.000010     0.000010     0.000010  shiftedPatElectronEnUp
+TimeReport   0.000010     0.000010     0.000010  shiftedPatElectronEnUpMuClean
+TimeReport   0.000161     0.000161     0.000161  shiftedPatJetEnDown
+TimeReport   0.000176     0.000176     0.000176  shiftedPatJetEnDownMuClean
+TimeReport   0.000123     0.000123     0.000123  shiftedPatJetEnUp
+TimeReport   0.000123     0.000123     0.000123  shiftedPatJetEnUpMuClean
+TimeReport   0.000316     0.000316     0.000316  shiftedPatJetResDown
+TimeReport   0.000322     0.000322     0.000322  shiftedPatJetResDownMuClean
+TimeReport   0.000305     0.000305     0.000305  shiftedPatJetResUp
+TimeReport   0.000304     0.000304     0.000304  shiftedPatJetResUpMuClean
+TimeReport   0.000008     0.000008     0.000008  shiftedPatMETCorrElectronEnDown
+TimeReport   0.000009     0.000009     0.000009  shiftedPatMETCorrElectronEnDownMuClean
+TimeReport   0.000009     0.000009     0.000009  shiftedPatMETCorrElectronEnUp
+TimeReport   0.000009     0.000009     0.000009  shiftedPatMETCorrElectronEnUpMuClean
+TimeReport   0.000012     0.000012     0.000012  shiftedPatMETCorrJetEnDown
+TimeReport   0.000013     0.000013     0.000013  shiftedPatMETCorrJetEnDownMuClean
+TimeReport   0.000012     0.000012     0.000012  shiftedPatMETCorrJetEnUp
+TimeReport   0.000012     0.000012     0.000012  shiftedPatMETCorrJetEnUpMuClean
+TimeReport   0.000014     0.000014     0.000014  shiftedPatMETCorrJetResDown
+TimeReport   0.000016     0.000016     0.000016  shiftedPatMETCorrJetResDownMuClean
+TimeReport   0.000013     0.000013     0.000013  shiftedPatMETCorrJetResUp
+TimeReport   0.000013     0.000013     0.000013  shiftedPatMETCorrJetResUpMuClean
+TimeReport   0.000012     0.000012     0.000012  shiftedPatMETCorrMuonEnDown
+TimeReport   0.000014     0.000014     0.000014  shiftedPatMETCorrMuonEnDownMuClean
+TimeReport   0.000010     0.000010     0.000010  shiftedPatMETCorrMuonEnUp
+TimeReport   0.000010     0.000010     0.000010  shiftedPatMETCorrMuonEnUpMuClean
+TimeReport   0.000008     0.000008     0.000008  shiftedPatMETCorrPhotonEnDown
+TimeReport   0.000009     0.000009     0.000009  shiftedPatMETCorrPhotonEnDownMuClean
+TimeReport   0.000008     0.000008     0.000008  shiftedPatMETCorrPhotonEnUp
+TimeReport   0.000008     0.000008     0.000008  shiftedPatMETCorrPhotonEnUpMuClean
+TimeReport   0.000015     0.000015     0.000015  shiftedPatMETCorrSmearedJetResDown
+TimeReport   0.000015     0.000015     0.000015  shiftedPatMETCorrSmearedJetResDownMuClean
+TimeReport   0.000013     0.000013     0.000013  shiftedPatMETCorrSmearedJetResUp
+TimeReport   0.000014     0.000014     0.000014  shiftedPatMETCorrSmearedJetResUpMuClean
+TimeReport   0.000010     0.000010     0.000010  shiftedPatMETCorrTauEnDown
+TimeReport   0.000010     0.000010     0.000010  shiftedPatMETCorrTauEnDownMuClean
+TimeReport   0.000009     0.000009     0.000009  shiftedPatMETCorrTauEnUp
+TimeReport   0.000009     0.000009     0.000009  shiftedPatMETCorrTauEnUpMuClean
+TimeReport   0.000236     0.000236     0.000236  shiftedPatMETCorrUnclusteredEnDown
+TimeReport   0.000246     0.000246     0.000246  shiftedPatMETCorrUnclusteredEnDownMuClean
+TimeReport   0.000225     0.000225     0.000225  shiftedPatMETCorrUnclusteredEnUp
+TimeReport   0.000225     0.000225     0.000225  shiftedPatMETCorrUnclusteredEnUpMuClean
+TimeReport   0.000024     0.000024     0.000024  shiftedPatMuonEnDown
+TimeReport   0.000027     0.000027     0.000027  shiftedPatMuonEnDownMuClean
+TimeReport   0.000012     0.000012     0.000012  shiftedPatMuonEnUp
+TimeReport   0.000012     0.000012     0.000012  shiftedPatMuonEnUpMuClean
+TimeReport   0.000011     0.000011     0.000011  shiftedPatPhotonEnDown
+TimeReport   0.000011     0.000011     0.000011  shiftedPatPhotonEnDownMuClean
+TimeReport   0.000009     0.000009     0.000009  shiftedPatPhotonEnUp
+TimeReport   0.000009     0.000009     0.000009  shiftedPatPhotonEnUpMuClean
+TimeReport   0.000411     0.000411     0.000411  shiftedPatSmearedJetResDown
+TimeReport   0.000444     0.000444     0.000444  shiftedPatSmearedJetResDownMuClean
+TimeReport   0.000308     0.000308     0.000308  shiftedPatSmearedJetResUp
+TimeReport   0.000309     0.000309     0.000309  shiftedPatSmearedJetResUpMuClean
+TimeReport   0.000015     0.000015     0.000015  shiftedPatTauEnDown
+TimeReport   0.000016     0.000016     0.000016  shiftedPatTauEnDownMuClean
+TimeReport   0.000011     0.000011     0.000011  shiftedPatTauEnUp
+TimeReport   0.000012     0.000012     0.000012  shiftedPatTauEnUpMuClean
+TimeReport   0.001764     0.001764     0.001764  shiftedPatUnclusteredEnDown
+TimeReport   0.002789     0.002789     0.002789  shiftedPatUnclusteredEnDownMuClean
+TimeReport   0.001696     0.001696     0.001696  shiftedPatUnclusteredEnUp
+TimeReport   0.001712     0.001712     0.001712  shiftedPatUnclusteredEnUpMuClean
+TimeReport   0.001377     0.001377     0.001377  slimmedElectrons
+TimeReport   0.000033     0.000033     0.000033  slimmedMETs
+TimeReport   0.000034     0.000034     0.000034  slimmedMETsMuClean
+TimeReport   0.000466     0.000466     0.000466  slimmedPhotons
+TimeReport   0.164012     0.164012     0.164012  ssbanalyzer
+TimeReport   0.000338     0.000338     0.000338  updatedPatJetsUpdatedJEC
+TimeReport  per event     per exec    per visit  Name
+
+T---Report end!
+
+
+=============================================
+
+MessageLogger Summary
+
+ type     category        sev    module        subroutine        count    total
+ ---- -------------------- -- ---------------- ----------------  -----    -----
+    1 fileAction           -s file_close                             1        1
+    2 fileAction           -s file_open                              2        2
+
+ type    category    Examples: run/evt        run/evt          run/evt
+ ---- -------------------- ---------------- ---------------- ----------------
+    1 fileAction           PostEndRun                        
+    2 fileAction           pre-events       pre-events       
+
+Severity    # Occurrences   Total Occurrences
+--------    -------------   -----------------
+System                  3                   3
+Thanks for using LHAPDF 6.1.6. Please make sure to cite the paper:
+  Eur.Phys.J. C75 (2015) 3, 132  (http://arxiv.org/abs/1412.7420)

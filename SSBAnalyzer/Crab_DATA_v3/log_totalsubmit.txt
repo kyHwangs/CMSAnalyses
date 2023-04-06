@@ -1,0 +1,486 @@
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_002503:sha_crab_20200501_091731
+Project dir: ./crab_20200501_091731
+Please use 'crab status -d ./crab_20200501_091731' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/DoubleMuon_Run2016B/crab_20200501_091731/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_003239:sha_crab_20200501_092507
+Project dir: ./crab_20200501_092507
+Please use 'crab status -d ./crab_20200501_092507' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/DoubleMuon_Run2016C/crab_20200501_092507/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_004018:sha_crab_20200501_093243
+Project dir: ./crab_20200501_093243
+Please use 'crab status -d ./crab_20200501_093243' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/DoubleMuon_Run2016D/crab_20200501_093243/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_004804:sha_crab_20200501_094022
+Project dir: ./crab_20200501_094022
+Please use 'crab status -d ./crab_20200501_094022' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/DoubleMuon_Run2016E/crab_20200501_094022/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_005529:sha_crab_20200501_094808
+Project dir: ./crab_20200501_094808
+Please use 'crab status -d ./crab_20200501_094808' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/DoubleMuon_Run2016F/crab_20200501_094808/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_010304:sha_crab_20200501_095533
+Project dir: ./crab_20200501_095533
+Please use 'crab status -d ./crab_20200501_095533' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/DoubleMuon_Run2016G/crab_20200501_095533/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_011031:sha_crab_20200501_100310
+Project dir: ./crab_20200501_100310
+Please use 'crab status -d ./crab_20200501_100310' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/DoubleMuon_Run2016HV2/crab_20200501_100310/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_011814:sha_crab_20200501_101035
+Project dir: ./crab_20200501_101035
+Please use 'crab status -d ./crab_20200501_101035' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/DoubleMuon_Run2016HV3/crab_20200501_101035/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_012543:sha_crab_20200501_101818
+Project dir: ./crab_20200501_101818
+Please use 'crab status -d ./crab_20200501_101818' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/DoubleEG_Run2016B/crab_20200501_101818/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_013305:sha_crab_20200501_102547
+Project dir: ./crab_20200501_102547
+Please use 'crab status -d ./crab_20200501_102547' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/DoubleEG_Run2016C/crab_20200501_102547/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_014031:sha_crab_20200501_103310
+Project dir: ./crab_20200501_103310
+Please use 'crab status -d ./crab_20200501_103310' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/DoubleEG_Run2016D/crab_20200501_103310/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_014805:sha_crab_20200501_104035
+Project dir: ./crab_20200501_104035
+Please use 'crab status -d ./crab_20200501_104035' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/DoubleEG_Run2016E/crab_20200501_104035/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_015539:sha_crab_20200501_104810
+Project dir: ./crab_20200501_104810
+Please use 'crab status -d ./crab_20200501_104810' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/DoubleEG_Run2016F/crab_20200501_104810/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_020308:sha_crab_20200501_105544
+Project dir: ./crab_20200501_105544
+Please use 'crab status -d ./crab_20200501_105544' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/DoubleEG_Run2016G/crab_20200501_105544/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_021046:sha_crab_20200501_110312
+Project dir: ./crab_20200501_110312
+Please use 'crab status -d ./crab_20200501_110312' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/DoubleEG_Run2016HV2/crab_20200501_110312/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_021825:sha_crab_20200501_111050
+Project dir: ./crab_20200501_111050
+Please use 'crab status -d ./crab_20200501_111050' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/DoubleEG_Run2016HV3/crab_20200501_111050/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_022550:sha_crab_20200501_111829
+Project dir: ./crab_20200501_111829
+Please use 'crab status -d ./crab_20200501_111829' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/MuonEG_Run2016B/crab_20200501_111829/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_023315:sha_crab_20200501_112554
+Project dir: ./crab_20200501_112554
+Please use 'crab status -d ./crab_20200501_112554' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/MuonEG_Run2016C/crab_20200501_112554/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_024056:sha_crab_20200501_113319
+Project dir: ./crab_20200501_113319
+Please use 'crab status -d ./crab_20200501_113319' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/MuonEG_Run2016D/crab_20200501_113319/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_024823:sha_crab_20200501_114100
+Project dir: ./crab_20200501_114100
+Please use 'crab status -d ./crab_20200501_114100' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/MuonEG_Run2016E/crab_20200501_114100/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_025554:sha_crab_20200501_114827
+Project dir: ./crab_20200501_114827
+Please use 'crab status -d ./crab_20200501_114827' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/MuonEG_Run2016F/crab_20200501_114827/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_030330:sha_crab_20200501_115558
+Project dir: ./crab_20200501_115558
+Please use 'crab status -d ./crab_20200501_115558' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/MuonEG_Run2016G/crab_20200501_115558/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_031059:sha_crab_20200501_120334
+Project dir: ./crab_20200501_120334
+Please use 'crab status -d ./crab_20200501_120334' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/MuonEG_Run2016HV2/crab_20200501_120334/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_031846:sha_crab_20200501_121103
+Project dir: ./crab_20200501_121103
+Please use 'crab status -d ./crab_20200501_121103' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/MuonEG_Run2016HV3/crab_20200501_121103/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_032635:sha_crab_20200501_121852
+Project dir: ./crab_20200501_121852
+Please use 'crab status -d ./crab_20200501_121852' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/SingleMuon_Run2016B/crab_20200501_121852/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_033353:sha_crab_20200501_122639
+Project dir: ./crab_20200501_122639
+Please use 'crab status -d ./crab_20200501_122639' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/SingleMuon_Run2016C/crab_20200501_122639/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_034139:sha_crab_20200501_123358
+Project dir: ./crab_20200501_123358
+Please use 'crab status -d ./crab_20200501_123358' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/SingleMuon_Run2016D/crab_20200501_123358/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_034930:sha_crab_20200501_124144
+Project dir: ./crab_20200501_124144
+Please use 'crab status -d ./crab_20200501_124144' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/SingleMuon_Run2016E/crab_20200501_124144/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_035658:sha_crab_20200501_124933
+Project dir: ./crab_20200501_124933
+Please use 'crab status -d ./crab_20200501_124933' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/SingleMuon_Run2016F/crab_20200501_124933/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_040426:sha_crab_20200501_125702
+Project dir: ./crab_20200501_125702
+Please use 'crab status -d ./crab_20200501_125702' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/SingleMuon_Run2016G/crab_20200501_125702/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_041214:sha_crab_20200501_130430
+Project dir: ./crab_20200501_130430
+Please use 'crab status -d ./crab_20200501_130430' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/SingleMuon_Run2016HV2/crab_20200501_130430/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_041946:sha_crab_20200501_131218
+Project dir: ./crab_20200501_131218
+Please use 'crab status -d ./crab_20200501_131218' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/SingleMuon_Run2016HV3/crab_20200501_131218/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_042727:sha_crab_20200501_131947
+Project dir: ./crab_20200501_131947
+Please use 'crab status -d ./crab_20200501_131947' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/SingleElectron_Run2016B/crab_20200501_131947/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_043645:sha_crab_20200501_132731
+Project dir: ./crab_20200501_132731
+Please use 'crab status -d ./crab_20200501_132731' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/SingleElectron_Run2016C/crab_20200501_132731/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_044438:sha_crab_20200501_133649
+Project dir: ./crab_20200501_133649
+Please use 'crab status -d ./crab_20200501_133649' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/SingleElectron_Run2016D/crab_20200501_133649/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_045208:sha_crab_20200501_134440
+Project dir: ./crab_20200501_134440
+Please use 'crab status -d ./crab_20200501_134440' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/SingleElectron_Run2016E/crab_20200501_134440/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_BCDEF_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_050017:sha_crab_20200501_135212
+Project dir: ./crab_20200501_135212
+Please use 'crab status -d ./crab_20200501_135212' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/SingleElectron_Run2016F/crab_20200501_135212/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_050935:sha_crab_20200501_140020
+Project dir: ./crab_20200501_140020
+Please use 'crab status -d ./crab_20200501_140020' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/SingleElectron_Run2016G/crab_20200501_140020/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_051648:sha_crab_20200501_140936
+Project dir: ./crab_20200501_140936
+Please use 'crab status -d ./crab_20200501_140936' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/SingleElectron_Run2016HV2/crab_20200501_140936/crab.log
+Will use CRAB configuration file ./crab_cfg.py
+Importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Added 'egmPhotonIDs' to process definition (MiniAOD format)!
+Finished importing CMSSW configuration ../../python/ssbanalyzer_data_GH_cfg.py
+Sending the request to the server at cmsweb.cern.ch
+Success: Your task has been delivered to the prod CRAB3 server.
+Task name: 200501_052355:sha_crab_20200501_141652
+Project dir: ./crab_20200501_141652
+Please use 'crab status -d ./crab_20200501_141652' to check how the submission process proceeds.
+Log file is /d0/scratch/sha/Analyses/Develop/MiniAOD/Fragmentation_v2/CMSSW_8_0_26_patch1/src/CMSAnalyses/SSBAnalyzer/Crab_DATA_v3/SingleElectron_Run2016HV3/crab_20200501_141652/crab.log
+test Test
+DoubleMuon
+DoubleEG
+MuonEG
+SingleMuon
+SingleElectron
+DBS_Set ? /DoubleMuon/Run2016B-03Feb2017_ver2-v2/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /DoubleMuon/Run2016C-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /DoubleMuon/Run2016D-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /DoubleMuon/Run2016E-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /DoubleMuon/Run2016F-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /DoubleMuon/Run2016G-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /DoubleMuon/Run2016H-03Feb2017_ver2-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /DoubleMuon/Run2016H-03Feb2017_ver3-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /DoubleEG/Run2016B-03Feb2017_ver2-v2/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /DoubleEG/Run2016C-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /DoubleEG/Run2016D-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /DoubleEG/Run2016E-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /DoubleEG/Run2016F-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /DoubleEG/Run2016G-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /DoubleEG/Run2016H-03Feb2017_ver2-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /DoubleEG/Run2016H-03Feb2017_ver3-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /MuonEG/Run2016B-03Feb2017_ver2-v2/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /MuonEG/Run2016C-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /MuonEG/Run2016D-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /MuonEG/Run2016E-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /MuonEG/Run2016F-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /MuonEG/Run2016G-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /MuonEG/Run2016H-03Feb2017_ver2-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /MuonEG/Run2016H-03Feb2017_ver3-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /SingleMuon/Run2016B-03Feb2017_ver2-v2/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /SingleMuon/Run2016C-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /SingleMuon/Run2016D-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /SingleMuon/Run2016E-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /SingleMuon/Run2016F-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /SingleMuon/Run2016G-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /SingleMuon/Run2016H-03Feb2017_ver2-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /SingleMuon/Run2016H-03Feb2017_ver3-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /SingleElectron/Run2016B-03Feb2017_ver2-v2/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /SingleElectron/Run2016C-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /SingleElectron/Run2016D-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /SingleElectron/Run2016E-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /SingleElectron/Run2016F-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /SingleElectron/Run2016G-03Feb2017-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /SingleElectron/Run2016H-03Feb2017_ver2-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
+DBS_Set ? /SingleElectron/Run2016H-03Feb2017_ver3-v1/MINIAOD
+crabsubmit ? crab submit -c ./crab_cfg.py 
