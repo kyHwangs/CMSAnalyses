@@ -3,17 +3,35 @@ import FWCore.ParameterSet.Config as cms
 # Define the CMSSW process
 process = cms.Process("SSB")
 
+# Configurable options =======================================================================
+isSingleMuonData = False # needed to record track collection for NMSSM ananlysis
+year = 2016 # Options: 2016, 2017, 2018
+period = 'UL2016' # Options: UL2016APV, UL2016, UL2017, UL2018
+
+#configurable options =======================================================================
+runOnData=False #data/MC switch
+isMC=not runOnData
+isSys=False
+#===================================================================
+
+
+
 # Load the standard set of configuration modules
 process.load('Configuration.StandardSequences.Services_cff')
 process.load('Configuration.StandardSequences.GeometryDB_cff')
 process.load('Configuration.StandardSequences.MagneticField_38T_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
+process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff')
 
-#################################################################
-### METFilter -- To use badMuon and bad charged Hadron Filter ###
-#################################################################
-#process.load("CMSAnalyses.SSBAnalyzer.metFiltersV2_cff")
-process.load("CMSAnalyses.SSBAnalyzer.metFilters_cff")
+if runOnData : process.GlobalTag.globaltag = '106X_dataRun2_v37'
+
+else:
+    if period is 'UL2016' :   process.GlobalTag.globaltag = '106X_mcRun2_asymptotic_v17'
+    elif period is 'UL2016APV' : process.GlobalTag.globaltag = '106X_mcRun2_asymptotic_preVFP_v11'
+    elif period is 'UL2017' : process.GlobalTag.globaltag = '106X_mc2017_realistic_v9'
+    elif period is 'UL2018' : process.GlobalTag.globaltag = '106X_upgrade2018_realistic_v16_L1v1'
+
+
 
 # Message Logger settings
 process.load("FWCore.MessageService.MessageLogger_cfi")
@@ -39,25 +57,21 @@ process.TFileService=cms.Service("TFileService",
         closeFileFast = cms.untracked.bool(True)
 )
 
-#configurable options =======================================================================
-runOnData=False #data/MC switch
-isMC=not runOnData
-isSys=False
-#===================================================================
-
 ### =====================================================================================================
 # Define the input source
 
 corList = cms.vstring(['L1FastJet', 'L2Relative', 'L3Absolute'])
     
 if runOnData:
-  fname = 'file:/d3/scratch/sha/Analyses/DATA/MiniAOD/Run2016/PromptBv2/02D9C19F-571A-E611-AD8E-02163E013732.root'
+  #fname = 'file:/d3/scratch/sha/Analyses/DATA/MiniAOD/Run2016/PromptBv2/02D9C19F-571A-E611-AD8E-02163E013732.root'
+  fname = "/store/mc/RunIISummer20UL16MiniAODv2/DY1JetsToLL_M-50_MatchEWPDG20_TuneCP5_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v1/120000/00061BF0-5BB0-524E-A539-0CAAD8579386.root" #UL2016 MC
   jecUncertainty="CMSAnalyses/SSBAnalyzer/data/Summer16_23Sep2016V4_DATA_Uncertainty_AK4PFchs.txt"
   corList = cms.vstring(['L1FastJet', 'L2Relative', 'L3Absolute', 'L2L3Residual'])
   print ("Running on Data ...")
 
 else:
-  fname = 'file:/pnfs/knu.ac.kr/data/cms/store/user/sha/MiniAODSample/MC/80X_v2/ForMoriond/TTbar/0693E0E7-97BE-E611-B32F-0CC47A78A3D8.root'
+  #fname = 'file:/pnfs/knu.ac.kr/data/cms/store/user/sha/MiniAODSample/MC/80X_v2/ForMoriond/TTbar/0693E0E7-97BE-E611-B32F-0CC47A78A3D8.root'
+  fname = 'file:../../0004BE39-823E-4A4B-9727-C2544050C4C0.root'
   jecUncertainty="CMSAnalyses/SSBAnalyzer/data/JECDir/Summer16_23Sep2016/Summer16_23Sep2016V4_MC/Summer16_23Sep2016V4_MC_Uncertainty_AK4PFchs.txt"
 
 # Define the input source
@@ -68,296 +82,46 @@ process.source = cms.Source("PoolSource",
 
 
 ### External JECs =====================================================================================================
-
-#from Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff import *
-process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff')
-#process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
-from Configuration.AlCa.GlobalTag_condDBv2 import GlobalTag
-#from Configuration.AlCa.autoCond import autoCond
-if runOnData:
-  #process.GlobalTag.globaltag = autoCond['run2_data']
-  process.GlobalTag.globaltag = '80X_dataRun2_2016SeptRepro_v7'
-else:
-  #process.GlobalTag.globaltag = autoCond['run2_mc']
-  process.GlobalTag.globaltag = '80X_mcRun2_asymptotic_2016_TrancheIV_v8'
-
-from CondCore.DBCommon.CondDBSetup_cfi import *
-import os
-if runOnData:
-  Eras="Summer16_23Sep2016V4_DATA"
-else:
-  Eras="Summer16_23Sep2016V4_MC"
-
-##___________________________External JEC file________________________________||
-print "Eras %s"%(Eras)
-process.jec = cms.ESSource("PoolDBESSource",CondDBSetup,
-                           connect = cms.string("sqlite_fip:CMSAnalyses/SSBAnalyzer/data/JECDir/Summer16_23Sep2016/Summer16_23Sep2016V4/"+Eras+"/"+Eras+".db"),
-                           toGet =  cms.VPSet(
-        cms.PSet(
-            record = cms.string("JetCorrectionsRecord"),
-            tag = cms.string("JetCorrectorParametersCollection_"+Eras+"_AK4PF"),
-            label= cms.untracked.string("AK4PF")
-            ),
-        cms.PSet(
-            record = cms.string("JetCorrectionsRecord"),
-            tag = cms.string("JetCorrectorParametersCollection_"+Eras+"_AK4PFchs"),
-            label= cms.untracked.string("AK4PFchs")
-            ),
-        )
-                           )
-process.es_prefer_jec = cms.ESPrefer("PoolDBESSource",'jec')
+# From :  https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookJetEnergyCorrections#CorrPatJets
 
 from PhysicsTools.PatAlgos.tools.jetTools import updateJetCollection
+updateJetCollection(
+  process,
+  jetSource = cms.InputTag('slimmedJets'),
+  labelName = 'UpdatedJEC',
+  jetCorrections = ('AK4PFchs', cms.vstring(['L1FastJet', 'L2Relative', 'L3Absolute', 'L2L3Residual']), 'None')  # Update: Safe to always add 'L2L3Residual' as MC contains dummy L2L3Residual corrections (always set to 1)
+)
+process.jecSequence = cms.Sequence(process.patJetCorrFactorsUpdatedJEC * process.updatedPatJetsUpdatedJEC)
 
 updateJetCollection(
-    process,
-    jetSource = cms.InputTag('slimmedJets'),
-    labelName = 'UpdatedJEC',
-    jetCorrections = ('AK4PFchs', corList, 'None')
-#    btagDiscriminators = bTagDiscriminators
+  process,
+  jetSource = cms.InputTag('slimmedJetsPuppi'),
+  labelName = 'UpdatedJECPuppi',
+  jetCorrections = ('AK4PFPuppi', cms.vstring(['L1FastJet', 'L2Relative', 'L3Absolute', 'L2L3Residual']), 'None')  # Update: Safe to always add 'L2L3Residual' as MC contains dummy L2L3Residual corrections (always set to 1)
 )
-process.JEC = cms.Sequence(process.patJetCorrFactorsUpdatedJEC * process.updatedPatJetsUpdatedJEC)
+process.jecSequencepuppi = cms.Sequence(process.patJetCorrFactorsUpdatedJECPuppi * process.updatedPatJetsUpdatedJECPuppi)
 
-########New
+### END JECs ==========================================================================================
+
 
 ## Following lines are for default MET for Type1 corrections.
 from PhysicsTools.PatUtils.tools.runMETCorrectionsAndUncertainties import runMetCorAndUncFromMiniAOD
 
-from MetTools.MetPhiCorrections.tools.multPhiCorr_Summer16_MC_DY_80X_sumPt_cfi import multPhiCorr_MC_DY_sumPT_80X as multPhiCorrParams_Txy_25ns_v2
-multPhiCorrParams_T0rtTxy_25ns     = cms.VPSet( pset for pset in multPhiCorrParams_Txy_25ns_v2)
-multPhiCorrParams_T0rtT1Txy_25ns   = cms.VPSet( pset for pset in multPhiCorrParams_Txy_25ns_v2)
-multPhiCorrParams_T0rtT1T2Txy_25ns = cms.VPSet( pset for pset in multPhiCorrParams_Txy_25ns_v2)
-multPhiCorrParams_T0pcTxy_25ns     = cms.VPSet( pset for pset in multPhiCorrParams_Txy_25ns_v2)
-multPhiCorrParams_T0pcT1Txy_25ns   = cms.VPSet( pset for pset in multPhiCorrParams_Txy_25ns_v2)
-multPhiCorrParams_T0pcT1T2Txy_25ns = cms.VPSet( pset for pset in multPhiCorrParams_Txy_25ns_v2)
-multPhiCorrParams_T1Txy_25ns       = cms.VPSet( pset for pset in multPhiCorrParams_Txy_25ns_v2)
-multPhiCorrParams_T1T2Txy_25ns     = cms.VPSet( pset for pset in multPhiCorrParams_Txy_25ns_v2)
-multPhiCorrParams_T1T2Txy_25ns     = cms.VPSet( pset for pset in multPhiCorrParams_T1T2Txy_25ns)
-
-multPhiCorrParams_T1SmearTxy_25ns  = cms.VPSet( pset for pset in multPhiCorrParams_T1Txy_25ns)
 # If you only want to re-correct for JEC and get the proper uncertainties for the default MET
 runMetCorAndUncFromMiniAOD(process,
                           isData=runOnData,
                           )
-# Now you are creating the bad muon corrected MET
-process.load('RecoMET.METFilters.badGlobalMuonTaggersMiniAOD_cff')
-process.badGlobalMuonTaggerMAOD.taggingMode = cms.bool(True)
-process.cloneGlobalMuonTaggerMAOD.taggingMode = cms.bool(True)
-
-
-
-from PhysicsTools.PatUtils.tools.muonRecoMitigation import muonRecoMitigation
-
-muonRecoMitigation(
-                   process = process,
-                   pfCandCollection = "packedPFCandidates", #input PF Candidate Collection
-                   runOnMiniAOD = True, #To determine if you are running on AOD or MiniAOD
-                   selection="", #You can use a custom selection for your bad muons. Leave empty if you would like to use the bad muon recipe definition.
-                   muonCollection="", #The muon collection name where your custom selection will be applied to. Leave empty if you would like to use the bad muon recipe definition.
-                   cleanCollName="cleanMuonsPFCandidates", #output pf candidate collection ame
-                   cleaningScheme="computeAllApplyClone", #Options are: "all", "computeAllApplyBad","computeAllApplyClone". Decides which (or both) bad muon collections to be used for MET cleaning coming from the bad muon recipe.
-                   postfix="" #Use if you would like to add a post fix to your muon / pf collections
-                   )
-
-# If you only want to re-correct for JEC and get the proper uncertainties for the default MET
-runMetCorAndUncFromMiniAOD(process,
-                           isData=runOnData,
-                           pfCandColl="cleanMuonsPFCandidates",
-                           electronColl="calibratedPatElectrons", 
-                           recoMetFromPFCs=True,
-                           postfix="MuClean"
-                           )
-
-if hasattr(process, "patPFMetTxyCorr"):
-    getattr(process,'patPFMetTxyCorr').parameters = multPhiCorrParams_T1Txy_25ns
-mufix = "MuClean"
-if hasattr(process, "patPFMetTxyCorr"+mufix):
-    getattr(process,'patPFMetTxyCorr'+mufix).parameters = multPhiCorrParams_T1Txy_25ns
-
-#########New End
-process.mucorMET = cms.Sequence(                     
-                    process.badGlobalMuonTaggerMAOD *
-                    process.cloneGlobalMuonTaggerMAOD *
-                    #process.badMuons * # If you are using cleaning mode "all", uncomment this line
-                    process.cleanMuonsPFCandidates *
-                    process.fullPatMetSequenceMuClean
-                   )
-
 #####################################
 ### Electron & Photon-- smearing ####
 #####################################
+#######################################################################
 
-from EgammaAnalysis.ElectronTools.regressionWeights_cfi import regressionWeights
-process = regressionWeights(process)
-
-process.load('EgammaAnalysis.ElectronTools.regressionApplication_cff')
-##########################################################
-### Applying the Electron Smearer ########################
-##########################################################
 process.RandomNumberGeneratorService = cms.Service("RandomNumberGeneratorService",
-                  calibratedPatElectrons  = cms.PSet( initialSeed = cms.untracked.uint32(8675389),
-                                                      engineName = cms.untracked.string('TRandom3'),
-                                                      ),
-                  calibratedPatPhotons    = cms.PSet( initialSeed = cms.untracked.uint32(8675389),
-                                                      engineName = cms.untracked.string('TRandom3'),
-                                                      ),
-
                   ssbanalyzer    = cms.PSet( initialSeed = cms.untracked.uint32(8675389),
                                                       engineName = cms.untracked.string('TRandom3'),
-                                                      ),
+                                                      )
                                                    )
 
-process.load('EgammaAnalysis.ElectronTools.calibratedPatElectronsRun2_cfi')
-process.load('EgammaAnalysis.ElectronTools.calibratedPatPhotonsRun2_cfi')
-
-
-
-process.calibratedPatElectrons.isMC = cms.bool(isMC)
-process.calibratedPatPhotons.isMC = cms.bool(isMC)
-
-process.calibratedPatElectrons.correctionFile = cms.string("EgammaAnalysis/ElectronTools/data/ScalesSmearings/Moriond17_23Jan_ele")
-process.calibratedPatPhotons.correctionFile = cms.string("EgammaAnalysis/ElectronTools/data/ScalesSmearings/Moriond17_23Jan_ele")
-################################
-### Electron & Photon -- ID ####
-################################
-### Applying the ID ######################################
-process.load("RecoEgamma.ElectronIdentification.ElectronIDValueMapProducer_cfi")
-process.load("RecoEgamma.ElectronIdentification.ElectronMVAValueMapProducer_cfi")
-
-process.load("RecoEgamma.PhotonIdentification.PhotonIDValueMapProducer_cfi")
-process.load("RecoEgamma.PhotonIdentification.PhotonMVAValueMapProducer_cfi")
-
-from PhysicsTools.SelectorUtils.tools.vid_id_tools import *
-# turn on VID producer, indicate data format  to be
-# DataFormat.AOD or DataFormat.MiniAOD, as appropriate 
-dataFormat = DataFormat.MiniAOD
-switchOnVIDElectronIdProducer(process, dataFormat)
-switchOnVIDPhotonIdProducer(process, dataFormat)
-
-# define which IDs we want to produce
-
-my_id_modules = ['RecoEgamma.ElectronIdentification.Identification.cutBasedElectronID_Summer16_80X_V1_cff',
-                 'RecoEgamma.ElectronIdentification.Identification.cutBasedElectronHLTPreselecition_Summer16_V1_cff',
-                 'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV60_cff',
-                 'RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Spring16_GeneralPurpose_V1_cff',
-                 'RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Spring16_HZZ_V1_cff']
-
-
-
-#add them to the VID producer
-### Electron ID
-for idmod in my_id_modules:
-    setupAllVIDIdsInModule(process,idmod,setupVIDElectronSelection)
-                                                                
-my_phoid_modules = ['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Spring16_V2p2_cff',
-                    'RecoEgamma.PhotonIdentification.Identification.mvaPhotonID_Spring16_nonTrig_V1_cff']
-
-#add them to the VID producer
-### Photon ID
-for idmod in my_phoid_modules:
-    setupAllVIDIdsInModule(process,idmod,setupVIDPhotonSelection)
-
-### Electron Cut for electron ID ###
-
-process.selectedElectrons = cms.EDFilter("PATElectronSelector",
-    src = cms.InputTag("calibratedPatElectrons"),
-    cut = cms.string("pt>5 && abs(eta)")
-)
-process.egmGsfElectronIDs.physicsObjectSrc = cms.InputTag('selectedElectrons')
-process.electronIDValueMapProducer.srcMiniAOD = cms.InputTag('selectedElectrons')
-process.electronRegressionValueMapProducer.srcMiniAOD = cms.InputTag('selectedElectrons')
-process.electronMVAValueMapProducer.srcMiniAOD = cms.InputTag('selectedElectrons')
-
-### Photon Cut for photon ID ###
-process.selectedPhotons = cms.EDFilter('PATPhotonSelector',
-    src = cms.InputTag('calibratedPatPhotons'),
-    cut = cms.string('pt>5 && abs(eta)')
-)
-
-process.egmPhotonIDs.physicsObjectSrc = cms.InputTag('selectedPhotons')
-process.egmPhotonIsolation.srcToIsolate = cms.InputTag('selectedPhotons')
-process.photonIDValueMapProducer.srcMiniAOD = cms.InputTag('selectedPhotons')
-process.photonRegressionValueMapProducer.srcMiniAOD = cms.InputTag('selectedPhotons')
-process.photonMVAValueMapProducer.srcMiniAOD = cms.InputTag('selectedPhotons')
-
-####################################################
-### GenJet B-Hadron Matcher For JetAngular Study ###
-####################################################
-
-genJetCollection = 'ak4GenJetsCustom'
-genParticleCollection = 'prunedGenParticles'
-genJetInputParticleCollection = 'packedGenParticles'
-
-## producing a subset of genParticles to be used for jet reclustering
-from RecoJets.Configuration.GenJetParticles_cff import genParticlesForJetsNoNu
-process.genParticlesForJetsCustom = genParticlesForJetsNoNu.clone(
-   #src = genParticleCollection
-    src = genJetInputParticleCollection
-)
-# Producing own jets for testing purposes
-from RecoJets.JetProducers.ak4GenJets_cfi import ak4GenJets
-process.ak4GenJetsCustom = ak4GenJets.clone(
-    src = 'genParticlesForJetsCustom',
-    #src = 'genParticlesForJetsNoNu',
-    rParam = cms.double(0.4),
-    jetAlgorithm = cms.string("AntiKt")
-)
-
-
-# Supplies PDG ID to real name resolution of MC particles
-process.load("SimGeneral.HepPDTESSource.pythiapdt_cfi")
-
-# Ghost particle collection used for Hadron-Jet association 
-# MUST use proper input particle collection
-from PhysicsTools.JetMCAlgos.HadronAndPartonSelector_cfi import selectedHadronsAndPartons
-process.selectedHadronsAndPartons = selectedHadronsAndPartons.clone(
-    particles = genParticleCollection
-)
-
-# Input particle collection for matching to gen jets (partons + leptons) 
-# MUST use use proper input jet collection: the jets to which hadrons should be associated
-# rParam and jetAlgorithm MUST match those used for jets to be associated with hadrons
-# More details on the tool: https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideBTagMCTools#New_jet_flavour_definition
-from PhysicsTools.JetMCAlgos.AK4PFJetsMCFlavourInfos_cfi import ak4JetFlavourInfos
-process.genJetFlavourInfos = ak4JetFlavourInfos.clone(
-    jets = genJetCollection,
-)
-
-# Plugin for analysing B hadrons
-# MUST use the same particle collection as in selectedHadronsAndPartons
-from PhysicsTools.JetMCAlgos.GenHFHadronMatcher_cff import matchGenBHadron
-process.matchGenBHadron = matchGenBHadron.clone(
-    genParticles = genParticleCollection,
-    jetFlavourInfos = "genJetFlavourInfos"
-)
-
-# Plugin for analysing C hadrons
-# MUST use the same particle collection as in selectedHadronsAndPartons
-from PhysicsTools.JetMCAlgos.GenHFHadronMatcher_cff import matchGenCHadron
-process.matchGenCHadron = matchGenCHadron.clone(
-    genParticles = genParticleCollection,
-    jetFlavourInfos = "genJetFlavourInfos"
-)
-
-#### For BFagMentation and Semi Lep decay br for bjet ####
-process.mergedGenParticles = cms.EDProducer("MergedGenParticleProducer",
-                    inputPruned = cms.InputTag("prunedGenParticles"),
-                        inputPacked = cms.InputTag("packedGenParticles"),
-)
-
-
-from GeneratorInterface.RivetInterface.genParticles2HepMC_cfi import genParticles2HepMC
-process.genParticles2HepMC = genParticles2HepMC.clone( genParticles = cms.InputTag("mergedGenParticles") )
-
-process.load("GeneratorInterface.RivetInterface.particleLevel_cfi")
-
-process.particleLevel.excludeNeutrinosFromJetClustering = False
-
-process.load('TopQuarkAnalysis.BFragmentationAnalyzer.bfragWgtProducer_cfi')
-
-process.bfragStudy = cms.Sequence(process.mergedGenParticles*process.genParticles2HepMC*process.particleLevel*process.bfragWgtProducer)
-
-#######################################################################
 
 process.MINIAODSIMoutput = cms.OutputModule("PoolOutputModule",
     compressionLevel = cms.untracked.int32(4),
@@ -380,10 +144,6 @@ process.MINIAODSIMoutput = cms.OutputModule("PoolOutputModule",
 ####################
 
 process.ssbanalyzer = cms.EDAnalyzer('SSBAnalyzer',
-                                    BadChargedCandidateFilter  = cms.InputTag("BadChargedCandidateFilter",""),
-                                    BadPFMuonFilter  = cms.InputTag("BadPFMuonFilter",""),
-                                    #badGlobalMuonTagger  = cms.InputTag("badGlobalMuonTagger",""),
-                                    #cloneGlobalMuonTagger  = cms.InputTag("cloneGlobalMuonTagger",""),
                                     bitsPat                    = cms.InputTag("TriggerResults","","PAT"),
                                     isMCTag         = cms.bool(isMC),
                                     PDFInfoTag      = cms.InputTag("generator",""),
@@ -398,13 +158,7 @@ process.ssbanalyzer = cms.EDAnalyzer('SSBAnalyzer',
                                     genParTag       = cms.InputTag("prunedGenParticles"),
                                     genJetTag       = cms.InputTag("slimmedGenJets",""),
                                     genJetReclusTag = cms.InputTag("ak4GenJetsCustom",""),
-                                    genBHadPlusMothersTag   = cms.InputTag("matchGenBHadron","genBHadPlusMothers"),
-                                    genBHadIndexTag   = cms.InputTag("matchGenBHadron","genBHadIndex"),
-                                    genBHadFlavourTag   = cms.InputTag("matchGenBHadron","genBHadFlavour"),
-                                    genBHadFromTopWeakDecayTag   = cms.InputTag("matchGenBHadron","genBHadFromTopWeakDecay"),
-                                    genBHadJetIndexTag   = cms.InputTag("matchGenBHadron","genBHadJetIndex"),
-
-                                    genMETTag = cms.InputTag("slimmedMETsMuClean","","SSB"),
+                                    genMETTag = cms.InputTag("slimmedMETs","","SSB"),
                                     isSignal        = cms.bool(True),
                                     RhoTag          = cms.InputTag("fixedGridRhoFastjetAll"),
                                     puTag           = cms.InputTag("slimmedAddPileupInfo",""),
@@ -530,41 +284,33 @@ process.ssbanalyzer = cms.EDAnalyzer('SSBAnalyzer',
                                     csvbjetTag = cms.string("pfCombinedInclusiveSecondaryVertexV2BJetTags"),
                                     btagListTag        = cms.vstring(
                                                          'pfCombinedInclusiveSecondaryVertexV2BJetTags',
-                                                         'softPFMuonBJetTags',
-                                                         'softPFMuonByIP3dBJetTags',
-                                                         'softPFElectronByPtBJetTags',
-                                                         'softPFElectronBJetTags',
-                                                         'softPFMuonByPtBJetTags',
-                                                         'softPFElectronByIP3dBJetTags',
-                                                         'softPFMuonByIP2dBJetTags',
-                                                         'softPFElectronByIP2dBJetTags'
-                                                      ),
+                                                         'pfDeepCSVJetTags:probb',
+                                                         'pfDeepCSVJetTags:probbb',
+                                                         'pfDeepCSVJetTags:probc',
+                                                         'pfDeepCSVJetTags:probudsg',
+                                                         'pfDeepFlavourJetTags:probb',
+                                                         'pfDeepFlavourJetTags:probbb',
+                                                         'pfDeepFlavourJetTags:problepb',
+                                                         'pfDeepFlavourJetTags:probc',
+                                                         'pfDeepFlavourJetTags:probuds',
+                                                         'pfDeepFlavourJetTags:probg',
+                                                         'pfDeepCSVDiscriminatorsJetTags:BvsAll', 
+                                                         'pfDeepCSVDiscriminatorsJetTags:CvsB',
+                                                         'pfDeepCSVDiscriminatorsJetTags:CvsL'
+                                                         ),
+
                                     PFTightJetID = cms.PSet(
-                                                       version = cms.string('RUNIISTARTUP'),
+                                                       version = cms.string('RUN2ULCHS'),
                                                        quality = cms.string('TIGHT')
                                                       ),
                                     PFLooseJetID = cms.PSet(
-                                                       version = cms.string('RUNIISTARTUP'),
-                                                       quality = cms.string('LOOSE')
+                                                       version = cms.string('RUN2ULCHS'),
+                                                       quality = cms.string('TIGHT')
                                                       ),
                                     metTag = cms.InputTag("slimmedMETs","","SSB"),
-                                    metmucleancorTag = cms.InputTag("slimmedMETsMuClean","","SSB"),
 )
 process.p = cms.Path(
-        process.regressionApplication*
-        process.calibratedPatElectrons*
-        process.calibratedPatPhotons*
-        process.selectedElectrons *
-        process.selectedPhotons *
-        process.egmGsfElectronIDSequence*
-        process.egmPhotonIDSequence*
-        process.photonIDValueMapProducer*
-        process.electronIDValueMapProducer*
-        process.photonMVAValueMapProducer *
-        process.electronMVAValueMapProducer *
-        process.mucorMET*
         process.fullPatMetSequence*
-        process.JEC*
-        process.bfragStudy*
+        process.jecSequence*
         process.ssbanalyzer
 )
