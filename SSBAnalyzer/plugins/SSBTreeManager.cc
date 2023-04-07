@@ -342,15 +342,8 @@ void SSBTreeManager::Book(TTree* tree){
     ssbtree->Branch("Jet_PileUpId", &VectorBox_Int["Jet_PileUpId"]);
     ssbtree->Branch("Jet_PileUpMVA", &VectorBox_Float["Jet_PileUpMVA"]);
     ssbtree->Branch("Jet_bDisc", &VectorBox_Float["Jet_bDisc"]);
-    ssbtree->Branch("Jet_bDisc_pfCombinedInclusiveSecondaryVertexV2BJetTags", &VectorBox_Float["Jet_bDisc_pfCombinedInclusiveSecondaryVertexV2BJetTags"]);
-    ssbtree->Branch("Jet_bDisc_softPFMuonBJetTags", &VectorBox_Float["Jet_bDisc_softPFMuonBJetTags"]);
-    ssbtree->Branch("Jet_bDisc_softPFMuonByIP3dBJetTags", &VectorBox_Float["Jet_bDisc_softPFMuonByIP3dBJetTags"]);
-    ssbtree->Branch("Jet_bDisc_softPFElectronByPtBJetTags", &VectorBox_Float["Jet_bDisc_softPFElectronByPtBJetTags"]);
-    ssbtree->Branch("Jet_bDisc_softPFElectronBJetTags", &VectorBox_Float["Jet_bDisc_softPFElectronBJetTags"]);
-    ssbtree->Branch("Jet_bDisc_softPFMuonByPtBJetTags", &VectorBox_Float["Jet_bDisc_softPFMuonByPtBJetTags"]);
-    ssbtree->Branch("Jet_bDisc_softPFElectronByIP3dBJetTags", &VectorBox_Float["Jet_bDisc_softPFElectronByIP3dBJetTags"]);
-    ssbtree->Branch("Jet_bDisc_softPFMuonByIP2dBJetTags", &VectorBox_Float["Jet_bDisc_softPFMuonByIP2dBJetTags"]);
-    ssbtree->Branch("Jet_bDisc_softPFElectronByIP2dBJetTags", &VectorBox_Float["Jet_bDisc_softPFElectronByIP2dBJetTags"]);
+    ssbtree->Branch("Jet_bDisc_Name", &VectorBox_String["Jet_bDisc_Name"]);
+    ssbtree->Branch("Jet_bDisc_Value", &VectorBox_Float["Jet_bDisc_Value"]);
     ssbtree->Branch("Jet_isJet", &VectorBox_Bool["Jet_isJet"]);
     ssbtree->Branch("LHE_Central", &VariableBox_Double["LHE_Central"], "LHE_Central/D");
     ssbtree->Branch("LHE_Id", &VectorBox_Int["LHE_Id"]);
@@ -706,16 +699,8 @@ void SSBTreeManager::InitializeVariables(){
     VectorBox_Int["Jet_PileUpId"].clear();
     VectorBox_Float["Jet_PileUpMVA"].clear();
     VectorBox_Float["Jet_bDisc"].clear();
-    VectorBox_Float["Jet_bDisc_pfCombinedInclusiveSecondaryVertexV2BJetTags"].clear();
-    VectorBox_Float["Jet_bDisc_softPFMuonBJetTags"].clear();
-    VectorBox_Float["Jet_bDisc_softPFMuonByIP3dBJetTags"].clear();
-    VectorBox_Float["Jet_bDisc_softPFElectronByPtBJetTags"].clear();
-    VectorBox_Float["Jet_bDisc_softPFElectronBJetTags"].clear();
-    VectorBox_Float["Jet_bDisc_softPFMuonByPtBJetTags"].clear();
-    VectorBox_Float["Jet_bDisc_softPFElectronByIP3dBJetTags"].clear();
-    VectorBox_Float["Jet_bDisc_softPFMuonByIP2dBJetTags"].clear();
-    VectorBox_Float["Jet_bDisc_softPFElectronByIP2dBJetTags"].clear();
-
+    VectorBox_String["Jet_bDisc_Name"].clear();
+    VectorBox_Float["Jet_bDisc_Value"].clear();
 
     VectorBox_Bool["Jet_isJet"].clear();
     VariableBox_Double["LHE_Central"] = 0;

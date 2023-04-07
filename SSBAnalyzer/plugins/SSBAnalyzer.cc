@@ -847,14 +847,13 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       }
 
       // Getting BTagging Information //
-      /*for (unsigned int ibtag =0; ibtag < btagList.size(); ++ibtag)
+      for (unsigned int ibtag =0; ibtag < btagList.size(); ++ibtag)
       {
          TString btagName = btagList.at(ibtag);
          btagName.ReplaceAll(":","_");
-        
-         //ssbtreeManager->Fill( "Jet_bDisc_"+ btagList.at(ibtag) , itJet.bDiscriminator( btagList.at(ibtag) ) ); 
-         ssbtreeManager->Fill( Form("Jet_bDisc_%s",btagName.Data()) , itJet.bDiscriminator( btagList.at(ibtag) ) ); 
-      }*/
+         ssbtreeManager->Fill( "Jet_bDisc_Name" ,  btagList); 
+         ssbtreeManager->Fill( "Jet_bDisc_Value" , itJet.bDiscriminator( btagList.at(ibtag) ) ); 
+      }
       ssbtreeManager->Fill( "Jet", jets_pt_, jets_eta_, jets_phi_, jets_energy_, jet_index);
       ssbtreeManager->Fill( "Jet_Charge"        , jets_charge_          );
       ssbtreeManager->Fill( "Jet_isJet"         , jets_isJet_           );
