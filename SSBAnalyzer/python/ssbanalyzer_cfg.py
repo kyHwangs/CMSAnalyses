@@ -4,9 +4,8 @@ import FWCore.ParameterSet.Config as cms
 process = cms.Process("SSB")
 
 # Configurable options =======================================================================
-isSingleMuonData = False # needed to record track collection for NMSSM ananlysis
 year = 2016 # Options: 2016, 2017, 2018
-period = 'UL2016' # Options: UL2016APV, UL2016, UL2017, UL2018
+period = 'UL2017' # Options: UL2016APV, UL2016, UL2017, UL2018
 
 #configurable options =======================================================================
 runOnData=False #data/MC switch
@@ -63,16 +62,12 @@ process.TFileService=cms.Service("TFileService",
 corList = cms.vstring(['L1FastJet', 'L2Relative', 'L3Absolute'])
     
 if runOnData:
-  #fname = 'file:/d3/scratch/sha/Analyses/DATA/MiniAOD/Run2016/PromptBv2/02D9C19F-571A-E611-AD8E-02163E013732.root'
   fname = "/store/mc/RunIISummer20UL16MiniAODv2/DY1JetsToLL_M-50_MatchEWPDG20_TuneCP5_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v1/120000/00061BF0-5BB0-524E-A539-0CAAD8579386.root" #UL2016 MC
-  jecUncertainty="CMSAnalyses/SSBAnalyzer/data/Summer16_23Sep2016V4_DATA_Uncertainty_AK4PFchs.txt"
   corList = cms.vstring(['L1FastJet', 'L2Relative', 'L3Absolute', 'L2L3Residual'])
   print ("Running on Data ...")
 
 else:
-  #fname = 'file:/pnfs/knu.ac.kr/data/cms/store/user/sha/MiniAODSample/MC/80X_v2/ForMoriond/TTbar/0693E0E7-97BE-E611-B32F-0CC47A78A3D8.root'
   fname = 'file:../../0004BE39-823E-4A4B-9727-C2544050C4C0.root'
-  jecUncertainty="CMSAnalyses/SSBAnalyzer/data/JECDir/Summer16_23Sep2016/Summer16_23Sep2016V4_MC/Summer16_23Sep2016V4_MC_Uncertainty_AK4PFchs.txt"
 
 # Define the input source
 process.source = cms.Source("PoolSource", 
@@ -114,6 +109,43 @@ runMetCorAndUncFromMiniAOD(process,
 #####################################
 ### Electron & Photon-- smearing ####
 #####################################
+
+from RecoEgamma.EgammaTools.EgammaPostRecoTools import setupEgammaPostRecoSeq
+
+#print ("eleIDModules : %s "%(eleIDModules))
+if period is 'UL2016APV' :                                                                                                             
+    labelEra = '2016preVFP-UL'
+    rerunIDs = True                                                                                                                    
+    rerunEnergyCorrections = True
+ #   eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer16UL_ID_ISO_cff','RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff'],
+ #   phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff'],
+elif period is 'UL2016' :
+    labelEra = '2016postVFP-UL'                                                                                                        
+    rerunIDs = True
+    rerunEnergyCorrections = True                                                                                                      
+ #   eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer17UL_ID_ISO_cff', 'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff'],
+ #   phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff'],
+elif period is 'UL2017' :
+    labelEra = '2017-UL'                                                                                                               
+    rerunIDs = True
+    rerunEnergyCorrections = True
+ #   eleIDModules=['','RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer17UL_ID_ISO_cff', 'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff'],
+ #   phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff'],
+
+elif period is 'UL2018' :                                                                                                              
+    labelEra = '2018-UL'                                                                                                               
+    rerunIDs = True
+    rerunEnergyCorrections = True
+ #   eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer18UL_ID_ISO_cff','RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff','RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Fall17_iso_V2_cff'],
+ #   phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff'],
+
+setupEgammaPostRecoSeq(process,
+                       runVID=rerunIDs,
+                       runEnergyCorrections=rerunEnergyCorrections,
+                       era=labelEra)
+
+#a sequence egammaPostRecoSeq has now been created and should be added to your path, eg process.p=cms.Path(process.egammaPostRecoSeq)
+
 #######################################################################
 
 process.RandomNumberGeneratorService = cms.Service("RandomNumberGeneratorService",
@@ -214,14 +246,15 @@ process.ssbanalyzer = cms.EDAnalyzer('SSBAnalyzer',
                                     muTag            = cms.InputTag("slimmedMuons",""),
                                     muEnUpTag        = cms.InputTag("shiftedPatMuonEnUp",""),
                                     muEnDownTag      = cms.InputTag("shiftedPatMuonEnDown",""),
-                                    #eleTag           = cms.InputTag("slimmedElectrons",""),
-                                    #electronPATInput = cms.InputTag("calibratedPatElectrons",""),
-                                    eleTag           = cms.InputTag("selectedElectrons",""),
+                                    eleTag           = cms.InputTag("slimmedElectrons",""),
                                     electronPATInput = cms.InputTag("selectedElectrons",""),
+                                    #electronPATInput = cms.InputTag("calibratedPatElectrons",""),
+                                    #eleTag           = cms.InputTag("selectedElectrons",""),
+                                    #electronPATInput = cms.InputTag("selectedElectrons",""),
                                     eleEnUpTag       = cms.InputTag("shiftedPatElectronEnUp",""),
                                     eleEnDownTag     = cms.InputTag("shiftedPatElectronEnDown",""),
 
-                                    effAreasConfigFile = cms.FileInPath("RecoEgamma/ElectronIdentification/data/Summer16/effAreaElectrons_cone03_pfNeuHadronsAndPhotons_80X.txt"),
+                                    effAreasConfigFile = cms.FileInPath("RecoEgamma/ElectronIdentification/data/Fall17/effAreaElectrons_cone03_pfNeuHadronsAndPhotons_92X.txt"),
 
                                     eleVetoIdMap    = cms.InputTag( "egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-V1-veto"   ),
                                     eleLooseIdMap   = cms.InputTag( "egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-V1-loose"  ),
@@ -310,6 +343,7 @@ process.ssbanalyzer = cms.EDAnalyzer('SSBAnalyzer',
                                     metTag = cms.InputTag("slimmedMETs","","SSB"),
 )
 process.p = cms.Path(
+        process.egammaPostRecoSeq*
         process.fullPatMetSequence*
         process.jecSequence*
         process.ssbanalyzer

@@ -678,7 +678,236 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
    /////// Electron infor//////
    ////////////////////////////
    ele_index=0;
+   edm::Handle<edm::View<pat::Electron> >elecs;
+   iEvent.getByToken(electronToken_, elecs);
+   for (edm::View<pat::Electron>::const_iterator iEle = elecs->begin(); iEle != elecs->end(); ++iEle) {
 
+      eles_pt_ = -9999.0;
+      eles_eta_ = -9999.0;
+      eles_phi_ = -9999.0;
+      eles_energy_ = -9999.0;
+      superclustereta_ = -999.0;
+
+      elecs_relIso03_ = -999.0;
+      elecs_relIso04_ = -999.0;
+      elecs_PFIsodbeta03_ = -999.0;
+      elecs_PFIsodbeta04_ = -999.0;
+      elecs_PFIsoRho03_ = -999.0;
+      elecs_PFIsoRho04_ = -999.0;
+
+      PfCharHadIso03_   = -999.0;
+      PfPUCharHadIso03_ = -999.0;
+      PfNeuHadIso03_    = -999.0;
+      PfGamIso03_       = -999.0;
+      PfCharHadIso04_   = -999.0;
+      PfPUCharHadIso04_ = -999.0;
+      PfNeuHadIso04_    = -999.0;
+      PfGamIso04_       = -999.0;
+
+      elecs_IsoWrong_ = false;
+
+      eles_SCB_Loose_  = false;
+      eles_SCB_Medium_ = false;
+      eles_SCB_Tight_  = false;
+      eles_SCB_Veto_   = false;
+
+      eles_pdgid_ = 0;
+      eles_charge_ = -999;
+      eles_chargeid_gsfctfpx_ = false;
+      eles_chargeid_gsfpx_ = false;
+      eles_chargeid_gsfctf_ = false;
+      eles_gsfchar_ = -999;
+      eles_ctfchar_ = -999;
+      eles_spchar_ = -999;
+
+      gsftrack_dxy_ = -999.0;
+      gsftrack_dz_ = -999.0;
+      ctftrack_dxy_ = -999.0;
+      ctftrack_dz_ = -999.0; 
+
+      mva1_ = -999.0;
+      mva2_ = -999.0;
+      mva3_ = -999.0;
+
+      nmhit_ = 999;
+      matchesConv = false;
+      passconversionveto = false;
+      passconversionveto1 = false;
+
+
+      auto corrP4  = iEle->p4() * iEle->userFloat("ecalTrkEnergyPostCorr") / iEle->energy();
+      //cout << "corrP4" << corrP4 << endl;
+      eles_pt_ = corrP4.Pt();
+      eles_eta_ = corrP4.Eta();
+      eles_phi_ = corrP4.Phi();
+      eles_energy_ = corrP4.energy();
+      ssbtreeManager->Fill("Elec", eles_pt_,eles_eta_,eles_phi_,eles_energy_,ele_index );
+
+      elecs_relIso03_ = isolation->ElecRelIso( iEle->dr03HcalTowerSumEt(), iEle->dr03EcalRecHitSumEt(), iEle->dr03TkSumPt(), iEle->et() );
+      elecs_relIso04_ = isolation->ElecRelIso( iEle->dr04HcalTowerSumEt(), iEle->dr04EcalRecHitSumEt(), iEle->dr04TkSumPt(), iEle->et() );
+
+      reco::GsfElectron::PflowIsolationVariables ele_pfIso = iEle->pfIsolationVariables();
+      elecs_PFIsodbeta03_ = isolation->PFIsodBeta(ele_pfIso.sumChargedHadronPt, ele_pfIso.sumNeutralHadronEt, ele_pfIso.sumPhotonEt, ele_pfIso.sumPUPt, iEle->pt() , 0.5);
+
+      if (   iEle->neutralHadronIso() !=  iEle->userIsolation(pat::PfNeutralHadronIso) )
+      {
+         cout << "neutralHadron 04 : " << iEle->neutralHadronIso() << endl;
+         cout << "userIsoneutralHadron 04 : " <<  iEle->userIsolation(pat::PfNeutralHadronIso) << endl;
+      }
+      if ( iEle->chargedHadronIso() != iEle->userIsolation(pat::PfChargedHadronIso) )
+      {
+         cout << "iEle->chargedHadronIso 04 : " << iEle->chargedHadronIso()  << endl;
+         cout << "userPfChargedHadronIso 04 : " <<  iEle->userIsolation(pat::PfChargedHadronIso) << endl;
+      }
+      if ( iEle->puChargedHadronIso() != iEle->userIsolation(pat::PfPUChargedHadronIso) )
+      {
+         cout << "iEle->puChargedHadronIso 04 : " << iEle->puChargedHadronIso() << endl;
+         cout << "userpuChargedHadronIso   04 : " << iEle->userIsolation(pat::PfPUChargedHadronIso) << endl;
+      }
+
+      if ( iEle->photonIso() != iEle->userIsolation(pat::PfGammaIso) )
+      {
+         cout << "iEle->puChargedHadronIso 04 : " << iEle->photonIso() << endl;
+         cout << "userpuChargedHadronIso   04 : " << iEle->userIsolation(pat::PfGammaIso) << endl;
+      }
+      PfCharHadIso04_   = iEle->userIsolation(pat::PfChargedHadronIso);
+      PfPUCharHadIso04_ = iEle->userIsolation(pat::PfPUChargedHadronIso);
+      PfNeuHadIso04_    = iEle->userIsolation(pat::PfNeutralHadronIso);
+      PfGamIso04_       = iEle->userIsolation(pat::PfGammaIso);
+
+
+      elecs_PFIsodbeta04_ = isolation->PFIsodBeta(iEle->userIsolation(pat::PfChargedHadronIso), iEle->userIsolation(pat::PfNeutralHadronIso),
+                                      iEle->userIsolation(pat::PfGammaIso), iEle->userIsolation(pat::PfPUChargedHadronIso), iEle->pt() , 0.5);
+
+      superclustereta_ =  iEle->superCluster()->eta();
+      float eA = effectiveAreas_.getEffectiveArea(fabs(superclustereta_));
+
+      effA03_ = isolation->EffArea2015( superclustereta_ );
+      effA04_ = isolation->EffArea2015( superclustereta_ );
+
+      elecs_PFIsoRho03_ = isolation->PFIsoRho( ele_pfIso.sumChargedHadronPt, ele_pfIso.sumNeutralHadronEt, ele_pfIso.sumPhotonEt, rho, eA, iEle->pt() );
+
+      elecs_PFIsoRho04_ = isolation->PFIsoRho( iEle->userIsolation(pat::PfChargedHadronIso), iEle->userIsolation(pat::PfNeutralHadronIso), iEle->userIsolation(pat::PfGammaIso), rho, effA04_, iEle->pt() );
+
+      ssbtreeManager->Fill( "Elec_relIso03"    , elecs_relIso03_     );
+      ssbtreeManager->Fill( "Elec_relIso04"    , elecs_relIso04_     );
+      ssbtreeManager->Fill( "Elec_PFIsodBeta03", elecs_PFIsodbeta03_ );
+      ssbtreeManager->Fill( "Elec_PFIsodBeta04", elecs_PFIsodbeta04_ );
+      ssbtreeManager->Fill( "Elec_PFIsoRho03"  , elecs_PFIsoRho03_   );
+      ssbtreeManager->Fill( "Elec_PFIsoRho04"  , elecs_PFIsoRho04_   );
+
+      if (!(iEle->gsfTrack().isNull()))
+      {
+
+         //nmhit_ = iEle->gsfTrack()->hitPattern().numberOfHits(reco::HitPattern::MISSING_INNER_HITS);
+         nmhit_ = iEle->gsfTrack()->hitPattern().numberOfLostHits(reco::HitPattern::MISSING_INNER_HITS);
+         gsftrack_dxy_ = iEle->gsfTrack()->dxy( v_vertex[0].position() );
+         gsftrack_dz_  = iEle->gsfTrack()->dz( v_vertex[0].position() );
+         eles_gsfchar_ = iEle->gsfTrack()->charge();
+
+      }
+
+      if (!(iEle->closestCtfTrackRef().isNull()))
+      {
+
+         ctftrack_dxy_ = iEle->closestCtfTrackRef()->dxy( v_vertex[0].position() );
+         ctftrack_dz_  = iEle->closestCtfTrackRef()->dz( v_vertex[0].position() );
+         eles_ctfchar_ = iEle->closestCtfTrackRef()->charge();
+
+      }
+
+      ssbtreeManager->Fill( "Elec_Charge_GsfTr" , eles_gsfchar_ );
+      ssbtreeManager->Fill( "Elec_Track_GsfdXY" , gsftrack_dxy_ );
+      ssbtreeManager->Fill( "Elec_Track_GsfdZ"  , gsftrack_dz_  );
+      ssbtreeManager->Fill( "Elec_Inner_Hit"    , nmhit_        );
+
+      ssbtreeManager->Fill( "Elec_Charge_CtfTr", eles_ctfchar_ );
+      ssbtreeManager->Fill( "Elec_Track_CtfdXY", ctftrack_dxy_ );
+      ssbtreeManager->Fill( "Elec_Track_CtfdZ" , ctftrack_dz_  );
+
+      eles_spchar_ = iEle->scPixCharge();
+      ssbtreeManager->Fill( "Elec_Charge_Px", eles_spchar_);
+
+      eles_pt_ = iEle->pt();
+      eles_eta_ = iEle->eta();
+      eles_phi_ = iEle->phi();
+      eles_energy_ = iEle->energy();
+      eles_pdgid_ = iEle->pdgId();
+      eles_charge_ = iEle->charge();
+
+      if (iEle->isGsfCtfScPixChargeConsistent())
+      {
+         eles_chargeid_gsfctfpx_ = true;
+      }
+
+      if (iEle->isGsfCtfChargeConsistent())
+      {
+         eles_chargeid_gsfctf_ = true;
+      }
+
+      if (iEle->isGsfScPixChargeConsistent())
+      {
+         eles_chargeid_gsfpx_ = true;
+      }
+
+      /////////////////////
+      //// Electron ID ////
+      /////////////////////
+      eles_SCB_Veto_   = iEle->electronID("cutBasedElectronID-Fall17-94X-V2-veto");
+      eles_SCB_Loose_  = iEle->electronID("cutBasedElectronID-Fall17-94X-V2-loose");
+      eles_SCB_Medium_ = iEle->electronID("cutBasedElectronID-Fall17-94X-V2-medium");
+      eles_SCB_Tight_  = iEle->electronID("cutBasedElectronID-Fall17-94X-V2-tight");
+
+      ssbtreeManager->Fill( "Elec_SCB_Loose"          , eles_SCB_Loose_         );
+      ssbtreeManager->Fill( "Elec_SCB_Medium"         , eles_SCB_Medium_        );
+      ssbtreeManager->Fill( "Elec_SCB_Tight"          , eles_SCB_Tight_         );
+      ssbtreeManager->Fill( "Elec_SCB_Veto"           , eles_SCB_Veto_          );
+
+/*      float mva_Values        = (*mvaValues)[itele];
+      float mva_ValuesHZZ     = (*mvaValuesHZZ)[itele];
+      int   mva_Categories    = (*mvaCategories)[itele];
+      int   mva_CategoriesHZZ = (*mvaCategoriesHZZ)[itele];*/
+
+
+      //electron_mva_value_Iso_Fall17_v1[electron_count] = iEle->userFloat("ElectronMVAEstimatorRun2Fall17IsoV1Values");
+      //electron_mva_value_noIso_Fall17_v1[electron_count] = iEle->userFloat("ElectronMVAEstimatorRun2Fall17NoIsoV1Values");
+      //cout << " ElectronMVAEstimatorRun2Fall17IsoV1Values ? " <<  iEle->userFloat("ElectronMVAEstimatorRun2Fall17IsoV1Values") << endl;
+      //cout << " ElectronMVAEstimatorRun2Fall17NoIsoV1Values ? " <<  iEle->userFloat("ElectronMVAEstimatorRun2Fall17NoIsoV1Values") << endl;
+
+      bool isPassmvaTight = iEle->electronID("mvaEleID-Fall17-iso-V2-wp90");
+      bool isPassmvaMedium = iEle->electronID("mvaEleID-Fall17-iso-V2-wp80");
+      bool isPassmvaLoose = iEle->electronID("mvaEleID-Fall17-iso-V2-wpLoose");
+
+      bool isPassmvaTightNonIso  =  iEle->electronID("mvaEleID-Fall17-noIso-V2-wp90");
+      bool isPassmvaMediumNonIso  =  iEle->electronID("mvaEleID-Fall17-noIso-V2-wp80");
+      bool isPassmvaLooseNonIso = iEle->electronID("mvaEleID-Fall17-noIso-V2-wpLoose");
+
+      ssbtreeManager->Fill( "Elec_MVA_Loose"          , isPassmvaLoose         );
+      ssbtreeManager->Fill( "Elec_MVA_Medium"         , isPassmvaMedium        );
+      ssbtreeManager->Fill( "Elec_MVA_Tight"          , isPassmvaTight         );
+
+      ssbtreeManager->Fill( "Elec_MVA_NonIso_Loose"          , isPassmvaLooseNonIso         );
+      ssbtreeManager->Fill( "Elec_MVA_NonIso_Medium"         , isPassmvaMediumNonIso        );
+      ssbtreeManager->Fill( "Elec_MVA_NonIso_Tight"          , isPassmvaTightNonIso         );
+
+      passconversionveto1 = iEle->passConversionVeto();// pat conversion veto
+
+      ooEmooP_ =  (1.0/iEle->ecalEnergy())*(1.0-iEle->eSuperClusterOverP()) ;
+
+
+
+/*      electron_mva_value_Iso_Fall17_v2[electron_count] = iEle->userFloat("ElectronMVAEstimatorRun2Fall17IsoV2Values");
+      electron_mva_value_noIso_Fall17_v2[electron_count] = iEle->userFloat("ElectronMVAEstimatorRun2Fall17NoIsoV2Values");
+
+      electron_mva_wp90_Iso_Fall17_v2[electron_count] = iEle->electronID("mvaEleID-Fall17-iso-V2-wp90");
+      electron_mva_wp80_Iso_Fall17_v2[electron_count] = iEle->electronID("mvaEleID-Fall17-iso-V2-wp80");
+      electron_mva_Loose_Iso_Fall17_v2[electron_count] = iEle->electronID("mvaEleID-Fall17-iso-V2-wpLoose");
+
+      electron_mva_wp90_noIso_Fall17_v2[electron_count] = iEle->electronID("mvaEleID-Fall17-noIso-V2-wp90");
+      electron_mva_wp80_noIso_Fall17_v2[electron_count] = iEle->electronID("mvaEleID-Fall17-noIso-V2-wp80");
+      electron_mva_Loose_noIso_Fall17_v2[electron_count] = iEle->electronID("mvaEleID-Fall17-noIso-V2-wpLoose");
+*/
+   }
 
    //////////////////////////
    /// Photon Information ///

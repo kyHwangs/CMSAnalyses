@@ -231,10 +231,14 @@ void SSBTreeManager::Book(TTree* tree){
     ssbtree->Branch("Elec_Id_RobustTight", &VectorBox_Int["Elec_Id_RobustTight"]);
     ssbtree->Branch("Elec_Id_Tight", &VectorBox_Int["Elec_Id_Tight"]);
     ssbtree->Branch("Elec_Inner_Hit", &VectorBox_Int["Elec_Inner_Hit"]);
+    ssbtree->Branch("Elec_MVA_Loose", &VectorBox_Bool["Elec_MVA_Loose"]);
     ssbtree->Branch("Elec_MVA_Medium", &VectorBox_Bool["Elec_MVA_Medium"]);
     ssbtree->Branch("Elec_MVA_Tight", &VectorBox_Bool["Elec_MVA_Tight"]);
-    ssbtree->Branch("Elec_MVA_HZZ", &VectorBox_Bool["Elec_MVA_HZZ"]);
     ssbtree->Branch("Elec_MVA_Values", &VectorBox_Float["Elec_MVA_Values"]);
+    ssbtree->Branch("Elec_MVA_NonIso_Loose", &VectorBox_Bool["Elec_MVA_NonIso_Loose"]);
+    ssbtree->Branch("Elec_MVA_NonIso_Medium", &VectorBox_Bool["Elec_MVA_NonIso_Medium"]);
+    ssbtree->Branch("Elec_MVA_NonIso_Tight", &VectorBox_Bool["Elec_MVA_NonIso_Tight"]);
+
     ssbtree->Branch("Elec_MVA_Categories", &VectorBox_Int["Elec_MVA_Categories"]);
     ssbtree->Branch("Elec_MVA_HZZ_Values", &VectorBox_Float["Elec_MVA_HZZ_Values"]);
     ssbtree->Branch("Elec_MVA_HZZ_Categories", &VectorBox_Int["Elec_MVA_HZZ_Categories"]);
@@ -615,9 +619,13 @@ void SSBTreeManager::InitializeVariables(){
     VectorBox_Int["Elec_Inner_Hit"].clear();
     VectorBox_Bool["Elec_MVA_Medium"].clear();
     VectorBox_Bool["Elec_MVA_Tight"].clear();
-    VectorBox_Bool["Elec_MVA_HZZ"].clear();
+    VectorBox_Bool["Elec_MVA_Loose"].clear();
     VectorBox_Float["Elec_MVA_Values"].clear();
     VectorBox_Int["Elec_MVA_Categories"].clear();
+
+    VectorBox_Bool["Elec_MVA_NonIso_Medium"].clear();
+    VectorBox_Bool["Elec_MVA_NonIso_Tight"].clear();
+    VectorBox_Bool["Elec_MVA_NonIso_Loose"].clear();
     VectorBox_Float["Elec_MVA_HZZ_Values"].clear();
     VectorBox_Int["Elec_MVA_HZZ_Categories"].clear();
     //VectorBox_Bool["Elec_MVATrig_Tight"].clear();
