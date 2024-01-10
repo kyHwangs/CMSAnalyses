@@ -4,8 +4,8 @@ import FWCore.ParameterSet.Config as cms
 process = cms.Process("SSB")
 
 # Configurable options =======================================================================
-year = 2016 # Options: 2016, 2017, 2018
-period = 'UL2017' # Options: UL2016APV, UL2016, UL2017, UL2018
+year = 2018 # Options: 2016, 2018, 2018
+period = 'UL2018' # Options: UL2016APV, UL2016, UL2018, UL2018
 
 #configurable options =======================================================================
 runOnData=False #data/MC switch
@@ -19,7 +19,7 @@ isSys=False
 process.load('Configuration.StandardSequences.Services_cff')
 process.load('Configuration.StandardSequences.GeometryDB_cff')
 process.load('Configuration.StandardSequences.MagneticField_38T_cff')
-process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
+#process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff')
 
 if runOnData : process.GlobalTag.globaltag = '106X_dataRun2_v37'
@@ -67,7 +67,7 @@ if runOnData:
   print ("Running on Data ...")
 
 else:
-  fname = 'file:../../0004BE39-823E-4A4B-9727-C2544050C4C0.root'
+  fname = 'file:/pnfs/knu.ac.kr/data/cms/store/user/sha/Run2_UL/MC/TTBarDiLep/04A0B676-D63A-6D41-B47F-F4CF8CBE7DB8.root'
 
 # Define the input source
 process.source = cms.Source("PoolSource", 
@@ -117,31 +117,34 @@ if period is 'UL2016APV' :
     labelEra = '2016preVFP-UL'
     rerunIDs = True                                                                                                                    
     rerunEnergyCorrections = True
- #   eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer16UL_ID_ISO_cff','RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff'],
- #   phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff'],
+    eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer16UL_ID_ISO_cff','RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff']
+    phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff']
 elif period is 'UL2016' :
     labelEra = '2016postVFP-UL'                                                                                                        
     rerunIDs = True
     rerunEnergyCorrections = True                                                                                                      
- #   eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer17UL_ID_ISO_cff', 'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff'],
- #   phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff'],
+    eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer17UL_ID_ISO_cff', 'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff']
+    phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff']
 elif period is 'UL2017' :
     labelEra = '2017-UL'                                                                                                               
     rerunIDs = True
     rerunEnergyCorrections = True
- #   eleIDModules=['','RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer17UL_ID_ISO_cff', 'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff'],
- #   phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff'],
+    eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer17UL_ID_ISO_cff', 'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff']
+    phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff']
 
 elif period is 'UL2018' :                                                                                                              
     labelEra = '2018-UL'                                                                                                               
     rerunIDs = True
     rerunEnergyCorrections = True
- #   eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer18UL_ID_ISO_cff','RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff','RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Fall17_iso_V2_cff'],
- #   phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff'],
+    eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer18UL_ID_ISO_cff','RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff','RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Fall17_iso_V2_cff']
+    phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff']
 
+print ("eleIDModules : %s "%(eleIDModules))
 setupEgammaPostRecoSeq(process,
                        runVID=rerunIDs,
                        runEnergyCorrections=rerunEnergyCorrections,
+                       eleIDModules=eleIDModules,
+                       phoIDModules=phoIDModules,
                        era=labelEra)
 
 #a sequence egammaPostRecoSeq has now been created and should be added to your path, eg process.p=cms.Path(process.egammaPostRecoSeq)
