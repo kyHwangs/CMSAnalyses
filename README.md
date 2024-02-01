@@ -1,8 +1,11 @@
 # SSBNtuple
 
 CMSSW_10_6_30 
+
 cd CMSSW_10_6_30/src/
+
 cmsenv 
+
 git cms-init 
 
 Egamma : 
