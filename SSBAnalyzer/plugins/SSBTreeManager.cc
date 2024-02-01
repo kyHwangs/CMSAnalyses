@@ -174,8 +174,10 @@ SSBTreeManager::SSBTreeManager(){
     VariableBox_LorentzVector["Muon"] = new TClonesArray("TLorentzVector");
     VariableBox_LorentzVector["GenMuon"] = new TClonesArray("TLorentzVector");
     VariableBox_LorentzVector["Elec"] = new TClonesArray("TLorentzVector");
+    VariableBox_LorentzVector["RawElec"] = new TClonesArray("TLorentzVector");
     VariableBox_LorentzVector["Photon"] = new TClonesArray("TLorentzVector");
     VariableBox_LorentzVector["Jet"] = new TClonesArray("TLorentzVector");
+    VariableBox_LorentzVector["RawJet"] = new TClonesArray("TLorentzVector");
     VariableBox_LorentzVector["MET"] = new TClonesArray("TLorentzVector");
     VariableBox_LorentzVector["METEGClean"] = new TClonesArray("TLorentzVector"); // DATA
     VariableBox_LorentzVector["METMUEGClean"] = new TClonesArray("TLorentzVector"); // DATA
@@ -206,6 +208,10 @@ void SSBTreeManager::Book(TTree* tree){
     ssbtree->Branch("Channel_Jets", &VariableBox_Int["Channel_Jets"], "Channel_Jets/I");
     ssbtree->Branch("Channel_Jets_Abs", &VariableBox_Int["Channel_Jets_Abs"], "Channel_Jets_Abs/I");
 
+    ssbtree->Branch("L1_PreFire_Central", &VariableBox_Double["L1_PreFire_Central"], "L1_PreFire_Central/D");
+    ssbtree->Branch("L1_PreFire_Up", &VariableBox_Double["L1_PreFire_Up"], "L1_PreFire_Up/D");
+    ssbtree->Branch("L1_PreFire_Down", &VariableBox_Double["L1_PreFire_Down"], "L1_PreFire_Down/D");
+
     ssbtree->Branch("METFilter_Name", &VectorBox_String["METFilter_Name"]);
     ssbtree->Branch("METFilter_isError", &VectorBox_Bool["METFilter_isError"]);
     ssbtree->Branch("METFilter_isPass", &VectorBox_Bool["METFilter_isPass"]);
@@ -215,6 +221,8 @@ void SSBTreeManager::Book(TTree* tree){
 
     ssbtree->Branch("Elec", "TClonesArray", &VariableBox_LorentzVector["Elec"], 32000, 0);
     VariableBox_LorentzVector["Elec"]->BypassStreamer();
+    ssbtree->Branch("RawElec", "TClonesArray", &VariableBox_LorentzVector["RawElec"], 32000, 0);
+    VariableBox_LorentzVector["RawElec"]->BypassStreamer();
 
     ssbtree->Branch("Elec_Charge", &VectorBox_Int["Elec_Charge"]);
     ssbtree->Branch("Elec_ChargeId_GsfCtf", &VectorBox_Bool["Elec_ChargeId_GsfCtf"]);
@@ -238,6 +246,8 @@ void SSBTreeManager::Book(TTree* tree){
     ssbtree->Branch("Elec_MVA_NonIso_Loose", &VectorBox_Bool["Elec_MVA_NonIso_Loose"]);
     ssbtree->Branch("Elec_MVA_NonIso_Medium", &VectorBox_Bool["Elec_MVA_NonIso_Medium"]);
     ssbtree->Branch("Elec_MVA_NonIso_Tight", &VectorBox_Bool["Elec_MVA_NonIso_Tight"]);
+    ssbtree->Branch("Elec_MVA_IsoV", &VectorBox_Float["Elec_MVA_IsoV"]);
+    ssbtree->Branch("Elec_MVA_nonIsoV", &VectorBox_Float["Elec_MVA_nonIsoV"]);
 
     ssbtree->Branch("Elec_MVA_Categories", &VectorBox_Int["Elec_MVA_Categories"]);
     ssbtree->Branch("Elec_MVA_HZZ_Values", &VectorBox_Float["Elec_MVA_HZZ_Values"]);
@@ -261,14 +271,16 @@ void SSBTreeManager::Book(TTree* tree){
     ssbtree->Branch("Elec_SCB_HEEP", &VectorBox_Bool["Elec_SCB_HEEP"]);
     ssbtree->Branch("Elec_SCB_ooEmooP", &VectorBox_Float["Elec_SCB_ooEmooP"]);
     ssbtree->Branch("Elec_SCB_sigmaIetaIeta", &VectorBox_Float["Elec_SCB_sigmaIetaIeta"]);
-    ssbtree->Branch("Elec_ScaleUp", &VectorBox_Double["Elec_ScaleUp"]);
-    ssbtree->Branch("Elec_ScaleDown", &VectorBox_Double["Elec_ScaleDown"]);
-    ssbtree->Branch("Elec_SigmaUp", &VectorBox_Double["Elec_SigmaUp"]);
-    ssbtree->Branch("Elec_SigmaDown", &VectorBox_Double["Elec_SigmaDown"]);
-    ssbtree->Branch("Elec_ScSmUpUp", &VectorBox_Double["Elec_ScSmUpUp"]);
-    ssbtree->Branch("Elec_ScSmUpDown", &VectorBox_Double["Elec_ScSmUpDown"]);
-    ssbtree->Branch("Elec_ScSmDownUp", &VectorBox_Double["Elec_ScSmDownUp"]);
-    ssbtree->Branch("Elec_ScSmDownDown", &VectorBox_Double["Elec_ScSmDownDown"]);
+    ssbtree->Branch("Elec_Scale_StatUp", &VectorBox_Float["Elec_Scale_StatUp"]);
+    ssbtree->Branch("Elec_Scale_StatDown", &VectorBox_Float["Elec_Scale_StatDown"]);
+    ssbtree->Branch("Elec_Scale_SystUp", &VectorBox_Float["Elec_Scale_SystUp"]);
+    ssbtree->Branch("Elec_Scale_SystDown", &VectorBox_Float["Elec_Scale_SystDown"]);
+    ssbtree->Branch("Elec_GainUp", &VectorBox_Float["Elec_GainUp"]);
+    ssbtree->Branch("Elec_GainDown", &VectorBox_Float["Elec_GainDown"]);
+    ssbtree->Branch("Elec_RhoUp", &VectorBox_Float["Elec_RhoUp"]);
+    ssbtree->Branch("Elec_RhoDown", &VectorBox_Float["Elec_RhoDown"]);
+    ssbtree->Branch("Elec_PhiUp", &VectorBox_Float["Elec_PhiUp"]);
+    ssbtree->Branch("Elec_PhiDown", &VectorBox_Float["Elec_PhiDown"]);
     ssbtree->Branch("Elec_Supercluster_Eta", &VectorBox_Double["Elec_Supercluster_Eta"]);
     ssbtree->Branch("Elec_Track_CtfdXY", &VectorBox_Double["Elec_Track_CtfdXY"]);
     ssbtree->Branch("Elec_Track_CtfdZ", &VectorBox_Double["Elec_Track_CtfdZ"]);
@@ -328,6 +340,8 @@ void SSBTreeManager::Book(TTree* tree){
 
     ssbtree->Branch("Jet", "TClonesArray", &VariableBox_LorentzVector["Jet"], 32000, 0);
     VariableBox_LorentzVector["Jet"]->BypassStreamer();
+    ssbtree->Branch("RawJet", "TClonesArray", &VariableBox_LorentzVector["RawJet"], 32000, 0);
+    VariableBox_LorentzVector["RawJet"]->BypassStreamer();
     ssbtree->Branch("Jet_Charge", &VectorBox_Int["Jet_Charge"]);
     ssbtree->Branch("Jet_Count", &VariableBox_Int["Jet_Count"], "Jet_Count/I");
     ssbtree->Branch("Jet_EnShiftedDown", &VectorBox_Double["Jet_EnShiftedDown"]);
@@ -513,17 +527,33 @@ void SSBTreeManager::Book(TTree* tree){
     ssbtree->Branch("Muon_PFIsodBeta03", &VectorBox_Double["Muon_PFIsodBeta03"]);
     ssbtree->Branch("Muon_PFIsodBeta04", &VectorBox_Double["Muon_PFIsodBeta04"]);
     ssbtree->Branch("Muon_isHighPt", &VectorBox_Bool["Muon_isHighPt"]);
+    ssbtree->Branch("Muon_isHighTrkPt", &VectorBox_Bool["Muon_isHighTrkPt"]);
     ssbtree->Branch("Muon_isLoose", &VectorBox_Bool["Muon_isLoose"]);
     ssbtree->Branch("Muon_isMedium", &VectorBox_Bool["Muon_isMedium"]);
-    ssbtree->Branch("Muon_isMedium2016", &VectorBox_Bool["Muon_isMedium2016"]);
+    ssbtree->Branch("Muon_isMediumPrompt", &VectorBox_Bool["Muon_isMediumPrompt"]);
     ssbtree->Branch("Muon_isSoft", &VectorBox_Bool["Muon_isSoft"]);
     ssbtree->Branch("Muon_isTight", &VectorBox_Bool["Muon_isTight"]);
+
+    ssbtree->Branch("Muon_isPFIsoVeryLoose", &VectorBox_Bool["Muon_isPFIsoVeryLoose"]);
+    ssbtree->Branch("Muon_isPFIsoLoose", &VectorBox_Bool["Muon_isPFIsoLoose"]);
+    ssbtree->Branch("Muon_isPFIsoMedium", &VectorBox_Bool["Muon_isPFIsoMedium"]);
+    ssbtree->Branch("Muon_isPFIsoTight", &VectorBox_Bool["Muon_isPFIsoTight"]);
+    ssbtree->Branch("Muon_isPFIsoVeryTight", &VectorBox_Bool["Muon_isPFIsoVeryTight"]);
+    ssbtree->Branch("Muon_isPFIsoVeryVeryTight", &VectorBox_Bool["Muon_isPFIsoVeryVeryTight"]);
+
     ssbtree->Branch("Muon_pdgId", &VectorBox_Int["Muon_pdgId"]);
     ssbtree->Branch("Muon_rand1", &VectorBox_Double["Muon_rand1"]);
     ssbtree->Branch("Muon_rand2", &VectorBox_Double["Muon_rand2"]);
     ssbtree->Branch("Muon_relIso03", &VectorBox_Double["Muon_relIso03"]);
     ssbtree->Branch("Muon_relIso04", &VectorBox_Double["Muon_relIso04"]);
     ssbtree->Branch("Muon_trackerLayers", &VectorBox_Int["Muon_trackerLayers"]);
+
+
+    ssbtree->Branch("Muon_tuneP_Pt", &VectorBox_Double["Muon_tuneP_Pt"]);
+    ssbtree->Branch("Muon_tuneP_Eta", &VectorBox_Double["Muon_tuneP_Eta"]);
+    ssbtree->Branch("Muon_tuneP_Phi", &VectorBox_Double["Muon_tuneP_Phi"]);
+    ssbtree->Branch("Muon_tuneP_Charge", &VectorBox_Double["Muon_tuneP_Charge"]);
+
     ssbtree->Branch("PDFWeight_BjorkenX1", &VectorBox_Double["PDFWeight_BjorkenX1"]);
     ssbtree->Branch("PDFWeight_BjorkenX2", &VectorBox_Double["PDFWeight_BjorkenX2"]);
     ssbtree->Branch("PDFWeight_Cent", &VectorBox_Double["PDFWeight_Cent"]);
@@ -594,6 +624,10 @@ void SSBTreeManager::InitializeVariables(){
     VariableBox_Int["Channel_Jets"] = 0;
     VariableBox_Int["Channel_Jets_Abs"] = 0;
 
+    VariableBox_Double["L1_PreFire_Central"] = 0;
+    VariableBox_Double["L1_PreFire_Up"] = 0;
+    VariableBox_Double["L1_PreFire_Down"] = 0;
+
     VectorBox_String["METFilter_Name"].clear();
     VectorBox_Bool["METFilter_isError"].clear();
     VectorBox_Bool["METFilter_isPass"].clear();
@@ -625,6 +659,8 @@ void SSBTreeManager::InitializeVariables(){
 
     VectorBox_Bool["Elec_MVA_NonIso_Medium"].clear();
     VectorBox_Bool["Elec_MVA_NonIso_Tight"].clear();
+    VectorBox_Float["Elec_MVA_Iso_V"].clear();
+    VectorBox_Float["Elec_MVA_nonIso_V"].clear();
     VectorBox_Bool["Elec_MVA_NonIso_Loose"].clear();
     VectorBox_Float["Elec_MVA_HZZ_Values"].clear();
     VectorBox_Int["Elec_MVA_HZZ_Categories"].clear();
@@ -647,14 +683,16 @@ void SSBTreeManager::InitializeVariables(){
     VectorBox_Float["Elec_SCB_hOverE"].clear();
     VectorBox_Float["Elec_SCB_ooEmooP"].clear();
     VectorBox_Float["Elec_SCB_sigmaIetaIeta"].clear();
-    VectorBox_Double["Elec_ScaleUp"].clear();
-    VectorBox_Double["Elec_ScaleDown"].clear();
-    VectorBox_Double["Elec_SigmaUp"].clear();
-    VectorBox_Double["Elec_SigmaDown"].clear();
-    VectorBox_Double["Elec_ScSmUpUp"].clear();
-    VectorBox_Double["Elec_ScSmUpDown"].clear();
-    VectorBox_Double["Elec_ScSmDownUp"].clear();
-    VectorBox_Double["Elec_ScSmDownDown"].clear();
+    VectorBox_Float["Elec_Scale_StatUp"].clear();
+    VectorBox_Float["Elec_Scale_StatDown"].clear();
+    VectorBox_Float["Elec_Scale_SystUp"].clear();
+    VectorBox_Float["Elec_Scale_SystDown"].clear();
+    VectorBox_Float["Elec_GainUp"].clear();
+    VectorBox_Float["Elec_GainDown"].clear();
+    VectorBox_Float["Elec_RhoUp"].clear();
+    VectorBox_Float["Elec_RhoDown"].clear();
+    VectorBox_Float["Elec_PhiUp"].clear();
+    VectorBox_Float["Elec_PhiDown"].clear();
     VectorBox_Double["Elec_Supercluster_Eta"].clear();
     VectorBox_Double["Elec_Track_CtfdXY"].clear();
     VectorBox_Double["Elec_Track_CtfdZ"].clear();
@@ -893,17 +931,30 @@ void SSBTreeManager::InitializeVariables(){
     VectorBox_Double["Muon_PFIsodBeta03"].clear();
     VectorBox_Double["Muon_PFIsodBeta04"].clear();
     VectorBox_Bool["Muon_isHighPt"].clear();
+    VectorBox_Bool["Muon_isHighTrkPt"].clear();
     VectorBox_Bool["Muon_isLoose"].clear();
     VectorBox_Bool["Muon_isMedium"].clear();
-    VectorBox_Bool["Muon_isMedium2016"].clear();
+    VectorBox_Bool["Muon_isMediumPrompt"].clear();
     VectorBox_Bool["Muon_isSoft"].clear();
     VectorBox_Bool["Muon_isTight"].clear();
+
+    VectorBox_Bool["Muon_isPFIsoVeryLoose"].clear();
+    VectorBox_Bool["Muon_isPFIsoLoose"].clear();
+    VectorBox_Bool["Muon_isPFIsoMedium"].clear();
+    VectorBox_Bool["Muon_isPFIsoTight"].clear();
+    VectorBox_Bool["Muon_isPFIsoVeryTight"].clear();
+    VectorBox_Bool["Muon_isPFIsoVeryVeryTight"].clear();
+
     VectorBox_Int["Muon_pdgId"].clear();
     VectorBox_Double["Muon_rand1"].clear();
     VectorBox_Double["Muon_rand2"].clear();
     VectorBox_Double["Muon_relIso03"].clear();
     VectorBox_Double["Muon_relIso04"].clear();
     VectorBox_Int["Muon_trackerLayers"].clear();
+    VectorBox_Double["Muon_tuneP_Pt"].clear();
+    VectorBox_Double["Muon_tuneP_Eta"].clear();
+    VectorBox_Double["Muon_tuneP_Phi"].clear();
+    VectorBox_Double["Muon_tuneP_Charge"].clear();
     VectorBox_Double["PDFWeight_BjorkenX1"].clear();
     VectorBox_Double["PDFWeight_BjorkenX2"].clear();
     VectorBox_Double["PDFWeight_Cent"].clear();

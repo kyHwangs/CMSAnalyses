@@ -44,6 +44,7 @@ effAreaChHadrons_((iConfig.getParameter<edm::FileInPath>("effAreaChHadFile")).fu
 effAreaNeuHadrons_((iConfig.getParameter<edm::FileInPath>("effAreaNeuHadFile")).fullPath() ),
 effAreaPhotons_((iConfig.getParameter<edm::FileInPath>("effAreaPhoFile")).fullPath() )
 {
+   runPeriod = iConfig.getUntrackedParameter<std::string> ("RunYear", "");
    isMC = iConfig.getParameter<bool>("isMCTag");
    isSignal = iConfig.getParameter<bool>("isSignal");
    doFragSys = iConfig.getParameter<bool>("doFragsys");
@@ -135,6 +136,14 @@ effAreaPhotons_((iConfig.getParameter<edm::FileInPath>("effAreaPhoFile")).fullPa
 // needed for MET
    metToken_               = consumes<pat::METCollection>(iConfig.getParameter<edm::InputTag>("metTag")); // MC & DATA with JEC
 
+// L1 Prefireing 
+   //prefweight_token = consumes<double>(edm::InputTag("prefiringweight:NonPrefiringProb"));
+  // prefweightup_token = consumes<double>(edm::InputTag("prefiringweight:NonPrefiringProbUp"));
+   //prefweightdown_token = consumes<double>(edm::InputTag("prefiringweight:NonPrefiringProbDown"));
+   prefweight_token = consumes< double >(edm::InputTag("prefiringweight:nonPrefiringProb"));
+   prefweightup_token = consumes< double >(edm::InputTag("prefiringweight:nonPrefiringProbUp"));
+   prefweightdown_token = consumes< double >(edm::InputTag("prefiringweight:nonPrefiringProbDown"));
+
 }
 
 
@@ -162,6 +171,8 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
    Lumi = -999;
    isData = false;
 
+   //cout << "runPeriod " << runPeriod << endl;
+
    /// Initailizing variable 
    ssbtreeManager->InitializeVariables(); 
    //ssbtreeManager->GenInitializeVariables();
@@ -175,6 +186,25 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
    ssbtreeManager->Fill( "Info_RunNumber"  , Run    ); 
    ssbtreeManager->Fill( "Info_Luminosity" , Lumi   ); 
    ssbtreeManager->Fill( "Info_isData"     , isData ); 
+  
+   ///////////////////
+   //// L1 Prefire ///
+   ///////////////////
+   edm::Handle< double > theprefweight;
+   iEvent.getByToken(prefweight_token, theprefweight ) ;
+   double _prefiringweight =(*theprefweight);
+
+   edm::Handle< double > theprefweightup;
+   iEvent.getByToken(prefweightup_token, theprefweightup ) ;
+   double _prefiringweightup =(*theprefweightup);
+
+   edm::Handle< double > theprefweightdown;
+   iEvent.getByToken(prefweightdown_token, theprefweightdown ) ;
+   double _prefiringweightdown =(*theprefweightdown);
+
+   ssbtreeManager->Fill( "L1_PreFire_Central" , _prefiringweight );
+   ssbtreeManager->Fill( "L1_PreFire_Up"      , _prefiringweightup);
+   ssbtreeManager->Fill( "L1_PreFire_Down"    , _prefiringweightdown);
 
    /////////////////////////////
    /// METFilter Information ///
@@ -193,7 +223,7 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       ssbtreeManager->Fill( "METFilter_isError" , MetFilter->error(i)         );
       ssbtreeManager->Fill( "METFilter_isRun"   , MetFilter->wasrun(i)        ); 
    }
-   /// Additional METFilter Information ///
+   /// Additional METFilter Information /// this is old version ...
 /*   edm::Handle<bool> ifilterbadGlobal;
    iEvent.getByToken(badGlobalMuonTaggerToken_, ifilterbadGlobal);
    bool filterbadGlobal = *ifilterbadGlobal;
@@ -470,7 +500,7 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       {  
          ssbtreeManager->Fill( "Filter_PV" , PV_Filter_ );
       }
-
+   
       v_vertex.push_back(itPV);
 
       vtx_x_  = itPV.x(); 
@@ -596,20 +626,58 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       isLoose = false;
       isSoft = false;
       isTight = false;
-      isHighPt = false;
+      isMediumPrompt = false;
       isMedium = false;
+      isHighPt = false;
+      isHighTrkPt = false;
       goodGlob = false;
-      isMedium2016 = false;
+      //isMedium2016 = false;
       numTrackLayer = -1;
-      isLoose = muon.isLooseMuon() ;
+      isPassPFIsoVeryLoose=false;
+      isPassPFIsoLoose=false;    
+      isPassPFIsoMedium=false;   
+      isPassPFIsoTight=false;
+      isPassPFIsoVeryTight=false;
+      isPassTkIsoLoose=false;
+      isPassTkIsoTight=false;
+
+      muTuneP_pt  = -999;
+      muTuneP_eta = -999;
+      muTuneP_phi = -999;
+      muTuneP_charge = -999;
+
+      ///////////////
+      /// Muon ID ///
+      ///////////////
+      // https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideMuonSelection#Muon_selectors_Since_9_4_X//
+      // old method... recomendation is to use MuonSelector...///
+/*      isLoose = muon.isLooseMuon() ;
       isMedium = muon.isMediumMuon() ;
       isSoft =  muon.isSoftMuon( v_vertex[0] );
       isTight = muon.isTightMuon( v_vertex[0] );
-      isHighPt = muon.isHighPtMuon( v_vertex[0] );
+      isHighPt = muon.isHighPtMuon( v_vertex[0] );*/
+      isLoose        = muon.passed(reco::Muon::CutBasedIdLoose);
+      isMedium       = muon.passed(reco::Muon::Muon::CutBasedIdMedium);
+      isMediumPrompt = muon.passed(reco::Muon::Muon::CutBasedIdMediumPrompt); //reco::Muon::isMediumMuon and dz<0.1 and dxy< 0.02
+      isTight        = muon.passed(reco::Muon::CutBasedIdTight);
+      isHighPt       = muon.passed(reco::Muon::CutBasedIdGlobalHighPt);
+      isHighTrkPt    = muon.passed(reco::Muon::CutBasedIdTrkHighPt);
+      isSoft         = muon.passed(reco::Muon::SoftCutBasedId);
 
       //cout << "03 " << muon.pfIsolationR03().sumChargedHadronPt << "   " << muon.pfIsolationR03().sumNeutralHadronEt << "   " 
       //<< muon.pfIsolationR03().sumPhotonEt << "   " << muon.pfIsolationR03().sumPUPt << endl;
+      /// Medium ID - 2016 /// Remove this requirements after Legacy Sample ...
+/*      goodGlob = muon.isGlobalMuon() && 
+                 muon.globalTrack()->normalizedChi2() < 3 && 
+                 muon.combinedQuality().chi2LocalPosition < 12 && 
+                 muon.combinedQuality().trkKink < 20;
+      isMedium2016 = muon::isLooseMuon(muon) && 
+                     muon.innerTrack()->validFraction() > 0.49 && 
+                     //muon.innerTrack()->validFraction() > 0.8 && 
+                     muon::segmentCompatibility(muon) > (goodGlob ? 0.303 : 0.451); 
+*/
 
+      // Calculation of muon isolation (rel, PFiso) ....
       relIso03 = isolation->MuonRelTrkIso( muon.isolationR03().sumPt, muon.pt() );
 
       PFIsodbeta03 = isolation->PFIsodBeta( muon.pfIsolationR03().sumChargedHadronPt, muon.pfIsolationR03().sumNeutralHadronEt, 
@@ -618,25 +686,26 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       PFIsodbeta04 = isolation->PFIsodBeta( muon.pfIsolationR04().sumChargedHadronPt, muon.pfIsolationR04().sumNeutralHadronEt, 
                                                 muon.pfIsolationR04().sumPhotonEt, muon.pfIsolationR04().sumPUPt, muon.pt() ,0.5);
 
-      //cout << "04 " << muon.pfIsolationR04().sumChargedHadronPt << "   " << muon.pfIsolationR04().sumNeutralHadronEt << "   " 
-      //     << muon.pfIsolationR04().sumPhotonEt << "   " << muon.pfIsolationR04().sumPUPt << endl;
+      /// Calculation of muon isolation using muonselector /// recomanded method for UL RUn2 ...
+      //cout << "muon.passed PFIso : " << muon.passed(reco::Muon::PFIsoTight) << endl;
+      isPassPFIsoVeryLoose     = muon.passed(reco::Muon::PFIsoVeryLoose); // Relative PF-isolation (delta beta corrected, 0.4 cone) <0.40 
+      isPassPFIsoLoose         = muon.passed(reco::Muon::PFIsoLoose); // Relative PF-isolation (delta beta corrected, 0.4 cone) <0.25
+      isPassPFIsoMedium        = muon.passed(reco::Muon::PFIsoMedium); // Relative PF-isolation (delta beta corrected, 0.4 cone) <0.20
+      isPassPFIsoTight         = muon.passed(reco::Muon::PFIsoTight); // Relative PF-isolation (delta beta corrected, 0.4 cone) <0.15
+      isPassPFIsoVeryTight     = muon.passed(reco::Muon::PFIsoVeryTight); // Relative PF-isolation (delta beta corrected, 0.4 cone) <0.10
+      isPassPFIsoVeryVeryTight = muon.passed(reco::Muon::PFIsoVeryVeryTight); // Relative PF-isolation (delta beta corrected, 0.4 cone) <0.05
+      isPassTkIsoLoose         = muon.passed(reco::Muon::TkIsoLoose); // Relative Tracker isolation (0.3 cone) <0.10
+      isPassTkIsoTight         = muon.passed(reco::Muon::TkIsoTight); // Relative Tracker isolation (0.3 cone) <0.05
+      // TO-DO //MiniIso and MVA ID will be added ...  
 
-
-      /// Medium ID - 2016 ///
-      goodGlob = muon.isGlobalMuon() && 
-                 muon.globalTrack()->normalizedChi2() < 3 && 
-                 muon.combinedQuality().chi2LocalPosition < 12 && 
-                 muon.combinedQuality().trkKink < 20;
-      isMedium2016 = muon::isLooseMuon(muon) && 
-                     muon.innerTrack()->validFraction() > 0.49 && 
-                     //muon.innerTrack()->validFraction() > 0.8 && 
-                     muon::segmentCompatibility(muon) > (goodGlob ? 0.303 : 0.451); 
+      //cout << " iMu->passed(reco::Muon::PFMvaTight) : " << muon.passed(reco::Muon::MvaTight)<< endl;
 
       if (muon.innerTrack().isNonnull() && muon.innerTrack().isAvailable()  ){
          numTrackLayer = muon.innerTrack()->hitPattern().trackerLayersWithMeasurement();
       }
       // get random number generator
       edm::Service<edm::RandomNumberGenerator> rng;
+      if (!rng.isAvailable()) edm::LogError("MUON : random number generator is missing !");
       CLHEP::HepRandomEngine& engine = rng->getEngine(iEvent.streamID());
       double mcShift1 = engine.flat();
       double mcShift2 = engine.flat();
@@ -652,11 +721,21 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
          gen_muphi = muon.genParticle()->phi(); 
          gen_muenergy = muon.genParticle()->energy(); 
       }
+
+      // TuneP //
+      if (muon.tunePMuonBestTrack().isNonnull()){
+         //cout << " tunePMuonBestTrack() pt :" << muon.tunePMuonBestTrack()->pt()<< endl;
+         muTuneP_pt = muon.tunePMuonBestTrack()->pt();
+         muTuneP_eta = muon.tunePMuonBestTrack()->eta();
+         muTuneP_phi = muon.tunePMuonBestTrack()->phi();
+         muTuneP_charge = muon.tunePMuonBestTrack()->charge();
+      }
+
       ssbtreeManager->Fill( "Muon", muon.pt(), muon.eta(), muon.phi(), muon.energy(), muon_index);
       ssbtreeManager->Fill( "GenMuon", gen_mupt, gen_mueta, gen_muphi, gen_muenergy, muon_index);
       ssbtreeManager->Fill( "Muon_isLoose"       , isLoose          );
       ssbtreeManager->Fill( "Muon_isMedium"      , isMedium         );
-      ssbtreeManager->Fill( "Muon_isMedium2016"  , isMedium2016     );
+      //ssbtreeManager->Fill( "Muon_isMedium2016"  , isMedium2016     );
       ssbtreeManager->Fill( "Muon_isSoft"        , isSoft           );
       ssbtreeManager->Fill( "Muon_isTight"       , isTight          );
       ssbtreeManager->Fill( "Muon_isHighPt"      , isHighPt         );
@@ -668,6 +747,16 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       ssbtreeManager->Fill( "Muon_pdgId"         , muon.pdgId()     );
       ssbtreeManager->Fill( "Muon_Charge"        , muon.charge()    );
       ssbtreeManager->Fill( "Muon_trackerLayers" , numTrackLayer    );
+      ssbtreeManager->Fill( "Muon_isPFIsoVeryLoose" , isPassPFIsoVeryLoose     );
+      ssbtreeManager->Fill( "Muon_isPFIsoLoose" , isPassPFIsoLoose     );
+      ssbtreeManager->Fill( "Muon_isPFIsoMedium" , isPassPFIsoMedium     );
+      ssbtreeManager->Fill( "Muon_isPFIsoTight" , isPassPFIsoTight     );
+      ssbtreeManager->Fill( "Muon_isPFIsoVeryTight" , isPassPFIsoVeryTight     );
+      ssbtreeManager->Fill( "Muon_isPFIsoVeryVeryTight" , isPassPFIsoVeryVeryTight     );
+      ssbtreeManager->Fill( "Muon_tuneP_Pt"             , muTuneP_pt     );
+      ssbtreeManager->Fill( "Muon_tuneP_Eta"            , muTuneP_eta    );
+      ssbtreeManager->Fill( "Muon_tuneP_Phi"            , muTuneP_phi    );
+      ssbtreeManager->Fill( "Muon_tuneP_Charge"         , muTuneP_charge );
 
       muon_index++;
 
@@ -732,7 +821,17 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       nmhit_ = 999;
       matchesConv = false;
       passconversionveto = false;
-      passconversionveto1 = false;
+
+      eleScale_stat_up_ = false;
+      eleScale_stat_dn_ = false;
+      eleScale_syst_up_ = false;
+      eleScale_syst_dn_ = false;
+      eleScale_gain_up_ = false;
+      eleScale_gain_dn_ = false;
+      eleResol_rho_up_  = false;
+      eleResol_rho_dn_  = false;
+      eleResol_phi_up_  = false;
+      eleResol_phi_dn_  = false;
 
 
       auto corrP4  = iEle->p4() * iEle->userFloat("ecalTrkEnergyPostCorr") / iEle->energy();
@@ -742,6 +841,41 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       eles_phi_ = corrP4.Phi();
       eles_energy_ = corrP4.energy();
       ssbtreeManager->Fill("Elec", eles_pt_,eles_eta_,eles_phi_,eles_energy_,ele_index );
+      ssbtreeManager->Fill("RawElec", iEle->pt(),iEle->eta(),iEle->phi(),iEle->energy(),ele_index );
+
+      /// Syst. Unc ///
+      eleScale_stat_up_ = iEle->userFloat("energyScaleStatUp");
+      eleScale_stat_dn_ = iEle->userFloat("energyScaleStatDown");
+      eleScale_syst_up_ = iEle->userFloat("energyScaleSystUp");
+      eleScale_syst_dn_ = iEle->userFloat("energyScaleSystDown");
+      eleScale_gain_up_ = iEle->userFloat("energyScaleGainUp");
+      eleScale_gain_dn_ = iEle->userFloat("energyScaleGainDown");
+      eleResol_rho_up_  = iEle->userFloat("energySigmaRhoUp");
+      eleResol_rho_dn_  = iEle->userFloat("energySigmaRhoDown");
+      eleResol_phi_up_  = iEle->userFloat("energySigmaPhiUp");
+      eleResol_phi_dn_  = iEle->userFloat("energySigmaPhiDown");
+
+      /*cout << "eleScale_stat_up_ : " << eleScale_stat_up_ << endl;
+      cout << "eleScale_stat_dn_ : " << eleScale_stat_dn_ << endl;
+      cout << "eleScale_syst_up_ : " << eleScale_syst_up_ << endl;
+      cout << "eleScale_syst_dn_ : " << eleScale_syst_dn_ << endl;
+      cout << "eleScale_gain_up_ : " << eleScale_gain_up_ << endl;
+      cout << "eleScale_gain_dn_ : " << eleScale_gain_dn_ << endl;
+      cout << "eleResol_rho_up_ : " << eleResol_rho_up_ << endl;
+      cout << "eleResol_rho_dn_ : " << eleResol_rho_dn_ << endl;
+      cout << "eleResol_phi_up_ : " << eleResol_phi_up_ << endl;
+      cout << "eleResol_phi_dn_ : " << eleResol_phi_dn_ << endl;*/
+
+      ssbtreeManager->Fill( "Elec_Scale_StatUp"    , eleScale_stat_up_);
+      ssbtreeManager->Fill( "Elec_Scale_StatDown"  , eleScale_stat_dn_);
+      ssbtreeManager->Fill( "Elec_Scale_SystUp"    , eleScale_syst_up_);
+      ssbtreeManager->Fill( "Elec_Scale_SystDown"  , eleScale_syst_dn_);
+      ssbtreeManager->Fill( "Elec_GainUp"          , eleScale_gain_up_);
+      ssbtreeManager->Fill( "Elec_GainDown"        , eleScale_gain_dn_);
+      ssbtreeManager->Fill( "Elec_GainUp"          , eleResol_rho_up_ );
+      ssbtreeManager->Fill( "Elec_GainDown"        , eleResol_rho_dn_ );
+      ssbtreeManager->Fill( "Elec_GainUp"          , eleResol_phi_up_ );
+      ssbtreeManager->Fill( "Elec_GainDown"        , eleResol_phi_dn_ );
 
       elecs_relIso03_ = isolation->ElecRelIso( iEle->dr03HcalTowerSumEt(), iEle->dr03EcalRecHitSumEt(), iEle->dr03TkSumPt(), iEle->et() );
       elecs_relIso04_ = isolation->ElecRelIso( iEle->dr04HcalTowerSumEt(), iEle->dr04EcalRecHitSumEt(), iEle->dr04TkSumPt(), iEle->et() );
@@ -858,21 +992,15 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       eles_SCB_Medium_ = iEle->electronID("cutBasedElectronID-Fall17-94X-V2-medium");
       eles_SCB_Tight_  = iEle->electronID("cutBasedElectronID-Fall17-94X-V2-tight");
 
+      /*cout << "eles_SCB_Veto_ : " << eles_SCB_Veto_ << endl;
+      cout << "eles_SCB_Loose_ : " << eles_SCB_Loose_ << endl;
+      cout << "eles_SCB_Medium_ : " << eles_SCB_Medium_ << endl;
+      cout << "eles_SCB_Tight_ : " << eles_SCB_Tight_ << endl;*/
+
       ssbtreeManager->Fill( "Elec_SCB_Loose"          , eles_SCB_Loose_         );
       ssbtreeManager->Fill( "Elec_SCB_Medium"         , eles_SCB_Medium_        );
       ssbtreeManager->Fill( "Elec_SCB_Tight"          , eles_SCB_Tight_         );
       ssbtreeManager->Fill( "Elec_SCB_Veto"           , eles_SCB_Veto_          );
-
-/*      float mva_Values        = (*mvaValues)[itele];
-      float mva_ValuesHZZ     = (*mvaValuesHZZ)[itele];
-      int   mva_Categories    = (*mvaCategories)[itele];
-      int   mva_CategoriesHZZ = (*mvaCategoriesHZZ)[itele];*/
-
-
-      //electron_mva_value_Iso_Fall17_v1[electron_count] = iEle->userFloat("ElectronMVAEstimatorRun2Fall17IsoV1Values");
-      //electron_mva_value_noIso_Fall17_v1[electron_count] = iEle->userFloat("ElectronMVAEstimatorRun2Fall17NoIsoV1Values");
-      //cout << " ElectronMVAEstimatorRun2Fall17IsoV1Values ? " <<  iEle->userFloat("ElectronMVAEstimatorRun2Fall17IsoV1Values") << endl;
-      //cout << " ElectronMVAEstimatorRun2Fall17NoIsoV1Values ? " <<  iEle->userFloat("ElectronMVAEstimatorRun2Fall17NoIsoV1Values") << endl;
 
       bool isPassmvaTight = iEle->electronID("mvaEleID-Fall17-iso-V2-wp90");
       bool isPassmvaMedium = iEle->electronID("mvaEleID-Fall17-iso-V2-wp80");
@@ -882,6 +1010,11 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       bool isPassmvaMediumNonIso  =  iEle->electronID("mvaEleID-Fall17-noIso-V2-wp80");
       bool isPassmvaLooseNonIso = iEle->electronID("mvaEleID-Fall17-noIso-V2-wpLoose");
 
+      bool isPassHEEP   = iEle->electronID("heepElectronID-HEEPV70");
+      //cout << " userFloat(\"ElectronMVAEstimatorRun2Fall17IsoV2Values\") : " << iEle->userFloat("ElectronMVAEstimatorRun2Fall17IsoV2Values") << endl;
+      float elemva_iso    = iEle->userFloat("ElectronMVAEstimatorRun2Fall17IsoV2Values");
+      float elemva_noniso = iEle->userFloat("ElectronMVAEstimatorRun2Fall17NoIsoV2Values");
+
       ssbtreeManager->Fill( "Elec_MVA_Loose"          , isPassmvaLoose         );
       ssbtreeManager->Fill( "Elec_MVA_Medium"         , isPassmvaMedium        );
       ssbtreeManager->Fill( "Elec_MVA_Tight"          , isPassmvaTight         );
@@ -889,29 +1022,116 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       ssbtreeManager->Fill( "Elec_MVA_NonIso_Loose"          , isPassmvaLooseNonIso         );
       ssbtreeManager->Fill( "Elec_MVA_NonIso_Medium"         , isPassmvaMediumNonIso        );
       ssbtreeManager->Fill( "Elec_MVA_NonIso_Tight"          , isPassmvaTightNonIso         );
+      ssbtreeManager->Fill( "Elec_SCB_HEEP"          , isPassHEEP          );
+      ssbtreeManager->Fill( "Elec_MVA_IsoV"          , elemva_iso          );
+      ssbtreeManager->Fill( "Elec_MVA_nonIsoV"       , elemva_noniso          );
 
-      passconversionveto1 = iEle->passConversionVeto();// pat conversion veto
+      passconversionveto = iEle->passConversionVeto();// pat conversion veto
+      ssbtreeManager->Fill( "Elec_Conversion"          , passconversionveto          );
+
+
 
       ooEmooP_ =  (1.0/iEle->ecalEnergy())*(1.0-iEle->eSuperClusterOverP()) ;
 
-
-
-/*      electron_mva_value_Iso_Fall17_v2[electron_count] = iEle->userFloat("ElectronMVAEstimatorRun2Fall17IsoV2Values");
-      electron_mva_value_noIso_Fall17_v2[electron_count] = iEle->userFloat("ElectronMVAEstimatorRun2Fall17NoIsoV2Values");
-
-      electron_mva_wp90_Iso_Fall17_v2[electron_count] = iEle->electronID("mvaEleID-Fall17-iso-V2-wp90");
-      electron_mva_wp80_Iso_Fall17_v2[electron_count] = iEle->electronID("mvaEleID-Fall17-iso-V2-wp80");
-      electron_mva_Loose_Iso_Fall17_v2[electron_count] = iEle->electronID("mvaEleID-Fall17-iso-V2-wpLoose");
-
-      electron_mva_wp90_noIso_Fall17_v2[electron_count] = iEle->electronID("mvaEleID-Fall17-noIso-V2-wp90");
-      electron_mva_wp80_noIso_Fall17_v2[electron_count] = iEle->electronID("mvaEleID-Fall17-noIso-V2-wp80");
-      electron_mva_Loose_noIso_Fall17_v2[electron_count] = iEle->electronID("mvaEleID-Fall17-noIso-V2-wpLoose");
-*/
    }
 
    //////////////////////////
    /// Photon Information ///
    //////////////////////////
+   photon_index = 0;
+   edm::Handle<edm::View<pat::Photon> >photons;
+   iEvent.getByToken(photonToken_, photons);
+   for (edm::View<pat::Photon>::const_iterator itPho = photons->begin(); itPho != photons->end(); ++itPho) {
+      phos_pt_     = -999;
+      phos_eta_    = -999;
+      phos_phi_    = -999;
+      phos_energy_ = -999;
+      abseta = -9990;
+      phos_SCB_Loose_ = false;
+      phos_SCB_Medium_ = false;
+      phos_SCB_Tight_ = false;
+      isPassNonTrigTight = false;
+      chIso = -999;
+      nhIso = -999;
+      phIso = -999;
+      CHHad_effArea = -999;
+      NeuHad_effArea = -999;
+      Pho_effArea = -999;
+      pho_r9 = -999;
+      phoHoverE = -999;
+      pho_scE = -999;
+      pho_scRawE = -999;
+      pho_sceta = -999;
+      pho_scphi = -999;
+      pho_scetawidth = -999;
+      pho_scphowidth = -999;
+      pho_EleVeto = -999;
+      pho_full5x5_sigmaIetaIeta = -999;
+
+      auto corrP4  = itPho->p4() * itPho->userFloat("ecalEnergyPostCorr") / itPho->energy();
+
+      /*phos_pt_     = itPho.pt();
+      phos_eta_    = itPho.eta();
+      phos_phi_    = itPho.phi();
+      phos_energy_ = itPho.energy();*/
+
+      phos_pt_ = corrP4.Pt();
+      phos_eta_ = corrP4.Eta();
+      phos_phi_ = corrP4.Phi();
+      phos_energy_ = corrP4.energy();
+
+
+      abseta = fabs(itPho->superCluster()->eta());
+      phos_SCB_Loose_ = itPho->photonID("cutBasedPhotonID-Fall17-94X-V2-loose");
+      phos_SCB_Medium_ = itPho->photonID("cutBasedPhotonID-Fall17-94X-V2-medium");
+      phos_SCB_Tight_ = itPho->photonID("cutBasedPhotonID-Fall17-94X-V2-tight");
+      //bool isPassMVA_WP80 = itPho->photonID("mvaPhoID-RunIIFall17-v2-wp80");
+      //bool isPassMVA_WP90 = itPho->photonID("mvaPhoID-RunIIFall17-v2-wp90");
+
+
+
+      CHHad_effArea  = effAreaChHadrons_.getEffectiveArea(abseta);
+      NeuHad_effArea = effAreaNeuHadrons_.getEffectiveArea(abseta);
+      Pho_effArea    = effAreaPhotons_.getEffectiveArea(abseta);
+//      double pfrho_iso   = isolation->PFIsoRho(chIso,nhIso,phIso,rho,Area,phos_pt_ );
+      pho_r9         = itPho->r9();
+      phoHoverE      = itPho->hadTowOverEm();
+      pho_scE        = itPho->superCluster()->energy();
+      pho_scRawE     = itPho->superCluster()->rawEnergy();
+      pho_sceta      = itPho->superCluster()->eta();
+      pho_scphi      = itPho->superCluster()->phi();
+      pho_scetawidth = itPho->superCluster()->etaWidth();
+      pho_scphowidth = itPho->superCluster()->phiWidth();
+      pho_EleVeto    = itPho->passElectronVeto();
+
+      ssbtreeManager->Fill("Photon", phos_pt_,phos_eta_,phos_phi_,phos_energy_,photon_index );
+      ssbtreeManager->Fill("Photon_SCB_Loose",               phos_SCB_Loose_    );
+      ssbtreeManager->Fill("Photon_SCB_Medium",              phos_SCB_Medium_   );
+      ssbtreeManager->Fill("Photon_SCB_Tight",               phos_SCB_Tight_    );
+      ssbtreeManager->Fill("Photon_MVANonTrig_Tight",        isPassNonTrigTight );
+      ssbtreeManager->Fill("Photon_R9",                      pho_r9             );
+      ssbtreeManager->Fill("Photon_HoverE",                  phoHoverE          );
+      ssbtreeManager->Fill("Photon_SuperCluster_Eta",        pho_sceta          );
+      ssbtreeManager->Fill("Photon_SuperCluster_Phi",        pho_scphi          );
+      ssbtreeManager->Fill("Photon_SuperCluster_EtaWidth",   pho_scetawidth     );
+      ssbtreeManager->Fill("Photon_SuperCluster_PhiWidth",   pho_scphowidth     );
+      ssbtreeManager->Fill("Photon_SuperCluster_Energy",     pho_scE            );
+      ssbtreeManager->Fill("Photon_SuperCluster_RawEnergy",  pho_scRawE         );
+      ssbtreeManager->Fill("Photon_Full5x5_SigmaIetaIeta",   pho_full5x5_sigmaIetaIeta);
+      ssbtreeManager->Fill("Photon_ElectronVeto"           , pho_EleVeto    );
+      ssbtreeManager->Fill("Photon_ChaHadIso"              , chIso          );
+      ssbtreeManager->Fill("Photon_NeuHadIso"              , nhIso          );
+      ssbtreeManager->Fill("Photon_PhoIso"                 , phIso          );
+      ssbtreeManager->Fill("Photon_WorstChargedIso"        , worstchIso     );
+      ssbtreeManager->Fill("Photon_ChaHadEffArea"          , CHHad_effArea  );
+      ssbtreeManager->Fill("Photon_NeuHadEffArea"          , NeuHad_effArea );
+      ssbtreeManager->Fill("Photon_PhoHadEffArea"          , Pho_effArea    );
+//      ssbtreeManager->Fill("Photon_PFIsoRho03"       , pfrho_iso          );
+      photon_index++;
+
+
+   }
+
 
    /////////////////////////
    /// Jets Information  ///
@@ -919,12 +1139,6 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 
 
    // Utility for Jet ID
-   PFJetIDSelectionFunctor LooseJetID(pfLooseJetIDparam);
-   pat::strbitset looseJetIdSel = LooseJetID.getBitTemplate();
-
-   PFJetIDSelectionFunctor TightJetID(pfTightJetIDparam);
-   pat::strbitset tightJetIdSel = TightJetID.getBitTemplate();
-
    jet_index = 0;
  
    Handle<pat::JetCollection> jets;
@@ -944,7 +1158,7 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
    JetCorrectorParameters const & JetCorPar = (*JetCorParColl)["Uncertainty"];
    jetcorr_uncertainty = new JetCorrectionUncertainty(JetCorPar);
 
-   // Declare JetPhiResolution //
+   // Declare JetPhiResolution // For Systematic Unc., we need to find out new receipe ...
    JME::JetResolution phiresol_mc;
    JME::JetResolution phiresol_data;
    JME::JetResolution ptresol_mc;
@@ -976,6 +1190,10 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       jets_eta_         = -9999;
       jets_phi_         = -9999;
       jets_energy_      = -9999;
+      rawjets_pt_          = -9999;
+      rawjets_eta_         = -9999;
+      rawjets_phi_         = -9999;
+      rawjets_energy_      = -9999;
       jets_pdgid_       = 0;
       jets_isJet_       = false;
       jets_bDisc_       = -9999;
@@ -990,28 +1208,72 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       isTightjetidLepVeto_pass = false;
       jets_UncEnUp_     = 0;
       jets_UncEnDown_   = 0;
-      NHF               = -999;
-      NEMF              = -999;
-      CHF               = -999;
-      MUF               = -999;
-      CEMF              = -999;
-      NumConst          = -999;
-      CHM               = -999;
 
+      NHF                 = -999;
+      NEMF                = -999;
+      CHF                 = -999;
+      MUF                 = -999;
+      CEMF                = -999;
+      NumConst            = -999;
+      NumNeutralParticles = -999;
+      CHM                 = -999;
 
       phi_resol_mc      = -999;
       phi_resol_data    = -999;
       pt_resol_mc       = -999;
       pt_resol_data       = -999;
       jet_en_resol_sf   = -999;
+
+      ////////////////////////////
+      /// End of jet selection ///
+      ////////////////////////////
+
+      float mva   = -999;
+
+      //// Jet Kinematics ////
+      jets_pt_ = itJet.pt();
+      jets_eta_ = itJet.eta();
+      jets_phi_ = itJet.phi();
+      jets_energy_ = itJet.energy();
+      jets_charge_ = itJet.charge();
+      //// RawJet Kinematics ////
+      rawjets_pt_ = itJet.correctedP4("Uncorrected").pt();
+      rawjets_eta_ = itJet.correctedP4("Uncorrected").eta();
+      rawjets_phi_ = itJet.correctedP4("Uncorrected").phi();
+      rawjets_energy_ = itJet.correctedP4("Uncorrected").energy();
+
+
+
+      /// works only for JPT or PF jet
+      jets_mvapujet_ = mva;
+      jets_pdgid_ = itJet.pdgId();
+      jets_isJet_ = itJet.isJet();
+
+
+
+      /// Update PFJetID ( Muon Energy Veto )///
+/*      NHF      = itJet.neutralHadronEnergyFraction();
+      NEMF     = itJet.neutralEmEnergyFraction();
+      CHF      = itJet.chargedHadronEnergyFraction();
+      MUF      = itJet.muonEnergyFraction();
+      CEMF     = itJet.chargedEmEnergyFraction();
+      NumConst = itJet.chargedMultiplicity()+itJet.neutralMultiplicity();
+      CHM      = itJet.chargedMultiplicity(); 
+*/
+      NHF  = itJet.neutralHadronEnergyFraction();
+      NEMF = itJet.neutralEmEnergyFraction();
+      CHF  = itJet.chargedHadronEnergyFraction();
+      MUF  = itJet.muonEnergyFraction();
+      CEMF = itJet.chargedEmEnergyFraction();
+      NumConst = itJet.chargedMultiplicity()+itJet.neutralMultiplicity();
+      NumNeutralParticles =itJet.neutralMultiplicity();
+      CHM      = itJet.chargedMultiplicity(); 
+
+
+
       ///For PFJetIDSelectionFunctor
-      looseJetIdSel.set(false);
-      isLoosejetid_pass = LooseJetID(itJet, looseJetIdSel);
 
-      tightJetIdSel.set(false);
-      isTightjetid_pass = TightJetID(itJet, tightJetIdSel);
-
-      if (isTightjetid_pass)
+      /*if (isTightjetid_pass)
       {
          jets_pfjetid_ = 2;
       }
@@ -1022,51 +1284,53 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       else 
       {
          jets_pfjetid_ = 0;
-      }
-
-      ////////////////////////////
-      /// End of jet selection ///
-      ////////////////////////////
-
-      float mva   = -999;
-          
-      jets_pt_ = itJet.pt();
-      jets_eta_ = itJet.eta();
-      jets_phi_ = itJet.phi();
-      jets_energy_ = itJet.energy();
-      jets_charge_ = itJet.charge();
-
-      /// works only for JPT or PF jet
-      jets_mvapujet_ = mva;
-      jets_pdgid_ = itJet.pdgId();
-      jets_isJet_ = itJet.isJet();
-      jets_bDisc_ = itJet.bDiscriminator(csvBJetTag);
-
-      /// Update PFJetID ( Muon Energy Veto )///
-      NHF      = itJet.neutralHadronEnergyFraction();
-      NEMF     = itJet.neutralEmEnergyFraction();
-      CHF      = itJet.chargedHadronEnergyFraction();
-      MUF      = itJet.muonEnergyFraction();
-      CEMF     = itJet.chargedEmEnergyFraction();
-      NumConst = itJet.chargedMultiplicity()+itJet.neutralMultiplicity();
-      CHM      = itJet.chargedMultiplicity(); 
-      /*bool testloose = false;
-      if((NHF<0.99 && NEMF<0.99 && NumConst>1) && ((abs(jets_eta_)<=2.4 && CHF>0 && CHM>0 && CEMF<0.99) || abs(jets_eta_)>2.4) && abs(jets_eta_)<=2.7)
-      {
-      testloose = true;
       }*/
 
-      if ( NHF != -999 && NEMF != -999 && CHF != -999 && MUF != -999 && CEMF != -999 && NumConst != -999 && CHM != -999  )
-      { 
-         isLoosejetidLepVeto_pass = (NHF<0.99 && NEMF<0.99 && NumConst>1 && MUF<0.8) && ((fabs(jets_eta_)<=2.4 && CHF>0 && CHM>0 && CEMF<0.99) || fabs(jets_eta_)>2.4);
-         isTightjetidLepVeto_pass = (NHF<0.90 && NEMF<0.90 && NumConst>1 && MUF<0.8) && ((fabs(jets_eta_)<=2.4 && CHF>0 && CHM>0 && CEMF<0.90) || fabs(jets_eta_)>2.4);
+
+      if(runPeriod =="UL2016"|| runPeriod == "UL2016APV"){
+        if(fabs(jets_eta_)<=2.4){
+          //isTightjetid_pass = ( CHM>0 && CHF>0 && NumConst>1 && NEMF<0.9 && NHF < 0.9 ); 
+          isTightjetid_pass = ( CHM>0 && CHF>0 && NumConst>1 && NEMF<0.9 && NHF < 0.9 ); 
+          isTightjetidLepVeto_pass = isTightjetid_pass && CEMF<0.8 && MUF <0.8; 
+        }else if(fabs(jets_eta_)<=2.7){
+          isTightjetid_pass = ( NEMF<0.99 && NHF < 0.9 );
+          isTightjetidLepVeto_pass = isTightjetid_pass;
+        }else if(fabs(jets_eta_)<=3.0){
+          isTightjetid_pass = ( NEMF>0.0 && NEMF<0.99 && NHF<0.9 && NumNeutralParticles>1 );
+          isTightjetidLepVeto_pass = isTightjetid_pass;
+        }else{
+          isTightjetid_pass = ( NEMF<0.90 && NHF>0.2 && NumNeutralParticles>10 );
+          isTightjetidLepVeto_pass = isTightjetid_pass;
+        }
+      }
+      else if(runPeriod == "UL2017" || runPeriod == "UL2018"){
+        if(fabs(jets_eta_)<=2.6){
+          isTightjetid_pass = ( CHM>0 && CHF>0 && NumConst>1 && NEMF<0.9 && NHF < 0.9 ); 
+          isTightjetidLepVeto_pass = isTightjetid_pass && CEMF<0.8 && MUF <0.8; 
+        }else if(fabs(jets_eta_)<=2.7){
+          isTightjetid_pass = ( CHM>0 && NEMF<0.99 && NHF < 0.9 );
+          isTightjetidLepVeto_pass = isTightjetid_pass && CEMF<0.8 && MUF <0.8;
+        }else if(fabs(jets_eta_)<=3.0){
+          isTightjetid_pass = ( NEMF>0.01 && NEMF<0.99 && NumNeutralParticles>1 );
+          isTightjetidLepVeto_pass = isTightjetid_pass;
+        }else{
+          isTightjetid_pass = ( NEMF<0.90 && NHF>0.2 && NumNeutralParticles>10 );
+          isTightjetidLepVeto_pass = isTightjetid_pass;
+        }
+      }
+      else {
+         cout << "Error!! Check out runPeriod!!!!" << runPeriod << endl;
+      }
+      if (isTightjetid_pass)
+      {
+         jets_pfjetid_ = 1;
+      }
+      else 
+      {
+         jets_pfjetid_ = 0;
       }
 
       if (isTightjetidLepVeto_pass)
-      {
-         jets_pfjetidveto_ = 2;
-      }
-      else if (isLoosejetidLepVeto_pass)
       {
          jets_pfjetidveto_ = 1;
       }
@@ -1075,15 +1339,88 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
          jets_pfjetidveto_ = 0;
       }
 
-      // Getting BTagging Information //
+
+      /// Calculating JetEnergy Uncertainty
+      jetcorr_uncertainty->setJetEta(jets_eta_);
+      jetcorr_uncertainty->setJetPt(jets_pt_);
+      double unc = jetcorr_uncertainty->getUncertainty(true);
+      jets_UncEnUp_ = (1. +  unc);
+      jetcorr_uncertainty->setJetEta(jets_eta_);
+      jetcorr_uncertainty->setJetPt(jets_pt_);
+      unc = jetcorr_uncertainty->getUncertainty(false);
+      jets_UncEnDown_ = (1. -  unc);
+/*
+      jetcorr_test->setJetEta(jets_eta_);
+      jetcorr_test->setJetPt(jets_pt_);
+      double unc_test = jetcorr_test->getUncertainty(true);
+      double jets_UncEnUp_test = (1. +  unc_test);
+      jetcorr_test->setJetEta(jets_eta_);
+      jetcorr_test->setJetPt(jets_pt_);
+      unc_test = jetcorr_test->getUncertainty(false);
+      double jets_UncEnDown_test = (1. -  unc_test);*/
+       
+      // Define parameters of Jet Phi (pT) Resol.//
+      parameters.setJetPt(jets_pt_);
+      parameters.setJetEta(jets_eta_);
+      parameters.setRho(rho); 
+
+      phi_resol_mc    = phiresol_mc.getResolution(parameters);
+      phi_resol_data  = phiresol_data.getResolution(parameters);
+      pt_resol_mc     = ptresol_mc.getResolution(parameters);
+      pt_resol_data   = ptresol_data.getResolution(parameters);
+      jet_en_resol_sf = res_sf.getScaleFactor({{JME::Binning::JetEta, jets_eta_}});
+      double jet_en_resol_sf_up = res_sf.getScaleFactor({{JME::Binning::JetEta, jets_eta_}}, Variation::UP);
+      double jet_en_resol_sf_dn = res_sf.getScaleFactor({{JME::Binning::JetEta, jets_eta_}}, Variation::DOWN);
+
+      double fJER   = -999;
+      double fJERUp = -999;
+      double fJERDn = -999;
+
+      if (!iEvent.isRealData()){
+         //const reco::GenJet* genJet = itJet.genJet();
+         auto genJet = itJet.genJetFwdRef();
+         if ( genJet.isNonnull() and deltaR(genJet->p4(), itJet.p4()) < 0.2 and 
+              std::abs(genJet->pt()-jets_pt_) < pt_resol_mc*3*jets_pt_ )
+         {
+            const double genJetPt = genJet->pt();
+            const double dPt = jets_pt_-genJetPt;
+            fJER   = std::max(0., (genJetPt+dPt*jet_en_resol_sf)/jets_pt_);
+            fJERUp = std::max(0., (genJetPt+dPt*jet_en_resol_sf_up)/jets_pt_);
+            fJERDn = std::max(0., (genJetPt+dPt*jet_en_resol_sf_dn)/jets_pt_);
+            //cout << "fJER : " << fJER << " fJERUp " << fJERUp << " fJERDn " << fJERDn << endl;
+         }
+         else {
+            edm::Service<edm::RandomNumberGenerator> rng;
+            if (!rng.isAvailable()) edm::LogError("JET : random number generator is missing !");
+            CLHEP::HepRandomEngine & engine = rng->getEngine( iEvent.streamID() );
+            //float rnd = CLHEP::RandGauss::shoot();
+            const double mcShift = CLHEP::RandGauss::shoot(&engine);
+            fJER   = jet_en_resol_sf   <= 1 ? 1 : 1+mcShift*pt_resol_mc*sqrt(jet_en_resol_sf*jet_en_resol_sf-1);
+            fJERUp = jet_en_resol_sf_up <= 1 ? 1 : 1+mcShift*pt_resol_mc*sqrt(jet_en_resol_sf_up*jet_en_resol_sf_up-1);
+            fJERDn = jet_en_resol_sf_dn <= 1 ? 1 : 1+mcShift*pt_resol_mc*sqrt(jet_en_resol_sf_dn*jet_en_resol_sf_dn-1);
+            //cout << "Rand fJER : " << fJER << " fJERUp " << fJERUp << " fJERDn " << fJERDn << endl;
+         }
+
+      }
+
+
+      // Getting BTagging Information // https://btv-wiki.docs.cern.ch/ScaleFactors/
+      //jets_bDisc_ = itJet.bDiscriminator("pfDeepFlavourJetTags:probb") + itJet.bDiscriminator("pfDeepFlavourJetTags:probbb") + itJet.bDiscriminator("pfDeepFlavourJetTags:problepb");
+      jets_bDisc_ = itJet.bDiscriminator(csvBJetTag); // old version ///
+
       for (unsigned int ibtag =0; ibtag < btagList.size(); ++ibtag)
       {
          TString btagName = btagList.at(ibtag);
          btagName.ReplaceAll(":","_");
          ssbtreeManager->Fill( "Jet_bDisc_Name" ,  btagList); 
          ssbtreeManager->Fill( "Jet_bDisc_Value" , itJet.bDiscriminator( btagList.at(ibtag) ) ); 
+         //cout << "btagList.at(ibtag) : " << btagList.at(ibtag)  << " disc: " << itJet.bDiscriminator( btagList.at(ibtag) ) << endl;
       }
+      //cout << "jets_bDisc_ : "<< jets_bDisc_ << endl;
+
+      //LorentzVector uncorrectedP4 = itJet.correctedP4("Uncorrected");
       ssbtreeManager->Fill( "Jet", jets_pt_, jets_eta_, jets_phi_, jets_energy_, jet_index);
+      ssbtreeManager->Fill( "RawJet", rawjets_pt_, rawjets_eta_, rawjets_phi_, rawjets_energy_, jet_index);
       ssbtreeManager->Fill( "Jet_Charge"        , jets_charge_          );
       ssbtreeManager->Fill( "Jet_isJet"         , jets_isJet_           );
       ssbtreeManager->Fill( "Jet_bDisc"         , jets_bDisc_           );
@@ -1092,7 +1429,17 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       ssbtreeManager->Fill( "Jet_PFIdVeto"           ,     jets_pfjetidveto_ );
       ssbtreeManager->Fill( "Jet_PileUpId"           ,     jets_mvapujetid_  );
       ssbtreeManager->Fill( "Jet_PileUpMVA"          ,     jets_mvapujet_    );
-  
+
+      ssbtreeManager->Fill( "Jet_EnShiftedUp"        ,     jets_UncEnUp_     );
+      ssbtreeManager->Fill( "Jet_EnShiftedDown"      ,     jets_UncEnDown_   );
+      ssbtreeManager->Fill( "Jet_PhiResolution_MC"   ,     phi_resol_mc      ); 
+      ssbtreeManager->Fill( "Jet_PhiResolution_DATA" ,     phi_resol_data    ); 
+      ssbtreeManager->Fill( "Jet_EnergyResolution_MC",     pt_resol_mc    ); 
+      ssbtreeManager->Fill( "Jet_EnergyResolution_DATA",   pt_resol_data    ); 
+      ssbtreeManager->Fill( "Jet_EnergyResolution_SF",     fJER              ); 
+      ssbtreeManager->Fill( "Jet_EnergyResolution_SFUp",   fJERUp            ); 
+      ssbtreeManager->Fill( "Jet_EnergyResolution_SFDown", fJERDn            ); 
+ 
       jet_index++;
 
    }
@@ -1122,7 +1469,7 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
                  << " MET MC sumET Test3 : " << itMet.shiftedSumEt(pat::MET::NoShift, pat::MET::Type1) 
                  << endl;*/
       //cout << "met sig. : "<< itMet.significance()  << " met METsig. : "<< itMet.metSignificance()  << endl;
-      ssbtreeManager->Fill( "MET" , itMet.shiftedPt(pat::MET::NoShift, pat::MET::Type1XY), 0, itMet.shiftedPhi(pat::MET::NoShift, pat::MET::Type1XY), 0, MET_index );
+      ssbtreeManager->Fill( "MET" , itMet.shiftedPt(pat::MET::NoShift, pat::MET::Type1XY), 0, itMet.shiftedPhi(pat::MET::NoShift, pat::MET::Type1XY), 0, MET_index ); /// TO-DO  We need to check up receipe for MET XY(phi) correction ...
       ssbtreeManager->Fill( "MET_Significance", itMet.significance() );
 
       MET_index++;

@@ -4,7 +4,6 @@ import FWCore.ParameterSet.Config as cms
 process = cms.Process("SSB")
 
 # Configurable options =======================================================================
-year = 2018 # Options: 2016, 2018, 2018
 period = 'UL2018' # Options: UL2016APV, UL2016, UL2018, UL2018
 
 #configurable options =======================================================================
@@ -29,7 +28,6 @@ else:
     elif period is 'UL2016APV' : process.GlobalTag.globaltag = '106X_mcRun2_asymptotic_preVFP_v11'
     elif period is 'UL2017' : process.GlobalTag.globaltag = '106X_mc2017_realistic_v9'
     elif period is 'UL2018' : process.GlobalTag.globaltag = '106X_upgrade2018_realistic_v16_L1v1'
-
 
 
 # Message Logger settings
@@ -117,29 +115,41 @@ if period is 'UL2016APV' :
     labelEra = '2016preVFP-UL'
     rerunIDs = True                                                                                                                    
     rerunEnergyCorrections = True
-    eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer16UL_ID_ISO_cff','RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff']
-    phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff']
+    #eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer16UL_ID_ISO_cff','RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff','RecoEgamma.ElectronIdentification.Identification.cutBasedElectronID_Fall17_94X_V2_cff']
+    #phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff']
 elif period is 'UL2016' :
     labelEra = '2016postVFP-UL'                                                                                                        
     rerunIDs = True
     rerunEnergyCorrections = True                                                                                                      
-    eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer17UL_ID_ISO_cff', 'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff']
-    phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff']
+    #eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer17UL_ID_ISO_cff', 'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff','RecoEgamma.ElectronIdentification.Identification.cutBasedElectronID_Fall17_94X_V2_cff']
+    #phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff']
 elif period is 'UL2017' :
     labelEra = '2017-UL'                                                                                                               
     rerunIDs = True
     rerunEnergyCorrections = True
-    eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer17UL_ID_ISO_cff', 'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff']
-    phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff']
+    #eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer17UL_ID_ISO_cff', 'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff','RecoEgamma.ElectronIdentification.Identification.cutBasedElectronID_Fall17_94X_V2_cff']
+    #phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff']
 
 elif period is 'UL2018' :                                                                                                              
     labelEra = '2018-UL'                                                                                                               
     rerunIDs = True
     rerunEnergyCorrections = True
-    eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer18UL_ID_ISO_cff','RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff','RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Fall17_iso_V2_cff']
-    phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff']
+    #eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer18UL_ID_ISO_cff','RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff','RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Fall17_iso_V2_cff','RecoEgamma.ElectronIdentification.Identification.cutBasedElectronID_Fall17_94X_V2_cff']
+    #phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff']
 
-print ("eleIDModules : %s "%(eleIDModules))
+eleIDModules =  [
+'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff',
+'RecoEgamma.ElectronIdentification.Identification.cutBasedElectronID_Fall17_94X_V2_cff',
+'RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Fall17_noIso_V2_cff',
+'RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Fall17_iso_V2_cff',
+]
+phoIDModules =  [
+'RecoEgamma.PhotonIdentification.Identification.mvaPhotonID_Fall17_94X_V2_cff',
+'RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff',
+]
+
+
+#print ("eleIDModules : %s "%(eleIDModules))
 setupEgammaPostRecoSeq(process,
                        runVID=rerunIDs,
                        runEnergyCorrections=rerunEnergyCorrections,
@@ -156,7 +166,36 @@ process.RandomNumberGeneratorService = cms.Service("RandomNumberGeneratorService
                                                       engineName = cms.untracked.string('TRandom3'),
                                                       )
                                                    )
+#######################
+#### L1 Prefiring #####
+#### https://twiki.cern.ch/twiki/bin/viewauth/CMS/L1PrefiringWeightRecipe
+#########################################################################
 
+from PhysicsTools.PatUtils.l1PrefiringWeightProducer_cfi import l1PrefiringWeightProducer
+
+#print ("eleIDModules : %s "%(eleIDModules))
+if period is 'UL2016APV' :                                                                                                             
+    DataEraECAL = 'UL2016preVFP'
+    DataEraMuon = '2016preVFP'
+elif period is 'UL2016' :
+    DataEraECAL = 'UL2016postVFP'
+    DataEraMuon = '2016postVFP'
+elif period is 'UL2017' :
+    DataEraECAL = 'UL2017BtoF'
+    DataEraMuon = '20172018'
+elif period is 'UL2018' :
+    DataEraECAL = 'None'
+    DataEraMuon = '20172018'
+
+process.prefiringweight = l1PrefiringWeightProducer.clone(
+  TheJets = cms.InputTag("updatedPatJetsUpdatedJEC"), #this should be the slimmedJets collection with up to date JECs !
+  DataEraECAL = cms.string(DataEraECAL),
+  DataEraMuon = cms.string(DataEraMuon),
+  #DataEraMuon = cms.string("20172018"),
+  UseJetEMPt = cms.bool(False),
+  PrefiringRateSystematicUnctyECAL = cms.double(0.2),
+  PrefiringRateSystematicUnctyMuon = cms.double(0.2)
+)
 
 process.MINIAODSIMoutput = cms.OutputModule("PoolOutputModule",
     compressionLevel = cms.untracked.int32(4),
@@ -174,11 +213,41 @@ process.MINIAODSIMoutput = cms.OutputModule("PoolOutputModule",
     overrideInputFileSplitLevels = cms.untracked.bool(True)
 )
 
+#########################
+####### JER Files #######
+#########################
+if period is 'UL2016APV' :                                                                                                             
+    phiResolMCFileName   = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer20UL16APV_JRV3_MC/Summer20UL16APV_JRV3_MC_PhiResolution_AK4PFchs.txt'
+    phiResolDataFileName = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer20UL16APV_JRV3_DATA/Summer20UL16APV_JRV3_DATA_PhiResolution_AK4PFchs.txt'
+    ptResolMCFileName    = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer20UL16APV_JRV3_MC/Summer20UL16APV_JRV3_MC_PtResolution_AK4PFchs.txt'
+    ptResolDataFileName  = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer20UL16APV_JRV3_DATA/Summer20UL16APV_JRV3_DATA_PtResolution_AK4PFchs.txt'
+    ptResolSFFileName    = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer20UL16APV_JRV3_MC/Summer20UL16APV_JRV3_MC_SF_AK4PFchs.txt'
+elif period is 'UL2016' :
+    phiResolMCFileName   = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer20UL16_JRV3_MC/Summer20UL16_JRV3_MC_PhiResolution_AK4PFchs.txt'
+    phiResolDataFileName = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer20UL16_JRV3_DATA/Summer20UL16_JRV3_DATA_PhiResolution_AK4PFchs.txt'
+    ptResolMCFileName    = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer20UL16_JRV3_MC/Summer20UL16_JRV3_MC_PtResolution_AK4PFchs.txt'
+    ptResolDataFileName  = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer20UL16_JRV3_DATA/Summer20UL16_JRV3_DATA_PtResolution_AK4PFchs.txt'
+    ptResolSFFileName    = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer20UL16_JRV3_MC/Summer20UL16_JRV3_MC_SF_AK4PFchs.txt'
+elif period is 'UL2017' :
+    phiResolMCFileName   = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer19UL17_JRV3_MC/Summer19UL17_JRV3_MC_PhiResolution_AK4PFchs.txt'
+    phiResolDataFileName = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer19UL17_JRV3_DATA/Summer19UL17_JRV3_DATA_PhiResolution_AK4PFchs.txt'
+    ptResolMCFileName    = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer19UL17_JRV3_MC/Summer19UL17_JRV3_MC_PtResolution_AK4PFchs.txt'
+    ptResolDataFileName  = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer19UL17_JRV3_DATA/Summer19UL17_JRV3_DATA_PtResolution_AK4PFchs.txt'
+    ptResolSFFileName    = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer19UL17_JRV3_MC/Summer19UL17_JRV3_MC_SF_AK4PFchs.txt'
+elif period is 'UL2018' :
+    phiResolMCFileName   = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer19UL18_JRV2_MC/Summer19UL18_JRV2_MC_PhiResolution_AK4PFchs.txt'
+    phiResolDataFileName = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer19UL18_JRV2_DATA/Summer19UL18_JRV2_DATA_PhiResolution_AK4PFchs.txt'
+    ptResolMCFileName    = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer19UL18_JRV2_MC/Summer19UL18_JRV2_MC_PtResolution_AK4PFchs.txt'
+    ptResolDataFileName  = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer19UL18_JRV2_DATA/Summer19UL18_JRV2_DATA_PtResolution_AK4PFchs.txt'
+    ptResolSFFileName    = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer19UL18_JRV2_MC/Summer19UL18_JRV2_MC_SF_AK4PFchs.txt'
+else : print("Check out Run Period!!!")
+
 ####################
 ### SSB Analyzer ###
 ####################
 
 process.ssbanalyzer = cms.EDAnalyzer('SSBAnalyzer',
+                                    RunYear = cms.untracked.string(period),
                                     bitsPat                    = cms.InputTag("TriggerResults","","PAT"),
                                     isMCTag         = cms.bool(isMC),
                                     PDFInfoTag      = cms.InputTag("generator",""),
@@ -199,47 +268,63 @@ process.ssbanalyzer = cms.EDAnalyzer('SSBAnalyzer',
                                     puTag           = cms.InputTag("slimmedAddPileupInfo",""),
                                     trigList        = cms.vstring(
                                                         ### SingleMuon ###
-                                                        'HLT_IsoMu20_v',
-                                                        'HLT_IsoMu24_v',# 2016 study
-                                                        'HLT_IsoTkMu24_v',# 2016 study
-                                                        'HLT_IsoMu22_eta2p1_v',# 2016 study
-                                                        'HLT_IsoTkMu22_eta2p1_v',# 2016 study
-                                                        'HLT_IsoMu20_eta2p1_TriCentralPFJet30_v',
-                                                        'HLT_IsoMu20_eta2p1_TriCentralPFJet50_40_30_v',
+                                                        'HLT_IsoMu20_v', #2016
+                                                        'HLT_IsoMu24_v', # 2016 2018
+                                                        'HLT_IsoTkMu24_v', # 2016
+                                                        'HLT_IsoMu22_eta2p1_v', #2016
+                                                        'HLT_IsoTkMu22_eta2p1_v', #2016
+                                                        'HLT_Mu50_v', #2016
+                                                        'HLT_TkMu50_v', #2016
+                                                        'HLT_Mu45_eta2p1_v',#2016 
+                                                        'HLT_IsoMu27_v',#2017
+                                                        'HLT_IsoMu24_eta2p1_v', #2017
+                                                        'HLT_IsoMu27_v', #2017
+                                                        'HLT_OldMu100_v', #2017&2018
+                                                        'HLT_TkMu100_v', #2017&2018
                                                         ### SingleElectron ###
-                                                        'HLT_Ele23_WPLoose_Gsf_v',
-                                                        'HLT_Ele27_eta2p1_WPLoose_Gsf_v', ## For 2015 study 
-                                                        'HLT_Ele27_eta2p1_WPLoose_Gsf_TriCentralPFJet30_v', # Will be Removed
-                                                        'HLT_Ele27_eta2p1_WPLoose_Gsf_CentralPFJet30_BTagCSV07_v', # Will be Removed
-                                                        'HLT_Ele27_eta2p1_WPLoose_Gsf_TriCentralPFJet50_40_30_v', # Will be Removed
-                                                        'HLT_Ele32_eta2p1_WPTight_Gsf_v', ## 2016 study
+                                                        'HLT_Ele32_eta2p1_WPTight_Gsf_v', #2016 
                                                         'HLT_Ele27_WPTight_Gsf_v', ## 2016 study
                                                         'HLT_Ele25_eta2p1_WPTight_Gsf_v', ## 2016 study
+                                                        'HLT_Ele35_WPTight_Gsf_v', ## 2017 study
+                                                        'HLT_Ele38_WPTight_Gsf_v', ## 2017 study
+                                                        'HLT_Ele40_WPTight_Gsf_v', ## 2017 study
+                                                        'HLT_Ele32_WPTight_Gsf_L1DoubleEG_v', ## 2017 study
+                                                        'HLT_Ele28_eta2p1_WPTight_Gsf_HT150_v', ## 2017 & 2018 study #E+HT Trigger
+                                                        'HLT_Ele30_eta2p1_WPTight_Gsf_CentralPFJet35_EleCleaned_v', ## 2017 & 2018 study #E+HT Trigger
+                                                        'HLT_Ele32_WPTight_Gsf_v', ## 2018 study 
                                                         ### DoubleMuon ###
                                                         'HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_v', ## 2016 study
                                                         'HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_DZ_v', ## 2016 study
-                                                        'HLT_Mu17_TrkIsoVVL_TkMu8_TrkIsoVVL_v', ## 2015 study
-                                                        'HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_v', ## 2015 study
+                                                        'HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ', ## 2017 study
+                                                        'HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass8_v', ## 2017 study
+                                                        'HLT_Mu17_TrkIsoVVL_Mu8_TrkIsoVVL_DZ_Mass3p8_v', ## 2017 & 2018 study
                                                         ### DoubleElectron ###
-                                                        'HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v', # for 2016
+                                                        'HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v', # for 2016 & 2017 & 2018
                                                         'HLT_DoubleEle24_22_eta2p1_WPLoose_Gsf_v', # for 2016
-                                                        'HLT_Ele17_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v',#for 2015
+                                                        'HLT_Ele17_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v',#for 2016
+                                                        'HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_v',#for 2017
+                                                        #'HLT_Ele23_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v',#for 2017
                                                         ### MuonElectron ###
-                                                        'HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_v',#for 2016 
-                                                        'HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v',#for 2016 
-                                                        'HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v',#for 2016 
-                                                        'HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v',#for 2016 
-                                                        'HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v',#for 2016
-                                                        'HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v',# for 2016
+                                                        'HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_v',# for 2016
+                                                        'HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v',# for 2016
+                                                        'HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v',# for 2016
+                                                        'HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v',# for 2016 & 2017 & 2018
+                                                        'HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_v',# for 2016
+                                                        'HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v',# for 2016
+                                                        #'HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_v',# for 2017 & 2016
+                                                        #'HLT_Mu23_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_DZ_v',# for 2017 & 2016
+                                                        #'HLT_Mu12_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v',# for 2017 & 2016
+                                                        #'HLT_Mu8_TrkIsoVVL_Ele23_CaloIdL_TrackIdL_IsoVL_DZ_v',# for 2016 & 2017
                                                         ### AllHadronic ### 
                                                         'HLT_PFHT450_SixJet40_BTagCSV_p056_v',#for 2016 
                                                         'HLT_PFHT400_SixJet30_DoubleBTagCSV_p056_v',#for 2016 
-                                                        'HLT_Mu17_TrkIsoVVL_Ele12_CaloIdL_TrackIdL_IsoVL_v',#for 2015
-                                                        'HLT_BTagMu_DiJet20_Mu5_v', # For SoftMuon Trigger 
-                                                        'HLT_BTagMu_DiJet40_Mu5_v',
-                                                        'HLT_BTagMu_DiJet70_Mu5_v',
-                                                        'HLT_BTagMu_DiJet110_Mu5_v',
-                                                        'HLT_BTagMu_DiJet300_Mu5_v',
+                                                        'HLT_PFHT380_SixJet32_DoubleBTagCSV_p075_v',#for 2016 
+                                                        'HLT_PFHT430_SixJet40_BTagCSV_p080_v',#for 2017
+                                                        'HLT_PFHT380_SixPFJet32_DoublePFBTagCSV_2p2_v',#for 2017
+                                                        'HLT_PFHT430_SixPFJet40_PFBTagCSV_1p5_v',#for 2017
+                                                        'HLT_PFHT380_SixPFJet32_DoublePFBTagDeepCSV_2p2_v',#for 2017
+                                                        'HLT_PFHT430_SixPFJet40_PFBTagDeepCSV_1p5_v',#for 2018
+                                                        #'HLT_PFHT380_SixPFJet32_DoublePFBTagDeepCSV_2p2_v',#for 2017
                                                         ),
                                     bits             = cms.InputTag("TriggerResults","","HLT"),
                                     prescales        = cms.InputTag("patTrigger"),
@@ -281,7 +366,7 @@ process.ssbanalyzer = cms.EDAnalyzer('SSBAnalyzer',
                                     
                                     #phoTag          = cms.InputTag("slimmedPhotons",""),
                                     #photonPATInput  = cms.InputTag("calibratedPatPhotons",""),
-                                    phoTag          = cms.InputTag("selectedPhotons",""),
+                                    phoTag          = cms.InputTag("slimmedElectrons",""),
                                     photonPATInput  = cms.InputTag("selectedPhotons",""),
                                     phoLooseIdMap   = cms.InputTag( "egmPhotonIDs:cutBasedPhotonID-Spring16-V2p2-loose"  ),
                                     phoMediumIdMap  = cms.InputTag( "egmPhotonIDs:cutBasedPhotonID-Spring16-V2p2-medium" ),
@@ -311,13 +396,13 @@ process.ssbanalyzer = cms.EDAnalyzer('SSBAnalyzer',
                                     jtTag = cms.InputTag("updatedPatJetsUpdatedJEC",""), #For Jet
                                     jtpuppiTag = cms.InputTag("slimmedJets",""), #For Jet
                                     PayLoadName = cms.string('AK4PFchs'),
-                                    phiResolMCFile = cms.FileInPath('CMSAnalyses/SSBAnalyzer/data/Spring16_25nsV10/Spring16_25nsV10_MC_PhiResolution_AK4PFchs.txt'),
-                                    phiResolDataFile = cms.FileInPath('CMSAnalyses/SSBAnalyzer/data/Spring16_25nsV6/Spring16_25nsV6_DATA_PhiResolution_AK4PFchs.txt'),
-                                    ptResolMCFile = cms.FileInPath('CMSAnalyses/SSBAnalyzer/data/Spring16_25nsV10/Spring16_25nsV10_MC_PtResolution_AK4PFchs.txt'),
-                                    ptResolDataFile = cms.FileInPath('CMSAnalyses/SSBAnalyzer/data/Spring16_25nsV6/Spring16_25nsV6_DATA_PtResolution_AK4PFchs.txt'),
-                                    #ptResolSFFile = cms.FileInPath('CMSAnalyses/SSBAnalyzer/data/Spring16_25nsV10/Spring16_25nsV10_MC_SF_AK4PFchs.txt'),
-                                    ptResolSFFile = cms.FileInPath('CMSAnalyses/SSBAnalyzer/data/Spring16_25nsV10a/Spring16_25nsV10a_MC_SF_AK4PFchs.txt'),
+                                    phiResolMCFile   = cms.FileInPath(phiResolMCFileName),
+                                    phiResolDataFile = cms.FileInPath(phiResolDataFileName),
+                                    ptResolMCFile    = cms.FileInPath(ptResolMCFileName),
+                                    ptResolDataFile  = cms.FileInPath(ptResolDataFileName),
+                                    ptResolSFFile    = cms.FileInPath(ptResolSFFileName),
                                     csvbjetTag = cms.string("pfCombinedInclusiveSecondaryVertexV2BJetTags"),
+                                    #csvbjetTag = cms.string('pfDeepCSVDiscriminatorsJetTags:BvsAll'), 
                                     btagListTag        = cms.vstring(
                                                          'pfCombinedInclusiveSecondaryVertexV2BJetTags',
                                                          'pfDeepCSVJetTags:probb',
@@ -349,5 +434,6 @@ process.p = cms.Path(
         process.egammaPostRecoSeq*
         process.fullPatMetSequence*
         process.jecSequence*
+        process.prefiringweight* 
         process.ssbanalyzer
 )

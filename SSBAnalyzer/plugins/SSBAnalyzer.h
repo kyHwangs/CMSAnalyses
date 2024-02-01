@@ -163,6 +163,7 @@ class SSBAnalyzer : public edm::EDAnalyzer {
       edm::Service<TFileService> ssbfs;
 
       bool isMC;
+      string runPeriod;
 
       // METFilter //
       edm::EDGetTokenT<bool> BadChCandFilterToken_;
@@ -240,11 +241,13 @@ class SSBAnalyzer : public edm::EDAnalyzer {
       edm::EDGetTokenT<edm::ValueMap<bool> > mva_eleMediumMapToken_;
       edm::EDGetTokenT<edm::ValueMap<bool> > mva_eleTightMapToken_;
       edm::EDGetTokenT<edm::ValueMap<bool> > mva_eleHZZIDMapToken_;
+
       // MVA values and categories (optional)
       edm::EDGetTokenT<edm::ValueMap<float> > mvaValuesMapToken_;
       edm::EDGetTokenT<edm::ValueMap<int> > mvaCategoriesMapToken_;
       edm::EDGetTokenT<edm::ValueMap<float> > mvaValuesHZZMapToken_;
       edm::EDGetTokenT<edm::ValueMap<int> > mvaCategoriesHZZMapToken_;
+
 
       /// Photon
       edm::EDGetTokenT<edm::View<pat::Photon>  >  photonToken_;
@@ -291,6 +294,11 @@ class SSBAnalyzer : public edm::EDAnalyzer {
       edm::EDGetTokenT<pat::METCollection> metsMuCleanCorrToken_; // MC  recompute bad muon //
       edm::EDGetTokenT<pat::METCollection> metsUncorrectedToken_; // DATA
 
+      // L1 Prefiring //
+      edm::EDGetTokenT< double > prefweight_token;
+      edm::EDGetTokenT< double > prefweightup_token;
+      edm::EDGetTokenT< double > prefweightdown_token;
+
       /// index for TClonesArray
       int genPar_index;
       int genJet_index;
@@ -332,19 +340,37 @@ class SSBAnalyzer : public edm::EDAnalyzer {
 
       // variables for Muons 
       bool isLoose;
+      //bool isMedium2016;
       bool isMedium;
+      bool isMediumPrompt;
       bool goodGlob;
-      bool isMedium2016;
       bool isSoft;
       bool isTight;
       bool isHighPt;
+      bool isHighTrkPt;
       double trkIso03;
       double relIso03;
 //      double trkIso04;
 //      double relIso04;
       double PFIsodbeta03;
       double PFIsodbeta04;
+
+      bool isPassPFIsoVeryLoose;
+      bool isPassPFIsoLoose;    
+      bool isPassPFIsoMedium;   
+      bool isPassPFIsoTight;
+      bool isPassPFIsoVeryTight;
+      bool isPassPFIsoVeryVeryTight;
+      bool isPassTkIsoLoose;
+      bool isPassTkIsoTight;
+
+
       int numTrackLayer;
+      // varibles for muon track (tuneP)
+      double muTuneP_pt;
+      double muTuneP_eta;
+      double muTuneP_phi;
+      double muTuneP_charge;
 
       // variables for patJet
       bool isJetPreCut;
@@ -358,6 +384,7 @@ class SSBAnalyzer : public edm::EDAnalyzer {
       float MUF;
       float CEMF;
       float NumConst;
+      float NumNeutralParticles;
       float CHM;
       double jets_pt_;
       double jets_UncEnUp_;
@@ -366,6 +393,13 @@ class SSBAnalyzer : public edm::EDAnalyzer {
       double jets_phi_;
       double jets_energy_;
       double jets_pdgid_;
+      double rawjets_pt_;
+      double rawjets_UncEnUp_;
+      double rawjets_UncEnDown_;
+      double rawjets_eta_;
+      double rawjets_phi_;
+      double rawjets_energy_;
+
       bool jets_isJet_;
       int jets_charge_;
       float jets_bDisc_;
@@ -445,6 +479,20 @@ class SSBAnalyzer : public edm::EDAnalyzer {
       float ooEmooP_;
 
       int nmhit_;
+      // Electron Smearing sys..
+      float  eleScale_stat_up_;
+      float  eleScale_stat_dn_;
+      float  eleScale_syst_up_;
+      float  eleScale_syst_dn_;
+      float  eleScale_gain_up_;
+      float  eleScale_gain_dn_;
+      float  eleResol_rho_up_;
+      float  eleResol_rho_dn_;
+      float  eleResol_phi_up_;
+      float  eleResol_phi_dn_;
+
+
+
 
       // variables for pile up info.
       float NPU;
