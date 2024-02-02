@@ -1150,6 +1150,7 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 
    }
 
+   ssbtreeManager->Fill("Photon_Count"          , photon_index    );
 
    /////////////////////////
    /// Jets Information  ///
