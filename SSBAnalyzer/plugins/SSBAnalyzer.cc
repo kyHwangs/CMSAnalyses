@@ -775,6 +775,12 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       eles_eta_ = -9999.0;
       eles_phi_ = -9999.0;
       eles_energy_ = -9999.0;
+
+      raweles_pt_ = -9999.0;
+      raweles_eta_ = -9999.0;
+      raweles_phi_ = -9999.0;
+      raweles_energy_ = -9999.0;
+
       superclustereta_ = -999.0;
 
       elecs_relIso03_ = -999.0;
@@ -833,6 +839,10 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       eleResol_phi_up_  = false;
       eleResol_phi_dn_  = false;
 
+      raweles_pt_ = itEle->pt();
+      raweles_eta_ = itEle->eta();
+      raweles_phi_ = itEle->phi();
+      raweles_energy_ = itEle->energy();
 
       auto corrP4  = itEle->p4() * itEle->userFloat("ecalTrkEnergyPostCorr") / itEle->energy();
       //cout << "corrP4" << corrP4 << endl;
@@ -841,18 +851,12 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       eles_phi_ = corrP4.Phi();
       eles_energy_ = corrP4.energy();
 
-      raweles_pt_ = itEle->pt();
-      raweles_eta_ = itEle->eta();
-      raweles_phi_ = itEle->phi();
-      raweles_energy_ = itEle->energy();
+
       eles_pdgid_ = itEle->pdgId();
       eles_charge_ = itEle->charge();
 
       //cout << "eles_pt_ : " << eles_pt_ << " raweles_pt_ : " << raweles_pt_ << endl;
 
-
-      ssbtreeManager->Fill("Elec", eles_pt_,eles_eta_,eles_phi_,eles_energy_,ele_index );
-      ssbtreeManager->Fill("RawElec", raweles_pt_,raweles_eta_,raweles_phi_,raweles_energy_, ele_index );
 
       /// Syst. Unc ///
       eleScale_stat_up_ = itEle->userFloat("energyScaleStatUp");
@@ -876,18 +880,6 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       cout << "eleResol_rho_dn_ : " << eleResol_rho_dn_ << endl;
       cout << "eleResol_phi_up_ : " << eleResol_phi_up_ << endl;
       cout << "eleResol_phi_dn_ : " << eleResol_phi_dn_ << endl;*/
-
-      ssbtreeManager->Fill( "Elec_Scale_StatUp"    , eleScale_stat_up_);
-      ssbtreeManager->Fill( "Elec_Scale_StatDown"  , eleScale_stat_dn_);
-      ssbtreeManager->Fill( "Elec_Scale_SystUp"    , eleScale_syst_up_);
-      ssbtreeManager->Fill( "Elec_Scale_SystDown"  , eleScale_syst_dn_);
-      ssbtreeManager->Fill( "Elec_GainUp"          , eleScale_gain_up_);
-      ssbtreeManager->Fill( "Elec_GainDown"        , eleScale_gain_dn_);
-      ssbtreeManager->Fill( "Elec_GainUp"          , eleResol_rho_up_ );
-      ssbtreeManager->Fill( "Elec_GainDown"        , eleResol_rho_dn_ );
-      ssbtreeManager->Fill( "Elec_GainUp"          , eleResol_phi_up_ );
-      ssbtreeManager->Fill( "Elec_GainDown"        , eleResol_phi_dn_ );
-
       elecs_relIso03_ = isolation->ElecRelIso( itEle->dr03HcalTowerSumEt(), itEle->dr03EcalRecHitSumEt(), itEle->dr03TkSumPt(), itEle->et() );
       elecs_relIso04_ = isolation->ElecRelIso( itEle->dr04HcalTowerSumEt(), itEle->dr04EcalRecHitSumEt(), itEle->dr04TkSumPt(), itEle->et() );
 
@@ -933,14 +925,6 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       elecs_PFIsoRho03_ = isolation->PFIsoRho( ele_pfIso.sumChargedHadronPt, ele_pfIso.sumNeutralHadronEt, ele_pfIso.sumPhotonEt, rho, eA, itEle->pt() );
 
       elecs_PFIsoRho04_ = isolation->PFIsoRho( itEle->userIsolation(pat::PfChargedHadronIso), itEle->userIsolation(pat::PfNeutralHadronIso), itEle->userIsolation(pat::PfGammaIso), rho, effA04_, itEle->pt() );
-
-      ssbtreeManager->Fill( "Elec_relIso03"    , elecs_relIso03_     );
-      ssbtreeManager->Fill( "Elec_relIso04"    , elecs_relIso04_     );
-      ssbtreeManager->Fill( "Elec_PFIsodBeta03", elecs_PFIsodbeta03_ );
-      ssbtreeManager->Fill( "Elec_PFIsodBeta04", elecs_PFIsodbeta04_ );
-      ssbtreeManager->Fill( "Elec_PFIsoRho03"  , elecs_PFIsoRho03_   );
-      ssbtreeManager->Fill( "Elec_PFIsoRho04"  , elecs_PFIsoRho04_   );
-
       if (!(itEle->gsfTrack().isNull()))
       {
 
@@ -999,12 +983,6 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       cout << "eles_SCB_Loose_ : " << eles_SCB_Loose_ << endl;
       cout << "eles_SCB_Medium_ : " << eles_SCB_Medium_ << endl;
       cout << "eles_SCB_Tight_ : " << eles_SCB_Tight_ << endl;*/
-
-      ssbtreeManager->Fill( "Elec_SCB_Loose"          , eles_SCB_Loose_         );
-      ssbtreeManager->Fill( "Elec_SCB_Medium"         , eles_SCB_Medium_        );
-      ssbtreeManager->Fill( "Elec_SCB_Tight"          , eles_SCB_Tight_         );
-      ssbtreeManager->Fill( "Elec_SCB_Veto"           , eles_SCB_Veto_          );
-
       bool isPassmvaTight = itEle->electronID("mvaEleID-Fall17-iso-V2-wp90");
       bool isPassmvaMedium = itEle->electronID("mvaEleID-Fall17-iso-V2-wp80");
       bool isPassmvaLoose = itEle->electronID("mvaEleID-Fall17-iso-V2-wpLoose");
@@ -1018,16 +996,50 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       float elemva_iso    = itEle->userFloat("ElectronMVAEstimatorRun2Fall17IsoV2Values");
       float elemva_noniso = itEle->userFloat("ElectronMVAEstimatorRun2Fall17NoIsoV2Values");
 
+      passconversionveto = itEle->passConversionVeto();// pat conversion veto
+      ooEmooP_ =  (1.0/itEle->ecalEnergy())*(1.0-itEle->eSuperClusterOverP()) ;
+
+      //Fill Electron information //
+      ssbtreeManager->Fill("Elec", eles_pt_,eles_eta_,eles_phi_,eles_energy_,ele_index );
+      ssbtreeManager->Fill("RawElec", raweles_pt_,raweles_eta_,raweles_phi_,raweles_energy_, ele_index );
+
+
+      ssbtreeManager->Fill( "Elec_Scale_StatUp"    , eleScale_stat_up_);
+      ssbtreeManager->Fill( "Elec_Scale_StatDown"  , eleScale_stat_dn_);
+      ssbtreeManager->Fill( "Elec_Scale_SystUp"    , eleScale_syst_up_);
+      ssbtreeManager->Fill( "Elec_Scale_SystDown"  , eleScale_syst_dn_);
+      ssbtreeManager->Fill( "Elec_GainUp"          , eleScale_gain_up_);
+      ssbtreeManager->Fill( "Elec_GainDown"        , eleScale_gain_dn_);
+      ssbtreeManager->Fill( "Elec_RhoUp"          , eleResol_rho_up_ );
+      ssbtreeManager->Fill( "Elec_RhoDown"        , eleResol_rho_dn_ );
+      ssbtreeManager->Fill( "Elec_PhiUp"          , eleResol_phi_up_ );
+      ssbtreeManager->Fill( "Elec_PhiDown"        , eleResol_phi_dn_ );
+
+
+      ssbtreeManager->Fill( "Elec_relIso03"    , elecs_relIso03_     );
+      ssbtreeManager->Fill( "Elec_relIso04"    , elecs_relIso04_     );
+      ssbtreeManager->Fill( "Elec_PFIsodBeta03", elecs_PFIsodbeta03_ );
+      ssbtreeManager->Fill( "Elec_PFIsodBeta04", elecs_PFIsodbeta04_ );
+      ssbtreeManager->Fill( "Elec_PFIsoRho03"  , elecs_PFIsoRho03_   );
+      ssbtreeManager->Fill( "Elec_PFIsoRho04"  , elecs_PFIsoRho04_   );
+
+
+      ssbtreeManager->Fill( "Elec_SCB_Loose"          , eles_SCB_Loose_         );
+      ssbtreeManager->Fill( "Elec_SCB_Medium"         , eles_SCB_Medium_        );
+      ssbtreeManager->Fill( "Elec_SCB_Tight"          , eles_SCB_Tight_         );
+      ssbtreeManager->Fill( "Elec_SCB_Veto"           , eles_SCB_Veto_          );
+
+
       ssbtreeManager->Fill( "Elec_MVA_Loose"          , isPassmvaLoose         );
       ssbtreeManager->Fill( "Elec_MVA_Medium"         , isPassmvaMedium        );
       ssbtreeManager->Fill( "Elec_MVA_Tight"          , isPassmvaTight         );
 
-      ssbtreeManager->Fill( "Elec_MVA_NonIso_Loose"          , isPassmvaLooseNonIso         );
-      ssbtreeManager->Fill( "Elec_MVA_NonIso_Medium"         , isPassmvaMediumNonIso        );
-      ssbtreeManager->Fill( "Elec_MVA_NonIso_Tight"          , isPassmvaTightNonIso         );
-      ssbtreeManager->Fill( "Elec_SCB_HEEP"          , isPassHEEP          );
-      ssbtreeManager->Fill( "Elec_MVA_IsoV"          , elemva_iso          );
-      ssbtreeManager->Fill( "Elec_MVA_nonIsoV"       , elemva_noniso          );
+      ssbtreeManager->Fill( "Elec_MVA_NonIso_Loose"          , isPassmvaLooseNonIso   );
+      ssbtreeManager->Fill( "Elec_MVA_NonIso_Medium"         , isPassmvaMediumNonIso  );
+      ssbtreeManager->Fill( "Elec_MVA_NonIso_Tight"          , isPassmvaTightNonIso   );
+      ssbtreeManager->Fill( "Elec_SCB_HEEP"                  , isPassHEEP             );
+      ssbtreeManager->Fill( "Elec_MVA_Iso_V"                 , elemva_iso             );
+      ssbtreeManager->Fill( "Elec_MVA_nonIso_V"              , elemva_noniso          );
 
 
       ssbtreeManager->Fill( "Elec_pdgId"              , eles_pdgid_             );
@@ -1042,12 +1054,11 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       ssbtreeManager->Fill( "Elec_SCB_hOverE"         , itEle->hadronicOverEm() );
 
 
-      passconversionveto = itEle->passConversionVeto();// pat conversion veto
       ssbtreeManager->Fill( "Elec_Conversion"          , passconversionveto          );
 
 
 
-      ooEmooP_ =  (1.0/itEle->ecalEnergy())*(1.0-itEle->eSuperClusterOverP()) ;
+      ssbtreeManager->Fill( "Elec_SCB_ooEmooP"        , ooEmooP_                );
 
       ele_index++;
    }

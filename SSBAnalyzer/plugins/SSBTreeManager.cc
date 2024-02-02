@@ -246,8 +246,8 @@ void SSBTreeManager::Book(TTree* tree){
     ssbtree->Branch("Elec_MVA_NonIso_Loose", &VectorBox_Bool["Elec_MVA_NonIso_Loose"]);
     ssbtree->Branch("Elec_MVA_NonIso_Medium", &VectorBox_Bool["Elec_MVA_NonIso_Medium"]);
     ssbtree->Branch("Elec_MVA_NonIso_Tight", &VectorBox_Bool["Elec_MVA_NonIso_Tight"]);
-    ssbtree->Branch("Elec_MVA_IsoV", &VectorBox_Float["Elec_MVA_IsoV"]);
-    ssbtree->Branch("Elec_MVA_nonIsoV", &VectorBox_Float["Elec_MVA_nonIsoV"]);
+    ssbtree->Branch("Elec_MVA_Iso_V", &VectorBox_Float["Elec_MVA_Iso_V"]);
+    ssbtree->Branch("Elec_MVA_nonIso_V", &VectorBox_Float["Elec_MVA_nonIso_V"]);
 
     ssbtree->Branch("Elec_MVA_Categories", &VectorBox_Int["Elec_MVA_Categories"]);
     ssbtree->Branch("Elec_MVA_HZZ_Values", &VectorBox_Float["Elec_MVA_HZZ_Values"]);
@@ -636,6 +636,7 @@ void SSBTreeManager::InitializeVariables(){
     VectorBox_Bool["METFilterAdd_isPass"].clear();
 
     VariableBox_LorentzVector["Elec"]->Clear();
+    VariableBox_LorentzVector["RawElec"]->Clear();
     VectorBox_Int["Elec_Charge"].clear();
     VectorBox_Bool["Elec_ChargeId_GsfCtf"].clear();
     VectorBox_Bool["Elec_ChargeId_GsfCtfPx"].clear();
@@ -727,6 +728,7 @@ void SSBTreeManager::InitializeVariables(){
     VariableBox_Double["Gen_EventWeight"] = 0;
 
     VariableBox_LorentzVector["Jet"]->Clear();
+    VariableBox_LorentzVector["RawJet"]->Clear();
     VectorBox_Int["Jet_Charge"].clear();
     VariableBox_Int["Jet_Count"] = 0;
     VectorBox_Double["Jet_EnShiftedUp"].clear();
