@@ -343,7 +343,7 @@ process.ssbanalyzer = cms.EDAnalyzer('SSBAnalyzer',
                                     eleEnUpTag       = cms.InputTag("shiftedPatElectronEnUp",""),
                                     eleEnDownTag     = cms.InputTag("shiftedPatElectronEnDown",""),
 
-                                    effAreasConfigFile = cms.FileInPath("RecoEgamma/ElectronIdentification/data/Fall17/effAreaElectrons_cone03_pfNeuHadronsAndPhotons_92X.txt"),
+                                    effAreasConfigFile = cms.FileInPath("RecoEgamma/ElectronIdentification/data/Fall17/effAreaElectrons_cone03_pfNeuHadronsAndPhotons_94X.txt"),
 
                                     eleVetoIdMap    = cms.InputTag( "egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-V1-veto"   ),
                                     eleLooseIdMap   = cms.InputTag( "egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-V1-loose"  ),
