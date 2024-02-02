@@ -21,3 +21,6 @@ Muon :
 git clone https://gitlab.cern.ch/akhukhun/roccor.git RoccoR  (https://twiki.cern.ch/twiki/bin/view/CMS/RochcorMuon)
 
 git clone -b UL_Ntuple_10_6_X_v1 https://github.com/physicist87/CMSAnalyses.git
+
+scram b -j10
+scram setup lhapdf
