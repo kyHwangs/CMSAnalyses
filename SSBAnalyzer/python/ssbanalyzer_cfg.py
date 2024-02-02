@@ -4,7 +4,8 @@ import FWCore.ParameterSet.Config as cms
 process = cms.Process("SSB")
 
 # Configurable options =======================================================================
-period = 'UL2018' # Options: UL2016APV, UL2016, UL2018, UL2018
+#period = 'UL2018' # Options: UL2016APV, UL2016, UL2018, UL2018
+period = 'UL2017' # Options: UL2016APV, UL2016, UL2018, UL2018
 
 #configurable options =======================================================================
 runOnData=False #data/MC switch

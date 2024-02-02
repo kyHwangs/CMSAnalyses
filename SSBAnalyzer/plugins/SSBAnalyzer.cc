@@ -840,8 +840,19 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       eles_eta_ = corrP4.Eta();
       eles_phi_ = corrP4.Phi();
       eles_energy_ = corrP4.energy();
+
+      raweles_pt_ = iEle->pt();
+      raweles_eta_ = iEle->eta();
+      raweles_phi_ = iEle->phi();
+      raweles_energy_ = iEle->energy();
+      eles_pdgid_ = iEle->pdgId();
+      eles_charge_ = iEle->charge();
+
+      //cout << "eles_pt_ : " << eles_pt_ << " raweles_pt_ : " << raweles_pt_ << endl;
+
+
       ssbtreeManager->Fill("Elec", eles_pt_,eles_eta_,eles_phi_,eles_energy_,ele_index );
-      ssbtreeManager->Fill("RawElec", iEle->pt(),iEle->eta(),iEle->phi(),iEle->energy(),ele_index );
+      ssbtreeManager->Fill("RawElec", raweles_pt_,raweles_eta_,raweles_phi_,raweles_energy_,ele_index );
 
       /// Syst. Unc ///
       eleScale_stat_up_ = iEle->userFloat("energyScaleStatUp");
@@ -962,13 +973,6 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
       eles_spchar_ = iEle->scPixCharge();
       ssbtreeManager->Fill( "Elec_Charge_Px", eles_spchar_);
 
-      eles_pt_ = iEle->pt();
-      eles_eta_ = iEle->eta();
-      eles_phi_ = iEle->phi();
-      eles_energy_ = iEle->energy();
-      eles_pdgid_ = iEle->pdgId();
-      eles_charge_ = iEle->charge();
-
       if (iEle->isGsfCtfScPixChargeConsistent())
       {
          eles_chargeid_gsfctfpx_ = true;
@@ -1033,7 +1037,9 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 
       ooEmooP_ =  (1.0/iEle->ecalEnergy())*(1.0-iEle->eSuperClusterOverP()) ;
 
+      ele_index++;
    }
+   ssbtreeManager->Fill( "Elec_Count" , ele_index );
 
    //////////////////////////
    /// Photon Information ///

@@ -366,7 +366,7 @@ process.ssbanalyzer = cms.EDAnalyzer('SSBAnalyzer',
                                     
                                     #phoTag          = cms.InputTag("slimmedPhotons",""),
                                     #photonPATInput  = cms.InputTag("calibratedPatPhotons",""),
-                                    phoTag          = cms.InputTag("slimmedElectrons",""),
+                                    phoTag          = cms.InputTag("slimmedPhotons",""),
                                     photonPATInput  = cms.InputTag("selectedPhotons",""),
                                     phoLooseIdMap   = cms.InputTag( "egmPhotonIDs:cutBasedPhotonID-Spring16-V2p2-loose"  ),
                                     phoMediumIdMap  = cms.InputTag( "egmPhotonIDs:cutBasedPhotonID-Spring16-V2p2-medium" ),

@@ -439,6 +439,10 @@ class SSBAnalyzer : public edm::EDAnalyzer {
       double eles_eta_;
       double eles_phi_;
       double eles_energy_;
+      double raweles_pt_;
+      double raweles_eta_;
+      double raweles_phi_;
+      double raweles_energy_;
       int eles_pdgid_;
       int eles_charge_;
 

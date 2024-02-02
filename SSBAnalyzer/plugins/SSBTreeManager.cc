@@ -377,7 +377,7 @@ void SSBTreeManager::Book(TTree* tree){
     ssbtree->Branch("MET", "TClonesArray", &VariableBox_LorentzVector["MET"], 32000, 0);
     VariableBox_LorentzVector["MET"]->BypassStreamer();
     ssbtree->Branch("MET_Significance", &VariableBox_Double["MET_Significance"], "MET_Significance/D");
-    ssbtree->Branch("MET_JetEnShiftedUp_PT", &VectorBox_Double["MET_JetEnShiftedUp_PT"]);
+/*    ssbtree->Branch("MET_JetEnShiftedUp_PT", &VectorBox_Double["MET_JetEnShiftedUp_PT"]);
     ssbtree->Branch("MET_JetEnShiftedUp_Phi", &VectorBox_Double["MET_JetEnShiftedUp_Phi"]);
     ssbtree->Branch("MET_JetEnShiftedDown_PT", &VectorBox_Double["MET_JetEnShiftedDown_PT"]);
     ssbtree->Branch("MET_JetEnShiftedDown_Phi", &VectorBox_Double["MET_JetEnShiftedDown_Phi"]);
@@ -397,8 +397,8 @@ void SSBTreeManager::Book(TTree* tree){
     ssbtree->Branch("MET_JetResShiftedUp_Phi", &VectorBox_Double["MET_JetResShiftedUp_Phi"]);
     ssbtree->Branch("MET_JetResShiftedDown_PT", &VectorBox_Double["MET_JetResShiftedDown_PT"]);
     ssbtree->Branch("MET_JetResShiftedDown_Phi", &VectorBox_Double["MET_JetResShiftedDown_Phi"]);
-
-    ssbtree->Branch("METEGClean", "TClonesArray", &VariableBox_LorentzVector["METEGClean"], 32000, 0);
+*/
+ /*   ssbtree->Branch("METEGClean", "TClonesArray", &VariableBox_LorentzVector["METEGClean"], 32000, 0);
     VariableBox_LorentzVector["METEGClean"]->BypassStreamer();
     ssbtree->Branch("METEGClean_Significance", &VariableBox_Double["METEGClean_Significance"], "METEGClean_Significance/D");
     ssbtree->Branch("METEGClean_JetEnShiftedUp_PT", &VectorBox_Double["METEGClean_JetEnShiftedUp_PT"]);
@@ -421,8 +421,8 @@ void SSBTreeManager::Book(TTree* tree){
     ssbtree->Branch("METEGClean_JetResShiftedUp_Phi", &VectorBox_Double["METEGClean_JetResShiftedUp_Phi"]);
     ssbtree->Branch("METEGClean_JetResShiftedDown_PT", &VectorBox_Double["METEGClean_JetResShiftedDown_PT"]);
     ssbtree->Branch("METEGClean_JetResShiftedDown_Phi", &VectorBox_Double["METEGClean_JetResShiftedDown_Phi"]);
-
-    ssbtree->Branch("METMUEGClean", "TClonesArray", &VariableBox_LorentzVector["METMUEGClean"], 32000, 0);
+*/
+ /*   ssbtree->Branch("METMUEGClean", "TClonesArray", &VariableBox_LorentzVector["METMUEGClean"], 32000, 0);
     VariableBox_LorentzVector["METMUEGClean"]->BypassStreamer();
     ssbtree->Branch("METMUEGClean_Significance", &VariableBox_Double["METMUEGClean_Significance"], "METMUEGClean_Significance/D");
     ssbtree->Branch("METMUEGClean_JetEnShiftedUp_PT", &VectorBox_Double["METMUEGClean_JetEnShiftedUp_PT"]);
@@ -517,7 +517,7 @@ void SSBTreeManager::Book(TTree* tree){
     ssbtree->Branch("METUnCor_JetResShiftedUp_Phi", &VectorBox_Double["METUnCor_JetResShiftedUp_Phi"]);
     ssbtree->Branch("METUnCor_JetResShiftedDown_PT", &VectorBox_Double["METUnCor_JetResShiftedDown_PT"]);
     ssbtree->Branch("METUnCor_JetResShiftedDown_Phi", &VectorBox_Double["METUnCor_JetResShiftedDown_Phi"]);
-
+*/
     ssbtree->Branch("Muon", "TClonesArray", &VariableBox_LorentzVector["Muon"], 32000, 0);
     VariableBox_LorentzVector["Muon"]->BypassStreamer();
     ssbtree->Branch("GenMuon", "TClonesArray", &VariableBox_LorentzVector["GenMuon"], 32000, 0);
@@ -762,7 +762,7 @@ void SSBTreeManager::InitializeVariables(){
 
     VariableBox_LorentzVector["MET"]->Clear();
     VariableBox_Double["MET_Significance"] = 0;
-    VectorBox_Double["MET_JetEnShiftedUp_PT"].clear();
+/*    VectorBox_Double["MET_JetEnShiftedUp_PT"].clear();
     VectorBox_Double["MET_JetEnShiftedUp_Phi"].clear();
     VectorBox_Double["MET_JetEnShiftedDown_PT"].clear();
     VectorBox_Double["MET_JetEnShiftedDown_Phi"].clear();
@@ -922,7 +922,7 @@ void SSBTreeManager::InitializeVariables(){
     VectorBox_Double["METMUCleanCor_JetResShiftedUp_Phi"].clear();
     VectorBox_Double["METMUCleanCor_JetResShiftedDown_PT"].clear();
     VectorBox_Double["METMUCleanCor_JetResShiftedDown_Phi"].clear();
-
+*/
 
     VariableBox_LorentzVector["Muon"]->Clear();
     VariableBox_LorentzVector["GenMuon"]->Clear();

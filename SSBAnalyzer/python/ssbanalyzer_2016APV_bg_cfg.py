@@ -4,7 +4,7 @@ import FWCore.ParameterSet.Config as cms
 process = cms.Process("SSB")
 
 # Configurable options =======================================================================
-period = 'UL2016' # Options: UL2016APV, UL2016, UL2018, UL2018
+period = 'UL2016APV' # Options: UL2016APV, UL2016, UL2018, UL2018
 
 #configurable options =======================================================================
 runOnData=False #data/MC switch
@@ -43,7 +43,7 @@ process.options = cms.untracked.PSet(
 
 # How many events to process
 process.maxEvents = cms.untracked.PSet( 
-   input = cms.untracked.int32(100),
+   input = cms.untracked.int32(10000),
    #input = cms.untracked.int32(-1),
 )
 ########################
@@ -60,12 +60,12 @@ process.TFileService=cms.Service("TFileService",
 corList = cms.vstring(['L1FastJet', 'L2Relative', 'L3Absolute'])
     
 if runOnData:
-  fname = "/store/mc/RunIISummer20UL16MiniAODv2/DY1JetsToLL_M-50_MatchEWPDG20_TuneCP5_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v1/120000/00061BF0-5BB0-524E-A539-0CAAD8579386.root" #UL2016 MC
+  fname = 'file:/d3/scratch/sha/Analyses/DATA/MiniAOD/Run2016/PromptBv2/02D9C19F-571A-E611-AD8E-02163E013732.root'
   corList = cms.vstring(['L1FastJet', 'L2Relative', 'L3Absolute', 'L2L3Residual'])
   print ("Running on Data ...")
 
 else:
-  fname = 'file:/pnfs/knu.ac.kr/data/cms/store/user/sha/Run2_UL/MC/TTBarDiLep/04A0B676-D63A-6D41-B47F-F4CF8CBE7DB8.root'
+  fname = "/store/mc/RunIISummer20UL16MiniAODv2/DY1JetsToLL_M-50_MatchEWPDG20_TuneCP5_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v1/120000/00061BF0-5BB0-524E-A539-0CAAD8579386.root" #UL2016 MC
 
 # Define the input source
 process.source = cms.Source("PoolSource", 
@@ -74,7 +74,7 @@ process.source = cms.Source("PoolSource",
 
 
 
-### External JECs =====================================================================================================
+###Apply JECs =====================================================================================================
 # From :  https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookJetEnergyCorrections#CorrPatJets
 
 from PhysicsTools.PatAlgos.tools.jetTools import updateJetCollection
@@ -149,6 +149,7 @@ phoIDModules =  [
 ]
 
 
+
 #print ("eleIDModules : %s "%(eleIDModules))
 setupEgammaPostRecoSeq(process,
                        runVID=rerunIDs,
@@ -166,13 +167,8 @@ process.RandomNumberGeneratorService = cms.Service("RandomNumberGeneratorService
                                                       engineName = cms.untracked.string('TRandom3'),
                                                       )
                                                    )
-#######################
-#### L1 Prefiring #####
-#### https://twiki.cern.ch/twiki/bin/viewauth/CMS/L1PrefiringWeightRecipe
-#########################################################################
-
+#
 from PhysicsTools.PatUtils.l1PrefiringWeightProducer_cfi import l1PrefiringWeightProducer
-
 #print ("eleIDModules : %s "%(eleIDModules))
 if period is 'UL2016APV' :                                                                                                             
     DataEraECAL = 'UL2016preVFP'
@@ -186,6 +182,7 @@ elif period is 'UL2017' :
 elif period is 'UL2018' :
     DataEraECAL = 'None'
     DataEraMuon = '20172018'
+
 
 process.prefiringweight = l1PrefiringWeightProducer.clone(
   TheJets = cms.InputTag("updatedPatJetsUpdatedJEC"), #this should be the slimmedJets collection with up to date JECs !
@@ -212,7 +209,6 @@ process.MINIAODSIMoutput = cms.OutputModule("PoolOutputModule",
     fastCloning = cms.untracked.bool(False),
     overrideInputFileSplitLevels = cms.untracked.bool(True)
 )
-
 #########################
 ####### JER Files #######
 #########################
@@ -242,6 +238,7 @@ elif period is 'UL2018' :
     ptResolSFFileName    = 'CMSAnalyses/SSBAnalyzer/data/JRDatabase/Summer19UL18_JRV2_MC/Summer19UL18_JRV2_MC_SF_AK4PFchs.txt'
 else : print("Check out Run Period!!!")
 
+
 ####################
 ### SSB Analyzer ###
 ####################
@@ -253,9 +250,10 @@ process.ssbanalyzer = cms.EDAnalyzer('SSBAnalyzer',
                                     PDFInfoTag      = cms.InputTag("generator",""),
                                     FixPOWHEG = cms.untracked.string("NNPDF30_nlo_as_0118.LHgrid"),
                                     PDFSetNames     = cms.vstring('NNPDF30_nlo_as_0118.LHgrid','CT10nnlo.LHgrid'),#"cteq66.LHgrid"), #'MRST2006nnlo.LHgrid'),# 'NNPDF10_100.LHgrid'), 
+
                                     PDFCent         = cms.bool(True),
                                     PDFSys          = cms.bool(True),
-                                    doFragsys        = cms.bool(True),
+                                    doFragsys        = cms.bool(False),
                                     pvTag           = cms.InputTag("offlineSlimmedPrimaryVertices",""),
                                     genEvnTag = cms.InputTag("generator"),
                                     genLHETag = cms.InputTag("externalLHEProducer"),
@@ -263,7 +261,7 @@ process.ssbanalyzer = cms.EDAnalyzer('SSBAnalyzer',
                                     genJetTag       = cms.InputTag("slimmedGenJets",""),
                                     genJetReclusTag = cms.InputTag("ak4GenJetsCustom",""),
                                     genMETTag = cms.InputTag("slimmedMETs","","SSB"),
-                                    isSignal        = cms.bool(True),
+                                    isSignal        = cms.bool(False),
                                     RhoTag          = cms.InputTag("fixedGridRhoFastjetAll"),
                                     puTag           = cms.InputTag("slimmedAddPileupInfo",""),
                                     trigList        = cms.vstring(
@@ -335,14 +333,13 @@ process.ssbanalyzer = cms.EDAnalyzer('SSBAnalyzer',
                                     muEnUpTag        = cms.InputTag("shiftedPatMuonEnUp",""),
                                     muEnDownTag      = cms.InputTag("shiftedPatMuonEnDown",""),
                                     eleTag           = cms.InputTag("slimmedElectrons",""),
-                                    electronPATInput = cms.InputTag("selectedElectrons",""),
                                     #electronPATInput = cms.InputTag("calibratedPatElectrons",""),
                                     #eleTag           = cms.InputTag("selectedElectrons",""),
-                                    #electronPATInput = cms.InputTag("selectedElectrons",""),
+                                    electronPATInput = cms.InputTag("selectedElectrons",""),
                                     eleEnUpTag       = cms.InputTag("shiftedPatElectronEnUp",""),
                                     eleEnDownTag     = cms.InputTag("shiftedPatElectronEnDown",""),
 
-                                    effAreasConfigFile = cms.FileInPath("RecoEgamma/ElectronIdentification/data/Fall17/effAreaElectrons_cone03_pfNeuHadronsAndPhotons_92X.txt"),
+                                    effAreasConfigFile = cms.FileInPath("RecoEgamma/ElectronIdentification/data/Summer16/effAreaElectrons_cone03_pfNeuHadronsAndPhotons_80X.txt"),
 
                                     eleVetoIdMap    = cms.InputTag( "egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-V1-veto"   ),
                                     eleLooseIdMap   = cms.InputTag( "egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-V1-loose"  ),
@@ -366,7 +363,7 @@ process.ssbanalyzer = cms.EDAnalyzer('SSBAnalyzer',
                                     
                                     phoTag          = cms.InputTag("slimmedPhotons",""),
                                     #photonPATInput  = cms.InputTag("calibratedPatPhotons",""),
-                                    #phoTag          = cms.InputTag("slimmedElectrons",""),
+                                    #phoTag          = cms.InputTag("selectedPhotons",""),
                                     photonPATInput  = cms.InputTag("selectedPhotons",""),
                                     phoLooseIdMap   = cms.InputTag( "egmPhotonIDs:cutBasedPhotonID-Spring16-V2p2-loose"  ),
                                     phoMediumIdMap  = cms.InputTag( "egmPhotonIDs:cutBasedPhotonID-Spring16-V2p2-medium" ),
@@ -391,7 +388,7 @@ process.ssbanalyzer = cms.EDAnalyzer('SSBAnalyzer',
                                     pfCands         = cms.InputTag("packedPFCandidates"),
                                     bstag           = cms.InputTag("offlineBeamSpot"),
                                     convertag       = cms.InputTag("reducedEgamma","reducedConversions"),
-                                    
+                                   
                                     isjtcutTag = cms.bool(False), #For Jet
                                     jtTag = cms.InputTag("updatedPatJetsUpdatedJEC",""), #For Jet
                                     jtpuppiTag = cms.InputTag("slimmedJets",""), #For Jet
@@ -421,12 +418,12 @@ process.ssbanalyzer = cms.EDAnalyzer('SSBAnalyzer',
                                                          ),
 
                                     PFTightJetID = cms.PSet(
-                                                       version = cms.string('RUN2ULCHS'),
+                                                       version = cms.string('RUNIISTARTUP'),
                                                        quality = cms.string('TIGHT')
                                                       ),
                                     PFLooseJetID = cms.PSet(
-                                                       version = cms.string('RUN2ULCHS'),
-                                                       quality = cms.string('TIGHT')
+                                                       version = cms.string('RUNIISTARTUP'),
+                                                       quality = cms.string('LOOSE')
                                                       ),
                                     metTag = cms.InputTag("slimmedMETs","","SSB"),
 )
