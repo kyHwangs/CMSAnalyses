@@ -552,7 +552,7 @@ void SSBTreeManager::Book(TTree* tree){
     ssbtree->Branch("Muon_tuneP_Pt", &VectorBox_Double["Muon_tuneP_Pt"]);
     ssbtree->Branch("Muon_tuneP_Eta", &VectorBox_Double["Muon_tuneP_Eta"]);
     ssbtree->Branch("Muon_tuneP_Phi", &VectorBox_Double["Muon_tuneP_Phi"]);
-    ssbtree->Branch("Muon_tuneP_Charge", &VectorBox_Double["Muon_tuneP_Charge"]);
+    ssbtree->Branch("Muon_tuneP_Charge", &VectorBox_Int["Muon_tuneP_Charge"]);
 
     ssbtree->Branch("PDFWeight_BjorkenX1", &VectorBox_Double["PDFWeight_BjorkenX1"]);
     ssbtree->Branch("PDFWeight_BjorkenX2", &VectorBox_Double["PDFWeight_BjorkenX2"]);
@@ -954,7 +954,7 @@ void SSBTreeManager::InitializeVariables(){
     VectorBox_Double["Muon_tuneP_Pt"].clear();
     VectorBox_Double["Muon_tuneP_Eta"].clear();
     VectorBox_Double["Muon_tuneP_Phi"].clear();
-    VectorBox_Double["Muon_tuneP_Charge"].clear();
+    VectorBox_Int["Muon_tuneP_Charge"].clear();
     VectorBox_Double["PDFWeight_BjorkenX1"].clear();
     VectorBox_Double["PDFWeight_BjorkenX2"].clear();
     VectorBox_Double["PDFWeight_Cent"].clear();

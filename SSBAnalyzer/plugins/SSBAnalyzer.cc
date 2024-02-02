@@ -724,7 +724,7 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
 
       // TuneP //
       if (muon.tunePMuonBestTrack().isNonnull()){
-         //cout << " tunePMuonBestTrack() pt :" << muon.tunePMuonBestTrack()->pt()<< endl;
+         //cout << " tunePMuonBestTrack() charge :" << muon.tunePMuonBestTrack()->charge()<< endl;
          muTuneP_pt = muon.tunePMuonBestTrack()->pt();
          muTuneP_eta = muon.tunePMuonBestTrack()->eta();
          muTuneP_phi = muon.tunePMuonBestTrack()->phi();
@@ -1469,7 +1469,9 @@ SSBAnalyzer::analyze(const edm::Event& iEvent, const edm::EventSetup& iSetup)
                  << " MET MC sumET Test3 : " << itMet.shiftedSumEt(pat::MET::NoShift, pat::MET::Type1) 
                  << endl;*/
       //cout << "met sig. : "<< itMet.significance()  << " met METsig. : "<< itMet.metSignificance()  << endl;
-      ssbtreeManager->Fill( "MET" , itMet.shiftedPt(pat::MET::NoShift, pat::MET::Type1XY), 0, itMet.shiftedPhi(pat::MET::NoShift, pat::MET::Type1XY), 0, MET_index ); /// TO-DO  We need to check up receipe for MET XY(phi) correction ...
+      //cout << "met pt. : "<< itMet.pt()  << " itMet.et : " << itMet.et() << " met phi. : "<< itMet.phi()  << endl;
+      //ssbtreeManager->Fill( "MET" , itMet.shiftedPt(pat::MET::NoShift, pat::MET::Type1XY), 0, itMet.shiftedPhi(pat::MET::NoShift, pat::MET::Type1XY), 0, MET_index ); /// TO-DO  We need to check up receipe for MET XY(phi) correction ...
+      ssbtreeManager->Fill( "MET" , itMet.pt(), 0, itMet.phi(), 0, MET_index ); /// TO-DO  We need to check up receipe for MET XY(phi) correction ... (MET Phi/XY correction is standalone So we need uncorrected MET pt and phi)
       ssbtreeManager->Fill( "MET_Significance", itMet.significance() );
 
       MET_index++;

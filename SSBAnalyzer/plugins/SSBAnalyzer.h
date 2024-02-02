@@ -370,7 +370,7 @@ class SSBAnalyzer : public edm::EDAnalyzer {
       double muTuneP_pt;
       double muTuneP_eta;
       double muTuneP_phi;
-      double muTuneP_charge;
+      int muTuneP_charge;
 
       // variables for patJet
       bool isJetPreCut;
