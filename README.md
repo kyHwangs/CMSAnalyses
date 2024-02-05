@@ -29,3 +29,14 @@ git clone -b UL_Ntuple_10_6_X_v1 https://github.com/physicist87/CMSAnalyses.git
 scram b -j10
 
 scram setup lhapdf
+
+Runing configuration for 2016 PreVFP(APV) 
+
+MC (ttbar samples): 
+
+cmsRun ./python/ssbanalyzer_2016_cfg.py
+
+MC (bg samples):
+
+cmsRun ./python/ssbanalyzer_2016_bg_cfg.py
+
