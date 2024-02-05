@@ -32,11 +32,20 @@ scram setup lhapdf
 
 Runing configuration for 2016 PreVFP(APV) 
 
-MC (ttbar samples): 
+- MC (ttbar samples): cmsRun ./python/ssbanalyzer_2016APV_cfg.py
 
-cmsRun ./python/ssbanalyzer_2016_cfg.py
+- MC (bg samples): cmsRun ./python/ssbanalyzer_2016APV_bg_cfg.py
 
-MC (bg samples):
+- DATA: cmsRun ./python/ssbanalyzer_2016APV_data_cfg.py
 
-cmsRun ./python/ssbanalyzer_2016_bg_cfg.py
+Runing configuration for 2016 PostVFP(nonAPV) 
+
+- MC (ttbar samples):  cmsRun ./python/ssbanalyzer_2016_cfg.py
+
+- MC (bg samples): cmsRun ./python/ssbanalyzer_2016_bg_cfg.py
+
+- DATA: cmsRun ./python/ssbanalyzer_2016_data_cfg.py
+
+
+
 
