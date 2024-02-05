@@ -1,0 +1,165 @@
+Importing CMSSW configuration ../python/ssbanalyzer_2016_data_cfg.py
+Finished importing CMSSW configuration ../python/ssbanalyzer_2016_data_cfg.py
+Warning: The following output files will not be published, as they are not EDM files: ['SSBTree.root']
+Sending the request to the server at cmsweb.cern.ch
+Fatal error trying to connect to https://cmsweb.cern.ch:8443/crabserver/prod/workflow using maxjobruntime=1250&lfn=store%2Fuser%2Fsha%2FRun2FULL%2F2016PreVFP&savelogsflag=0&useparent=0&asyncdest=T3_KR_KNU&algoargs=20&cachefilename=9266cb412707cc61e2b18b15c1d2f0812f39141ef75efc6d131701e0191c937d.tar.gz&numcores=1&generator=pythia&maxmemory=2000&partialdataset=0&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_10_6_30&primarydataset=&inputdata=%2FDoubleMuon%2FRun2016B-ver2_HIPM_UL2016_MiniAODv2-v1%2FMINIAOD&ignorelocality=0&dryrun=0&workflow=crab_DoubleMuon_Run2016B-ver2&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2FS3%2Fcrabcache_prod&nonprodsw=1&oneEventMode=0&debugfilename=db144e8cbc153ab549810b7013cb54a4caba7a59def47094f679ecdd5c3cfb98.tar.gz&saveoutput=1&publication=1&jobarch=slc7_amd64_gcc700&totalunits=0&splitalgo=LumiBased&ignoreglobalblacklist=0&nonvaliddata=0&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&jobtype=Analysis&requireaccelerator=0&publishname2=&tfileoutfiles=SSBTree.root&runs=273158&runs=273302&runs=273402&runs=273403&runs=273404&runs=273405&runs=273406&runs=273408&runs=273409&runs=273410&runs=273411&runs=273425&runs=273446&runs=273447&runs=273448&runs=273449&runs=273450&runs=273492&runs=273493&runs=273494&runs=273502&runs=273503&runs=273554&runs=273555&runs=273725&runs=273728&runs=273730&runs=274094&runs=274146&runs=274157&runs=274159&runs=274160&runs=274161&runs=274172&runs=274198&runs=274199&runs=274200&runs=274240&runs=274241&runs=274244&runs=274250&runs=274251&runs=274283&runs=274284&runs=274286&runs=274314&runs=274315&runs=274316&runs=274317&runs=274319&runs=274335&runs=274336&runs=274337&runs=274338&runs=274339&runs=274344&runs=274345&runs=274382&runs=274387&runs=274388&runs=274420&runs=274421&runs=274422&runs=274440&runs=274441&runs=274442&runs=274954&runs=274955&runs=274968&runs=274969&runs=274970&runs=274971&runs=274998&runs=274999&runs=275000&runs=275001&runs=275059&runs=275066&runs=275067&runs=275068&runs=275073&runs=275074&runs=275124&runs=275125&runs=275282&runs=275283&runs=275284&runs=275290&runs=275291&runs=275292&runs=275293&runs=275309&runs=275310&runs=275311&runs=275319&runs=275337&runs=275338&runs=275344&runs=275345&runs=275370&runs=275371&runs=275375&runs=275376&runs=275657&runs=275658&runs=275659&runs=275761&runs=275767&runs=275772&runs=275773&runs=275774&runs=275776&runs=275777&runs=275778&runs=275782&runs=275832&runs=275833&runs=275834&runs=275835&runs=275836&runs=275837&runs=275847&runs=275886&runs=275890&runs=275911&runs=275912&runs=275913&runs=275918&runs=275920&runs=275921&runs=275923&runs=275931&runs=275963&runs=276092&runs=276097&runs=276242&runs=276243&runs=276244&runs=276282&runs=276283&runs=276315&runs=276317&runs=276318&runs=276355&runs=276361&runs=276363&runs=276384&runs=276437&runs=276454&runs=276458&runs=276495&runs=276501&runs=276502&runs=276525&runs=276527&runs=276528&runs=276542&runs=276543&runs=276544&runs=276545&runs=276581&runs=276582&runs=276583&runs=276584&runs=276585&runs=276586&runs=276587&runs=276653&runs=276655&runs=276659&runs=276775&runs=276776&runs=276794&runs=276807&runs=276808&runs=276810&runs=276811&runs=276831&runs=276834&runs=276870&runs=276935&runs=276940&runs=276946&runs=276947&runs=276948&runs=276950&runs=277069&runs=277070&runs=277071&runs=277072&runs=277073&runs=277076&runs=277087&runs=277094&runs=277096&runs=277112&runs=277126&runs=277127&runs=277148&runs=277166&runs=277168&runs=277180&runs=277194&runs=277305&runs=277420&runs=277981&runs=277991&runs=277992&runs=278017&runs=278018&runs=278167&runs=278175&runs=278193&runs=278239&runs=278240&runs=278273&runs=278274&runs=278288&runs=278289&runs=278290&runs=278308&runs=278310&runs=278315&runs=278345&runs=278346&runs=278349&runs=278366&runs=278406&runs=278509&runs=278769&runs=278770&runs=278801&runs=278802&runs=278803&runs=278804&runs=278805&runs=278808&runs=278820&runs=278822&runs=278873&runs=278874&runs=278875&runs=278923&runs=278957&runs=278962&runs=278963&runs=278969&runs=278975&runs=278976&runs=278986&runs=279024&runs=279029&runs=279071&runs=279080&runs=279115&runs=279116&runs=279479&runs=279588&runs=279653&runs=279654&runs=279656&runs=279658&runs=279667&runs=279681&runs=279682&runs=279683&runs=279684&runs=279685&runs=279691&runs=279694&runs=279715&runs=279716&runs=279760&runs=279766&runs=279767&runs=279794&runs=279823&runs=279841&runs=279844&runs=279887&runs=279931&runs=279966&runs=279975&runs=279993&runs=279994&runs=280013&runs=280015&runs=280016&runs=280017&runs=280018&runs=280020&runs=280024&runs=280187&runs=280188&runs=280191&runs=280194&runs=280242&runs=280249&runs=280251&runs=280327&runs=280330&runs=280349&runs=280363&runs=280364&runs=280383&runs=280384&runs=280385&runs=281613&runs=281639&runs=281641&runs=281693&runs=281707&runs=281726&runs=281727&runs=281797&runs=281975&runs=281976&runs=282033&runs=282034&runs=282035&runs=282037&runs=282092&runs=282708&runs=282710&runs=282712&runs=282730&runs=282731&runs=282732&runs=282733&runs=282734&runs=282735&runs=282800&runs=282807&runs=282814&runs=282842&runs=282917&runs=282918&runs=282919&runs=282922&runs=282923&runs=283042&runs=283043&runs=283049&runs=283050&runs=283052&runs=283059&runs=283270&runs=283283&runs=283305&runs=283306&runs=283307&runs=283308&runs=283353&runs=283358&runs=283359&runs=283407&runs=283408&runs=283416&runs=283453&runs=283469&runs=283478&runs=283548&runs=283680&runs=283681&runs=283682&runs=283685&runs=283820&runs=283830&runs=283834&runs=283835&runs=283865&runs=283876&runs=283877&runs=283884&runs=283885&runs=283933&runs=283934&runs=283946&runs=283964&runs=284006&runs=284014&runs=284025&runs=284029&runs=284035&runs=284036&runs=284037&runs=284038&runs=284039&runs=284040&runs=284041&runs=284042&runs=284043&runs=284044&lumis=1%2C1283&lumis=1%2C459&lumis=100%2C292&lumis=1%2C68&lumis=1%2C22&lumis=2%2C34&lumis=1%2C125&lumis=1%2C9&lumis=1%2C317&lumis=1%2C99&lumis=1%2C29&lumis=62%2C352%2C354%2C742&lumis=1%2C48&lumis=1%2C113%2C115%2C420&lumis=1%2C396&lumis=1%2C216&lumis=1%2C214%2C219%2C647&lumis=71%2C282%2C284%2C325%2C327%2C343&lumis=1%2C241&lumis=1%2C192&lumis=73%2C256%2C258%2C318%2C320%2C813%2C815%2C1077&lumis=1%2C598&lumis=77%2C444&lumis=1%2C173&lumis=83%2C252%2C254%2C2556&lumis=1%2C112&lumis=1%2C2126&lumis=108%2C332&lumis=1%2C73&lumis=105%2C537&lumis=1%2C47&lumis=1%2C214&lumis=1%2C516&lumis=31%2C95&lumis=81%2C192&lumis=1%2C630&lumis=1%2C678&lumis=1%2C40%2C42%2C86&lumis=1%2C1180&lumis=1%2C607&lumis=1%2C704&lumis=1%2C546&lumis=1%2C22&lumis=1%2C215&lumis=1%2C154&lumis=97%2C165&lumis=1%2C432&lumis=1%2C974&lumis=1%2C22&lumis=1%2C225&lumis=60%2C1013&lumis=1%2C20&lumis=1%2C22&lumis=1%2C703&lumis=1%2C99&lumis=1%2C639&lumis=1%2C170&lumis=94%2C144&lumis=88%2C447&lumis=1%2C1820&lumis=93%2C268&lumis=1%2C356&lumis=1%2C2207&lumis=92%2C498&lumis=1%2C443&lumis=1%2C752&lumis=37%2C60&lumis=1%2C98&lumis=1%2C1206&lumis=1%2C1007&lumis=1%2C47&lumis=1%2C905&lumis=63%2C794&lumis=1%2C1257&lumis=1%2C140&lumis=1%2C1781%2C1786%2C2061&lumis=78%2C81%2C105%2C150&lumis=1%2C111&lumis=1%2C396&lumis=1%2C922&lumis=1%2C523&lumis=1%2C647&lumis=106%2C433&lumis=1%2C989&lumis=90%2C185&lumis=1%2C137&lumis=1%2C74&lumis=96%2C150&lumis=1%2C356&lumis=1%2C125&lumis=1%2C142%2C144%2C201&lumis=55%2C627&lumis=1%2C1939&lumis=1%2C1253&lumis=141%2C292&lumis=1%2C433&lumis=1%2C520&lumis=76%2C368&lumis=1%2C353&lumis=81%2C371&lumis=1%2C569&lumis=127%2C1453&lumis=1%2C3096&lumis=1%2C111&lumis=1%2C344&lumis=1%2C17&lumis=1%2C11&lumis=1%2C8&lumis=1%2C61&lumis=1%2C21&lumis=1%2C317&lumis=1%2C149&lumis=1%2C304&lumis=1%2C319&lumis=1%2C131%2C133%2C762&lumis=1%2C371&lumis=1%2C53%2C56%2C115%2C117%2C254&lumis=1%2C303&lumis=1%2C20&lumis=1%2C429%2C431%2C1163%2C1166%2C1170%2C1184%2C1306&lumis=1%2C186%2C198%2C726&lumis=1%2C2263&lumis=70%2C109&lumis=1%2C1393&lumis=62%2C298%2C300%2C354%2C356%2C445&lumis=1%2C303&lumis=1%2C484&lumis=1%2C318%2C348%2C361&lumis=1%2C472&lumis=1%2C32&lumis=1%2C127&lumis=1%2C89&lumis=82%2C139%2C141%2C172&lumis=74%2C153&lumis=1%2C507&lumis=1%2C7%2C18%2C61%2C72%2C1669&lumis=1%2C15%2C18%2C627&lumis=1%2C1202&lumis=75%2C534%2C537%2C1151&lumis=1%2C1087&lumis=40%2C175%2C178%2C227&lumis=1%2C147&lumis=1%2C103%2C106%2C576&lumis=1%2C34&lumis=1%2C161%2C169%2C208%2C210%2C800%2C802%2C844&lumis=1%2C238%2C242%2C1489&lumis=1%2C1117&lumis=63%2C224%2C227%2C1074%2C1076%2C2190&lumis=1%2C527&lumis=1%2C341&lumis=87%2C279&lumis=1%2C221%2C223%2C2556&lumis=1%2C741&lumis=87%2C1606%2C1626%2C2904&lumis=1%2C214&lumis=1%2C394&lumis=74%2C858&lumis=1%2C961&lumis=1%2C163&lumis=1%2C110%2C117%2C213&lumis=79%2C447&lumis=1%2C873&lumis=1%2C60&lumis=1%2C2&lumis=1%2C253&lumis=1%2C658%2C680%2C781&lumis=1%2C1006&lumis=72%2C562&lumis=1%2C593%2C595%2C1114&lumis=1%2C127%2C129%2C252&lumis=96%2C1269&lumis=1%2C1823&lumis=1%2C885&lumis=66%2C227&lumis=1%2C883&lumis=1%2C291&lumis=1%2C2563&lumis=64%2C2711&lumis=1%2C729&lumis=78%2C1354%2C1356%2C3108%2C3111%2C3258%2C3260%2C3484&lumis=79%2C184%2C186%2C838%2C842%2C906&lumis=70%2C214&lumis=1%2C34&lumis=1%2C150&lumis=1%2C481&lumis=1%2C2353&lumis=81%2C394&lumis=1%2C1063&lumis=1%2C82%2C90%2C178&lumis=1%2C253%2C256%2C484&lumis=1%2C98&lumis=1%2C3%2C5%2C7%2C9%2C35%2C38%2C1037&lumis=204%2C1191&lumis=1%2C161%2C164%2C598&lumis=1%2C2093&lumis=1%2C155&lumis=42%2C60&lumis=1%2C438%2C440%2C902&lumis=83%2C715&lumis=77%2C433&lumis=1%2C2223&lumis=88%2C228&lumis=113%2C139%2C144%2C2070&lumis=62%2C744&lumis=84%2C346&lumis=82%2C83%2C85%2C163&lumis=1%2C98&lumis=1%2C260%2C262%2C312&lumis=77%2C97%2C99%2C213%2C215%2C512%2C514%2C600&lumis=1%2C263%2C265%2C627%2C642%2C1011%2C1020%2C1181&lumis=87%2C1660%2C1662%2C2260&lumis=1%2C88&lumis=77%2C231&lumis=76%2C754&lumis=1%2C64%2C70%2C113%2C115%2C1309&lumis=75%2C114&lumis=1%2C85&lumis=67%2C84&lumis=1%2C42%2C44%2C60&lumis=1%2C11&lumis=87%2C216%2C219%2C1200%2C1217%2C1848%2C1876%2C1885&lumis=1%2C709&lumis=73%2C254%2C256%2C661%2C663%2C767&lumis=84%2C500%2C503%2C833&lumis=1%2C150&lumis=1%2C401%2C403%2C612%2C630%2C639&lumis=1%2C453&lumis=85%2C360%2C362%2C1682&lumis=91%2C1557&lumis=75%2C111&lumis=1%2C767&lumis=48%2C92&lumis=1%2C21&lumis=1%2C330&lumis=1%2C8&lumis=1%2C26%2C30%2C291&lumis=1%2C445%2C447%2C462%2C464%2C1793&lumis=17%2C1540&lumis=1%2C1627&lumis=70%2C136&lumis=1%2C484&lumis=1%2C834&lumis=55%2C467&lumis=79%2C227&lumis=68%2C418&lumis=1%2C23%2C25%2C175&lumis=70%2C1051%2C1053%2C1291%2C1293%2C1465&lumis=1%2C857&lumis=1%2C20&lumis=71%2C199&lumis=82%2C382&lumis=1%2C260&lumis=71%2C244&lumis=68%2C224&lumis=118%2C524&lumis=38%2C485&lumis=86%2C190&lumis=100%2C1259&lumis=77%2C77%2C82%2C268&lumis=1%2C108%2C110%2C1231%2C1285%2C1307&lumis=1%2C43%2C82%2C87&lumis=1%2C713&lumis=68%2C1033&lumis=77%2C111&lumis=1%2C47&lumis=1%2C34&lumis=1%2C34&lumis=1%2C93%2C95%2C209&lumis=71%2C124&lumis=1%2C2235&lumis=71%2C474%2C476%2C477%2C480%2C480%2C511%2C511%2C523%2C691&lumis=1%2C860%2C875%2C1528%2C1530%2C1653&lumis=68%2C578%2C585%2C728%2C798%2C806&lumis=1%2C1694&lumis=1%2C776&lumis=77%2C1100&lumis=61%2C395&lumis=75%2C398%2C407%2C2122&lumis=72%2C304&lumis=79%2C397&lumis=84%2C628%2C630%2C801%2C803%2C1043%2C1045%2C3022&lumis=79%2C441&lumis=70%2C190%2C192%2C253%2C256%2C281%2C283%2C709%2C734%2C1121&lumis=85%2C163&lumis=1%2C59&lumis=1%2C34&lumis=1%2C39%2C41%2C56%2C59%2C554%2C560%2C584&lumis=1%2C163&lumis=1%2C613&lumis=1%2C1282&lumis=1%2C47&lumis=1%2C427&lumis=4%2C70&lumis=1%2C253&lumis=1%2C781%2C783%2C909&lumis=1%2C238&lumis=1%2C411%2C414%2C639&lumis=1%2C1437&lumis=1%2C165%2C167%2C372&lumis=49%2C98&lumis=1%2C870&lumis=1%2C247%2C252%2C639&lumis=1%2C367&lumis=1%2C619%2C621%2C1090%2C1102%2C1363&lumis=64%2C73&lumis=1%2C47&lumis=1%2C519%2C523%2C2022&lumis=101%2C903&lumis=1%2C136&lumis=1%2C319&lumis=1%2C2191&lumis=99%2C982%2C1000%2C1065%2C1087%2C1089&lumis=1%2C291&lumis=1%2C1605&lumis=125%2C2176&lumis=1%2C215&lumis=1%2C2166&lumis=82%2C124&lumis=1%2C35&lumis=1%2C47&lumis=1%2C457%2C459%2C1862&lumis=92%2C222%2C624%2C2276&lumis=1%2C8&lumis=1%2C9&lumis=1%2C1%2C10%2C68&lumis=89%2C171&lumis=1%2C176&lumis=1%2C73&lumis=1%2C178&lumis=1%2C330&lumis=1%2C1823&lumis=1%2C382&lumis=1%2C330&lumis=1%2C1843&lumis=1%2C80&lumis=117%2C201&lumis=1%2C59&lumis=1%2C243&lumis=1%2C137&lumis=1%2C17%2C19%2C30%2C32%2C86%2C88%2C229&lumis=1%2C10&lumis=1%2C519&lumis=82%2C98&lumis=1%2C227&lumis=1%2C124&lumis=1%2C458&lumis=76%2C1913&lumis=1%2C1748&lumis=79%2C93&lumis=1%2C291&lumis=1%2C461&lumis=1%2C547%2C549%2C571%2C573%2C948&lumis=80%2C832&lumis=1%2C243%2C245%2C986&lumis=1%2C428&lumis=82%2C124&lumis=1%2C2125%2C2203%2C2416%2C2528%2C2543&lumis=49%2C245&lumis=83%2C537&lumis=74%2C74&lumis=76%2C303%2C324%2C973&lumis=144%2C291&lumis=1%2C87&lumis=1%2C23&lumis=1%2C389&lumis=1%2C314&lumis=67%2C1552&lumis=1%2C729&lumis=1%2C85&lumis=1%2C112&lumis=1%2C1177&lumis=65%2C736&lumis=1%2C1496&lumis=349%2C756&lumis=1%2C1723&lumis=88%2C240&lumis=1%2C784%2C793%2C870%2C875%2C1245%2C1267%2C1291&lumis=85%2C1462&lumis=1%2C388&lumis=73%2C394&lumis=1%2C266&lumis=109%2C162&lumis=1%2C112&lumis=1%2C369&lumis=1%2C356&lumis=1%2C343&lumis=1%2C60&lumis=1%2C34&lumis=1%2C35&lumis=1%2C47&lumis=1%2C137&lumis=1%2C227&lumis=1%2C30.
+exit code from curl = 0
+HTTP code/reason = 400/Bad Request .  stdout:
+<!DOCTYPE html PUBLIC
+"-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+    <title>400 Bad Request</title>
+    <style type="text/css">
+    #powered_by {
+        margin-top: 20px;
+        border-top: 2px solid black;
+        font-style: italic;
+    }
+
+    #traceback {
+        color: red;
+    }
+    </style>
+</head>
+    <body>
+        <h2>400 Bad Request</h2>
+        <p>Invalid input parameter</p>
+        <pre id="traceback"></pre>
+    <div id="powered_by">
+      <span>
+        Powered by <a href="http://www.cherrypy.dev">CherryPy 18.8.0</a>
+      </span>
+    </div>
+    </body>
+</html>
+
+Traceback (most recent call last):
+  File "crab_config_UL16PreVFP_v2.py", line 33, in <module>
+    crabCommand('submit', config = config)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.240110.01/lib/CRABAPI/RawCommand.py", line 28, in crabCommand
+    return execRaw(command, arguments)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.240110.01/lib/CRABAPI/RawCommand.py", line 52, in execRaw
+    res = cmdobj()
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.240110.01/lib/CRABClient/Commands/submit.py", line 137, in __call__
+    dictresult, status, reason = server.put(api=self.defaultApi, data=self.configreq_encoded)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.240110.01/lib/CRABClient/RestInterfaces.py", line 287, in put
+    return self.server.put(uri, data)
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.240110.01/lib/CRABClient/RestInterfaces.py", line 133, in put
+    return self.makeRequest(uri=uri, data=data, verb='PUT')
+  File "/cvmfs/cms.cern.ch/share/cms/crab-prod/v3.240110.01/lib/CRABClient/RestInterfaces.py", line 225, in makeRequest
+    raise RESTInterfaceException(stderr)
+CRABClient.ClientExceptions.RESTInterfaceException:   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying 188.185.89.202...
+* TCP_NODELAY set
+* Connected to cmsweb.cern.ch (188.185.89.202) port 8443 (#0)
+* ALPN, offering http/1.1
+* Cipher selection: ALL:!EXPORT:!EXPORT40:!EXPORT56:!aNULL:!LOW:!RC4:@STRENGTH
+* successfully set certificate verify locations:
+  CAfile: /etc/pki/tls/certs/ca-bundle.crt
+  CApath: /etc/grid-security/certificates/
+* TLSv1.2 (OUT), TLS header, Certificate Status (22):
+} [5 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client hello (1):
+} [512 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server hello (2):
+{ [109 bytes data]
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0* TLSv1.2 (IN), TLS handshake, Certificate (11):
+{ [6240 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server key exchange (12):
+{ [333 bytes data]
+* TLSv1.2 (IN), TLS handshake, Request CERT (13):
+{ [14071 bytes data]
+* TLSv1.2 (IN), TLS handshake, Server finished (14):
+{ [4 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Certificate (11):
+} [6741 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Client key exchange (16):
+} [70 bytes data]
+* TLSv1.2 (OUT), TLS handshake, CERT verify (15):
+} [264 bytes data]
+* TLSv1.2 (OUT), TLS change cipher, Client hello (1):
+} [1 bytes data]
+* TLSv1.2 (OUT), TLS handshake, Finished (20):
+} [16 bytes data]
+* TLSv1.2 (IN), TLS change cipher, Client hello (1):
+{ [1 bytes data]
+* TLSv1.2 (IN), TLS handshake, Finished (20):
+{ [16 bytes data]
+* SSL connection using TLSv1.2 / ECDHE-RSA-AES128-GCM-SHA256
+* ALPN, server accepted to use http/1.1
+* Server certificate:
+*  subject: DC=ch; DC=cern; OU=computers; CN=cmsweb.cern.ch
+*  start date: Feb 28 02:56:51 2023 GMT
+*  expire date: Apr  3 02:56:51 2024 GMT
+*  subjectAltName: host "cmsweb.cern.ch" matched cert's "cmsweb.cern.ch"
+*  issuer: DC=ch; DC=cern; CN=CERN Grid Certification Authority
+*  SSL certificate verify ok.
+} [5 bytes data]
+> PUT /crabserver/prod/workflow HTTP/1.1
+> Host: cmsweb.cern.ch:8443
+> User-Agent: CRABClient/v3.240110
+> Accept: */*
+> Content-Length: 12892
+> Content-Type: application/x-www-form-urlencoded
+> Expect: 100-continue
+> 
+{ [5 bytes data]
+< HTTP/1.1 100 Continue
+  0 12892    0     0    0     0      0      0 --:--:--  0:00:01 --:--:--     0} [5 bytes data]
+* We are completely uploaded and fine
+{ [5 bytes data]
+< HTTP/1.1 400 Bad Request
+< Date: Mon, 05 Feb 2024 08:07:19 GMT
+< Server: Apache
+< Content-Type: text/html;charset=utf-8
+< Content-Length: 733
+< X-Rest-Status: 302
+< X-Error-Http: 400
+< X-Error-Id: 5cb3182d131ddcd836f24514f4264cbb
+< X-Error-Detail: Invalid input parameter
+< X-Error-Info: Incorrect 'lfn' parameter <class 'str'> store/user/sha/Run2FULL/2016PreVFP
+< X-Rest-Time: 6582.499 us
+< CMS-Server-Time: D=362559 t=1707120439603361
+< Connection: close
+< 
+{ [5 bytes data]
+100 13625  100   733  100 12892    347   6115  0:00:02  0:00:02 --:--:--  6466
+* Closing connection 0
+} [5 bytes data]
+* TLSv1.2 (OUT), TLS alert, Client hello (1):
+} [2 bytes data]
+<!DOCTYPE html PUBLIC
+"-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"></meta>
+    <title>400 Bad Request</title>
+    <style type="text/css">
+    #powered_by {
+        margin-top: 20px;
+        border-top: 2px solid black;
+        font-style: italic;
+    }
+
+    #traceback {
+        color: red;
+    }
+    </style>
+</head>
+    <body>
+        <h2>400 Bad Request</h2>
+        <p>Invalid input parameter</p>
+        <pre id="traceback"></pre>
+    <div id="powered_by">
+      <span>
+        Powered by <a href="http://www.cherrypy.dev">CherryPy 18.8.0</a>
+      </span>
+    </div>
+    </body>
+</html>
+
