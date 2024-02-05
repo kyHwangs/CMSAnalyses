@@ -18,7 +18,7 @@ config.Data.lumiMask = '../JSON/Cert_271036-284044_13TeV_Legacy2016_Collisions16
 
 config.Site.storageSite = 'T3_KR_KNU'
 #config.Data.outLFNDirBase = '/store/user/sha/Run2FULL/2016PreVFP/MC/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8'
-config.Data.outLFNDirBase = 'store/user/sha/Run2FULL/2016PreVFP'
+config.Data.outLFNDirBase = '/store/user/sha/Run2FULL/2016PreVFP/DATA'
 if __name__ == '__main__':
     
     from CRABAPI.RawCommand import crabCommand
@@ -28,9 +28,9 @@ if __name__ == '__main__':
 #    config.Data.inputDataset = '/DoubleMuon/Run2016B-ver1_HIPM_UL2016_MiniAODv2-v1/MINIAOD'
 #    crabCommand('submit', config = config)
 
-    config.General.requestName = 'DoubleMuon_Run2016B-ver2'
-    config.Data.inputDataset = '/DoubleMuon/Run2016B-ver2_HIPM_UL2016_MiniAODv2-v1/MINIAOD'
-    crabCommand('submit', config = config)
+#    config.General.requestName = 'DoubleMuon_Run2016B-ver2'
+#    config.Data.inputDataset = '/DoubleMuon/Run2016B-ver2_HIPM_UL2016_MiniAODv2-v1/MINIAOD'
+#    crabCommand('submit', config = config)
 
 
     config.General.requestName = 'DoubleMuon_Run2016C'
