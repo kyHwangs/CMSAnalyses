@@ -5,7 +5,7 @@ config = config()
 config.General.workArea = 'UL2016_PreVFP'
 
 config.JobType.pluginName = 'Analysis'
-config.JobType.psetName = '../python/ssbanalyzer_2016_data_cfg.py'
+config.JobType.psetName = '../python/ssbanalyzer_2016APV_data_cfg.py'
 config.JobType.allowUndistributedCMSSW = True
 config.JobType.outputFiles = ["SSBTree.root"]
 

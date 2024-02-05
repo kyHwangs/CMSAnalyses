@@ -5,20 +5,20 @@ config = config()
 config.General.workArea = 'UL2016_PreVFP'
 
 config.JobType.pluginName = 'Analysis'
-config.JobType.psetName = '../python/ssbanalyzer_2016_data_cfg.py'
+config.JobType.psetName = '../python/ssbanalyzer_2016APV_data_cfg.py'
 config.JobType.allowUndistributedCMSSW = True
 config.JobType.outputFiles = ["SSBTree.root"]
 
 config.Data.inputDBS = 'global'
 config.Data.splitting = 'LumiBased'
-config.Data.unitsPerJob = 20
-#config.Data.unitsPerJob = 50
+#config.Data.unitsPerJob = 20
+config.Data.unitsPerJob = 50
 config.Data.lumiMask = '../JSON/Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt'
 
 
 config.Site.storageSite = 'T3_KR_KNU'
 #config.Data.outLFNDirBase = '/store/user/sha/Run2FULL/2016PreVFP/MC/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8'
-config.Data.outLFNDirBase = 'store/user/sha/Run2FULL/2016PreVFP'
+config.Data.outLFNDirBase = 'store/user/sha/Run2FULL/2016PreVFP/DATA'
 if __name__ == '__main__':
     
     from CRABAPI.RawCommand import crabCommand
