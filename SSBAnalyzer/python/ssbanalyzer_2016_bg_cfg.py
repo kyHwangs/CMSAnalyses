@@ -43,8 +43,8 @@ process.options = cms.untracked.PSet(
 
 # How many events to process
 process.maxEvents = cms.untracked.PSet( 
-   input = cms.untracked.int32(10000),
-   #input = cms.untracked.int32(-1),
+   #input = cms.untracked.int32(10000),
+   input = cms.untracked.int32(-1),
 )
 ########################
 ### Output filenames ###
@@ -65,7 +65,9 @@ if runOnData:
   print ("Running on Data ...")
 
 else:
-  fname = "/store/mc/RunIISummer20UL16MiniAODv2/DY1JetsToLL_M-50_MatchEWPDG20_TuneCP5_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v1/120000/00061BF0-5BB0-524E-A539-0CAAD8579386.root" #UL2016 MC
+  #fname = "/store/mc/RunIISummer20UL16MiniAODv2/DY1JetsToLL_M-50_MatchEWPDG20_TuneCP5_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v1/120000/00061BF0-5BB0-524E-A539-0CAAD8579386.root" #UL2016 MC
+  #fname = "file:/u/user/sha/SE_UserHome/Run2_UL/MC/DY50_amcnlo/53517696-58F8-4A47-8834-C452EC2FF2F2.root" #UL2016 MC
+  fname = "file:/u/user/sha/SE_UserHome/Run2_UL/MC/DY50_amcnlo/v2/53517696-58F8-4A47-8834-C452EC2FF2F2.root" #UL2016 MC
 
 # Define the input source
 process.source = cms.Source("PoolSource", 

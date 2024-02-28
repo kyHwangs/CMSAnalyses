@@ -9,7 +9,7 @@ config.section_('JobType')
 
 
 #config.General.workArea = 'UL2016_PreVFP_Resub'
-config.General.workArea = 'UL2016_PreVFP_ResubBlack'
+config.General.workArea = 'UL2016_PreVFP_v3p2'
 config.JobType.pluginName = 'Analysis'
 config.JobType.psetName = '../python/ssbanalyzer_2016APV_bg_cfg.py'
 config.JobType.allowUndistributedCMSSW = True
@@ -21,13 +21,16 @@ config.section_('Data')
 
 config.Data.publication = False
 config.Data.splitting = 'EventAwareLumiBased'
+#config.Data.splitting = 'FileBased'
 config.Data.unitsPerJob = 25000
 #config.Data.unitsPerJob = 20000
+#config.Data.unitsPerJob =1 
 config.section_('User')
 config.section_('Site')
 config.Site.storageSite = 'T3_KR_KNU'
-config.Site.blacklist = ['T2_US_UCSD', 'T2_US_MIT']
+#config.Site.blacklist = ['T2_US_UCSD', 'T2_US_MIT']
 config.Data.outLFNDirBase = '/store/user/sha/Run2FULL/2016PreVFP/MC/'
+config.Site.whitelist = ['T1_US_FNAL','T3_KR_KNU']
 
 
 
