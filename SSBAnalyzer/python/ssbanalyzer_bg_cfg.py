@@ -1,18 +1,35 @@
+from FWCore.ParameterSet.VarParsing import VarParsing
 import FWCore.ParameterSet.Config as cms
+
+options = VarParsing('python')
+
+options.register('era', 'Run2018',
+    VarParsing.multiplicity.singleton,
+    VarParsing.varType.string,
+    "Set era ('UL2018', 'UL2017', 'UL2016', 'UL2016APV')"
+)
+
+options.register('isFullAOD', True,
+    VarParsing.multiplicity.singleton,
+    VarParsing.varType.bool,
+    "Set to False for MiniAOD datatier"
+)
+
+
 
 # Define the CMSSW process
 process = cms.Process("SSB")
+#===================================================================
 
 # Configurable options =======================================================================
 period = 'UL2018' # Options: UL2016APV, UL2016, UL2018, UL2018
-
-#configurable options =======================================================================
-runOnData=False #data/MC switch
-isMC=not runOnData
-isSys=False
 #===================================================================
 
-
+#configurable options =======================================================================
+runOnData = False #data/MC switch
+isMC = not runOnData
+isSys = False
+#===================================================================
 
 # Load the standard set of configuration modules
 process.load('Configuration.StandardSequences.Services_cff')
@@ -20,6 +37,7 @@ process.load('Configuration.StandardSequences.GeometryDB_cff')
 process.load('Configuration.StandardSequences.MagneticField_38T_cff')
 #process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff')
+#===================================================================
 
 if runOnData : process.GlobalTag.globaltag = '106X_dataRun2_v37'
 
@@ -34,18 +52,21 @@ else:
 process.load("FWCore.MessageService.MessageLogger_cfi")
 process.MessageLogger.destinations = ['cout', 'cerr']
 process.MessageLogger.cerr.FwkReport.reportEvery = 100
+#===================================================================
 
 # Set the process options -- Display summary at the end, enable unscheduled execution
 process.options = cms.untracked.PSet( 
     allowUnscheduled = cms.untracked.bool(True),
     wantSummary = cms.untracked.bool(True) 
 )
+#===================================================================
 
 # How many events to process
 process.maxEvents = cms.untracked.PSet( 
-   input = cms.untracked.int32(100000),
-   #input = cms.untracked.int32(-1),
+   input = cms.untracked.int32(-1),
 )
+#===================================================================
+
 ########################
 ### Output filenames ###
 ########################
@@ -53,10 +74,9 @@ process.TFileService=cms.Service("TFileService",
         fileName=cms.string("SSBTree.root"),
         closeFileFast = cms.untracked.bool(True)
 )
+#===================================================================
 
-### =====================================================================================================
 # Define the input source
-
 corList = cms.vstring(['L1FastJet', 'L2Relative', 'L3Absolute'])
     
 if runOnData:
@@ -66,12 +86,13 @@ if runOnData:
 
 else:
   fname = "/store/mc/RunIISummer20UL16MiniAODv2/DY1JetsToLL_M-50_MatchEWPDG20_TuneCP5_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v1/120000/00061BF0-5BB0-524E-A539-0CAAD8579386.root" #UL2016 MC
+#===================================================================
 
 # Define the input source
 process.source = cms.Source("PoolSource", 
     fileNames = cms.untracked.vstring([ fname ])
 )
-
+#===================================================================
 
 
 ###Apply JECs =====================================================================================================
@@ -93,7 +114,6 @@ updateJetCollection(
   jetCorrections = ('AK4PFPuppi', cms.vstring(['L1FastJet', 'L2Relative', 'L3Absolute', 'L2L3Residual']), 'None')  # Update: Safe to always add 'L2L3Residual' as MC contains dummy L2L3Residual corrections (always set to 1)
 )
 process.jecSequencepuppi = cms.Sequence(process.patJetCorrFactorsUpdatedJECPuppi * process.updatedPatJetsUpdatedJECPuppi)
-
 ### END JECs ==========================================================================================
 
 
@@ -101,9 +121,8 @@ process.jecSequencepuppi = cms.Sequence(process.patJetCorrFactorsUpdatedJECPuppi
 from PhysicsTools.PatUtils.tools.runMETCorrectionsAndUncertainties import runMetCorAndUncFromMiniAOD
 
 # If you only want to re-correct for JEC and get the proper uncertainties for the default MET
-runMetCorAndUncFromMiniAOD(process,
-                          isData=runOnData,
-                          )
+runMetCorAndUncFromMiniAOD(process, isData = runOnData)
+
 #####################################
 ### Electron & Photon-- smearing ####
 #####################################
@@ -138,16 +157,16 @@ elif period is 'UL2018' :
     #phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff']
 
 eleIDModules =  [
-'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff',
-'RecoEgamma.ElectronIdentification.Identification.cutBasedElectronID_Fall17_94X_V2_cff',
-'RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Fall17_noIso_V2_cff',
-'RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Fall17_iso_V2_cff',
+    'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff',
+    'RecoEgamma.ElectronIdentification.Identification.cutBasedElectronID_Fall17_94X_V2_cff',
+    'RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Fall17_noIso_V2_cff',
+    'RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Fall17_iso_V2_cff',
 ]
 phoIDModules =  [
-'RecoEgamma.PhotonIdentification.Identification.mvaPhotonID_Fall17_94X_V2_cff',
-'RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff',
+    'RecoEgamma.PhotonIdentification.Identification.mvaPhotonID_Fall17_94X_V2_cff',
+    'RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff',
 ]
-
+#===================================================================
 
 
 #print ("eleIDModules : %s "%(eleIDModules))
@@ -163,10 +182,11 @@ setupEgammaPostRecoSeq(process,
 #######################################################################
 
 process.RandomNumberGeneratorService = cms.Service("RandomNumberGeneratorService",
-                  ssbanalyzer    = cms.PSet( initialSeed = cms.untracked.uint32(8675389),
-                                                      engineName = cms.untracked.string('TRandom3'),
-                                                      )
-                                                   )
+                                                    ssbanalyzer = cms.PSet( 
+                                                        initialSeed = cms.untracked.uint32(8675389),
+                                                        engineName = cms.untracked.string('TRandom3')
+                                                    )
+                                                  )
 #
 from PhysicsTools.PatUtils.l1PrefiringWeightProducer_cfi import l1PrefiringWeightProducer
 #print ("eleIDModules : %s "%(eleIDModules))

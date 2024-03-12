@@ -1,5 +1,5 @@
-import FWCore.ParameterSet.Config as cms
 from FWCore.ParameterSet.VarParsing import VarParsing
+import FWCore.ParameterSet.Config as cms
 
 options = VarParsing('analysis')
 
@@ -20,16 +20,12 @@ options.parseArguments()
 period = options.era
 globaltag = options.gt
 
-print '_{}_'.format(period)
-
 print period
 print globaltag
 
 # Define the CMSSW process
 process = cms.Process("SSB")
-
-# Configurable options =======================================================================
-# period = 'UL2016' # Options: UL2016APV, UL2016, UL2018, UL2018
+#===================================================================
 
 #configurable options =======================================================================
 runOnData = False #data/MC switch
@@ -37,14 +33,13 @@ isMC = not runOnData
 isSys = False
 #===================================================================
 
-
-
 # Load the standard set of configuration modules
 process.load('Configuration.StandardSequences.Services_cff')
 process.load('Configuration.StandardSequences.GeometryDB_cff')
 process.load('Configuration.StandardSequences.MagneticField_38T_cff')
 #process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff')
+#===================================================================
 
 # if runOnData : process.GlobalTag.globaltag = '106X_dataRun2_v37'
 
@@ -54,26 +49,27 @@ process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condD
 #     elif period is 'UL2017' : process.GlobalTag.globaltag = '106X_mc2017_realistic_v9'
 #     elif period is 'UL2018' : process.GlobalTag.globaltag = '106X_upgrade2018_realistic_v16_L1v1'
 
-# process.GlobalTag.globaltag = '106X_mcRun2_asymptotic_preVFP_v11'
-
 process.GlobalTag.globaltag = globaltag
 
 # Message Logger settings
 process.load("FWCore.MessageService.MessageLogger_cfi")
 process.MessageLogger.destinations = ['cout', 'cerr']
-process.MessageLogger.cerr.FwkReport.reportEvery = 100
+process.MessageLogger.cerr.FwkReport.reportEvery = 1000
+#===================================================================
 
 # Set the process options -- Display summary at the end, enable unscheduled execution
 process.options = cms.untracked.PSet( 
     allowUnscheduled = cms.untracked.bool(True),
     wantSummary = cms.untracked.bool(True) 
 )
+#===================================================================
 
 # How many events to process
 process.maxEvents = cms.untracked.PSet( 
-   input = cms.untracked.int32(1000),
-   # input = cms.untracked.int32(-1),
+   input = cms.untracked.int32(-1),
 )
+#===================================================================
+
 ########################
 ### Output filenames ###
 ########################
@@ -81,50 +77,47 @@ process.TFileService=cms.Service("TFileService",
         fileName=cms.string("SSBTree.root"),
         closeFileFast = cms.untracked.bool(True)
 )
+#===================================================================
 
-### =====================================================================================================
 # Define the input source
-
 corList = cms.vstring(['L1FastJet', 'L2Relative', 'L3Absolute'])
     
 if runOnData:
-  fname = 'file:/d3/scratch/sha/Analyses/DATA/MiniAOD/Run2016/PromptBv2/02D9C19F-571A-E611-AD8E-02163E013732.root'
-  corList = cms.vstring(['L1FastJet', 'L2Relative', 'L3Absolute', 'L2L3Residual'])
-  print ("Running on Data ...")
+    fname = 'file:/d3/scratch/sha/Analyses/DATA/MiniAOD/Run2016/PromptBv2/02D9C19F-571A-E611-AD8E-02163E013732.root'
+    corList = cms.vstring(['L1FastJet', 'L2Relative', 'L3Absolute', 'L2L3Residual'])
+    print ("Running on Data ...")
 
 else:
-  fname = "/store/mc/RunIISummer20UL16MiniAODAPVv2/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_preVFP_v11-v1/120000/06E6E2D8-C2B5-DB44-B335-EA4410CDBAD5.root" #UL2016 MC
-# fname = "/store/mc/RunIISummer20UL16MiniAOD/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v13-v2/270000/002C4C40-22FD-B946-BAB6-ABC759082930.root" #UL2016 MC
-  # fname = "file:/u/user/sha/SE_UserHome/Run2_UL/MC/DY50_amcnlo/53517696-58F8-4A47-8834-C452EC2FF2F2.root" #UL2016 MC
-  # fname = "file:/u/user/sha/SE_UserHome/Run2_UL/MC/DY50_amcnlo/v2/53517696-58F8-4A47-8834-C452EC2FF2F2.root" #UL2016 MC
+    fname = "/store/mc/RunIISummer20UL16MiniAODAPVv2/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_preVFP_v11-v1/120000/06E6E2D8-C2B5-DB44-B335-EA4410CDBAD5.root" #UL2016 MC
+    # fname = "/store/mc/RunIISummer20UL16MiniAOD/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v13-v2/270000/002C4C40-22FD-B946-BAB6-ABC759082930.root" #UL2016 MC
+    # fname = "file:/u/user/sha/SE_UserHome/Run2_UL/MC/DY50_amcnlo/53517696-58F8-4A47-8834-C452EC2FF2F2.root" #UL2016 MC
+    # fname = "file:/u/user/sha/SE_UserHome/Run2_UL/MC/DY50_amcnlo/v2/53517696-58F8-4A47-8834-C452EC2FF2F2.root" #UL2016 MC
 
 # Define the input source
 process.source = cms.Source("PoolSource", 
     fileNames = cms.untracked.vstring([ fname ])
 )
-
-
+#===================================================================
 
 ###Apply JECs =====================================================================================================
 # From :  https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookJetEnergyCorrections#CorrPatJets
 
 from PhysicsTools.PatAlgos.tools.jetTools import updateJetCollection
 updateJetCollection(
-  process,
-  jetSource = cms.InputTag('slimmedJets'),
-  labelName = 'UpdatedJEC',
-  jetCorrections = ('AK4PFchs', cms.vstring(['L1FastJet', 'L2Relative', 'L3Absolute', 'L2L3Residual']), 'None')  # Update: Safe to always add 'L2L3Residual' as MC contains dummy L2L3Residual corrections (always set to 1)
+    process,
+    jetSource = cms.InputTag('slimmedJets'),
+    labelName = 'UpdatedJEC',
+    jetCorrections = ('AK4PFchs', cms.vstring(['L1FastJet', 'L2Relative', 'L3Absolute', 'L2L3Residual']), 'None')  # Update: Safe to always add 'L2L3Residual' as MC contains dummy L2L3Residual corrections (always set to 1)
 )
 process.jecSequence = cms.Sequence(process.patJetCorrFactorsUpdatedJEC * process.updatedPatJetsUpdatedJEC)
 
 updateJetCollection(
-  process,
-  jetSource = cms.InputTag('slimmedJetsPuppi'),
-  labelName = 'UpdatedJECPuppi',
-  jetCorrections = ('AK4PFPuppi', cms.vstring(['L1FastJet', 'L2Relative', 'L3Absolute', 'L2L3Residual']), 'None')  # Update: Safe to always add 'L2L3Residual' as MC contains dummy L2L3Residual corrections (always set to 1)
+    process,
+    jetSource = cms.InputTag('slimmedJetsPuppi'),
+    labelName = 'UpdatedJECPuppi',
+    jetCorrections = ('AK4PFPuppi', cms.vstring(['L1FastJet', 'L2Relative', 'L3Absolute', 'L2L3Residual']), 'None')  # Update: Safe to always add 'L2L3Residual' as MC contains dummy L2L3Residual corrections (always set to 1)
 )
 process.jecSequencepuppi = cms.Sequence(process.patJetCorrFactorsUpdatedJECPuppi * process.updatedPatJetsUpdatedJECPuppi)
-
 ### END JECs ==========================================================================================
 
 
@@ -132,9 +125,8 @@ process.jecSequencepuppi = cms.Sequence(process.patJetCorrFactorsUpdatedJECPuppi
 from PhysicsTools.PatUtils.tools.runMETCorrectionsAndUncertainties import runMetCorAndUncFromMiniAOD
 
 # If you only want to re-correct for JEC and get the proper uncertainties for the default MET
-runMetCorAndUncFromMiniAOD(process,
-                          isData=runOnData,
-                          )
+runMetCorAndUncFromMiniAOD(process, isData = runOnData)
+
 #####################################
 ### Electron & Photon-- smearing ####
 #####################################
@@ -146,21 +138,18 @@ if period == 'UL2016APV':
     labelEra = '2016preVFP-UL'
     rerunIDs = True                                                                                                                    
     rerunEnergyCorrections = True
-    print 'in UL2016APV'
     #eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer16UL_ID_ISO_cff','RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff','RecoEgamma.ElectronIdentification.Identification.cutBasedElectronID_Fall17_94X_V2_cff']
     #phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff']
 elif period == 'UL2016':
     labelEra = '2016postVFP-UL'                                                                                                        
     rerunIDs = True
     rerunEnergyCorrections = True                                                                                                      
-    print 'in UL2016'
     #eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer17UL_ID_ISO_cff', 'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff','RecoEgamma.ElectronIdentification.Identification.cutBasedElectronID_Fall17_94X_V2_cff']
     #phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff']
 elif period == 'UL2017':
     labelEra = '2017-UL'                                                                                                               
     rerunIDs = True
     rerunEnergyCorrections = True
-    print 'in UL2017'
     #eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer17UL_ID_ISO_cff', 'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff','RecoEgamma.ElectronIdentification.Identification.cutBasedElectronID_Fall17_94X_V2_cff']
     #phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff']
 
@@ -168,20 +157,20 @@ elif period == 'UL2018':
     labelEra = '2018-UL'                                                                                                               
     rerunIDs = True
     rerunEnergyCorrections = True
-    print 'in UL2018'
     #eleIDModules=['RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Summer18UL_ID_ISO_cff','RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff','RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Fall17_iso_V2_cff','RecoEgamma.ElectronIdentification.Identification.cutBasedElectronID_Fall17_94X_V2_cff']
     #phoIDModules=['RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff']
 
 eleIDModules =  [
-'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff',
-'RecoEgamma.ElectronIdentification.Identification.cutBasedElectronID_Fall17_94X_V2_cff',
-'RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Fall17_noIso_V2_cff',
-'RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Fall17_iso_V2_cff',
+    'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff',
+    'RecoEgamma.ElectronIdentification.Identification.cutBasedElectronID_Fall17_94X_V2_cff',
+    'RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Fall17_noIso_V2_cff',
+    'RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Fall17_iso_V2_cff',
 ]
 phoIDModules =  [
-'RecoEgamma.PhotonIdentification.Identification.mvaPhotonID_Fall17_94X_V2_cff',
-'RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff',
+    'RecoEgamma.PhotonIdentification.Identification.mvaPhotonID_Fall17_94X_V2_cff',
+    'RecoEgamma.PhotonIdentification.Identification.cutBasedPhotonID_Fall17_94X_V2_cff',
 ]
+#===================================================================
 
 
 #print ("eleIDModules : %s "%(eleIDModules))
@@ -197,14 +186,14 @@ setupEgammaPostRecoSeq(process,
 #######################################################################
 
 process.RandomNumberGeneratorService = cms.Service("RandomNumberGeneratorService",
-                  ssbanalyzer    = cms.PSet( initialSeed = cms.untracked.uint32(8675389),
-                                                      engineName = cms.untracked.string('TRandom3'),
-                                                      )
-                                                   )
+                                                    ssbanalyzer = cms.PSet( 
+                                                        initialSeed = cms.untracked.uint32(8675389),
+                                                        engineName = cms.untracked.string('TRandom3')
+                                                    )
+                                                  )
 #
 from PhysicsTools.PatUtils.l1PrefiringWeightProducer_cfi import l1PrefiringWeightProducer
 #print ("eleIDModules : %s "%(eleIDModules))
-
 if period == 'UL2016APV':                                                                                                             
     DataEraECAL = 'UL2016preVFP'
     DataEraMuon = '2016preVFP'
@@ -217,6 +206,7 @@ elif period == 'UL2017':
 elif period == 'UL2018':
     DataEraECAL = 'None'
     DataEraMuon = '20172018'
+
 
 process.prefiringweight = l1PrefiringWeightProducer.clone(
   TheJets = cms.InputTag("updatedPatJetsUpdatedJEC"), #this should be the slimmedJets collection with up to date JECs !
@@ -412,6 +402,7 @@ process.ssbanalyzer = cms.EDAnalyzer('SSBAnalyzer',
                                     phoNeutralHadronIsolation = cms.InputTag('photonIDValueMapProducer:phoNeutralHadronIsolation'),
                                     phoPhotonIsolation        = cms.InputTag('photonIDValueMapProducer:phoPhotonIsolation'),
                                     phoWorstChargedIsolation  = cms.InputTag('photonIDValueMapProducer:phoWorstChargedIsolation'),
+
 
                                     effAreaChHadFile  = cms.FileInPath("RecoEgamma/PhotonIdentification/data/Fall17/effAreaPhotons_cone03_pfChargedHadrons_90percentBased_V2.txt"),
                                     effAreaNeuHadFile = cms.FileInPath("RecoEgamma/PhotonIdentification/data/Fall17/effAreaPhotons_cone03_pfNeutralHadrons_90percentBased_V2.txt"),

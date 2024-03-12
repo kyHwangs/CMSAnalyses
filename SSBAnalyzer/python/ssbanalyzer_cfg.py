@@ -2,15 +2,16 @@ import FWCore.ParameterSet.Config as cms
 
 # Define the CMSSW process
 process = cms.Process("SSB")
+#===================================================================
 
 # Configurable options =======================================================================
-#period = 'UL2018' # Options: UL2016APV, UL2016, UL2018, UL2018
 period = 'UL2017' # Options: UL2016APV, UL2016, UL2018, UL2018
+#===================================================================
 
 #configurable options =======================================================================
-runOnData=False #data/MC switch
-isMC=not runOnData
-isSys=False
+runOnData = False #data/MC switch
+isMC = not runOnData
+isSys = False
 #===================================================================
 
 
@@ -21,6 +22,7 @@ process.load('Configuration.StandardSequences.GeometryDB_cff')
 process.load('Configuration.StandardSequences.MagneticField_38T_cff')
 #process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff')
+#===================================================================
 
 if runOnData : process.GlobalTag.globaltag = '106X_dataRun2_v37'
 
@@ -35,18 +37,21 @@ else:
 process.load("FWCore.MessageService.MessageLogger_cfi")
 process.MessageLogger.destinations = ['cout', 'cerr']
 process.MessageLogger.cerr.FwkReport.reportEvery = 100
+#===================================================================
 
 # Set the process options -- Display summary at the end, enable unscheduled execution
 process.options = cms.untracked.PSet( 
     allowUnscheduled = cms.untracked.bool(True),
     wantSummary = cms.untracked.bool(True) 
 )
+#===================================================================
 
 # How many events to process
 process.maxEvents = cms.untracked.PSet( 
-   input = cms.untracked.int32(100),
-   #input = cms.untracked.int32(-1),
+   input = cms.untracked.int32(-1),
 )
+#===================================================================
+
 ########################
 ### Output filenames ###
 ########################
@@ -55,9 +60,9 @@ process.TFileService=cms.Service("TFileService",
         closeFileFast = cms.untracked.bool(True)
 )
 
-### =====================================================================================================
-# Define the input source
+#===================================================================
 
+# Define the input source
 corList = cms.vstring(['L1FastJet', 'L2Relative', 'L3Absolute'])
     
 if runOnData:
@@ -67,13 +72,13 @@ if runOnData:
 
 else:
   fname = 'file:/pnfs/knu.ac.kr/data/cms/store/user/sha/Run2_UL/MC/TTBarDiLep/04A0B676-D63A-6D41-B47F-F4CF8CBE7DB8.root'
+#===================================================================
+
 
 # Define the input source
 process.source = cms.Source("PoolSource", 
     fileNames = cms.untracked.vstring([ fname ])
 )
-
-
 
 ### External JECs =====================================================================================================
 # From :  https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookJetEnergyCorrections#CorrPatJets
