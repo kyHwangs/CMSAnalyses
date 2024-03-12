@@ -29,6 +29,7 @@ else:
     elif period is 'UL2017' : process.GlobalTag.globaltag = '106X_mc2017_realistic_v9'
     elif period is 'UL2018' : process.GlobalTag.globaltag = '106X_upgrade2018_realistic_v16_L1v1'
 
+process.GlobalTag.globaltag = '106X_mcRun2_asymptotic_preVFP_v11'
 
 # Message Logger settings
 process.load("FWCore.MessageService.MessageLogger_cfi")
@@ -43,8 +44,8 @@ process.options = cms.untracked.PSet(
 
 # How many events to process
 process.maxEvents = cms.untracked.PSet( 
-   #input = cms.untracked.int32(10000),
-   input = cms.untracked.int32(-1),
+   input = cms.untracked.int32(1000),
+   # input = cms.untracked.int32(-1),
 )
 ########################
 ### Output filenames ###
@@ -65,9 +66,10 @@ if runOnData:
   print ("Running on Data ...")
 
 else:
-  #fname = "/store/mc/RunIISummer20UL16MiniAODv2/DY1JetsToLL_M-50_MatchEWPDG20_TuneCP5_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v17-v1/120000/00061BF0-5BB0-524E-A539-0CAAD8579386.root" #UL2016 MC
-  #fname = "file:/u/user/sha/SE_UserHome/Run2_UL/MC/DY50_amcnlo/53517696-58F8-4A47-8834-C452EC2FF2F2.root" #UL2016 MC
-  fname = "file:/u/user/sha/SE_UserHome/Run2_UL/MC/DY50_amcnlo/v2/53517696-58F8-4A47-8834-C452EC2FF2F2.root" #UL2016 MC
+  fname = "/store/mc/RunIISummer20UL16MiniAODAPVv2/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_preVFP_v11-v1/120000/06E6E2D8-C2B5-DB44-B335-EA4410CDBAD5.root" #UL2016 MC
+# fname = "/store/mc/RunIISummer20UL16MiniAOD/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/MINIAODSIM/106X_mcRun2_asymptotic_v13-v2/270000/002C4C40-22FD-B946-BAB6-ABC759082930.root" #UL2016 MC
+  # fname = "file:/u/user/sha/SE_UserHome/Run2_UL/MC/DY50_amcnlo/53517696-58F8-4A47-8834-C452EC2FF2F2.root" #UL2016 MC
+  # fname = "file:/u/user/sha/SE_UserHome/Run2_UL/MC/DY50_amcnlo/v2/53517696-58F8-4A47-8834-C452EC2FF2F2.root" #UL2016 MC
 
 # Define the input source
 process.source = cms.Source("PoolSource", 

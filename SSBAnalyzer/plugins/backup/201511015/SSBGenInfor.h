@@ -2,7 +2,7 @@
 //
 // Package:    SSBGenInfor
 // Class:      SSBGenInfor
-// 
+//
 /**\class SSBGenInfor SSBGenInfor.cc CMSAnalyses/SSBGenInfor/plugins/SSBGenInfor.cc
 
  Description: [one line class summary]
@@ -11,7 +11,7 @@
      [Notes on implementation]
 */
 //
-// Original Author: Sungwoong Cho, Seungkyu Ha, Sehwook Lee, Suyoung Choi, Jaehoon Lim, Dooyeon Gyun. Korea University. SSB developers. 
+// Original Author: Sungwoong Cho, Seungkyu Ha, Sehwook Lee, Suyoung Choi, Jaehoon Lim, Dooyeon Gyun. Korea University. SSB developers.
 //         Created:  Mon Dec 29 10:42:18 KST 2014
 // $Id$
 //
@@ -32,7 +32,6 @@
 
 #include "FWCore/ParameterSet/interface/ParameterSet.h"
 
-
 #include "DataFormats/HepMCCandidate/interface/GenParticle.h"
 #include "DataFormats/HepMCCandidate/interface/GenParticleFwd.h"
 
@@ -44,8 +43,8 @@
 #include "DataFormats/PatCandidates/interface/MET.h"
 
 // TFile Service
-#include "FWCore/ServiceRegistry/interface/Service.h" 
-#include "CommonTools/UtilAlgos/interface/TFileService.h"   
+#include "FWCore/ServiceRegistry/interface/Service.h"
+#include "CommonTools/UtilAlgos/interface/TFileService.h"
 
 // TreeManager
 #include "CMSAnalyses/SSBAnalyzer/plugins/SSBTreeManager.h"
@@ -66,85 +65,90 @@ using namespace reco;
 class SSBTreeManager;
 
 class SSBGenInfor : public edm::EDAnalyzer {
+  typedef std::vector<reco::GenParticle> GenParticleCollection;
+  typedef std::vector<reco::GenJet> GenJetCollection;
+  //   typedef std::vector<reco::GenMET> GenMETCollection;
+  typedef std::vector<pat::MET> GenMETCollection;
 
-   typedef std::vector<reco::GenParticle> GenParticleCollection;
-   typedef std::vector<reco::GenJet> GenJetCollection;
-//   typedef std::vector<reco::GenMET> GenMETCollection;
-   typedef std::vector<pat::MET> GenMETCollection;
+  typedef std::vector<int> vec_i;
+  typedef std::map<int, vec_i> map_i;
+  typedef std::map<int, vec_i>::iterator map_i_it;
+  typedef std::map<int, std::string> map_s;
+  typedef std::map<int, int> map_ii;
+  typedef std::map<int, int>::iterator map_ii_it;
 
-   typedef std::vector<int>               vec_i;
-   typedef std::map<int, vec_i>           map_i;
-   typedef std::map<int, vec_i>::iterator map_i_it;
-   typedef std::map<int, std::string>     map_s;
-   typedef std::map<int, int>             map_ii;
-   typedef std::map<int, int>::iterator   map_ii_it;
+public:
+  explicit SSBGenInfor(const edm::ParameterSet&);
+  ~SSBGenInfor();
 
-   public:
-      explicit SSBGenInfor(const edm::ParameterSet&);
-      ~SSBGenInfor();
+  static void fillDescriptions(edm::ConfigurationDescriptions& descriptions);
 
-      static void fillDescriptions(edm::ConfigurationDescriptions& descriptions);
+  void GenPar(const edm::Event&, SSBTreeManager*);
+  void GenJet(const edm::Event&, SSBTreeManager*);
+  void GenMET(const edm::Event&, SSBTreeManager*);
 
-      void GenPar(const edm::Event&, SSBTreeManager*);
-      void GenJet(const edm::Event&, SSBTreeManager*);
-      void GenMET(const edm::Event&, SSBTreeManager*);
+private:
+  virtual void beginJob();
+  virtual void analyze(const edm::Event&, const edm::EventSetup&);
+  virtual void endJob();
 
-   private:
-      virtual void beginJob() ;
-      virtual void analyze(const edm::Event&, const edm::EventSetup&);
-      virtual void endJob() ;
+  virtual void beginRun(edm::Run const&, edm::EventSetup const&);
+  virtual void endRun(edm::Run const&, edm::EventSetup const&);
+  virtual void beginLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&);
+  virtual void endLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&);
 
-      virtual void beginRun(edm::Run const&, edm::EventSetup const&);
-      virtual void endRun(edm::Run const&, edm::EventSetup const&);
-      virtual void beginLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&);
-      virtual void endLuminosityBlock(edm::LuminosityBlock const&, edm::EventSetup const&);
+  // User Function
+  void InitializeGenPar();
+  int IndexLinker(map_i,
+                  int,
+                  int target_depth = 0,
+                  int target_index = -999,
+                  int target_pdgid = 0,
+                  int target_status = 0,
+                  bool PrintError = false,
+                  int LoopDepth = 0);
+  void FillGenPar(int, int, int, int, int, GenParticleCollection::const_iterator, SSBTreeManager*);
 
-      // User Function 
-      void InitializeGenPar();
-      int IndexLinker ( map_i, int, int target_depth = 0, int target_index = -999, int target_pdgid = 0, int target_status = 0, bool PrintError = false, int LoopDepth = 0);
-      void FillGenPar(int, int, int, int, int, GenParticleCollection::const_iterator, SSBTreeManager*);
+  TTree* ssbtree;
+  SSBTreeManager* ssbtreeManager;
+  edm::Service<TFileService> ssbfs;
 
-      TTree* ssbtree;
-      SSBTreeManager* ssbtreeManager;
-      edm::Service<TFileService> ssbfs;
+  bool isMC;
+  edm::InputTag genParInfoTag;
+  edm::InputTag genJetInfoTag;
+  edm::InputTag genMETInfoTag;
 
-      bool isMC;
-      edm::InputTag genParInfoTag;
-      edm::InputTag genJetInfoTag;
-      edm::InputTag genMETInfoTag;
+  // variables for Event info.
+  int Event;
+  int Run;
+  int Lumi;
+  bool isData;
 
-      // variables for Event info. 
-      int Event;
-      int Run;
-      int Lumi; 
-      bool isData;    
+  int genPar_index;
+  int genJet_index;
+  int genMET_index;
 
-      int genPar_index;
-      int genJet_index;
-      int genMET_index;
+  map_i AllParMom;
+  vec_i OriginalMom;
+  map_i AllParDau;
+  vec_i OriginalDau;
+  map_i AllParInfo;
+  vec_i pdgId_status;
+  map_i SelParDau;
+  vec_i SelectedDau;
 
-      map_i AllParMom;
-      vec_i OriginalMom;
-      map_i AllParDau;
-      vec_i OriginalDau;
-      map_i AllParInfo;
-      vec_i pdgId_status;
-      map_i SelParDau;
-      vec_i SelectedDau;
+  vec_i TreePar;
+  vec_i FinalPar;
+  vec_i SelectedPar;
 
-      vec_i TreePar;
-      vec_i FinalPar;
-      vec_i SelectedPar;
+  map_ii SelectedpdgId;
 
-      map_ii SelectedpdgId;
+  map_s ParName;
 
-      map_s ParName;
-
-      int PythiaVersion;
-      bool isSignal;
-      bool isMINIAOD;
-      // ----------member data ---------------------------
-
+  int PythiaVersion;
+  bool isSignal;
+  bool isMINIAOD;
+  // ----------member data ---------------------------
 };
 
 #endif
