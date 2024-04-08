@@ -781,6 +781,7 @@ void SSBAnalyzer::analyze(const edm::Event &iEvent, const edm::EventSetup &iSetu
       tMuon_TrackLayerWithHit = muon.innerTrack()->hitPattern().trackerLayersWithMeasurement();
       tMuon_PixelHit = muon.innerTrack()->hitPattern().numberOfValidPixelHits();  
       tMuon_ValidTrackHitFraction = muon.innerTrack()->validFraction();
+      
       tMuon_dxy = fabs(muon.innerTrack()->dxy(v_vertex[0].position()));
       tMuon_dz = fabs(muon.innerTrack()->dz(v_vertex[0].position()));    
     }
