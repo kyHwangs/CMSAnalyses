@@ -780,12 +780,15 @@ void SSBAnalyzer::analyze(const edm::Event &iEvent, const edm::EventSetup &iSetu
     if (muon.innerTrack().isNonnull() && muon.innerTrack().isAvailable()) {
       tMuon_TrackLayerWithHit = muon.innerTrack()->hitPattern().trackerLayersWithMeasurement();
       tMuon_PixelHit = muon.innerTrack()->hitPattern().numberOfValidPixelHits();  
-      tMuon_ValidTrackHitFraction = muon.innerTrack()->validFraction();
-      
-      tMuon_dxy = fabs(muon.innerTrack()->dxy(v_vertex[0].position()));
-      tMuon_dz = fabs(muon.innerTrack()->dz(v_vertex[0].position()));    
+      tMuon_ValidTrackHitFraction = muon.innerTrack()->validFraction();  
     }
 
+    if (muon.muonBestTrack().isNonnull() && muon.muonBestTrack().isAvailable()) {
+
+      tMuon_dxy = fabs(muon.muonBestTrack()->dxy(v_vertex[0].position()));
+      tMuon_dz = fabs(muon.muonBestTrack()->dz(v_vertex[0].position()));      
+    }
+    
     tMuon_dB = muon.dB();
 
 
