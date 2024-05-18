@@ -1,14 +1,14 @@
 {
     "UL2016APV": {
-        "NNLO_tautau": {
-            "dataset": "/DYJetsToTauTau_M-50_AtLeastOneEorMuDecay_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM",
-            "globalTag": "106X_mcRun2_asymptotic_preVFP_v11",
-            "output": "DYJetsToTauTau_M-50_AtLeastOneEorMuDecay_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
-        },        
         "LO_inc": {
             "dataset": "/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM",
             "globalTag": "106X_mcRun2_asymptotic_preVFP_v11",
             "output": "DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8"
+        },
+        "NNLO_tautau": {
+            "dataset": "/DYJetsToTauTau_M-50_AtLeastOneEorMuDecay_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_preVFP_v11",
+            "output": "DYJetsToTauTau_M-50_AtLeastOneEorMuDecay_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
         },
         "NNLO_inc": {
             "dataset": "/DYJetsToMuMu_M-50_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM",
@@ -69,18 +69,68 @@
             "dataset": "/DYJetsToMuMu_M-2000toInf_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v2/MINIAODSIM",
             "globalTag": "106X_mcRun2_asymptotic_preVFP_v11",
             "output": "DYJetsToMuMu_M-2000toInf_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "TTTo2L2Nu": {
+            "dataset": "/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_preVFP_v11",
+            "output": "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8"
+        },
+        "ST_s": {
+            "dataset": "/ST_s-channel_4f_leptonDecays_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_preVFP_v11",
+            "output": "ST_s-channel_4f_leptonDecays_TuneCP5_13TeV-amcatnlo-pythia8"
+        },
+        "ST_t_Top": {
+            "dataset": "/ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v3/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_preVFP_v11",
+            "output": "ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8"
+        },
+        "ST_t_AntiTop": {
+            "dataset": "/ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v3/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_preVFP_v11",
+            "output": "ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8"
+        },
+        "ST_tW_Top": {
+            "dataset": "/ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_preVFP_v11",
+            "output": "ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8"
+        },
+        "ST_tW_AntiTop": {
+            "dataset": "/ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_preVFP_v11",
+            "output": "ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8"
+        },
+        "WJetsToLNu": {
+            "dataset": "/WJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v2/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_preVFP_v11",
+            "output": "WJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-pythia8"
+        },
+        "WW": {
+            "dataset": "/WWTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_preVFP_v11",
+            "output": "WWTo2L2Nu_TuneCP5_13TeV-powheg-pythia8"
+        },
+        "WZ": {
+            "dataset": "/WZ_TuneCP5_13TeV-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_preVFP_v11",
+            "output": "WZ_TuneCP5_13TeV-pythia8"
+        },
+        "ZZ": {
+            "dataset": "/ZZ_TuneCP5_13TeV-pythia8/RunIISummer20UL16MiniAODAPVv2-106X_mcRun2_asymptotic_preVFP_v11-v1/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_preVFP_v11",
+            "output": "ZZ_TuneCP5_13TeV-pythia8"
         }
     },
     "UL2016": {
-        "NNLO_tautau": {
-            "dataset": "/DYJetsToTauTau_M-50_AtLeastOneEorMuDecay_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v1/MINIAODSIM",
-            "globalTag": "106X_mcRun2_asymptotic_v17",
-            "output": "DYJetsToTauTau_M-50_AtLeastOneEorMuDecay_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
-        },             
         "LO_inc": {
             "dataset": "/DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8/RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v1/MINIAODSIM",
             "globalTag": "106X_mcRun2_asymptotic_v17",
             "output": "DYJetsToLL_M-50_TuneCP5_13TeV-madgraphMLM-pythia8"
+        },
+        "NNLO_tautau": {
+            "dataset": "/DYJetsToTauTau_M-50_AtLeastOneEorMuDecay_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v1/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_v17",
+            "output": "DYJetsToTauTau_M-50_AtLeastOneEorMuDecay_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
         },
         "NNLO_inc": {
             "dataset": "/DYJetsToMuMu_M-50_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v1/MINIAODSIM",
@@ -141,10 +191,290 @@
             "dataset": "/DYJetsToMuMu_M-2000toInf_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v2/MINIAODSIM",
             "globalTag": "106X_mcRun2_asymptotic_v17",
             "output": "DYJetsToMuMu_M-2000toInf_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "TTTo2L2Nu": {
+            "dataset": "/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v1/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_v17",
+            "output": "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8"
+        },
+        "ST_s": {
+            "dataset": "/ST_s-channel_4f_leptonDecays_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v1/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_v17",
+            "output": "ST_s-channel_4f_leptonDecays_TuneCP5_13TeV-amcatnlo-pythia8"
+        },
+        "ST_t_Top": {
+            "dataset": "/ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v3/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_v17",
+            "output": "ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8"
+        },
+        "ST_t_AntiTop": {
+            "dataset": "/ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v3/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_v17",
+            "output": "ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8"
+        },
+        "ST_tW_Top": {
+            "dataset": "/ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v2/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_v17",
+            "output": "ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8"
+        },
+        "ST_tW_AntiTop": {
+            "dataset": "/ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v2/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_v17",
+            "output": "ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8"
+        },
+        "WJetsToLNu": {
+            "dataset": "/WJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v2/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_v17",
+            "output": "WJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-pythia8"
+        },
+        "WW": {
+            "dataset": "/WWTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v1/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_v17",
+            "output": "WWTo2L2Nu_TuneCP5_13TeV-powheg-pythia8"
+        },
+        "WZ": {
+            "dataset": "/WZ_TuneCP5_13TeV-pythia8/RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v1/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_v17",
+            "output": "WZ_TuneCP5_13TeV-pythia8"
+        },
+        "ZZ": {
+            "dataset": "/ZZ_TuneCP5_13TeV-pythia8/RunIISummer20UL16MiniAODv2-106X_mcRun2_asymptotic_v17-v1/MINIAODSIM",
+            "globalTag": "106X_mcRun2_asymptotic_v17",
+            "output": "ZZ_TuneCP5_13TeV-pythia8"
         }
     },
     "UL2017": {
+        "NNLO_tautau": {
+            "dataset": "/DYJetsToTauTau_M-50_AtLeastOneEorMuDecay_massWgtFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "DYJetsToTauTau_M-50_AtLeastOneEorMuDecay_massWgtFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_inc": {
+            "dataset": "/DYJetsToMuMu_M-50_massWgtFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "DYJetsToMuMu_M-50_massWgtFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_10to50": {
+            "dataset": "/DYJetsToMuMu_M-10to50_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "DYJetsToMuMu_M-10to50_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_10to50_v2": {
+            "dataset": "/DYJetsToMuMu_M-10to50_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9_ext1-v2/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "DYJetsToMuMu_M-10to50_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos_v2"
+        },
+        "NNLO_100to200": {
+            "dataset": "/DYJetsToMuMu_M-100to200_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "DYJetsToMuMu_M-100to200_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_200to400": {
+            "dataset": "/DYJetsToMuMu_M-200to400_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "DYJetsToMuMu_M-200to400_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_400to500": {
+            "dataset": "/DYJetsToMuMu_M-400to500_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "DYJetsToMuMu_M-400to500_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_500to700": {
+            "dataset": "/DYJetsToMuMu_M-500to700_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "DYJetsToMuMu_M-500to700_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_700to800": {
+            "dataset": "/DYJetsToMuMu_M-700to800_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "DYJetsToMuMu_M-700to800_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_800to1000": {
+            "dataset": "/DYJetsToMuMu_M-800to1000_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "DYJetsToMuMu_M-800to1000_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_1000to1500": {
+            "dataset": "/DYJetsToMuMu_M-1000to1500_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "DYJetsToMuMu_M-1000to1500_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_1500to2000": {
+            "dataset": "/DYJetsToMuMu_M-1500to2000_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "DYJetsToMuMu_M-1500to2000_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_2000toInf": {
+            "dataset": "/DYJetsToMuMu_M-2000toInf_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "DYJetsToMuMu_M-2000toInf_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "TTTo2L2Nu": {
+            "dataset": "/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8"
+        },
+        "ST_s": {
+            "dataset": "/ST_s-channel_4f_leptonDecays_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "ST_s-channel_4f_leptonDecays_TuneCP5_13TeV-amcatnlo-pythia8"
+        },
+        "ST_t_Top": {
+            "dataset": "/ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8"
+        },
+        "ST_t_AntiTop": {
+            "dataset": "/ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8"
+        },
+        "ST_tW_Top": {
+            "dataset": "/ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8"
+        },
+        "ST_tW_AntiTop": {
+            "dataset": "/ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8"
+        },
+        "WJetsToLNu": {
+            "dataset": "/WJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "WJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-pythia8"
+        },
+        "WW": {
+            "dataset": "/WWTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v2/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "WWTo2L2Nu_TuneCP5_13TeV-powheg-pythia8"
+        },
+        "WZ": {
+            "dataset": "/WZ_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "WZ_TuneCP5_13TeV-pythia8"
+        },
+        "ZZ": {
+            "dataset": "/ZZ_TuneCP5_13TeV-pythia8/RunIISummer20UL17MiniAODv2-106X_mc2017_realistic_v9-v1/MINIAODSIM",
+            "globalTag": "106X_mc2017_realistic_v9",
+            "output": "ZZ_TuneCP5_13TeV-pythia8"
+        }
     },
     "UL2018": {
+        "NNLO_tautau": {
+            "dataset": "/DYJetsToTauTau_M-50_AtLeastOneEorMuDecay_massWgtFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "DYJetsToTauTau_M-50_AtLeastOneEorMuDecay_massWgtFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_inc": {
+            "dataset": "/DYJetsToMuMu_M-50_massWgtFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "DYJetsToMuMu_M-50_massWgtFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_10to50": {
+            "dataset": "/DYJetsToMuMu_M-10to50_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "DYJetsToMuMu_M-10to50_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_10to50_v2": {
+            "dataset": "/DYJetsToMuMu_M-10to50_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1_ext1-v2/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "DYJetsToMuMu_M-10to50_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos_v2"
+        },
+        "NNLO_100to200": {
+            "dataset": "/DYJetsToMuMu_M-100to200_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "DYJetsToMuMu_M-100to200_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_200to400": {
+            "dataset": "/DYJetsToMuMu_M-200to400_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "DYJetsToMuMu_M-200to400_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_400to500": {
+            "dataset": "/DYJetsToMuMu_M-400to500_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "DYJetsToMuMu_M-400to500_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_500to700": {
+            "dataset": "/DYJetsToMuMu_M-500to700_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "DYJetsToMuMu_M-500to700_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_700to800": {
+            "dataset": "/DYJetsToMuMu_M-700to800_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "DYJetsToMuMu_M-700to800_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_800to1000": {
+            "dataset": "/DYJetsToMuMu_M-800to1000_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "DYJetsToMuMu_M-800to1000_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_1000to1500": {
+            "dataset": "/DYJetsToMuMu_M-1000to1500_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "DYJetsToMuMu_M-1000to1500_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_1500to2000": {
+            "dataset": "/DYJetsToMuMu_M-1500to2000_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "DYJetsToMuMu_M-1500to2000_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "NNLO_2000toInf": {
+            "dataset": "/DYJetsToMuMu_M-2000toInf_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "DYJetsToMuMu_M-2000toInf_H2ErratumFix_TuneCP5_13TeV-powhegMiNNLO-pythia8-photos"
+        },
+        "TTTo2L2Nu": {
+            "dataset": "/TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "TTTo2L2Nu_TuneCP5_13TeV-powheg-pythia8"
+        },
+        "ST_s": {
+            "dataset": "/ST_s-channel_4f_leptonDecays_TuneCP5_13TeV-amcatnlo-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "ST_s-channel_4f_leptonDecays_TuneCP5_13TeV-amcatnlo-pythia8"
+        },
+        "ST_t_Top": {
+            "dataset": "/ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "ST_t-channel_top_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8"
+        },
+        "ST_t_AntiTop": {
+            "dataset": "/ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "ST_t-channel_antitop_4f_InclusiveDecays_TuneCP5_13TeV-powheg-madspin-pythia8"
+        },
+        "ST_tW_Top": {
+            "dataset": "/ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "ST_tW_top_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8"
+        },
+        "ST_tW_AntiTop": {
+            "dataset": "/ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "ST_tW_antitop_5f_inclusiveDecays_TuneCP5_13TeV-powheg-pythia8"
+        },
+        "WJetsToLNu": {
+            "dataset": "/WJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "WJetsToLNu_TuneCP5_13TeV-amcatnloFXFX-pythia8"
+        },
+        "WW": {
+            "dataset": "/WWTo2L2Nu_TuneCP5_13TeV-powheg-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "WWTo2L2Nu_TuneCP5_13TeV-powheg-pythia8"
+        },
+        "WZ": {
+            "dataset": "/WZ_TuneCP5_13TeV-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v1/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "WZ_TuneCP5_13TeV-pythia8"
+        },
+        "ZZ": {
+            "dataset": "/ZZ_TuneCP5_13TeV-pythia8/RunIISummer20UL18MiniAODv2-106X_upgrade2018_realistic_v16_L1v1-v2/MINIAODSIM",
+            "globalTag": "106X_upgrade2018_realistic_v16_L1v1",
+            "output": "ZZ_TuneCP5_13TeV-pythia8"
+        }
     }
 }
