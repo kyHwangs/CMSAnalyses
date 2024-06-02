@@ -1,0 +1,110 @@
+{
+    "UL2016APV": {
+        "Run2016B_v1_HIPM": {
+            "dataset": "/SingleMuon/Run2016B-ver1_HIPM_UL2016_MiniAODv2-v2/MINIAOD",
+            "globalTag": "106X_dataRun2_v35",
+            "output": "Run2016B_v1_HIPM"
+        },
+        "Run2016B_v2_HIPM": {
+            "dataset": "/SingleMuon/Run2016B-ver2_HIPM_UL2016_MiniAODv2-v2/MINIAOD",
+            "globalTag": "106X_dataRun2_v35",
+            "output": "Run2016B_v2_HIPM"
+        },
+        "Run2016C_HIPM": {
+            "dataset": "/SingleMuon/Run2016C-HIPM_UL2016_MiniAODv2-v2/MINIAOD",
+            "globalTag": "106X_dataRun2_v35",
+            "output": "Run2016C_HIPM"
+        },
+        "Run2016D_HIPM": {
+            "dataset": "/SingleMuon/Run2016D-HIPM_UL2016_MiniAODv2-v2/MINIAOD",
+            "globalTag": "106X_dataRun2_v35",
+            "output": "Run2016D_HIPM"
+        },
+        "Run2016E_HIPM": {
+            "dataset": "/SingleMuon/Run2016E-HIPM_UL2016_MiniAODv2-v2/MINIAOD",
+            "globalTag": "106X_dataRun2_v35",
+            "output": "Run2016E_HIPM"
+        },
+        "Run2016F_HIPM": {
+            "dataset": "/SingleMuon/Run2016F-HIPM_UL2016_MiniAODv2-v2/MINIAOD",
+            "globalTag": "106X_dataRun2_v35",
+            "output": "Run2016F_HIPM"
+        }
+    },
+    "UL2016": {
+        "Run2016F": {
+            "dataset": "/SingleMuon/Run2016F-UL2016_MiniAODv2-v2/MINIAOD",
+            "globalTag": "106X_dataRun2_v35",
+            "output": "Run2016F"
+        },
+        "Run2016G": {
+            "dataset": "/SingleMuon/Run2016G-UL2016_MiniAODv2-v2/MINIAOD",
+            "globalTag": "106X_dataRun2_v35",
+            "output": "Run2016G"
+        },
+        "Run2016H": {
+            "dataset": "/SingleMuon/Run2016H-UL2016_MiniAODv2-v2/MINIAOD",
+            "globalTag": "106X_dataRun2_v35",
+            "output": "Run2016H"
+        }
+    },
+    "UL2017": {
+        "Run2017B": {
+            "dataset": "/SingleMuon/Run2017B-UL2017_MiniAODv2-v1/MINIAOD",
+            "globalTag": "106X_dataRun2_v33",
+            "output": "Run2017B"
+        },
+        "Run2017C": {
+            "dataset": "/SingleMuon/Run2017C-UL2017_MiniAODv2-v1/MINIAOD",
+            "globalTag": "106X_dataRun2_v33",
+            "output": "Run2017C"
+        },
+        "Run2017D": {
+            "dataset": "/SingleMuon/Run2017D-UL2017_MiniAODv2-v1/MINIAOD",
+            "globalTag": "106X_dataRun2_v33",
+            "output": "Run2017D"
+        },
+        "Run2017E": {
+            "dataset": "/SingleMuon/Run2017E-UL2017_MiniAODv2-v1/MINIAOD",
+            "globalTag": "106X_dataRun2_v33",
+            "output": "Run2017E"
+        },
+        "Run2017F": {
+            "dataset": "/SingleMuon/Run2017F-UL2017_MiniAODv2-v1/MINIAOD",
+            "globalTag": "106X_dataRun2_v33",
+            "output": "Run2017F"
+        },
+        "Run2017G": {
+            "dataset": "/SingleMuon/Run2017G-UL2017_MiniAODv2-v1/MINIAOD",
+            "globalTag": "106X_dataRun2_v33",
+            "output": "Run2017G"
+        },
+        "Run2017H": {
+            "dataset": "/SingleMuon/Run2017H-UL2017_MiniAODv2-v1/MINIAOD",
+            "globalTag": "106X_dataRun2_v33",
+            "output": "Run2017H"
+        }
+    },
+    "UL2018": {
+      "Run2018A": {
+          "dataset": "/SingleMuon/Run2018A-UL2018_MiniAODv2-v3/MINIAOD",
+          "globalTag": "106X_dataRun2_v33",
+          "output": "Run2018A"
+      },
+      "Run2018B": {
+          "dataset": "/SingleMuon/Run2018B-UL2018_MiniAODv2-v2/MINIAOD",
+          "globalTag": "106X_dataRun2_v33",
+          "output": "Run2018B"
+      },
+      "Run2018C": {
+          "dataset": "/SingleMuon/Run2018C-UL2018_MiniAODv2-v2/MINIAOD",
+          "globalTag": "106X_dataRun2_v33",
+          "output": "Run2018C"
+      },
+      "Run2018D": {
+          "dataset": "/SingleMuon/Run2018D-UL2018_MiniAODv2-v3/MINIAOD",
+          "globalTag": "106X_dataRun2_v33",
+          "output": "Run2018D"
+      }
+    }
+}
