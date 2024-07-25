@@ -183,11 +183,9 @@ def main():
             db = json.load(db_file)
 
             try:
-                print era, sample
                 input_dataset = db[era][sample]["dataset"]
                 globalTag = db[era][sample]["globalTag"]
                 output_dir = db[era][sample]["output"]
-                print input_dataset, globalTag, output_dir
 
             except:
                 print ("Error!! Requested era and sample are likely not valid. Please check argument.")
@@ -203,6 +201,16 @@ def main():
 
         config.Data.inputDataset = input_dataset
         config.General.requestName = '_'.join(['SSB_nTuplizer', era, sample, suffix])
+
+        print (configFile)
+        print (era)
+        print (sample)
+        print (input_dataset)
+        print (output_dir)
+        print (globalTag)
+        print ("")
+
+        # return;
 
         # If we need to pull input files from a list file instead of CRAB:
         # config.Data.userInputFiles = open(basedir + sample + '.list').readlines()
@@ -247,4 +255,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

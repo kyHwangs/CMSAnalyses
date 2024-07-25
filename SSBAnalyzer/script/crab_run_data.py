@@ -87,7 +87,7 @@ def getOptions():
     parser.add_option('--unitsPerJobData',
                       dest = 'unitsPerJobData',
                       type = 'int',
-                      default = 100,
+                      default = 10,
                       help = "unitsPerJob option for data",
                       metavar = 'UNIT_PER_JOB_DATA')
 
@@ -180,8 +180,11 @@ def main():
             LM_perEra = LM_prefix + '16/13TeV/Legacy_2016/Cert_271036-284044_13TeV_Legacy2016_Collisions16_JSON.txt'
         elif era == 'UL2017' :
             LM_perEra = LM_prefix + '17/13TeV/Legacy_2017/Cert_294927-306462_13TeV_UL2017_Collisions17_GoldenJSON.txt'
+        # elif era == 'UL2018' :
+        #     LM_perEra = LM_prefix + '18/13TeV/Legacy_2018/Cert_314472-325175_13TeV_Legacy2018_Collisions18_JSON.txt'
+
         elif era == 'UL2018' :
-            LM_perEra = LM_prefix + '18/13TeV/Legacy_2018/Cert_314472-325175_13TeV_Legacy2018_Collisions18_JSON.txt'
+            LM_perEra = '/u/user/kyhwang/WorkingDir/CMS/HighMassDY/ntupler/240306/CMSSW_10_6_30/src/CMSAnalyses/SSBAnalyzer/script/240527/UL2018/Run2018A/crab_SSB_nTuplizer_UL2018_Run2018A_240527/results/notFinishedLumis.json'
 
         config.Data.lumiMask = LM_perEra
 
